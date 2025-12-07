@@ -1,0 +1,12 @@
+[package]
+name = "eris"
+description = "ERIS notation system - entity types, operators, and parsing"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+regex = { workspace = true }
+paste = { workspace = true }
+once_cell = { workspace = true }

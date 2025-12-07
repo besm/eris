@@ -1,0 +1,605 @@
+//! ≡ ERIS ontology operator system
+//! ≝ Operators for reality creation and constitution
+
+define_operator_module! {
+    Ontology {
+        Creation => "Reality creation operators",
+        Constitution => "Constitution operators",
+        Grounding => "Grounding operators",
+        Dynamics => "Dynamical process operators",
+        States => "State operators",
+        Transitions => "Transition operators",
+    },
+    extra_fields: {
+        /// Armenian property vector rating (if applicable)
+        property_vector: Option<&'static str>,
+    }
+}
+
+/// Get all ontology operator definitions
+pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
+    vec![
+        // 𝀐 - Creates (κοντέβμα)
+        OntologyOperatorDef {
+            symbol: "𝀐",
+            name: "creates",
+            category: OntologyOperatorCategory::Creation,
+            property_vector: Some("Փ9Գ8"),
+            lines: lines![
+                ("≡", ["creates", "brings_forth"]),
+                ("≝", ["ontological creation", "bringing into existence"]),
+                ("⊡", "Փ9Գ8"),
+                ("⊛", [
+                    "⧈ 𝀐 kinds ∧ ⛣ 𝀐 obligations ∧ ⛫𝀐 facts",
+                    "𝀐≡𝁚 general ∧ naming 𝀐 existence"
+                ]),
+            ],
+        },
+        // 𝁚 - Constitutes (κρατημοϋπόρροον)
+        OntologyOperatorDef {
+            symbol: "𝁚",
+            name: "constitutes",
+            category: OntologyOperatorCategory::Constitution,
+            property_vector: None,
+            lines: lines![
+                ("≡", ["constitutes", "creates_reality"]),
+                ("≝", ["reality constitution", "performative creation", "holding together"]),
+                ("⊛", [
+                    "⧈𝁚reality ∧ naming𝁚existence ∧ ⧈𝁚being",
+                    "𝁚 via ⛫_power ∧ financial_⧈𝁚market_reality",
+                    "KB𝁚financial_reality",
+                    "𝁚 sustains coherence",
+                    "parts𝁚whole"
+                ]),
+            ],
+        },
+        // 𝀼 - Syrma / Constitutive Extension (σύρμα)
+        OntologyOperatorDef {
+            symbol: "𝀼",
+            name: "extension",
+            category: OntologyOperatorCategory::Constitution,
+            property_vector: None,
+            lines: lines![
+                ("≡", ["constitutive_extension", "dragging_along", "trailing"]),
+                ("≝", ["extension that reshapes", "theory drags reality", "model constitutes market"]),
+                ("∂", [
+                    "უmere addition",
+                    "უaccumulation",
+                    "უdetached growth",
+                    "requires constitutive trace"
+                ]),
+                ("⊛", [
+                    "theory𝀼reality ∧ model𝀼market ∧ concept𝀼framework",
+                    "economic models𝀼market behavior",
+                    "𝀼 maintains continuous connection",
+                    "extension leaves constitutive wake",
+                    "directional growth that shapes target",
+                    "theory𝀼market traders use model",
+                    "𝀼 binds extending∧extended",
+                    "σύρω: drag, draw along, trail"
+                ]),
+                ("⊢", [
+                    "reflexive entanglement",
+                    "constitutive reshaping",
+                    "theory-reality binding"
+                ]),
+            ],
+        },
+        // �𝀏 - Crystallize (ψηφιστόν)
+        OntologyOperatorDef {
+            symbol: "𝀏",
+            name: "crystallize",
+            category: OntologyOperatorCategory::Dynamics,
+            property_vector: None,
+            lines: lines![
+                ("≡", ["crystallize", "solidification"]),
+                ("≝", ["forming stable structure", "semantic hardening", "𝀷 solidifies"]),
+                ("∂", [
+                    "უ◬ (emergence)",
+                    "უmere compression",
+                    "requires lattice formation"
+                ]),
+                ("⊛", [
+                    "𝀷→გ→𝀏 integration grounds then solidifies",
+                    "⌻→𝀏→⌺",
+                    "meaning ო𝀏 into stable form",
+                    "consensus→𝀏",
+                    "𝀏 creates fixed structure",
+                    "usage patterns 𝀏 semantics"
+                ]),
+                ("⊢", [
+                    "structural stability",
+                    "semantic fixity"
+                ]),
+            ],
+        },
+        // 𝀾 - Flow / Flux (ἀντικενοκύλισμα)
+        OntologyOperatorDef {
+            symbol: "𝀾",
+            name: "flow",
+            category: OntologyOperatorCategory::Dynamics,
+            property_vector: None,
+            lines: lines![
+                ("≡", ["flow", "flux", "movement"]),
+                ("≝", ["state space trajectory", "dynamic movement toward ✱"]),
+                ("∂", [
+                    "უstatic",
+                    "უdiscrete jump",
+                    "requires continuous motion"
+                ]),
+                ("⊛", [
+                    "𝀾→✱→𝀆",
+                    "𝀾→⌺ semantic convergence",
+                    "semantic drift via 𝀾",
+                    "basin→𝀾→✱",
+                    "meaning 𝀾 through usage toward ⌺",
+                    "𝀾 velocity determines transition time",
+                    "ჭ→𝀾"
+                ]),
+                ("⊢", [
+                    "trajectory formation",
+                    "attractor convergence"
+                ]),
+            ],
+        },
+        // 𝀸 - Perturbation (σεῖσμα)
+        OntologyOperatorDef {
+            symbol: "𝀸",
+            name: "perturbation",
+            category: OntologyOperatorCategory::Dynamics,
+            property_vector: None,
+            lines: lines![
+                ("≡", ["perturbation", "disruption", "shock"]),
+                ("≝", ["system disturbance", "stability challenge"]),
+                ("∂", [
+                    "უ⤋ (gradual decline)",
+                    "უ◬ (emergence)",
+                    "requires external impulse"
+                ]),
+                ("⊛", [
+                    "𝀸→⌺ tests stability",
+                    "(weak 𝀸→⌺ recovers) ∨ (strong 𝀸→⌺→⌼)",
+                    "𝀸 strength vs stability threshold",
+                    "resilience≝resistance to 𝀸",
+                    "𝀸 reveals basin boundaries"
+                ]),
+                ("⊢", [
+                    "stability test",
+                    "resilience measure"
+                ]),
+            ],
+        },
+        // 𝀆 - Equilibrium (ἴσον)
+        OntologyOperatorDef {
+            symbol: "𝀆",
+            name: "equilibrium",
+            category: OntologyOperatorCategory::States,
+            property_vector: None,
+            lines: lines![
+                ("≡", ["equilibrium", "rest at ✱"]),
+                ("≝", ["stable point occupancy", "unchanging state"]),
+                ("∂", [
+                    "უ𝀾 (flowing)",
+                    "უ𝁀 (oscillating)",
+                    "requires attractor residence"
+                ]),
+                ("⊛", [
+                    "system at 𝀆",
+                    "𝀆≝✱ occupation",
+                    "⌺ in 𝀆",
+                    "𝀾→✱→𝀆",
+                    "𝀸 can disrupt 𝀆"
+                ]),
+                ("⊢", [
+                    "stable residence",
+                    "no motion"
+                ]),
+            ],
+        },
+        // 𝁀 - Oscillation (τρομικόν)
+        OntologyOperatorDef {
+            symbol: "𝁀",
+            name: "oscillation",
+            category: OntologyOperatorCategory::States,
+            property_vector: None,
+            lines: lines![
+                ("≡", ["oscillation", "periodic cycling"]),
+                ("≝", ["bounded periodic motion", "trembling state"]),
+                ("∂", [
+                    "უ𝀆 (rest)",
+                    "უescape",
+                    "requires limit cycle"
+                ]),
+                ("⊛", [
+                    "periodic ✱",
+                    "system in 𝁀",
+                    "𝁀 confined to basin",
+                    "not rest but not escape",
+                    "trembling within bounds",
+                    "⟳ via 𝁀"
+                ]),
+                ("⊢", [
+                    "periodic return",
+                    "bounded cycling"
+                ]),
+            ],
+        },
+        // 𝁆 - Dissolution (ξηρὸν κλάσμα)
+        OntologyOperatorDef {
+            symbol: "𝁆",
+            name: "dissolution",
+            category: OntologyOperatorCategory::Transitions,
+            property_vector: None,
+            lines: lines![
+                ("≡", ["dissolution", "structure unmade"]),
+                ("≝", ["reverse of 𝀏", "return to flux", "crumbling"]),
+                ("∂", [
+                    "უ𝀏 (crystallizing)",
+                    "უmere 𝀾 (flowing)",
+                    "requires structure breakdown"
+                ]),
+                ("⊛", [
+                    "𝁆≡¬𝀏",
+                    "⌺→შ→𝁆→𝀾",
+                    "structure შო into flux",
+                    "crystalline→𝁆→fluid",
+                    "⌼ experiencing 𝁆",
+                    "𝀸 can trigger 𝁆"
+                ]),
+                ("⊢", [
+                    "structure loss",
+                    "return to flux"
+                ]),
+            ],
+        },
+        // � - Sublation / Aufhebung (ἐλαφρόν)
+        OntologyOperatorDef {
+            symbol: "𝀗",
+            name: "sublation",
+            category: OntologyOperatorCategory::Transitions,
+            property_vector: None,
+            lines: lines![
+                ("≡", ["sublation", "dialectical elevation", "Aufhebung"]),
+                ("≝", ["negation∧preservation∧elevation", "lifting contradiction", "ἐλαφρόν lightness"]),
+                ("∂", [
+                    "უsimple negation",
+                    "უmere synthesis",
+                    "უannihilation",
+                    "requires contradiction retention"
+                ]),
+                ("⊛", [
+                    "thesis∧antithesis→𝀗→synthesis",
+                    "Being∧Nothing→𝀗→Becoming",
+                    "𝀗≡cancel∧preserve∧elevate",
+                    "contradiction 𝀗 to higher unity",
+                    "𝀗 lightens by raising",
+                    "feudalism→𝀗→capitalism (Marx)",
+                    "⧆→𝀗→resolution at higher level",
+                    "𝀗 carries forward essential",
+                    "graceful elevation უviolence"
+                ]),
+                ("⊢", [
+                    "contradiction resolved",
+                    "elevated integration",
+                    "nothing lost"
+                ]),
+            ],
+        },
+
+        // 𝀞 - Shapes (Molds Form)
+        OntologyOperatorDef {
+            symbol: "𝀞",
+            name: "shapes",
+            category: OntologyOperatorCategory::Constitution,
+            property_vector: Some("Փ8Բ7"),
+            lines: lines![
+                ("≡", ["shapes", "molds_form"]),
+                ("≝", ["constitutive shaping", "discourse shapes reality"]),
+                ("⊡", "Փ8Բ7"),
+                ("⊛", [
+                    "⧈⥅𝀞 perception",
+                    "⟟⥅𝀞 perception",
+                    "discourse 𝀞 reality",
+                    "⛫ power→⟛→𝀞 subjects",
+                    "language 𝀞 thought",
+                    "𝀞 via ⧈ classification"
+                ]),
+                ("⊢", "𝀞 shaping ⊢ constituted form ⊢ discourse effects"),
+            ],
+        },
+
+        // 𝀕 - Behavior (Enacted Pattern)
+        OntologyOperatorDef {
+            symbol: "𝀕",
+            name: "behavior",
+            category: OntologyOperatorCategory::Dynamics,
+            property_vector: Some("Փ8Բ7"),
+            lines: lines![
+                ("≡", ["behavior", "enacted_pattern"]),
+                ("≝", ["observable behavior", "enacted regularities"]),
+                ("⊡", "Փ8Բ7"),
+                ("⊛", [
+                    "◬ from ⧈⇋𝀕",
+                    "𝀕⊱⧈",
+                    "⧈→𝀕→𝆌→⧈",
+                    "𝀔⬡𝀕",
+                    "𝀕 observable pattern",
+                    "behavior→𝆌→⌂"
+                ]),
+                ("⊢", "𝀕 behavior ⊢ observable pattern ⊢ ⧈ reinforcement"),
+            ],
+        },
+
+        // ⌂ - Habitus (Embodied Dispositions)
+        OntologyOperatorDef {
+            symbol: "⌂",
+            name: "habitus",
+            category: OntologyOperatorCategory::Constitution,
+            property_vector: Some("Ր8Գ7"),
+            lines: lines![
+                ("≡", ["habitus", "embodied_dispositions"]),
+                ("≝", ["Bourdieu's habitus", "durable dispositions", "structured structures"]),
+                ("⊡", "Ր8Գ7"),
+                ("⊛", [
+                    "⌂ formed by 𝄃",
+                    "𝄃⊱⌂",
+                    "⥅→⌂ formation",
+                    "behavior→𝆌→⌂",
+                    "⌂ generates practice",
+                    "field∧⌂→practice",
+                    "⌂≡structured structuring structure"
+                ]),
+                ("⊢", "⌂ habitus ⊢ durable dispositions ⊢ practical sense"),
+            ],
+        },
+
+        // 𝀶 - Destroys (Eliminates Structure)
+        OntologyOperatorDef {
+            symbol: "𝀶",
+            name: "destroys",
+            category: OntologyOperatorCategory::Transitions,
+            property_vector: Some("Ց9Փ6"),
+            lines: lines![
+                ("≡", ["destroys", "eliminates_structure"]),
+                ("≝", ["destruction", "structural elimination"]),
+                ("⊡", "Ց9Փ6"),
+                ("⊛", [
+                    "⟲ can 𝀶 or 𝆌",
+                    "overload can 𝀶 ┃",
+                    "crisis 𝀶 stability",
+                    "𝀶 → 𝁆 dissolution",
+                    "𝀶 removes structure",
+                    "revolution 𝀶 old order"
+                ]),
+                ("⊢", "𝀶 destruction ⊢ structure loss ⊢ dissolution"),
+            ],
+        },
+
+        // 𝀴 - Transforms (Fundamental Change)
+        OntologyOperatorDef {
+            symbol: "𝀴",
+            name: "transforms",
+            category: OntologyOperatorCategory::Transitions,
+            property_vector: Some("Փ8Գ8"),
+            lines: lines![
+                ("≡", ["transforms", "fundamental_change"]),
+                ("≝", ["deep transformation", "qualitative shift"]),
+                ("⊡", "Փ8Գ8"),
+                ("⊛", [
+                    "𝄎 awareness 𝀴",
+                    "crisis 𝀴 system",
+                    "𝀴 ≈ ⤇ general",
+                    "learning 𝀴 understanding",
+                    "𝀴 not mere change",
+                    "metamorphosis via 𝀴"
+                ]),
+                ("⊢", "𝀴 transformation ⊢ qualitative shift ⊢ new form"),
+            ],
+        },
+
+        // ⟒ - Grounds (Founds Reality)
+        OntologyOperatorDef {
+            symbol: "⟒",
+            name: "grounds",
+            category: OntologyOperatorCategory::Grounding,
+            property_vector: None,
+            lines: lines![
+                ("≡", ["grounds", "founds"]),
+                ("≝", ["ontological grounding", "foundational establishment", "material basis"]),
+                ("∂", [
+                    "უmere support",
+                    "უcausal antecedent",
+                    "requires constitutive foundation"
+                ]),
+                ("⊛", [
+                    "⧏⟒empirical_data",
+                    "belief⟒action",
+                    "⟒ in material_conditions",
+                    "authority⟒legitimacy",
+                    "⌂⟒𝀕_patterns",
+                    "practice⟒theory"
+                ]),
+                ("⊢", "⟒ grounding ⊢ foundational support ⊢ material basis"),
+            ],
+        },
+
+        // ⛁ - Memory (Persistence)
+        OntologyOperatorDef {
+            symbol: "⛁",
+            name: "memory",
+            category: OntologyOperatorCategory::Grounding,
+            property_vector: Some("Լ9Բ8"),
+            lines: lines![
+                ("≡", ["memory", "persistence"]),
+                ("≝", ["context preservation across time", "semantic storage"]),
+                ("⊡", "Լ9Բ8"),
+                ("∂", [
+                    "⛁≠⌺ (⛁ stores|⌺ stabilizes)",
+                    "⛁≠დ (⛁ mechanism|დ reference)",
+                    "⛁ preserves|⌺ crystallizes"
+                ]),
+                ("⊛", [
+                    "⛁ preserves ⯐ across time",
+                    "დ⯐ held in ⛁",
+                    "⌺ flow in ⛁",
+                    "⩎→⛁ artifact persisted",
+                    "⛁ enables Տ across sessions",
+                    "⛁ grounds ⥅ (feedforward requires memory)"
+                ]),
+                ("⊢", [
+                    "⛁9 ⊢ ⯐ continuity ⊢ ◇accumulated understanding",
+                    "⛁1 ⊢ ⯐ amnesia ⊢ ¬◇learning",
+                    "⛁⊰⥅ (memory enables anticipation)"
+                ]),
+                ("⟷", [
+                    "⛁⟷⌺ (⛁ holds what ⌺ stabilizes)",
+                    "⛁⟷⯐ (⛁ preserves ⯐)",
+                    "⛁⟷Լ (⛁ enables lifespan)"
+                ]),
+            ],
+        },
+
+        // ⩎ - Entity / Node / Concrete Instance
+        OntologyOperatorDef {
+            symbol: "⩎",
+            name: "entity",
+            category: OntologyOperatorCategory::Grounding,
+            property_vector: Some("Գ9Բ7"),
+            lines: lines![
+                ("≡", ["entity", "node", "concrete_instance"]),
+                ("≝", ["grounded particular", "what patterns actualize into", "what operations transform"]),
+                ("⊡", "Գ9Բ7"),
+                ("∂", [
+                    "⩎≠ᛝ (instance vs pattern)",
+                    "⩎≠⯐ (thing vs space)",
+                    "⩎≠⋕ (particular vs schema)"
+                ]),
+                ("⊛", [
+                    "ᛝ→გ⩎ pattern grounds to entity",
+                    "⩎→შ→⩎' transformation",
+                    "⩎⊃⩎ containment",
+                    "⩎↬⩎ connection",
+                    "⩎⊆system membership",
+                    "∘(⊨,გ)→⩎ operations yield entities"
+                ]),
+                ("⊢", [
+                    "⩎⊢particular⊢◇concrete",
+                    "ᛝ⊢◇⩎ patterns may instantiate"
+                ]),
+                ("⟷", [
+                    "⩎⟷ᛝ",
+                    "⩎⟷⛁"
+                ]),
+            ],
+        },
+
+        // ⤑ - Shapes Through Influence (Constitutive Influence)
+        OntologyOperatorDef {
+            symbol: "⤑",
+            name: "shapes_through_influence",
+            category: OntologyOperatorCategory::Constitution,
+            property_vector: None,
+            lines: lines![
+                ("≡", ["shapes", "constitutes_through_influence"]),
+                ("≝", ["constitutive influence", "weaker than 𝀞 but still reality-shaping"]),
+                ("∂", [
+                    "უmere influence",
+                    "უcausal effect",
+                    "⤑≈𝀞 but weaker",
+                    "requires constitutive trace"
+                ]),
+                ("⊛", [
+                    "⧈⤑𝀕",
+                    "expectation⤑outcome",
+                    "model⤑reality",
+                    "⤑ through feedback_loops",
+                    "discourse⤑possibilities",
+                    "⤑≠mere_influence_but_creation"
+                ]),
+                ("⊢", "⤑ shaping ⊢ constitutive influence ⊢ reality effects"),
+            ],
+        },
+
+        // ⬟ - Performativity Chain (Symbol→Action→Reality)
+        OntologyOperatorDef {
+            symbol: "⬟",
+            name: "performativity_chain",
+            category: OntologyOperatorCategory::Constitution,
+            property_vector: Some("Փ8Գ7Վ7"),
+            lines: lines![
+                ("≡", ["symbol_action_reality_chain", "performativity_pattern"]),
+                ("≝", ["symbol creates action creates reality", "Austin-Searle-Butler chain"]),
+                ("⊡", "Փ8Գ7Վ7"),
+                ("∂", [
+                    "უmere representation",
+                    "უdescription",
+                    "requires performative force"
+                ]),
+                ("⊛", [
+                    "⬟≡performativity_pattern",
+                    "ꕥ→ო→გ via ⬟",
+                    "⛣⬟social_fact",
+                    "model⬟𝀕⬟outcome",
+                    "⬟ 𝀐 what_it_names",
+                    "⚘Austin→⚘Searle→⚘Butler via ⬟"
+                ]),
+                ("⊢", "⬟ performativity ⊢ symbol→action→reality ⊢ constitutive speech"),
+            ],
+        },
+
+        // ⛣ - Speech Act (Performative Utterance)
+        OntologyOperatorDef {
+            symbol: "⛣",
+            name: "speech_act",
+            category: OntologyOperatorCategory::Creation,
+            property_vector: Some("Փ8Բ7"),
+            lines: lines![
+                ("≡", ["speech_act", "performative_utterance"]),
+                ("≝", ["Austin's speech act", "illocutionary force", "words that do"]),
+                ("⊡", "Փ8Բ7"),
+                ("∂", [
+                    "უdescription",
+                    "უconstative",
+                    "⛣→does_not_describe",
+                    "requires performative force"
+                ]),
+                ("⊛", [
+                    "⛣≡⚘J.L. Austin_concept",
+                    "illocutionary⛣perlocutionary",
+                    "⛣𝁚⛫_facts",
+                    "promise⛣𝀐_obligation",
+                    "⛣→⬟→reality",
+                    "⧈+⛣→named_into_being",
+                    "⛣ 𝄃→𝀕_patterns"
+                ]),
+                ("⊢", "⛣ speech act ⊢ performative force ⊢ social fact creation"),
+            ],
+        },
+
+        // ⥎ - Interactive Kinds (Looping Effect)
+        OntologyOperatorDef {
+            symbol: "⥎",
+            name: "interactive_kinds",
+            category: OntologyOperatorCategory::Constitution,
+            property_vector: Some("Տ8Ս7"),
+            lines: lines![
+                ("≡", ["interactive", "mutually_constitutive"]),
+                ("≝", ["Hacking's looping kinds", "classification affects classified", "human kinds"]),
+                ("⊡", "Տ8Ս7"),
+                ("∂", [
+                    "⥎≠passive",
+                    "⥎≠natural kinds",
+                    "requires awareness of classification"
+                ]),
+                ("⊛", [
+                    "⥎ kinds≡⚘Ian Hacking",
+                    "⧈⥎⚘→⟗loops",
+                    "human_kinds≡⥎",
+                    "⥎ 𝀴 both_parties",
+                    "classification⥎classified⥎classification"
+                ]),
+                ("⊢", "⥎ interactive ⊢ looping effect ⊢ mutual constitution"),
+            ],
+        },
+    ]
+}

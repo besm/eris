@@ -1,0 +1,16 @@
+[package]
+name = "eris-cli"
+description = "CLI for querying ERIS notation definitions"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "eris"
+path = "src/main.rs"
+
+[dependencies]
+eris = { workspace = true }
+clap = { workspace = true }
+anyhow = { workspace = true }
