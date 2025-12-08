@@ -1,5 +1,8 @@
 # ERIS
 
+Crazy person stuff, don't look.
+
+
 ERIS (Entity Reference and Information System) is a notation system for semantic tagging using Unicode symbols.
 
 ## Overview
