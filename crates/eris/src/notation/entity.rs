@@ -401,6 +401,13 @@ impl CompoundTag {
             if let Some(year) = self.year() {
                 implied.push(format!("⊙{}{}{}", BRACKET_OPEN, year, BRACKET_CLOSE));
             }
+
+            // Extract journal/venue for article citations (those with 𝄏 symbol)
+            if self.has_symbol('𝄏') {
+                if let Some(journal) = self.get_named("journal") {
+                    implied.push(format!("𝄏{}{}{}", BRACKET_OPEN, journal, BRACKET_CLOSE));
+                }
+            }
         }
 
         implied
@@ -631,6 +638,16 @@ mod tests {
         let implied2 = tag2.implied_tag_names();
         assert!(implied2.contains(&"⚘⦑George Lakoff⦒".to_string()));
         assert!(implied2.contains(&"⚘⦑Mark Johnson⦒".to_string()));
+
+        // Article citation with journal venue
+        let tag3 = CompoundTag::parse(
+            "⚘⊙𝄏⊳⦑Larry Frohman⦒⦑2020⦒⦑German History⦒⦑Network Euphoria⦒",
+        )
+        .unwrap();
+        let implied3 = tag3.implied_tag_names();
+        assert!(implied3.contains(&"⚘⦑Larry Frohman⦒".to_string()));
+        assert!(implied3.contains(&"⊙⦑2020⦒".to_string()));
+        assert!(implied3.contains(&"𝄏⦑German History⦒".to_string()));
     }
 
     // ═══════════════════════════════════════════════════════════════════════
