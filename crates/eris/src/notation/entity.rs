@@ -65,6 +65,16 @@ pub static NOTATIONS: &[EntityNotation] = &[
         components: &[("author", 0), ("year", 1), ("journal", 2), ("title", 3)],
     },
     EntityNotation {
+        name: "OrgBookCitation",
+        pattern: &['⍚', '⊙', '⊳'],
+        components: &[("author", 0), ("year", 1), ("title", 2)],
+    },
+    EntityNotation {
+        name: "OrgArticleCitation",
+        pattern: &['⍚', '⊙', '𝄏', '⊳'],
+        components: &[("author", 0), ("year", 1), ("journal", 2), ("title", 3)],
+    },
+    EntityNotation {
         name: "DatedEvent",
         pattern: &['⌁', '⊙'],
         components: &[("event", 0), ("year", 1)],
@@ -223,9 +233,11 @@ impl CompoundTag {
     // Type Checks
     // ═══════════════════════════════════════════════════════════════════════
 
-    /// Check if this is a citation tag (starts with ⚘⊙)
+    /// Check if this is a citation tag (starts with ⚘⊙ or ⍚⊙)
     pub fn is_citation(&self) -> bool {
-        self.symbols.len() >= 2 && self.symbols[0] == '⚘' && self.symbols[1] == '⊙'
+        self.symbols.len() >= 2
+            && (self.symbols[0] == '⚘' || self.symbols[0] == '⍚')
+            && self.symbols[1] == '⊙'
     }
 
     /// Check if this is a simple person tag (just ⚘⦑Name⦒)
@@ -380,19 +392,25 @@ impl CompoundTag {
         let mut implied = Vec::new();
 
         if self.is_citation() {
+            // Determine the author symbol (⚘ for person, ⍚ for organization)
+            let author_symbol = self.symbols.first().copied().unwrap_or('⚘');
+
             // Extract author(s)
             if let Some(author_str) = self.author() {
-                // Handle multi-author with ∧ separator
-                if author_str.contains(CONJUNCTION) {
+                // Handle multi-author with ∧ separator (only for person authors)
+                if author_symbol == '⚘' && author_str.contains(CONJUNCTION) {
                     for author in split_conjunction(author_str) {
                         if !author.is_empty() {
-                            implied.push(format!("⚘{}{}{}", BRACKET_OPEN, author, BRACKET_CLOSE));
+                            implied.push(format!(
+                                "{}{}{}{}",
+                                author_symbol, BRACKET_OPEN, author, BRACKET_CLOSE
+                            ));
                         }
                     }
                 } else {
                     implied.push(format!(
-                        "⚘{}{}{}",
-                        BRACKET_OPEN, author_str, BRACKET_CLOSE
+                        "{}{}{}{}",
+                        author_symbol, BRACKET_OPEN, author_str, BRACKET_CLOSE
                     ));
                 }
             }
@@ -648,6 +666,16 @@ mod tests {
         assert!(implied3.contains(&"⚘⦑Larry Frohman⦒".to_string()));
         assert!(implied3.contains(&"⊙⦑2020⦒".to_string()));
         assert!(implied3.contains(&"𝄏⦑German History⦒".to_string()));
+
+        // Organization author citation
+        let tag4 = CompoundTag::parse(
+            "⍚⊙⊳⦑The Church of Jesus Christ of Latter-day Saints⦒⦑2020⦒⦑General Handbook⦒",
+        )
+        .unwrap();
+        let implied4 = tag4.implied_tag_names();
+        assert!(implied4.contains(&"⍚⦑The Church of Jesus Christ of Latter-day Saints⦒".to_string()));
+        assert!(implied4.contains(&"⊙⦑2020⦒".to_string()));
+        assert_eq!(implied4.len(), 2);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
