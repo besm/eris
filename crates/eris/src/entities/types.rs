@@ -90,6 +90,7 @@ pub fn get_entity_type_definitions() -> Vec<EntityTypeDef> {
     defs.extend(question::get_entity_type_definitions());
     defs.extend(project::get_entity_type_definitions());
     defs.extend(idea::get_entity_type_definitions());
+    defs.extend(section::get_entity_type_definitions());
     
     // Operators that also function as entity types
     defs.extend(chronos::get_entity_type_definitions());
