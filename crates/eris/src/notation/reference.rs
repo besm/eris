@@ -59,9 +59,7 @@ impl Notation for Reference {
         let symbol = chars.next()?;
 
         // Validate it's a known reference symbol
-        if find_reference_notation(symbol).is_none() {
-            return None;
-        }
+        find_reference_notation(symbol)?;
 
         // Expect opening bracket
         if chars.next() != Some(REF_OPEN) {

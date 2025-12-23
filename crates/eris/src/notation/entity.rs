@@ -327,7 +327,7 @@ impl CompoundTag {
         }
         if let Some(author_str) = self.author() {
             // Handle multi-author with ∧
-            if split_conjunction(author_str).iter().any(|a| *a == name) {
+            if split_conjunction(author_str).contains(&name) {
                 return true;
             }
         }
