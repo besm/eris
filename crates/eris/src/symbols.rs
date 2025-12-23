@@ -45,6 +45,7 @@ pub const META: &str = "⑀";
 pub const QUESTION: &str = "⋯";
 pub const PROJECT: &str = "◈";
 pub const IDEA: &str = "⟡";
+pub const SECTION: &str = "§";
 
 // Tag brackets - entities (simple and compound)
 pub const BRACKET_OPEN: char = '⦑';

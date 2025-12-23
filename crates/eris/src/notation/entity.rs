@@ -79,6 +79,11 @@ pub static NOTATIONS: &[EntityNotation] = &[
         pattern: &['⌁', '⊙'],
         components: &[("event", 0), ("year", 1)],
     },
+    EntityNotation {
+        name: "ProjectSection",
+        pattern: &['◈', '§'],
+        components: &[("project", 0), ("section", 1)],
+    },
 ];
 
 /// Find notation definition matching a symbol sequence
@@ -899,5 +904,64 @@ mod tests {
         let tag = CompoundTag::parse("⌁⊙⦑Gutenberg Bible Printed⦒⦑1455⦒").unwrap();
         assert!(!tag.is_citation());
         assert!(!tag.is_person());
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // ProjectSection Compound Type Tests
+    // ═══════════════════════════════════════════════════════════════════════
+
+    #[test]
+    fn test_parse_project_section() {
+        let tag = CompoundTag::parse("◈§⦑Binding Time⦒⦑Chapter 2⦒").unwrap();
+        assert_eq!(tag.symbols, vec!['◈', '§']);
+        assert_eq!(tag.components, vec!["Binding Time", "Chapter 2"]);
+
+        // Verify notation lookup works
+        let notation = tag.notation().unwrap();
+        assert_eq!(notation.name, "ProjectSection");
+
+        // Verify named component access
+        assert_eq!(tag.get_named("project"), Some("Binding Time"));
+        assert_eq!(tag.get_named("section"), Some("Chapter 2"));
+    }
+
+    #[test]
+    fn test_project_section_variations() {
+        // Section can be words or numbers
+        let cases = vec![
+            ("◈§⦑ERIS⦒⦑2⦒", "ERIS", "2"),
+            ("◈§⦑Rustwise⦒⦑Introduction⦒", "Rustwise", "Introduction"),
+            ("◈§⦑My Project⦒⦑Section 2.1⦒", "My Project", "Section 2.1"),
+            ("◈§⦑Dissertation⦒⦑Literature Review⦒", "Dissertation", "Literature Review"),
+        ];
+
+        for (input, expected_project, expected_section) in cases {
+            let tag = CompoundTag::parse(input).unwrap();
+            assert_eq!(tag.get_named("project"), Some(expected_project), "Failed for: {}", input);
+            assert_eq!(tag.get_named("section"), Some(expected_section), "Failed for: {}", input);
+        }
+    }
+
+    #[test]
+    fn test_project_section_roundtrip() {
+        let input = "◈§⦑Binding Time⦒⦑Chapter 2⦒";
+        let tag = CompoundTag::parse(input).unwrap();
+        assert_eq!(tag.render(), input);
+    }
+
+    #[test]
+    fn test_project_section_is_not_citation() {
+        let tag = CompoundTag::parse("◈§⦑Project⦒⦑Section⦒").unwrap();
+        assert!(!tag.is_citation());
+        assert!(!tag.is_person());
+    }
+
+    #[test]
+    fn test_simple_section_tag() {
+        // § can also be used as a simple tag
+        let tag = CompoundTag::parse("§⦑Introduction⦒").unwrap();
+        assert_eq!(tag.symbols, vec!['§']);
+        assert_eq!(tag.components, vec!["Introduction"]);
+        assert!(tag.is_simple());
     }
 }

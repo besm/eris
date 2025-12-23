@@ -34,6 +34,7 @@ pub mod meta;
 pub mod question;
 pub mod project;
 pub mod idea;
+pub mod section;
 
 macro_rules! aggregate_entities {
     ($($mod:ident),+ $(,)?) => {
@@ -96,5 +97,5 @@ aggregate_entities!(
     person, place, era, date, event, field, group, organization, agency,
     tech, identifier, publisher, university, language, concept, method,
     movement, relation, tension, r#loop, paradox, evolution, action,
-    effect, work, journal, meta, question, project, idea
+    effect, work, journal, meta, question, project, idea, section
 );
