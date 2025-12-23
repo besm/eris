@@ -453,6 +453,45 @@ impl CompoundTag {
             }
         }
 
+        // DatedEvent: ⌁⊙⦑Event⦒⦑Year⦒ → ⌁⦑Event⦒, ⊙⦑Year⦒
+        if self.symbols == vec!['⌁', '⊙'] {
+            if let Some(event) = self.get_named("event") {
+                implied.push(format!("⌁{}{}{}", BRACKET_OPEN, event, BRACKET_CLOSE));
+            }
+            if let Some(year) = self.get_named("year") {
+                implied.push(format!("⊙{}{}{}", BRACKET_OPEN, year, BRACKET_CLOSE));
+            }
+        }
+
+        // Project compounds: extract each symbol+component as simple tag
+        if self.has_symbol('◈') && self.symbols.len() >= 2 {
+            // Extract project
+            if let Some(project) = self.get_named("project") {
+                implied.push(format!("◈{}{}{}", BRACKET_OPEN, project, BRACKET_CLOSE));
+            }
+
+            // Extract section (for ◈§, ◈§⟡, ◈§⋯)
+            if self.has_symbol('§') {
+                if let Some(section) = self.get_named("section") {
+                    implied.push(format!("§{}{}{}", BRACKET_OPEN, section, BRACKET_CLOSE));
+                }
+            }
+
+            // Extract idea (for ◈⟡, ◈§⟡)
+            if self.has_symbol('⟡') {
+                if let Some(idea) = self.get_named("idea") {
+                    implied.push(format!("⟡{}{}{}", BRACKET_OPEN, idea, BRACKET_CLOSE));
+                }
+            }
+
+            // Extract question (for ◈⋯, ◈§⋯)
+            if self.has_symbol('⋯') {
+                if let Some(question) = self.get_named("question") {
+                    implied.push(format!("⋯{}{}{}", BRACKET_OPEN, question, BRACKET_CLOSE));
+                }
+            }
+        }
+
         implied
     }
 }
@@ -701,6 +740,50 @@ mod tests {
         assert!(implied4.contains(&"⍚⦑The Church of Jesus Christ of Latter-day Saints⦒".to_string()));
         assert!(implied4.contains(&"⊙⦑2020⦒".to_string()));
         assert_eq!(implied4.len(), 2);
+
+        // DatedEvent: ⌁⊙⦑Event⦒⦑Year⦒ → ⌁⦑Event⦒, ⊙⦑Year⦒
+        let tag5 = CompoundTag::parse("⌁⊙⦑French Revolution⦒⦑1789⦒").unwrap();
+        let implied5 = tag5.implied_tag_names();
+        assert!(implied5.contains(&"⌁⦑French Revolution⦒".to_string()));
+        assert!(implied5.contains(&"⊙⦑1789⦒".to_string()));
+        assert_eq!(implied5.len(), 2);
+
+        // ProjectSection: ◈§⦑P⦒⦑S⦒ → ◈⦑P⦒, §⦑S⦒
+        let tag6 = CompoundTag::parse("◈§⦑ERIS⦒⦑Chapter 2⦒").unwrap();
+        let implied6 = tag6.implied_tag_names();
+        assert!(implied6.contains(&"◈⦑ERIS⦒".to_string()));
+        assert!(implied6.contains(&"§⦑Chapter 2⦒".to_string()));
+        assert_eq!(implied6.len(), 2);
+
+        // ProjectIdea: ◈⟡⦑P⦒⦑I⦒ → ◈⦑P⦒, ⟡⦑I⦒
+        let tag7 = CompoundTag::parse("◈⟡⦑ERIS⦒⦑Add graphs⦒").unwrap();
+        let implied7 = tag7.implied_tag_names();
+        assert!(implied7.contains(&"◈⦑ERIS⦒".to_string()));
+        assert!(implied7.contains(&"⟡⦑Add graphs⦒".to_string()));
+        assert_eq!(implied7.len(), 2);
+
+        // ProjectQuestion: ◈⋯⦑P⦒⦑Q⦒ → ◈⦑P⦒, ⋯⦑Q⦒
+        let tag8 = CompoundTag::parse("◈⋯⦑Dissertation⦒⦑How to frame?⦒").unwrap();
+        let implied8 = tag8.implied_tag_names();
+        assert!(implied8.contains(&"◈⦑Dissertation⦒".to_string()));
+        assert!(implied8.contains(&"⋯⦑How to frame?⦒".to_string()));
+        assert_eq!(implied8.len(), 2);
+
+        // ProjectSectionIdea: ◈§⟡⦑P⦒⦑S⦒⦑I⦒ → ◈⦑P⦒, §⦑S⦒, ⟡⦑I⦒
+        let tag9 = CompoundTag::parse("◈§⟡⦑ERIS⦒⦑Notation⦒⦑Nested brackets⦒").unwrap();
+        let implied9 = tag9.implied_tag_names();
+        assert!(implied9.contains(&"◈⦑ERIS⦒".to_string()));
+        assert!(implied9.contains(&"§⦑Notation⦒".to_string()));
+        assert!(implied9.contains(&"⟡⦑Nested brackets⦒".to_string()));
+        assert_eq!(implied9.len(), 3);
+
+        // ProjectSectionQuestion: ◈§⋯⦑P⦒⦑S⦒⦑Q⦒ → ◈⦑P⦒, §⦑S⦒, ⋯⦑Q⦒
+        let tag10 = CompoundTag::parse("◈§⋯⦑Dissertation⦒⦑Methods⦒⦑Which approach?⦒").unwrap();
+        let implied10 = tag10.implied_tag_names();
+        assert!(implied10.contains(&"◈⦑Dissertation⦒".to_string()));
+        assert!(implied10.contains(&"§⦑Methods⦒".to_string()));
+        assert!(implied10.contains(&"⋯⦑Which approach?⦒".to_string()));
+        assert_eq!(implied10.len(), 3);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
