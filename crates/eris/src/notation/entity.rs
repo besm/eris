@@ -84,6 +84,26 @@ pub static NOTATIONS: &[EntityNotation] = &[
         pattern: &['◈', '§'],
         components: &[("project", 0), ("section", 1)],
     },
+    EntityNotation {
+        name: "ProjectIdea",
+        pattern: &['◈', '⟡'],
+        components: &[("project", 0), ("idea", 1)],
+    },
+    EntityNotation {
+        name: "ProjectQuestion",
+        pattern: &['◈', '⋯'],
+        components: &[("project", 0), ("question", 1)],
+    },
+    EntityNotation {
+        name: "ProjectSectionIdea",
+        pattern: &['◈', '§', '⟡'],
+        components: &[("project", 0), ("section", 1), ("idea", 2)],
+    },
+    EntityNotation {
+        name: "ProjectSectionQuestion",
+        pattern: &['◈', '§', '⋯'],
+        components: &[("project", 0), ("section", 1), ("question", 2)],
+    },
 ];
 
 /// Find notation definition matching a symbol sequence
@@ -963,5 +983,74 @@ mod tests {
         assert_eq!(tag.symbols, vec!['§']);
         assert_eq!(tag.components, vec!["Introduction"]);
         assert!(tag.is_simple());
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // Project Idea/Question Compound Type Tests
+    // ═══════════════════════════════════════════════════════════════════════
+
+    #[test]
+    fn test_parse_project_idea() {
+        let tag = CompoundTag::parse("◈⟡⦑ERIS⦒⦑Add graph visualization⦒").unwrap();
+        assert_eq!(tag.symbols, vec!['◈', '⟡']);
+        assert_eq!(tag.components, vec!["ERIS", "Add graph visualization"]);
+
+        let notation = tag.notation().unwrap();
+        assert_eq!(notation.name, "ProjectIdea");
+        assert_eq!(tag.get_named("project"), Some("ERIS"));
+        assert_eq!(tag.get_named("idea"), Some("Add graph visualization"));
+    }
+
+    #[test]
+    fn test_parse_project_question() {
+        let tag = CompoundTag::parse("◈⋯⦑Dissertation⦒⦑How to frame Ch3?⦒").unwrap();
+        assert_eq!(tag.symbols, vec!['◈', '⋯']);
+        assert_eq!(tag.components, vec!["Dissertation", "How to frame Ch3?"]);
+
+        let notation = tag.notation().unwrap();
+        assert_eq!(notation.name, "ProjectQuestion");
+        assert_eq!(tag.get_named("project"), Some("Dissertation"));
+        assert_eq!(tag.get_named("question"), Some("How to frame Ch3?"));
+    }
+
+    #[test]
+    fn test_parse_project_section_idea() {
+        let tag = CompoundTag::parse("◈§⟡⦑ERIS⦒⦑Notation⦒⦑Support nested brackets⦒").unwrap();
+        assert_eq!(tag.symbols, vec!['◈', '§', '⟡']);
+        assert_eq!(tag.components, vec!["ERIS", "Notation", "Support nested brackets"]);
+
+        let notation = tag.notation().unwrap();
+        assert_eq!(notation.name, "ProjectSectionIdea");
+        assert_eq!(tag.get_named("project"), Some("ERIS"));
+        assert_eq!(tag.get_named("section"), Some("Notation"));
+        assert_eq!(tag.get_named("idea"), Some("Support nested brackets"));
+    }
+
+    #[test]
+    fn test_parse_project_section_question() {
+        let tag = CompoundTag::parse("◈§⋯⦑Dissertation⦒⦑Methods⦒⦑Ethnography or interviews?⦒").unwrap();
+        assert_eq!(tag.symbols, vec!['◈', '§', '⋯']);
+        assert_eq!(tag.components, vec!["Dissertation", "Methods", "Ethnography or interviews?"]);
+
+        let notation = tag.notation().unwrap();
+        assert_eq!(notation.name, "ProjectSectionQuestion");
+        assert_eq!(tag.get_named("project"), Some("Dissertation"));
+        assert_eq!(tag.get_named("section"), Some("Methods"));
+        assert_eq!(tag.get_named("question"), Some("Ethnography or interviews?"));
+    }
+
+    #[test]
+    fn test_project_idea_question_roundtrips() {
+        let cases = vec![
+            "◈⟡⦑Project⦒⦑Idea⦒",
+            "◈⋯⦑Project⦒⦑Question⦒",
+            "◈§⟡⦑Project⦒⦑Section⦒⦑Idea⦒",
+            "◈§⋯⦑Project⦒⦑Section⦒⦑Question⦒",
+        ];
+
+        for input in cases {
+            let tag = CompoundTag::parse(input).unwrap();
+            assert_eq!(tag.render(), input, "Roundtrip failed for: {}", input);
+        }
     }
 }
