@@ -390,11 +390,9 @@ impl CompoundTag {
 
     /// Generate implied simple tag names from a compound tag.
     ///
-    /// For citation tags (⚘⊙...), extracts:
-    /// - `⚘⦑Author⦒` - person tag for each author
-    /// - `⊙⦑Year⦒` - date tag for the year
-    ///
-    /// Handles multi-author citations with ∧ separator.
+    /// Extracts each component as a simple tag using the corresponding symbol
+    /// from the notation pattern. Handles `∧` conjunction in any component,
+    /// splitting into multiple implied tags.
     ///
     /// # Examples
     ///
@@ -407,7 +405,7 @@ impl CompoundTag {
     /// assert!(implied.contains(&"⚘⦑Mary Douglas⦒".to_string()));
     /// assert!(implied.contains(&"⊙⦑1966⦒".to_string()));
     ///
-    /// // Multi-author
+    /// // Multi-author with ∧
     /// let tag2 = CompoundTag::parse("⚘⊙⊳⦑George Lakoff∧Mark Johnson⦒⦑1980⦒⦑Metaphors We Live By⦒").unwrap();
     /// let implied2 = tag2.implied_tag_names();
     /// assert!(implied2.contains(&"⚘⦑George Lakoff⦒".to_string()));
@@ -416,78 +414,25 @@ impl CompoundTag {
     pub fn implied_tag_names(&self) -> Vec<String> {
         let mut implied = Vec::new();
 
-        if self.is_citation() {
-            // Determine the author symbol (⚘ for person, ⍚ for organization)
-            let author_symbol = self.symbols.first().copied().unwrap_or('⚘');
-
-            // Extract author(s)
-            if let Some(author_str) = self.author() {
-                // Handle multi-author with ∧ separator (only for person authors)
-                if author_symbol == '⚘' && author_str.contains(CONJUNCTION) {
-                    for author in split_conjunction(author_str) {
-                        if !author.is_empty() {
-                            implied.push(format!(
-                                "{}{}{}{}",
-                                author_symbol, BRACKET_OPEN, author, BRACKET_CLOSE
-                            ));
+        if let Some(notation) = self.notation() {
+            for (_, index) in notation.components {
+                let symbol = notation.pattern[*index];
+                if let Some(value) = self.get(*index) {
+                    if value.contains(CONJUNCTION) {
+                        for part in split_conjunction(value) {
+                            if !part.is_empty() {
+                                implied.push(format!(
+                                    "{}{}{}{}",
+                                    symbol, BRACKET_OPEN, part, BRACKET_CLOSE
+                                ));
+                            }
                         }
+                    } else {
+                        implied.push(format!(
+                            "{}{}{}{}",
+                            symbol, BRACKET_OPEN, value, BRACKET_CLOSE
+                        ));
                     }
-                } else {
-                    implied.push(format!(
-                        "{}{}{}{}",
-                        author_symbol, BRACKET_OPEN, author_str, BRACKET_CLOSE
-                    ));
-                }
-            }
-
-            // Extract year
-            if let Some(year) = self.year() {
-                implied.push(format!("⊙{}{}{}", BRACKET_OPEN, year, BRACKET_CLOSE));
-            }
-
-            // Extract journal/venue for article citations (those with 𝄏 symbol)
-            if self.has_symbol('𝄏') {
-                if let Some(journal) = self.get_named("journal") {
-                    implied.push(format!("𝄏{}{}{}", BRACKET_OPEN, journal, BRACKET_CLOSE));
-                }
-            }
-        }
-
-        // DatedEvent: ⌁⊙⦑Event⦒⦑Year⦒ → ⌁⦑Event⦒, ⊙⦑Year⦒
-        if self.symbols == vec!['⌁', '⊙'] {
-            if let Some(event) = self.get_named("event") {
-                implied.push(format!("⌁{}{}{}", BRACKET_OPEN, event, BRACKET_CLOSE));
-            }
-            if let Some(year) = self.get_named("year") {
-                implied.push(format!("⊙{}{}{}", BRACKET_OPEN, year, BRACKET_CLOSE));
-            }
-        }
-
-        // Project compounds: extract each symbol+component as simple tag
-        if self.has_symbol('◈') && self.symbols.len() >= 2 {
-            // Extract project
-            if let Some(project) = self.get_named("project") {
-                implied.push(format!("◈{}{}{}", BRACKET_OPEN, project, BRACKET_CLOSE));
-            }
-
-            // Extract section (for ◈§, ◈§⟡, ◈§⋯)
-            if self.has_symbol('§') {
-                if let Some(section) = self.get_named("section") {
-                    implied.push(format!("§{}{}{}", BRACKET_OPEN, section, BRACKET_CLOSE));
-                }
-            }
-
-            // Extract idea (for ◈⟡, ◈§⟡)
-            if self.has_symbol('⟡') {
-                if let Some(idea) = self.get_named("idea") {
-                    implied.push(format!("⟡{}{}{}", BRACKET_OPEN, idea, BRACKET_CLOSE));
-                }
-            }
-
-            // Extract question (for ◈⋯, ◈§⋯)
-            if self.has_symbol('⋯') {
-                if let Some(question) = self.get_named("question") {
-                    implied.push(format!("⋯{}{}{}", BRACKET_OPEN, question, BRACKET_CLOSE));
                 }
             }
         }
@@ -706,13 +651,16 @@ mod tests {
 
     #[test]
     fn test_implied_tag_names() {
+        // Book citation: extracts author, year, title
         let tag =
             CompoundTag::parse("⚘⊙⊳⦑Mary Douglas⦒⦑1966⦒⦑Purity and Danger⦒").unwrap();
         let implied = tag.implied_tag_names();
         assert!(implied.contains(&"⚘⦑Mary Douglas⦒".to_string()));
         assert!(implied.contains(&"⊙⦑1966⦒".to_string()));
+        assert!(implied.contains(&"⊳⦑Purity and Danger⦒".to_string()));
+        assert_eq!(implied.len(), 3);
 
-        // Multi-author
+        // Multi-author: splits ∧, extracts year, title
         let tag2 = CompoundTag::parse(
             "⚘⊙⊳⦑George Lakoff∧Mark Johnson⦒⦑1980⦒⦑Metaphors We Live By⦒",
         )
@@ -720,8 +668,11 @@ mod tests {
         let implied2 = tag2.implied_tag_names();
         assert!(implied2.contains(&"⚘⦑George Lakoff⦒".to_string()));
         assert!(implied2.contains(&"⚘⦑Mark Johnson⦒".to_string()));
+        assert!(implied2.contains(&"⊙⦑1980⦒".to_string()));
+        assert!(implied2.contains(&"⊳⦑Metaphors We Live By⦒".to_string()));
+        assert_eq!(implied2.len(), 4);
 
-        // Article citation with journal venue
+        // Article citation: extracts author, year, journal, title
         let tag3 = CompoundTag::parse(
             "⚘⊙𝄏⊳⦑Larry Frohman⦒⦑2020⦒⦑German History⦒⦑Network Euphoria⦒",
         )
@@ -730,8 +681,10 @@ mod tests {
         assert!(implied3.contains(&"⚘⦑Larry Frohman⦒".to_string()));
         assert!(implied3.contains(&"⊙⦑2020⦒".to_string()));
         assert!(implied3.contains(&"𝄏⦑German History⦒".to_string()));
+        assert!(implied3.contains(&"⊳⦑Network Euphoria⦒".to_string()));
+        assert_eq!(implied3.len(), 4);
 
-        // Organization author citation
+        // Organization author citation: extracts org, year, title
         let tag4 = CompoundTag::parse(
             "⍚⊙⊳⦑The Church of Jesus Christ of Latter-day Saints⦒⦑2020⦒⦑General Handbook⦒",
         )
@@ -739,7 +692,8 @@ mod tests {
         let implied4 = tag4.implied_tag_names();
         assert!(implied4.contains(&"⍚⦑The Church of Jesus Christ of Latter-day Saints⦒".to_string()));
         assert!(implied4.contains(&"⊙⦑2020⦒".to_string()));
-        assert_eq!(implied4.len(), 2);
+        assert!(implied4.contains(&"⊳⦑General Handbook⦒".to_string()));
+        assert_eq!(implied4.len(), 3);
 
         // DatedEvent: ⌁⊙⦑Event⦒⦑Year⦒ → ⌁⦑Event⦒, ⊙⦑Year⦒
         let tag5 = CompoundTag::parse("⌁⊙⦑French Revolution⦒⦑1789⦒").unwrap();
