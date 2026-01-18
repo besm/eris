@@ -1007,5 +1007,93 @@ pub fn get_logical_operator_definitions() -> Vec<LogDef> {
                 ("⊢", "⊸ import ⊢ namespace availability ⊢ external dependency"),
             ],
         },
+        // ⊐ - Awaiting (ball elsewhere)
+        LogDef {
+            symbol: "⊐",
+            name: "awaiting",
+            category: LogicalOperatorCategory::Workflow,
+            lines: lines![
+                ("≡", ["awaiting", "ball_elsewhere"]),
+                ("≝", ["open loop held by other", "blocked pending external action"]),
+                ("⊡", "1≡stale|5≡active|9≡urgent"),
+                ("∂", [
+                    "⊐≠⊏ (⊐ they hold | ⊏ I hold)",
+                    "⊐≠◇ (⊐ blocked | ◇ eventual)",
+                    "⊐≠⊟ (⊐ agent known | ⊟ unclear)"
+                ]),
+                ("⊛", [
+                    "⊐⚘⦑agent⦒⦑item⦒",
+                    "⊐⍚⦑org⦒⦑item⦒",
+                    "follow-up◻⊐",
+                    "γ drain low",
+                    "⍜ external"
+                ]),
+                ("⊢", ["⊐ ⊢ action unavailable ⊢ ◇follow-up"]),
+                ("⟷", [
+                    "⊐⟷ς (⊐ creates coordination dependency)",
+                    "⊐→⊏ when responsibility transfers"
+                ]),
+            ],
+        },
+        // ⊏ - Owing (ball here)
+        LogDef {
+            symbol: "⊏",
+            name: "owing",
+            category: LogicalOperatorCategory::Workflow,
+            lines: lines![
+                ("≡", ["owing", "ball_here"]),
+                ("≝", ["open loop held by self", "blocked pending my action"]),
+                ("⊡", "1≡stale|5≡active|9≡urgent"),
+                ("∂", ["⊏≠⊐ (⊏ I hold | ⊐ they hold)"]),
+                ("⊛", [
+                    "⊏⚘⦑agent⦒⦑item⦒",
+                    "⊏⦑item⦒",
+                    "action available",
+                    "guilt accumulates",
+                    "γ drain high",
+                    "⍜ internal"
+                ]),
+                ("⊢", [
+                    "⊏ ⊢ action available ⊢ ◇∮",
+                    "⊏ accumulation ⊢ γ⤋"
+                ]),
+                ("⟷", [
+                    "⊏⟷γ (⊏ count drains capacity)",
+                    "⊏→∮ via action",
+                    "⊏→⊐ via delegation"
+                ]),
+            ],
+        },
+        // ⊔ - Dormant (intentionally paused)
+        LogDef {
+            symbol: "⊔",
+            name: "dormant",
+            category: LogicalOperatorCategory::Workflow,
+            lines: lines![
+                ("≡", ["dormant", "intentionally_paused"]),
+                ("≝", ["open loop suspended by choice", "will reactivate"]),
+                ("⊛", [
+                    "⊔⦑item⦒",
+                    "cork without abandonment",
+                    "γ drain near zero"
+                ]),
+            ],
+        },
+        // ⊬ - Orphaned (holder unclear)
+        LogDef {
+            symbol: "⊬",
+            name: "orphaned",
+            category: LogicalOperatorCategory::Workflow,
+            lines: lines![
+                ("≡", ["orphaned", "holder_unclear"]),
+                ("≝", ["open loop fallen through", "neither party owns"]),
+                ("⊛", [
+                    "⊬⦑item⦒",
+                    "requires triage",
+                    "often surfaces as surprise"
+                ]),
+                ("⟷", ["⊬⟷⊟ (orphaned loops need clarification)"]),
+            ],
+        },
     ]
 }
