@@ -40,6 +40,11 @@ pub const EFFECT: &str = "⬢";
 // Compound citation components
 pub const WORK: &str = "⊳";
 
+// ML/recommendation symbols
+pub const ATTRACTOR: &str = "✱";
+pub const TAG: &str = "⌕";
+pub const COMMIT: &str = "⊞";
+
 // User-defined markers
 pub const META: &str = "⑀";
 pub const QUESTION: &str = "⋯";
