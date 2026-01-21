@@ -64,8 +64,93 @@ pub const VECTOR_CLOSE: char = '⟩';
 pub const REF_OPEN: char = '⟦';
 pub const REF_CLOSE: char = '⟧';
 
-// Operators
+// Logical operators
 pub const CONJUNCTION: char = '∧';
+pub const DISJUNCTION: char = '∨';
+pub const NEGATION: char = '¬';
+pub const IMPLIES: char = '→';
+pub const IFF: char = '↔';
+pub const FOR_ALL: char = '∀';
+pub const EXISTS: char = '∃';
+pub const THEREFORE: char = '∴';
+pub const SUBSET: char = '⊂';
+pub const SUPERSET: char = '⊃';
+pub const ELEMENT_OF: char = '∈';
+pub const NOT_ELEMENT_OF: char = '∉';
+pub const INTERSECTION: char = '∩';
+pub const UNION: char = '∪';
+pub const EQUIVALENCE: char = '≡';
+pub const DEFINED_AS: char = '≝';
+pub const BOUNDARY: char = '∂';
+pub const ENTAILS: char = '⊢';
+pub const VALIDATES: char = '⊨';
+pub const NECESSITY: char = '◻';
+pub const TESTING: char = '≟';
+pub const UNCERTAIN: char = '⊟';
+pub const PRECEDES_ENABLING: char = '⊰';
+pub const COMPOSE: char = '∘';
+
+// Workflow operators
+pub const AWAITING: char = '⊐';
+pub const OWING: char = '⊏';
+pub const DORMANT: char = '⊔';
+pub const ORPHANED: char = '⊬';
+
+// Temporal operators
+pub const ALWAYS: char = '□';
+pub const EVENTUALLY: char = '◇';
+pub const PRECEDES: char = '≺';
+pub const SUCCEEDS: char = '≻';
+pub const NEXT_STATE: char = '○';
+
+// Georgian workflow markers
+pub const PAST: char = 'დ';
+pub const NOW: char = 'ნ';
+pub const FUTURE: char = 'წ';
+pub const GROUNDING: char = 'გ';
+pub const OPERATION: char = 'ო';
+pub const SHIFT: char = 'შ';
+pub const WITHOUT: char = 'უ';
+
+// Semantic stability states
+pub const STABLE_WELL: char = '⌺';
+pub const FORMING_WELL: char = '⌻';
+pub const DISSOLVING_WELL: char = '⌼';
+
+// Ontology operators
+pub const CREATES: char = '𝀐';
+pub const CONSTITUTES: char = '𝁚';
+pub const CRYSTALLIZE: char = '𝀏';
+pub const FLOW: char = '𝀾';
+pub const DISSOLUTION: char = '𝁆';
+pub const SUBLATION: char = '𝀗';
+pub const CONCRESCENCE: char = '𝀷';
+
+// Semantic operators
+pub const CONTEXT: char = '⯐';
+pub const PERSPECTIVE: char = '⊚';
+pub const EMERGENCE: char = '◬';
+pub const FEEDFORWARD: char = '⥅';
+pub const INTERANIMATION: char = '⥈';
+pub const UNDERSTANDING: char = '☊';
+pub const MEANING: &str = "ℳ";
+
+// Chronos operators
+pub const TELEOLOGICAL_ANCHOR: char = '⍜';
+pub const PREDICTION: char = '⟟';
+pub const FEEDBACK_LOOP: char = '⟲';
+pub const RECURSIVE_PROCESS: char = '⟖';
+pub const REFLEXIVE: char = '𝄎';
+pub const PROCESS: char = '𝀺';
+pub const STATE: char = '⏣';
+
+// Armenian property vector indicator
+pub const PROPERTY_VECTOR: char = '⊡';
+
+// Meta operators
+pub const PATTERN: &str = "ᛝ";
+pub const SYMBOL: &str = "ꕥ";
+pub const SCHEMA: char = '⋕';
 
 // Reference symbols
 pub const HIGHLIGHT_REF: char = '❧';
