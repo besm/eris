@@ -1064,19 +1064,24 @@ pub fn get_logical_operator_definitions() -> Vec<LogDef> {
                 ]),
             ],
         },
-        // ⊔ - Dormant (intentionally paused)
+        // ⏸ - Dormant (intentionally paused)
         LogDef {
-            symbol: "⊔",
+            symbol: "⏸",
             name: "dormant",
             category: LogicalOperatorCategory::Workflow,
             lines: lines![
                 ("≡", ["dormant", "intentionally_paused"]),
                 ("≝", ["open loop suspended by choice", "will reactivate"]),
+                ("∂", [
+                    "⏸≠⊏ (⏸ paused | ⊏ actionable)",
+                    "⏸≠⊐ (⏸ by choice | ⊐ by external)"
+                ]),
                 ("⊛", [
-                    "⊔⦑item⦒",
+                    "⏸⦑item⦒",
                     "cork without abandonment",
                     "γ drain near zero"
                 ]),
+                ("⟷", "⏸→⊏ via reactivation"),
             ],
         },
         // ⊬ - Orphaned (holder unclear)

@@ -199,7 +199,7 @@ pub const BOUNDARY: char = '∂';
 // Workflow state operators
 pub const AWAITING: char = '⊐';
 pub const OWING: char = '⊏';
-pub const DORMANT_OP: char = '⊔';
+pub const DORMANT_OP: char = '⏸';
 pub const ORPHANED: char = '⊬';
 
 // Process operators
