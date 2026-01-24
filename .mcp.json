@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "eris": {
+      "command": "/home/ktb/code/eris/target/release/eris-mcp"
+    }
+  }
+}
