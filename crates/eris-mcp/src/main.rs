@@ -231,6 +231,24 @@ fn get_tools() -> Vec<Tool> {
                 "required": ["name"]
             }),
         },
+        Tool {
+            name: "define",
+            description: "Get definitions for ERIS symbols found in a file. Reads the file and returns definitions for any ERIS symbols it contains.",
+            input_schema: json!({
+                "type": "object",
+                "properties": {
+                    "file": {
+                        "type": "string",
+                        "description": "Path to file to analyze for ERIS symbols"
+                    },
+                    "category": {
+                        "type": "string",
+                        "description": "Filter by category: 'ops', 'entities', or 'all' (default)"
+                    }
+                },
+                "required": ["file"]
+            }),
+        },
     ]
 }
 
@@ -392,6 +410,53 @@ fn handle_workflow(params: &Value) -> ToolResult {
     }
 }
 
+fn handle_define(params: &Value) -> ToolResult {
+    let file_path = match params.get("file").and_then(|v| v.as_str()) {
+        Some(p) => p,
+        None => return ToolResult::error("Missing required parameter: file"),
+    };
+
+    let content = match std::fs::read_to_string(file_path) {
+        Ok(c) => c,
+        Err(e) => return ToolResult::error(format!("Failed to read '{}': {}", file_path, e)),
+    };
+
+    let category = params.get("category").and_then(|v| v.as_str()).unwrap_or("all");
+
+    // Select symbol set and lookup function based on category
+    let (defined, lookup_fn): (HashSet<String>, fn(&str) -> Option<String>) = match category {
+        "ops" => (get_operator_symbols(), eris::lookup_operator),
+        "entities" => (get_entity_symbols(), eris::lookup_entity),
+        _ => (get_all_symbols(), lookup_symbol),
+    };
+
+    // Collect symbols used in file that have definitions
+    let mut used: HashSet<String> = HashSet::new();
+    for ch in content.chars() {
+        let s = ch.to_string();
+        if defined.contains(&s) {
+            used.insert(s);
+        }
+    }
+
+    if used.is_empty() {
+        return ToolResult::text("No ERIS symbols found in file");
+    }
+
+    // Output definitions for used symbols (sorted)
+    let mut symbols: Vec<_> = used.into_iter().collect();
+    symbols.sort();
+
+    let mut results: Vec<String> = Vec::new();
+    for symbol in symbols {
+        if let Some(text) = lookup_fn(&symbol) {
+            results.push(text);
+        }
+    }
+
+    ToolResult::text(results.join("\n\n"))
+}
+
 // Module detection helpers (based on symbol ranges/patterns)
 fn is_armenian_symbol(s: &str) -> bool {
     s.chars().next().map(|c| ('\u{0530}'..='\u{058F}').contains(&c)).unwrap_or(false)
@@ -475,6 +540,7 @@ fn handle_request(request: JsonRpcRequest) -> JsonRpcResponse {
                 Some("all") => handle_all(&arguments),
                 Some("closure") => handle_closure(&arguments),
                 Some("workflow") => handle_workflow(&arguments),
+                Some("define") => handle_define(&arguments),
                 Some(name) => ToolResult::error(format!("Unknown tool: {}", name)),
                 None => ToolResult::error("Missing tool name"),
             };
