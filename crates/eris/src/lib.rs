@@ -9,6 +9,7 @@ pub mod frame;
 pub mod notation;
 pub mod operators;
 pub mod parsers;
+pub mod sql;
 pub mod symbols;
 
 pub use entities::types::get_entity_type_by_symbol;

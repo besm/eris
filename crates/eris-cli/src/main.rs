@@ -5,6 +5,7 @@ use clap::{Parser, Subcommand};
 use eris::{
     get_all_definitions, get_all_symbols, lookup_symbol,
     get_operator_symbols, get_entity_symbols, lookup_operator, lookup_entity,
+    sql,
 };
 use eris::operators::get_all_definitions as get_operator_definitions;
 use eris::entities::get_all_definitions as get_entity_definitions;
@@ -100,6 +101,21 @@ enum Command {
     Workflow {
         /// Workflow name (tag, validate, etc.) or 'list' to show available
         name: String,
+    },
+    /// Export definitions as SQL
+    Sql {
+        /// Output only schema (DDL)
+        #[arg(long)]
+        schema: bool,
+        /// Output only data (INSERT statements)
+        #[arg(long)]
+        data: bool,
+        /// Check if tracked schema files are up to date
+        #[arg(long)]
+        check: bool,
+        /// Update tracked schema files
+        #[arg(long)]
+        update: bool,
     },
     /// Look up a specific symbol
     #[command(external_subcommand)]
@@ -280,6 +296,66 @@ fn main() -> Result<()> {
                 return Err(anyhow!("Workflow '{}' not found. Use 'eris workflow list' to see available.", name));
             }
         }
+        Command::Sql { schema, data, check, update } => {
+            let schema_dir = get_schema_dir()?;
+
+            if check {
+                // Verify tracked files match generated
+                let schema_path = schema_dir.join("schema.sql");
+                let data_path = schema_dir.join("data.sql");
+
+                let mut ok = true;
+
+                if schema_path.exists() {
+                    let tracked = std::fs::read_to_string(&schema_path)?;
+                    let generated = sql::generate_schema();
+                    if tracked != generated {
+                        eprintln!("schema.sql is out of date");
+                        ok = false;
+                    }
+                } else {
+                    eprintln!("schema.sql not found");
+                    ok = false;
+                }
+
+                if data_path.exists() {
+                    let tracked = std::fs::read_to_string(&data_path)?;
+                    let generated = sql::generate_data();
+                    if tracked != generated {
+                        eprintln!("data.sql is out of date");
+                        ok = false;
+                    }
+                } else {
+                    eprintln!("data.sql not found");
+                    ok = false;
+                }
+
+                if ok {
+                    println_or_exit!("Schema files are up to date");
+                } else {
+                    return Err(anyhow!("Schema out of sync - run 'eris sql --update'"));
+                }
+            } else if update {
+                // Update tracked files
+                std::fs::create_dir_all(&schema_dir)?;
+
+                let schema_path = schema_dir.join("schema.sql");
+                let data_path = schema_dir.join("data.sql");
+
+                std::fs::write(&schema_path, sql::generate_schema())?;
+                std::fs::write(&data_path, sql::generate_data())?;
+
+                println_or_exit!("Updated {}", schema_path.display());
+                println_or_exit!("Updated {}", data_path.display());
+            } else if schema {
+                println_or_exit!("{}", sql::generate_schema());
+            } else if data {
+                println_or_exit!("{}", sql::generate_data());
+            } else {
+                // Default: output full SQL
+                println_or_exit!("{}", sql::generate_full());
+            }
+        }
         Command::Lookup(args) => {
             let symbol = args.join(" ");
             if let Some(text) = lookup_symbol(&symbol) {
@@ -291,4 +367,33 @@ fn main() -> Result<()> {
     }
 
     Ok(())
+}
+
+/// Find the schema directory (relative to crate root)
+fn get_schema_dir() -> Result<PathBuf> {
+    // Try to find the eris crate directory
+    let mut dir = std::env::current_dir()?;
+
+    // Look for Cargo.toml to find project root
+    loop {
+        let cargo_toml = dir.join("Cargo.toml");
+        if cargo_toml.exists() {
+            // Check if this is the workspace root or eris crate
+            let content = std::fs::read_to_string(&cargo_toml)?;
+            if content.contains("[workspace]") {
+                // Workspace root - schema goes in crates/eris/schema
+                return Ok(dir.join("crates/eris/schema"));
+            } else if content.contains("name = \"eris\"") && !content.contains("name = \"eris-cli\"") {
+                // eris crate root
+                return Ok(dir.join("schema"));
+            }
+        }
+
+        if !dir.pop() {
+            break;
+        }
+    }
+
+    // Fallback: use current directory
+    Ok(std::env::current_dir()?.join("schema"))
 }
