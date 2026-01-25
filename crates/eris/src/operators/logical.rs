@@ -1015,7 +1015,7 @@ pub fn get_logical_operator_definitions() -> Vec<LogDef> {
             lines: lines![
                 ("≡", ["awaiting", "ball_elsewhere"]),
                 ("≝", ["open loop held by other", "blocked pending external action"]),
-                ("⊡", "1≡stale|5≡active|9≡urgent"),
+                ("⊡", "0≡stale|5≡active|9≡urgent"),
                 ("∂", [
                     "⊐≠⊏ (⊐ they hold | ⊏ I hold)",
                     "⊐≠◇ (⊐ blocked | ◇ eventual)",
@@ -1043,7 +1043,7 @@ pub fn get_logical_operator_definitions() -> Vec<LogDef> {
             lines: lines![
                 ("≡", ["owing", "ball_here"]),
                 ("≝", ["open loop held by self", "blocked pending my action"]),
-                ("⊡", "1≡stale|5≡active|9≡urgent"),
+                ("⊡", "0≡stale|5≡active|9≡urgent"),
                 ("∂", ["⊏≠⊐ (⊏ I hold | ⊐ they hold)"]),
                 ("⊛", [
                     "⊏⚘⦑agent⦒⦑item⦒",

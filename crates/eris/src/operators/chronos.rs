@@ -49,7 +49,7 @@ pub fn get_chronos_operator_definitions() -> Vec<ChronosOperatorDef> {
             lines: lines![
                 ("≡", ["teleological_anchor", "purpose_dimension"]),
                 ("≝", ["goal-oriented force", "why behind when"]),
-                ("⊡", "1≡incidental|5≡directional|9≡teleological"),
+                ("⊡", "0≡incidental|5≡directional|9≡teleological"),
                 ("∂", [
                     "⍜≠Փ (capability უ direction)",
                     "⍜≠δ (density უ purpose)",
@@ -111,7 +111,7 @@ pub fn get_chronos_operator_definitions() -> Vec<ChronosOperatorDef> {
             lines: lines![
                 ("≡", ["intentionality", "goal_orientation_strength"]),
                 ("≝", ["deliberateness measure", "ω component"]),
-                ("⊡", "1≡incidental|5≡purposeful|9≡strategic"),
+                ("⊡", "0≡incidental|5≡purposeful|9≡strategic"),
                 ("∂", [
                     "ι≠Ը (ι measures|Ը names)",
                     "ι≠⍜ (ι∈ω⊂⍜)",
@@ -142,7 +142,7 @@ pub fn get_chronos_operator_definitions() -> Vec<ChronosOperatorDef> {
             lines: lines![
                 ("≡", ["alignment", "path_criticality"]),
                 ("≝", ["goal-path coherence", "ω component"]),
-                ("⊡", "1≡misaligned|5≡contributing|9≡critical_path"),
+                ("⊡", "0≡misaligned|5≡contributing|9≡critical_path"),
                 ("∂", [
                     "α≠ι (alignment≠intention)",
                     "α≠ε (aligned≠executed)",
@@ -173,7 +173,7 @@ pub fn get_chronos_operator_definitions() -> Vec<ChronosOperatorDef> {
             lines: lines![
                 ("≡", ["execution", "implementation_flow"]),
                 ("≝", ["action integration", "ω component"]),
-                ("⊡", "1≡fragmented|5≡coordinated|9≡integrated_flow"),
+                ("⊡", "0≡fragmented|5≡coordinated|9≡integrated_flow"),
                 ("∂", [
                     "ε≠𝀾 (ε measures|𝀾 names)",
                     "ε≠ϕ (ε∈ω purposive|ϕ diagnostic)",
@@ -237,7 +237,7 @@ pub fn get_chronos_operator_definitions() -> Vec<ChronosOperatorDef> {
             lines: lines![
                 ("≡", ["horizon", "planning_distance"]),
                 ("≝", ["temporal scope", "μ component"]),
-                ("⊡", "1≡immediate(hours)|5≡medium(weeks)|9≡extended(months+)"),
+                ("⊡", "0≡immediate(hours)|5≡medium(weeks)|9≡extended(months+)"),
                 ("∂", [
                     "θ≠Լ (planning≠duration)",
                     "θ≠⍜ (distance≠purpose)",
@@ -269,7 +269,7 @@ pub fn get_chronos_operator_definitions() -> Vec<ChronosOperatorDef> {
             lines: lines![
                 ("≡", ["density", "commitment_volume"]),
                 ("≝", ["time allocation intensity", "μ component"]),
-                ("⊡", "1≡sparse|5≡moderate|9≡saturated"),
+                ("⊡", "0≡sparse|5≡moderate|9≡saturated"),
                 ("∂", [
                     "δ≠Վ (temporal≠semantic)",
                     "δ≠≐ (commitment≠compression)",
@@ -304,7 +304,7 @@ pub fn get_chronos_operator_definitions() -> Vec<ChronosOperatorDef> {
             lines: lines![
                 ("≡", ["precision", "timing_rigidity"]),
                 ("≝", ["scheduling granularity", "μ component"]),
-                ("⊡", "1≡loose|5≡structured|9≡rigid"),
+                ("⊡", "0≡loose|5≡structured|9≡rigid"),
                 ("∂", [
                     "π≠ς (precision უ sync)",
                     "π≠α (temporal≠goal)",
@@ -339,7 +339,7 @@ pub fn get_chronos_operator_definitions() -> Vec<ChronosOperatorDef> {
             lines: lines![
                 ("≡", ["sync", "coordination_dependency"]),
                 ("≝", ["synchronization requirements", "μ component"]),
-                ("⊡", "1≡independent|5≡coordinated|9≡tightly_coupled"),
+                ("⊡", "0≡independent|5≡coordinated|9≡tightly_coupled"),
                 ("∂", [
                     "ς≠π (sync≠precision)",
                     "ς≠⋈ (temporal≠structural)",
@@ -371,7 +371,7 @@ pub fn get_chronos_operator_definitions() -> Vec<ChronosOperatorDef> {
             lines: lines![
                 ("≡", ["consistency", "temporal_pattern_stability"]),
                 ("≝", ["behavioral regularity", "diagnostic"]),
-                ("⊡", "1≡erratic|5≡patterned|9≡invariant"),
+                ("⊡", "0≡erratic|5≡patterned|9≡invariant"),
                 ("∂", [
                     "λ≠թ (temporal≠logical)",
                     "λ≠ delays (behavioral≠symbolic)",
@@ -404,7 +404,7 @@ pub fn get_chronos_operator_definitions() -> Vec<ChronosOperatorDef> {
             lines: lines![
                 ("≡", ["flux", "flow_state_measure"]),
                 ("≝", ["dynamic fluidity", "diagnostic"]),
-                ("⊡", "1≡blocked|5≡moving|9≡flowing"),
+                ("⊡", "0≡blocked|5≡moving|9≡flowing"),
                 ("∂", [
                     "ϕ≠𝀾 (ϕ measures|𝀾 names)",
                     "ϕ≠ε (general≠purposive)",
@@ -436,7 +436,7 @@ pub fn get_chronos_operator_definitions() -> Vec<ChronosOperatorDef> {
             lines: lines![
                 ("≡", ["capacity", "energy_reserve"]),
                 ("≝", ["resource availability", "diagnostic"]),
-                ("⊡", "1≡depleted|5≡adequate|9≡abundant"),
+                ("⊡", "0≡depleted|5≡adequate|9≡abundant"),
                 ("∂", [
                     "γ≠Լ (energy≠duration)",
                     "γ≠ε (having≠using)",
