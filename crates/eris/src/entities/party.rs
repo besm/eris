@@ -14,7 +14,7 @@ pub fn get_entity_definitions() -> Vec<PartyDef> {
             symbol: "⚐",
             name: "Political Party",
             description: "Electoral organization that nominates candidates for public office",
-            sort_order: 9,  // after ⍚
+            sort_order: 9,
             category: EntityCategory::Primary,
             lines: lines![
                 ("≡", ["political_party", "electoral_organization", "candidate_nominating_body"]),
@@ -27,44 +27,43 @@ pub fn get_entity_definitions() -> Vec<PartyDef> {
                 ]),
                 ("⊡", [
                     "⚐: Բ6Փ7Ֆ5Պ5Հ6Շ6Ի6Ղ6Ց6",
-                    "major_party: Բ7Փ8Ֆ6Պ4Հ7Շ7Ի7Ղ7Ց4",
-                    "minor_party: Բ5Փ5Ֆ4Պ6Հ4Շ4Ի5Ղ4Ց7"
-                ]),
-                ("⊡", [
+                    "major: Բ7Փ8Ֆ6Պ4Հ7Շ7Ի7Ղ7Ց4",
+                    "minor: Բ5Փ5Ֆ4Պ6Հ4Շ4Ի5Ղ4Ց7",
                     "gradients:",
-                    "⚐→⎈: via electoral_victory→governing_authority (party becomes government)",
-                    "⚐→⌯: Ֆ↓Պ↑Բ↓ (abandons elections, becomes movement)",
-                    "⌯→⚐: Ֆ↑Պ↓Բ↑ (institutionalizes, begins contesting)"
+                    "  ⚐→⎈: electoral_victory→governing_authority",
+                    "  ⚐→⌯: Ֆ↓Պ↑Բ↓ (abandons elections)",
+                    "  ⌯→⚐: Ֆ↑Պ↓Բ↑ (institutionalizes)"
+                ]),
+                ("◻", [
+                    "naming: national specificity required",
+                    "  ⚐⦑[Name] ([Country])⦒: ⚐⦑Labour Party (UK)|Democratic Party (United States)|Liberal Party (Australia)⦒",
+                    "  ⚐⦑[Name] ([Acronym])⦒: ⚐⦑Communist Party of Germany (KPD)|African National Congress (ANC)|Bharatiya Janata Party (BJP)⦒",
+                    "  ⚐⦑[Unique Name]⦒: ⚐⦑Fidesz|Syriza|Podemos|Likud|Baath|Kuomintang⦒",
+                    "  ✗⚐⦑Communist Party|Socialist Party|Democratic Party|Republican Party|Labour Party|Liberal Party|Nazi Party⦒ — which country?",
+                    "  rationale: parties are national entities, generic names semantically empty"
                 ]),
                 ("⊛", [
-                    "us_major: ⚐⦑Democratic Party⦒ ∧ ⚐⦑Republican Party⦒",
-                    "us_minor: ⚐⦑Green Party⦒ ∧ ⚐⦑Libertarian Party⦒ ∧ ⚐⦑Communist Party USA⦒",
-                    "uk: ⚐⦑Labour Party⦒ ∧ ⚐⦑Conservative Party⦒ ∧ ⚐⦑Liberal Democrats⦒",
-                    "european: ⚐⦑CDU⦒ ∧ ⚐⦑SPD⦒ ∧ ⚐⦑Fidesz⦒ ∧ ⚐⦑Syriza⦒ ∧ ⚐⦑Five Star Movement⦒",
-                    "historical: ⚐⦑Whig Party⦒ ∧ ⚐⦑Federalist Party⦒ ∧ ⚐⦑NSDAP⦒ ∧ ⚐⦑Bolshevik Party⦒",
-                    "non_governing: ⚐⦑KKE⦒ ∧ ⚐⦑PCF⦒ ∧ ⚐⦑CPGB⦒"
+                    "⚐⦑Democratic Party (United States)|Labour Party (UK)|Bharatiya Janata Party (BJP)|African National Congress (ANC)|Partido dos Trabalhadores (PT)⦒",
+                    "⚐⦑Liberal Democratic Party (Japan)|Fidesz|Likud|Morena (Mexico)|Syriza⦒",
+                    "⚐⦑Communist Party of the Soviet Union (CPSU)|Communist Party of China (CPC)|French Communist Party (PCF)|Communist Party of Germany (KPD)⦒",
+                    "⚐⦑National Socialist German Workers' Party (NSDAP)|Bolshevik Party|Kuomintang (KMT)|Baath Party (Syria)⦒"
                 ]),
                 ("≟", [
                     "test{nominates_candidates?→YES:⚐|NO:continue}",
                     "test{rejects_electoralism?→YES:⌯|NO:continue}",
                     "test{governing_apparatus?→YES:⎈|NO:continue}",
-                    "test{supporters_as_people?→YES:⧈⦑Democrats|Republicans⦒|NO:review}"
+                    "test{supporters_as_people?→YES:⧈⦑Democrats|Republicans⦒|NO:review}",
+                    "test{⚐⦑[Adj]* Party⦒ ∧ ¬country ∧ ¬acronym?→REJECT}"
                 ]),
                 ("≟", [
                     "edge_cases:",
-                    "  banned_party_seeking_restoration→⚐: ⚐⦑PKK political wing⦒ (seeks to contest)",
-                    "  vanguard_rejecting_elections→⌯: ⌯⦑Maoist Movement⦒ (¬nominates)",
-                    "  party_in_government→⚐∧⎈: ⚐⦑Labour Party⦒ contest ∧ ⎈⦑UK Government⦒ governs",
-                    "  faction_within_party→⧈: ⧈⦑Progressive Democrats⦒ ∨ ⧈⦑Tea Party Republicans⦒"
+                    "  banned_seeking_restoration→⚐: seeks to contest",
+                    "  vanguard_rejecting_elections→⌯: ¬nominates",
+                    "  party_in_government: ⚐ contests ∧ ⎈ governs (both valid)",
+                    "  faction_within_party→⧈: ⧈⦑Progressive Democrats|Tea Party Republicans⦒",
+                    "  party_became_state: ⚐⦑NSDAP⦒∧⎈⦑Nazi Germany⦒, ⚐⦑Bolshevik Party⦒∧⎈⦑Soviet Union⦒"
                 ]),
-                ("≟", [
-                    "historical_discrimination:",
-                    "  party_that_became_state→⚐ historical, ⎈ when governing:",
-                    "    ⚐⦑NSDAP⦒ (party) ∧ ⎈⦑Nazi Germany⦒ (state)",
-                    "    ⚐⦑Bolshevik Party⦒ (party) ∧ ⎈⦑Soviet Union⦒ (state)",
-                    "  single_party_state: party∧state fused, context determines tag"
-                ]),
-                ("⊨", "⚐ ≡ nominates_candidates ∧ contests_elections ∧ ⚐⊂⍚"),
+                ("⊨", "⚐ ≡ nominates_candidates ∧ contests_elections ∧ national_specificity ∧ ⚐⊂⍚"),
             ],
         },
     ]

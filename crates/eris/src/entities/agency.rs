@@ -17,53 +17,55 @@ pub fn get_entity_definitions() -> Vec<GovernmentalAuthorityDef> {
             sort_order: 9,
             category: EntityCategory::Primary,
             lines: lines![
-                ("≡", ["state entity", "enforcement power"]),
-                ("≝", ["sovereign or delegated authority", "public sector", "enforcement capacity"]),
+                ("≡", ["state_entity", "enforcement_power", "sovereign_authority"]),
+                ("≝", "sovereign or delegated authority ∧ public sector ∧ enforcement capacity"),
                 ("∂", [
-                    "⎈⊅{⍚ non-governmental, ⧈ human categories}",
-                    "⎈⊅⧊_power_concepts (power relations ≠ power-wielding entities)",
-                    "specific entity→⎈ | abstract power concept→⧊"
+                    "⎈⊅⍚ (⎈ ⛫_enforcement | ⍚ ⛫_coordination)",
+                    "⎈⊅⚐ (⎈ holds∧exercises power | ⚐ contests for power)",
+                    "⎈⊅⧈ (⎈ institution | ⧈ faction/supporters)",
+                    "⎈⊅⧊ (⎈ specific entity | ⧊ power concept)"
                 ]),
                 ("⊡", [
                     "typical: Փ9Ֆ8Հ7Ղ8",
-                    "⎈⦑EPA⦒: Փ8Ֆ9Հ6Ղ6 (regulatory, delegated)",
-                    "⎈⦑U.S. Congress⦒: Փ9Ֆ9Հ8Ղ9 (legislative, sovereign)",
-                    "⎈⦑NATO⦒: Փ8Ֆ7Հ7Ղ7 (supranational, coordinated)"
+                    "regulatory (delegated): Փ8Ֆ9Հ6Ղ6",
+                    "legislative (sovereign): Փ9Ֆ9Հ8Ղ9",
+                    "supranational (coordinated): Փ8Ֆ7Հ7Ղ7"
                 ]),
                 ("⊛", [
-                    "⎈⦑Congress|EPA|Federal Reserve|Supreme Court⦒",
-                    "⎈⦑United States Army|NATO|European Union⦒"
-                ]),
-                ("⧠", [
-                    "'European Powers'→⧊ (concept about power relations)",
-                    "'European Union'→⎈ (specific governmental entity)",
-                    "'Great Powers'→⧊ (IR theory concept)",
-                    "'UN Security Council'→⎈ (specific body)",
-                    "'the state'→⧊ (abstract)",
-                    "'the French state'→⎈ (specific polity)"
+                    "legislative: ⎈⦑U.S. Congress|Parliament of the United Kingdom|Bundestag|National People's Congress|Knesset|Diet of Japan⦒",
+                    "judicial: ⎈⦑Supreme Court (United States)|European Court of Justice|Constitutional Court of Germany|High Court of Australia⦒",
+                    "regulatory: ⎈⦑EPA|FDA|FCC|SEC|Ofcom|BaFin|CNIL⦒",
+                    "military: ⎈⦑United States Army|People's Liberation Army|NATO|IDF|Bundeswehr⦒",
+                    "monetary: ⎈⦑Federal Reserve|ECB|Bank of England|People's Bank of China|Bank of Japan|Reserve Bank of India⦒",
+                    "supranational: ⎈⦑European Union|WTO|ICC|European Court of Human Rights|African Union Commission⦒",
+                    "ancient: ⎈⦑Athenian Assembly|Roman Senate|Spartan Council⦒"
                 ]),
                 ("◻", [
-                    "enforcement authority ◻□discriminator:",
-                    "  statutory/regulatory: {⎈⦑EPA|FDA|FCC|SEC⦒}",
-                    "  monetary: {⎈⦑Federal Reserve⦒} (regulatory powers required)",
-                    "  military: {⎈⦑United States Army|NATO⦒}",
-                    "  legislative: {⎈⦑Congress|Parliament⦒}",
-                    "  judicial: {⎈⦑Supreme Court⦒}",
-                    "  supranational: {⎈⦑European Union|OECD⦒}",
-                    "vs ⍚: test{enforcement power?→⎈ | advisory only?→⍚}",
-                    "  ✓⎈⦑Federal Reserve⦒ ✗⍚⦑National Academy of Sciences⦒",
-                    "vs ⧈: test{institution?→⎈ | partisan faction?→⧈}",
-                    "  ✓⎈⦑U.S. Senate⦒ ✗⧈⦑Senate Republicans⦒",
-                    "vs ⧊: test{specific entity?→⎈ | power concept?→⧊}"
+                    "enforcement_authority discriminator:",
+                    "  statutory/regulatory power→⎈",
+                    "  monetary policy∧regulatory authority→⎈",
+                    "  military command→⎈",
+                    "  legislative authority→⎈",
+                    "  judicial authority→⎈",
+                    "  supranational∧can_compel→⎈",
+                    "  advisory only→⍚"
+                ]),
+                ("⧠", [
+                    "'European Powers'→⧊ (concept) | 'European Union'→⎈ (entity)",
+                    "'the state'→⧊ (abstract) | 'the French state'→⎈ (polity)",
+                    "'Senate Republicans'→⧈ (faction) | 'U.S. Senate'→⎈ (institution)"
                 ]),
                 ("≟", [
-                    "○₁ specificity: specific entity?→continue | power concept?→⧊",
-                    "○₂ enforcement: statutory/regulatory power?→⎈ | advisory?→⍚",
-                    "○₃ governmental: public sector?→continue | private?→⍚",
-                    "○₄ human: institution?→⎈ | faction/caucus?→⧈",
-                    "party_in_government: ⚐ contests, ⎈ governs — both valid, context determines"
+                    "test{specific entity?→continue|power concept?→⧊}",
+                    "test{enforcement/regulatory power?→⎈|advisory only?→⍚}",
+                    "test{public sector?→continue|private?→⍚}",
+                    "test{institution?→⎈|faction/caucus?→⧈}",
+                    "test{contests elections?→⚐|governs?→⎈} (both valid)",
+                    "edge_cases:",
+                    "  international: ⎈⦑WTO|ICC⦒ (can_compel) vs ⍚⦑UN|WHO⦒ (facilitates)",
+                    "  party∧government: ⚐⦑Labour Party (UK)⦒ contests ∧ ⎈⦑UK Government⦒ governs"
                 ]),
-                ("⊨", "⎈⊂governmental authority ∧ enforcement power ∧ ⎈⊂⍚")
+                ("⊨", "⎈ ≡ ⛫_enforcement ∧ sovereign∨delegated_authority ∧ public_sector")
             ],
         },
     ]

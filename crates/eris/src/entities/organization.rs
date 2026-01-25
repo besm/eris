@@ -34,62 +34,40 @@ pub fn get_entity_definitions() -> Vec<OrgDef> {
                 ]),
                 ("⊡", [
                     "gradients:",
-                    "⍚→⎈: Բ↑Փ↑Ֆ↑Պ↓Հ↑Ղ↑Ց↓ (boundary hardens, formalization increases, closes, hierarchy deepens, gains sovereignty, stabilizes)",
-                    "⍚→⌯: Բ↓Ֆ↓Պ↑Հ↓Ի↓Ց↑ (boundary dissolves, informality, opens, flattens, fragments, destabilizes)",
-                    "⍚→⍢: Փ↑Ֆ↑ (specializes educational, formalizes mission)"
+                    "⍚→⎈: Բ↑Փ↑Ֆ↑Պ↓Հ↑Ղ↑Ց↓ (hardens, formalizes, closes, deepens hierarchy, gains sovereignty)",
+                    "⍚→⌯: Բ↓Ֆ↓Պ↑Հ↓Ի↓Ց↑ (dissolves, informalizes, opens, flattens, fragments)",
+                    "⍚→⍢: Փ↑Ֆ↑ (specializes educational)",
+                    "⍚→⚐: adds electoral_nomination_function"
                 ]),
                 ("⊛", [
-                    "corporations: ⍚⦑Apple⦒ ∧ ⍚⦑Toyota⦒ ∧ ⍚⦑Goldman Sachs⦒",
-                    "nonprofits: ⍚⦑Red Cross⦒ ∧ ⍚⦑Doctors Without Borders⦒ ∧ ⍚⦑ACLU⦒",
-                    "research_orgs: ⍚⦑Bell Labs⦒ ∧ ⍚⦑RAND Corporation⦒ ∧ ⍚⦑Santa Fe Institute⦒",
-                    "professional: ⍚⦑American Bar Association⦒ ∧ ⍚⦑IEEE⦒ ∧ ⍚⦑Royal Society⦒",
-                    "trade_unions: ⍚⦑AFL-CIO⦒ ∧ ⍚⦑UAW⦒",
-                    "historical: ⍚⦑East India Company⦒ ∧ ⍚⦑Hanseatic League⦒ ∧ ⍚⦑Académie française⦒"
+                    "⍚⦑Apple|Toyota|Goldman Sachs|Samsung|Tata Group|Alibaba⦒",
+                    "⍚⦑Red Cross|Doctors Without Borders|ACLU|Oxfam|Amnesty International⦒",
+                    "⍚⦑Bell Labs|RAND Corporation|Santa Fe Institute|Brookings|Max Planck Society⦒",
+                    "⍚⦑American Bar Association|IEEE|Royal Society|British Medical Association⦒",
+                    "⍚⦑AFL-CIO|UAW|IG Metall|Solidarity|Congress of South African Trade Unions⦒",
+                    "⍚⦑East India Company|Hanseatic League|Académie française|Dutch East India Company⦒"
                 ]),
                 ("≟", [
                     "test{⛫_enforcement?→YES:⎈|NO:continue}",
                     "test{⛫_educational_primary?→YES:⍢|NO:continue}",
+                    "test{nominates_candidates?→YES:⚐|NO:continue}",
                     "test{⛫_coordination∧membership?→YES:⍚|NO:continue}",
-                    "test{¬⛫_diffuse_ideological?→YES:⌯|NO:continue}",
+                    "test{diffuse_ideological?→YES:⌯|NO:continue}",
                     "test{ascribed_category?→YES:⧈|NO:review}"
                 ]),
                 ("≟", [
                     "vector_test:",
-                    "Բ≥6∧Ֆ≥5∧Պ≤6→⍚∨⎈∨⍢ (institutional)",
-                    "Բ≤4∧Ֆ≤3∧Պ≥7→⌯ (movement)",
-                    "Փ9∧Ղ9→⎈ (enforcement∧sovereignty)",
-                    "Փ8∧Շ5∧educational→⍢"
+                    "Բ≥6∧Ֆ≥5∧Պ≤6→⍚∨⎈∨⍢∨⚐ (institutional)",
+                    "Բ≤4∧Ֆ≤3∧Պ≥7→⌯ (movement)"
                 ]),
                 ("≟", [
-                    "ancient_governing_bodies→⎈:",
-                    "  ⎈⦑Athenian Assembly⦒ ∧ ⎈⦑Roman Senate⦒ ∧ ⎈⦑Spartan Council⦒",
-                    "  Փ9Ղ9: ⛫_enforcement∧legislative_authority",
-                    "historical_orgs→⍚:",
-                    "  ⍚⦑Royal Society⦒ ∧ ⍚⦑East India Company⦒ ∧ ⍚⦑Hanseatic League⦒",
-                    "  Բ7Փ7Ղ7: ⛫_coordination∧¬state_authority",
-                    "historical_educational→⍢:",
-                    "  ⍢⦑Academy of Athens⦒ ∧ ⍢⦑University of Bologna⦒ ∧ ⍢⦑University of Paris⦒",
-                    "  Փ8Ֆ7: ⛫_educational∧degree_granting"
+                    "⍚ examples:",
+                    "  commercial_banks: ⍚⦑JPMorgan Chase|Deutsche Bank|HSBC|Mitsubishi UFJ⦒ (¬enforcement∧profit_motive)",
+                    "  research: ⍚⦑Bell Labs|RAND|Brookings|Fraunhofer Society⦒ (⛫_coordination_research)",
+                    "  international: ⍚⦑United Nations|WHO|IMF|African Union⦒ (facilitates, ¬compels)",
+                    "  historical: ⍚⦑Royal Society|East India Company|Hanseatic League⦒ (⛫_coordination∧¬state_authority)"
                 ]),
-                ("≟", [
-                    "central_banks→⎈:",
-                    "  ⎈⦑Federal Reserve⦒ ∧ ⎈⦑ECB⦒ ∧ ⎈⦑Bank of England⦒",
-                    "  Փ9Ղ9Ֆ9: monetary_policy∧regulatory_authority",
-                    "commercial_banks→⍚:",
-                    "  ⍚⦑JPMorgan Chase⦒ ∧ ⍚⦑Deutsche Bank⦒",
-                    "  Փ7Ղ7: ¬enforcement∧profit_motive"
-                ]),
-                ("≟", [
-                    "research_institutes:",
-                    "  ⛫_educational_primary→⍢: ⍢⦑Caltech⦒ ∧ ⍢⦑Georgia Tech⦒",
-                    "  ⛫_coordination_research→⍚: ⍚⦑Bell Labs⦒ ∧ ⍚⦑RAND⦒ ∧ ⍚⦑Brookings⦒"
-                ]),
-                ("≟", [
-                    "international_bodies:",
-                    "  Փ9Ղ8→⎈: ⎈⦑WTO⦒ ∧ ⎈⦑ICC⦒ (can_compel)",
-                    "  Փ6Ղ5→⍚: ⍚⦑United Nations⦒ ∧ ⍚⦑WHO⦒ ∧ ⍚⦑IMF⦒ (facilitates)"
-                ]),
-                ("⊨", "⍚ ≡ ⛫_coordination∧membership∧¬⛫_enforcement ∧ Բ7Փ7Ֆ6Պ5"),
+                ("⊨", "⍚ ≡ ⛫_coordination∧membership∧¬⛫_enforcement∧¬nominates_candidates ∧ Բ7Փ7Ֆ6Պ5"),
             ],
         },
     ]

@@ -17,36 +17,45 @@ pub fn get_entity_definitions() -> Vec<MovementDef> {
             sort_order: 22,
             category: EntityCategory::Conceptual,
             lines: lines![
-                ("≡", "social movement ∧ collective action"),
-                ("≝", "sustained mobilization ∧ political activism ∧ ideological coherence"),
+                ("≡", ["social_movement", "collective_action", "sustained_mobilization"]),
+                ("≝", "sustained mobilization ∧ collective identity ∧ political/social goals ∧ ¬formal_nomination"),
                 ("∂", [
-                    "⌯⊅{⍚formal organizations,⧈human categories,⧖eras,❖fields}",
-                    "⌯⊅⚐ (⌯ ¬nominates_candidates | ⚐ nominates_candidates)"
+                    "⌯⊅⍚ (⌯ diffuse | ⍚ institutionalized)",
+                    "⌯⊅⚐ (⌯ ¬nominates_candidates | ⚐ nominates_candidates)",
+                    "⌯⊅⧈ (⌯ movement | ⧈ adherents as category)",
+                    "⌯⊅⧖ (⌯ mobilization | ⧖ temporal period)",
+                    "⌯⊅❖ (⌯ activism | ❖ academic field)"
                 ]),
-                ("◻", "◻{social mobilization,collective identity,political/social goals}"),
-                ("⊛", "⌯⦑Civil Rights Movement|Feminism|Jansenism|Frankfurt School⦒"),
+                ("⊡", [
+                    "⌯: Բ3Փ4Ֆ2Պ8Հ2Շ6Ի4Ղ5Ց7",
+                    "institutionalizing: Բ↑Ֆ↑Պ↓ (→⍚ or →⚐)",
+                    "diffusing: Պ↑Ի↓Ց↑ (fragmenting)"
+                ]),
+                ("⊛", [
+                    "⌯⦑Civil Rights Movement|Labor Movement|Anti-War Movement|Occupy|Black Lives Matter⦒",
+                    "⌯⦑Feminism|Environmentalism|LGBTQ Rights Movement|Disability Rights Movement⦒",
+                    "⌯⦑Solidarity (Poland)|Arab Spring|Umbrella Movement|Landless Workers' Movement⦒",
+                    "⌯⦑Peronism|Gandhian Movement|Negritude|Pan-Africanism|Zionism (pre-state)⦒",
+                    "⌯⦑Frankfurt School|Vienna Circle|Jansenism|Oxford Movement|Transcendentalism⦒",
+                    "⌯⦑Protestantism|Pietism|Pentecostalism|Liberation Theology⦒"
+                ]),
                 ("◻", [
-                    "Movement naming descriptive|ideological label:",
-                    "  political{⌯⦑Civil Rights Movement|Labor Movement|Anti-War Movement⦒}",
-                    "  intellectual{⌯⦑Frankfurt School|Jansenism|Port-Royal⦒when tradition/movement}",
-                    "  religious{⌯⦑Protestantism|Jansenism⦒}",
-                    "  social{⌯⦑Feminism|Environmentalism⦒}",
-                    "Movement vs institution movement/tradition→⌯|actual institute→⍚:",
-                    "  ⌯⦑Frankfurt School⦒(intellectual tradition¬actual institution)",
-                    "  ⍚⦑Institute for Social Research⦒(actual institution)",
-                    "  case-by-case{DELETE organization when concept/movement already captured:",
-                    "    ⌯⦑Port-Royal⦒→⌯⦑Jansenism⦒when ⧊⦑Jansenism⦒already present}",
-                    "  usage context determines classification"
+                    "movement vs institution:",
+                    "  ⌯⦑Frankfurt School⦒ (tradition) vs ⍚⦑Institute for Social Research⦒ (actual institute)",
+                    "  ⌯⦑Zionism (pre-state)⦒ vs ⚐⦑Likud⦒ (party that contests)",
+                    "  ⌯⦑Peronism⦒ (ideology/movement) vs ⚐⦑Partido Justicialista (PJ)⦒ (party)",
+                    "rejects_electoralism∧'party'_name→⌯:",
+                    "  vanguard formations rejecting electoral participation→⌯ regardless of name",
+                    "  form decoupled from function"
                 ]),
                 ("≟", [
-                    "sustained mobilization∧collective identity→⌯",
-                    "formal organization→⍚",
-                    "intellectual tradition¬institute→⌯",
-                    "academic field→❖",
-                    "nominates_candidates→⚐",
-                    "rejects_electoralism∧'party'_name→⌯: form decoupled from function"
+                    "test{nominates_candidates?→YES:⚐|NO:continue}",
+                    "test{sustained mobilization∧collective identity?→YES:⌯|NO:continue}",
+                    "test{formal organization∧membership?→YES:⍚|NO:continue}",
+                    "test{academic field?→YES:❖|NO:continue}",
+                    "test{adherents as people?→YES:⧈|NO:review}"
                 ]),
-                ("⊨", "⌯⊂social movements ∧ sustained mobilization"),
+                ("⊨", "⌯ ≡ sustained_mobilization ∧ collective_identity ∧ ¬nominates_candidates")
             ],
         },
     ]

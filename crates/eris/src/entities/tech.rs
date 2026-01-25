@@ -17,51 +17,48 @@ pub fn get_entity_definitions() -> Vec<TechDef> {
             sort_order: 10,
             category: EntityCategory::Primary,
             lines: lines![
-                ("≡", "technology ∧ technical artifact"),
-                ("≝", "implemented systems ∧ operational capability ∧ material|computational realization"),
-                ("∂", "⌬⊅{⧊abstract frameworks,⧏analytical methods,⍚organizations providing tech}"),
-                ("◻", [
-                    "◻{material implementation∨computational realization,operational capability,technical infrastructure}"
+                ("≡", ["technology", "technical_artifact", "implemented_system"]),
+                ("≝", "material|computational realization ∧ operational capability ∧ technical infrastructure"),
+                ("∂", [
+                    "⌬⊅⧊ (⌬ implemented | ⧊ abstract framework)",
+                    "⌬⊅⧏ (⌬ technical system | ⧏ analytical procedure)",
+                    "⌬⊅⍚ (⌬ artifact | ⍚ organization providing tech)",
+                    "⌬⊅⍓ (⌬ platform without curation | ⍓ editorial selection)"
                 ]),
-                ("⊛", "⌬⦑Computer|Internet|AI|Feedback Control|Facebook⦒"),
+                ("⊡", [
+                    "⌬: Բ7Փ8Ֆ6Պ5Հ6Շ6Ի7Ղ6Ց6",
+                    "infrastructure: Բ8Փ9Շ8 (widespread, foundational)",
+                    "platform: Բ6Փ7Պ6 (user-facing, permeable)"
+                ]),
+                ("⊛", [
+                    "hardware: ⌬⦑Computer|Microprocessor|ENIAC|IBM System/360|Ferranti Mark 1|BESM-6⦒",
+                    "software: ⌬⦑UNIX|Linux|Windows|LISP|COBOL|Multics⦒",
+                    "networks: ⌬⦑Internet|Arpanet|SAGE System|Minitel|SWIFT|Fidonet⦒",
+                    "platforms: ⌬⦑Facebook|WeChat|VKontakte|LINE|Tinder|Amazon KDP|Substack⦒",
+                    "domains: ⌬⦑AI|Large Language Models|Blockchain|Nanotechnology|CRISPR⦒",
+                    "industrial: ⌬⦑Numerical Control|Feedback Control|Assembly Line|Containerization⦒",
+                    "historical: ⌬⦑Telegraph|Printing Press|Jacquard Loom|Difference Engine⦒"
+                ]),
                 ("◻", [
-                    "Technical specification ≫ generic description:",
-                    "  hardware{⌬⦑Computer|Microprocessor|TRS-80|ENIAC⦒}",
-                    "  software{⌬⦑Operating System|UNIX|Multics|LISP⦒}",
-                    "  networks{⌬⦑Internet|Arpanet|SAGE System|ChaosNet⦒}",
-                    "  platforms{⌬⦑Facebook|Tinder|MUD|Chat Room⦒}",
-                    "  technical domains{⌬⦑AI|Nanotechnology|Large Language Models⦒}",
-                    "  acronyms{expand when ambiguous:⌬⦑Terminal Interface Message Processor (TIP)⦒}",
-                    "Technical vs conceptual implementation→⌬|abstraction→⧊:",
-                    "  ⌬⦑AI⦒(technology domain with implementations)",
-                    "  ⌬⦑Feedback Control⦒(technical system with servomechanisms)",
-                    "  ⌬⦑Numerical Control⦒(implemented manufacturing system)",
-                    "  ∂when purely abstract framework without implementation→⧊",
-                    "  operational capability criterion(must have material|computational realization)",
-                    "Technology vs method system→⌬|procedure→⧏:",
-                    "  ⌬⦑Collaborative Filtering⦒(implemented algorithmic system)",
-                    "  ⌬⦑General Circulation Model⦒(computational modeling system)",
-                    "  ∂pure analytical frameworks without technical infrastructure→⧏",
-                    "  technical infrastructure discriminator",
-                    "Platform vs organization technology→⌬|institution→⍚:",
-                    "  ⌬⦑Facebook⦒(platform as technical system)",
-                    "  ⌬⦑Netscape⦒(software product)",
-                    "  ⌬⦑Tinder⦒(dating platform as technical system)",
-                    "  ∂when referencing company/organization→⍚(use context)",
-                    "  technical artifact emphasis"
+                    "naming:",
+                    "  ✓⌬⦑[Specific System]⦒: ⌬⦑UNIX|Arpanet|ENIAC⦒",
+                    "  ✓⌬⦑[Technical Domain]⦒: ⌬⦑AI|Blockchain|CRISPR⦒",
+                    "  expand acronyms when ambiguous: ⌬⦑Terminal Interface Message Processor (TIP)⦒",
+                    "discrimination:",
+                    "  ⌬⦑AI⦒ (implemented domain) vs ⧊⦑Intelligence⦒ (abstract concept)",
+                    "  ⌬⦑Collaborative Filtering⦒ (algorithmic system) vs ⧏⦑Content Analysis⦒ (method)",
+                    "  ⌬⦑Facebook⦒ (platform) vs ⍚⦑Meta⦒ (company) — context determines",
+                    "  ⌬⦑Amazon KDP|Substack⦒ (platform) vs ⍓⦑Penguin⦒ (editorial selection)"
                 ]),
                 ("≟", [
-                    "\"implementation system\"→⌬",
-                    "\"abstract framework\"→⧊",
-                    "\"analytical procedure\"→⧏",
-                    "\"organization providing tech\"→⍚:",
-                    "  test{material implementation|computational realization?→YES:⌬|NO:continue}",
-                    "  test{technical infrastructure|operational system?→YES:⌬|NO:continue}",
-                    "  test{abstract concept without implementation?→YES:⧊|NO:continue}",
-                    "  test{analytical method without technical system?→YES:⧏|NO:continue}",
-                    "  test{organization operating platform?→YES:check context(platform→⌬|company→⍚)}"
+                    "test{material|computational realization?→YES:⌬|NO:continue}",
+                    "test{operational capability∧technical infrastructure?→YES:⌬|NO:continue}",
+                    "test{abstract concept without implementation?→YES:⧊|NO:continue}",
+                    "test{analytical method without technical system?→YES:⧏|NO:continue}",
+                    "test{organization operating platform?→context: platform→⌬|company→⍚}",
+                    "test{platform without editorial selection?→YES:⌬|NO:⍓}"
                 ]),
-                ("⊨", "⌬≡technical artifacts ∧ operational capability required ∧ material|computational realization"),
+                ("⊨", "⌬ ≡ material|computational_realization ∧ operational_capability")
             ],
         },
     ]

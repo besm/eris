@@ -10,6 +10,16 @@ cargo test               # Run tests
 cargo run -p eris-cli    # Run CLI
 ```
 
+## Post-Build Install
+
+After building, install binaries to `~/bin`:
+
+```bash
+cargo build --release -p eris-cli -p eris-mcp
+cp target/release/eris ~/bin/eris
+cp target/release/eris-mcp ~/bin/eris-mcp
+```
+
 ## Project Structure
 
 ```
