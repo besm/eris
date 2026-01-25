@@ -286,16 +286,17 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
             ],
         },
 
-        // 𝀞 - Shapes (Molds Form)
+        // 𝀞 - Shapes (Constitutive Shaping - Direct)
         OntologyOperatorDef {
             symbol: "𝀞",
             name: "shapes",
             category: OntologyOperatorCategory::Constitution,
             property_vector: Some("Փ8Բ7"),
             lines: lines![
-                ("≡", ["shapes", "molds_form"]),
-                ("≝", ["constitutive shaping", "discourse shapes reality"]),
+                ("≡", ["constitutive_shaping", "molds_form"]),
+                ("≝", ["discourse→reality direct", "strong constitutive force"]),
                 ("⊡", "Փ8Բ7"),
+                ("∂", ["𝀞⊃⤑ (𝀞 direct | ⤑ indirect)"]),
                 ("⊛", [
                     "⧈⥅𝀞 perception",
                     "⟟⥅𝀞 perception",
@@ -375,20 +376,20 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
             ],
         },
 
-        // 𝀴 - Transforms (Fundamental Change)
+        // 𝀴 - Transforms (Qualitative Change)
         OntologyOperatorDef {
             symbol: "𝀴",
             name: "transforms",
             category: OntologyOperatorCategory::Transitions,
             property_vector: Some("Փ8Գ8"),
             lines: lines![
-                ("≡", ["transforms", "fundamental_change"]),
-                ("≝", ["deep transformation", "qualitative shift"]),
+                ("≡", ["transforms", "qualitative_change"]),
+                ("≝", ["metamorphosis general", "any fundamental shift"]),
                 ("⊡", "Փ8Գ8"),
+                ("∂", ["𝀴⊃⤇ (𝀴 general | ⤇ foundational)"]),
                 ("⊛", [
                     "𝄎 awareness 𝀴",
                     "crisis 𝀴 system",
-                    "𝀴 ≈ ⤇ general",
                     "learning 𝀴 understanding",
                     "𝀴 not mere change",
                     "metamorphosis via 𝀴"
@@ -493,19 +494,19 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
             ],
         },
 
-        // ⤑ - Shapes Through Influence (Constitutive Influence)
+        // ⤑ - Shapes Through Influence (Indirect Constitutive)
         OntologyOperatorDef {
             symbol: "⤑",
             name: "shapes_through_influence",
             category: OntologyOperatorCategory::Constitution,
             property_vector: None,
             lines: lines![
-                ("≡", ["shapes", "constitutes_through_influence"]),
-                ("≝", ["constitutive influence", "weaker than 𝀞 but still reality-shaping"]),
+                ("≡", ["constitutive_influence", "shapes_through_feedback"]),
+                ("≝", ["weaker than 𝀞", "indirect reality-shaping"]),
                 ("∂", [
+                    "⤑⊂𝀞 (⤑ weaker | 𝀞 direct)",
                     "უmere influence",
                     "უcausal effect",
-                    "⤑≈𝀞 but weaker",
                     "requires constitutive trace"
                 ]),
                 ("⊛", [
@@ -513,8 +514,7 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                     "expectation⤑outcome",
                     "model⤑reality",
                     "⤑ through feedback_loops",
-                    "discourse⤑possibilities",
-                    "⤑≠mere_influence_but_creation"
+                    "discourse⤑possibilities"
                 ]),
                 ("⊢", "⤑ shaping ⊢ constitutive influence ⊢ reality effects"),
             ],

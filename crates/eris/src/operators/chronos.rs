@@ -638,45 +638,47 @@ pub fn get_chronos_operator_definitions() -> Vec<ChronosOperatorDef> {
             entity_type: None,
         },
 
-        // ⟲ - Feedback Loop
+        // ⟲ - Feedback Loop (Mechanism/Operator)
         ChronosOperatorDef {
             symbol: "⟲",
             name: "feedback_loop",
             category: ChronosOperatorCategory::Causal,
             lines: lines![
                 ("≡", ["feedback_loop", "circular_causation"]),
-                ("≝", ["output→input cycle", "self-reinforcing process"]),
+                ("≝", ["output→input mechanism", "general self-reinforcement"]),
                 ("⊡", "Ր9Տ8"),
+                ("∂", [
+                    "⟲⊅⟗ (⟲ mechanism | ⟗ named instance)",
+                    "⟲ operator | ⟗ entity-taggable"
+                ]),
                 ("⊛", [
                     "⟟→outcome⟲⟟",
                     "⧈→𝀕⟲⧈",
                     "⟲ amplifies initial_conditions",
                     "market⟲sentiment⟲price",
-                    "social_reality⟲",
                     "⟲ 𝀖 𝀺→◬",
-                    "⟲ can 𝀶 or 𝆌",
-                    "◈⊰⟡⊰◈ (projects spawn ideas spawn projects)"
+                    "⟲ can 𝀶 or 𝆌"
                 ]),
                 ("⊢", "⟲ ⊢ non-linear dynamics ⊢ emergent behavior"),
             ],
             entity_type: None,
         },
 
-        // ⟖ - Recursive Process
+        // ⟖ - Recursive Process (Specialized f(f(x)))
         ChronosOperatorDef {
             symbol: "⟖",
             name: "recursive_process",
             category: ChronosOperatorCategory::Causal,
             lines: lines![
-                ("≡", ["recursive_process", "self_application"]),
-                ("≝", ["function applied to own output", "self-generating structure"]),
+                ("≡", ["recursive_process", "function_on_output"]),
+                ("≝", ["f(f(x)) structure", "complexity generation"]),
                 ("⊡", "Ր9Տ8"),
+                ("∂", ["⟖⊂⟳ (⟖ specialized | ⟳ general)"]),
                 ("⊛", [
                     "definition⟖self_reference⟖definition",
                     "⟖ generates_complexity",
                     "language⟖metalanguage⟖",
                     "consciousness⟖self_awareness⟖",
-                    "⟖≈⟳ specialized",
                     "⟖→𝄎 structures",
                     "⟖ 𝀙 with each cycle"
                 ]),

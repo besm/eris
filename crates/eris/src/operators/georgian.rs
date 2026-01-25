@@ -53,9 +53,10 @@ pub fn get_georgian_operator_definitions() -> Vec<CharDef> {
             name: "grounding",
             category: GeorgianOperatorCategory::OperationalCore,
             lines: lines![
-                ("≡", ["grounding", "implementation", "concrete"]),
-                ("≝", ["abstract→concrete realization", "actualization"]),
-                ("⊛", "ᛝ→გ⩎ ∧ abstract→გ ∧ ᛝ→გ=actualization"),
+                ("≡", ["grounding", "actualization_process"]),
+                ("≝", ["abstract→concrete operation", "transforms via execution"]),
+                ("∂", ["გ≠⊧ (გ operation | ⊧ relation)"]),
+                ("⊛", ["ᛝ→გ⩎", "abstract→გ", "⊧→გ (relation enables process)"]),
                 ("⊢", ["∘(⊨,გ)→⩎", "⊧→გ_manifestation"]),
             ],
         },

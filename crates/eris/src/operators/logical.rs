@@ -131,10 +131,15 @@ pub fn get_logical_operator_definitions() -> Vec<LogDef> {
             name: "embodies",
             category: LogicalOperatorCategory::Composition,
             lines: lines![
-                ("≡", ["embodies", "concrete manifestation"]),
-                ("≝", ["abstract→concrete realization", "instantiation"]),
-                ("∂", ["¬mere mention", "¬reference", "¬description", "requires actual instantiation"]),
-                ("⊛", ["concept ⊧ pattern", "∃ concrete instances"]),
+                ("≡", ["embodies", "instantiation_relation"]),
+                ("≝", ["concept instantiated in particular", "relation not operation"]),
+                ("∂", [
+                    "⊧≠გ (⊧ relation | გ operation)",
+                    "¬mere mention",
+                    "¬reference",
+                    "requires actual instantiation"
+                ]),
+                ("⊛", ["concept ⊧ pattern", "∃ concrete instances", "⊧→გ (relation enables process)"]),
                 ("⊢", "⊧→გ manifestation"),
             ],
         },

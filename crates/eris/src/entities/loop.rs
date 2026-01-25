@@ -17,9 +17,10 @@ pub fn get_entity_definitions() -> Vec<LoopDef> {
             sort_order: 32,
             category: EntityCategory::Relational,
             lines: lines![
-                ("≡", ["feedback_cycle", "bidirectional_causality", "repeated_iteration"]),
-                ("≝", "A↔B↔C ∧ visible iteration ∧ mutual reinforcement"),
+                ("≡", ["feedback_cycle", "named_loop", "repeated_iteration"]),
+                ("≝", "specific iterated pattern ∧ entity-taggable with ⦑⦒"),
                 ("∂", [
+                    "⟗⊂⟲ (⟗ instance | ⟲ mechanism)",
                     "⟗⊅⬢ (⟗ iterating | ⬢ simultaneous t₀=t₀)",
                     "⟗⊅⧃ (⟗ bidirectional | ⧃ unidirectional)",
                     "⟗⊅⧊ (⟗ specific loop | ⧊ analyzing concept)"

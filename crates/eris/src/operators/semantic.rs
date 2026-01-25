@@ -106,21 +106,21 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
             ],
             entity_type: None,
         },
-        // ⟳ - Recursive Process
+        // ⟳ - Recursive (General Cyclical Structure)
         SemanticOperatorDef {
             symbol: "⟳",
             name: "recursive",
             category: SemanticOperatorCategory::Processes,
             lines: lines![
-                ("≡", ["recursive", "cyclical process"]),
-                ("≝", ["self-referential iteration", "cyclical continuation"]),
+                ("≡", ["recursive", "self_reference"]),
+                ("≝", ["general cyclical structure", "⟖ is specialized ⟳"]),
                 ("⊡", "Ր9Տ8"),
+                ("∂", ["⟳⊃⟖ (⟳ general | ⟖ specialized f(f(x)))"]),
                 ("⊛", [
                     "⟳→⟳",
                     "⟳ evaluated lazily",
                     "⟳ structure→continuity",
                     "registry=⟳ discussing itself",
-                    "⟖≈⟳ specialized",
                     "⟗→⟳ awareness"
                 ]),
                 ("⊢", "⟳ recursion ⊢ self-reference ⊢ meta-level awareness"),
@@ -159,28 +159,29 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                     "⥅∧⊟→resilience (works best with uncertainty)"
                 ]),
                 ("⟷", [
-                    "⥅⟷⟲ (feedforward↔feedback reciprocal)",
-                    "⥅⊰⟲ (feedforward enables feedback)",
-                    "⥅⟷⛁ (feedforward grounded in memory)",
-                    "⥅⟷⥈ (Richards: feedforward+interanimation)"
+                    "⥅⟷⟲ (reciprocal)∧⥅⊰⟲ (enables)",
+                    "⥅⟷⛁ (memory)∧⥅⟷⥈ (Richards pair)"
                 ]),
             ],
             entity_type: None,
         },
-        // ⤇ - Deep Transformation
+        // ⤇ - Deep Transformation (Foundational Restructure)
         SemanticOperatorDef {
             symbol: "⤇",
             name: "deep_transform",
             category: SemanticOperatorCategory::Processes,
             lines: lines![
-                ("≡", ["deep_transform", "fundamental_change"]),
-                ("≝", ["foundational restructuring", "paradigm shift"]),
+                ("≡", ["deep_transform", "foundational_restructure"]),
+                ("≝", ["architectural transformation", "reshapes foundations not surface"]),
+                ("∂", [
+                    "⤇⊂𝀴 (⤇ foundational | 𝀴 general)",
+                    "⤇ via 𝀗 (sublation enables depth)"
+                ]),
                 ("⊛", [
                     "exchange→⤇ of ☊",
                     "⤇ reshapes foundations",
                     "surface→⤇→depth",
                     "incremental→⤇→paradigm",
-                    "⤇ via 𝀗 sublation",
                     "paradigm შ structural shift"
                 ]),
                 ("⊢", "⤇ transformation ⊢ new foundations ⊢ paradigm change"),
@@ -379,7 +380,7 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
             lines: lines![
                 ("≡", ["relation", "structural_connection"]),
                 ("≝", ["network connection", "structural bond"]),
-                ("⊡", "Տ9Ս8Ր7"),
+                ("⊡", "Տ9 Delays8Ր7"),
                 ("⊛", [
                     "⋈→⛁ ⊨",
                     "⋈∈network topology",
@@ -422,20 +423,14 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                     "∇⯐→optimization",
                     "⇌pattern from ⯐",
                     "⯐⩕→☊",
-                    "Burke's Scene: ⯐ shapes Act∧Agent∧Purpose ratios",
-                    "Computational: token window, attention field, working memory",
-                    "Perceptual: viewfinder, foreground/background distinction",
-                    "Terministic screen: ⯐ determines what can be said/thought/done",
-                    "⯐ boundaries ⊢ relevance determination ⊢ meaning possibility",
-                    "დ⯐ (past_context): former ⏣ ∧ historical_⯐ preserved in ⛁",
-                    "ნ⯐ (current_context): this_moment ∧ active ⯐ in use ∧ ⯐⊕interaction→ნ⯐+1",
-                    "წ⯐ (future_context): planned ⏣ ∧ anticipated ⯐ via ⥅"
+                    "⯐≡Burke's Scene∧token window∧terministic screen",
+                    "დ⯐∧ნ⯐∧წ⯐ temporal variants",
+                    "⯐⊕interaction→ნ⯐+1"
                 ]),
                 ("⊢", "⯐ scene-setting ⊢ constrained possibilities ⊢ dramatistic coherence"),
             ],
             entity_type: None,
         },
-
         // ⊚ - Perspective / Viewpoint
         SemanticOperatorDef {
             symbol: "⊚",
@@ -473,7 +468,6 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
             ],
             entity_type: None,
         },
-
         // 𝀙 - Deepens (Intensifies Understanding)
         SemanticOperatorDef {
             symbol: "𝀙",
@@ -494,7 +488,6 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
             ],
             entity_type: None,
         },
-
         // ⥈ - Interanimation (Mutual Semantic Control)
         SemanticOperatorDef {
             symbol: "⥈",
@@ -533,7 +526,6 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
             ],
             entity_type: None,
         },
-
         // ☊ - Understanding / Epistemic Yield
         SemanticOperatorDef {
             symbol: "☊",
@@ -570,7 +562,6 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
             ],
             entity_type: None,
         },
-
         // ℳ - Meaning (semantic content)
         SemanticOperatorDef {
             symbol: "ℳ",
@@ -597,7 +588,6 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
             ],
             entity_type: None,
         },
-
         // ◭ - Language (semiotic system)
         SemanticOperatorDef {
             symbol: "◭",
@@ -622,7 +612,6 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
             ],
             entity_type: None,
         },
-
         // ⩍ - Shared (intersubjective)
         SemanticOperatorDef {
             symbol: "⩍",
