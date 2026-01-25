@@ -14,26 +14,24 @@ pub fn get_entity_definitions() -> Vec<QuestionDef> {
         QuestionDef {
             symbol: "⋯",
             name: "Question",
-            description: "User-defined question marker for items needing follow-up",
+            description: "User-defined question marker for generative inquiry",
             sort_order: 101,
             category: EntityCategory::UserDefined,
             lines: lines![
-                ("≡", ["question", "generative_inquiry"]),
-                ("≝", ["◈_orienting_problem", "fertile_unknown"]),
+                ("≡", ["generative_inquiry", "fertile_unknown", "orienting_problem"]),
+                ("≝", "user's own question ∧ drives work ∧ anti-crystallization"),
                 ("∂", [
+                    "∂ user-defined (¬ERIS detection)",
                     "⋯⊅⊟ (⋯ fertile | ⊟ needs resolution)",
                     "⋯⊅⌾ (⋯ drives work | ⌾ seeks clarification)",
-                    "∂ user-defined (¬ERIS detection)"
+                    "⋯⊅◈ (⋯ question | ◈ bounded project)"
                 ]),
-                ("⊛", [
-                    "⋯⦑question_text⦒",
-                    "⋯ ⊰ ◈ (questions generate projects)",
-                    "❧ → ⋯ (highlights accrete to questions)",
-                    "⋯ holds ¬⌺ (anti-crystallization)",
-                    "⋯_open | ⋯_dormant | ⋯→☊",
-                    "⋯ may persist through ◈_⌺"
+                ("◻", [
+                    "lifecycle: ⋯⊰◈ (questions generate projects)",
+                    "accretes: ❧→⋯ (highlights gather to questions)",
+                    "persistence: ⋯ holds ¬⌺ | ⋯ may persist through ◈_⌺"
                 ]),
-                ("⊢", "⋯ question ⊢ ❧ accretes ⊢ ◈ oriented"),
+                ("⊨", "⋯ ≡ user_owned_question ∧ generative ∧ user-defined")
             ],
         },
     ]

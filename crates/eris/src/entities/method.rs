@@ -17,44 +17,40 @@ pub fn get_entity_definitions() -> Vec<MethodDef> {
             sort_order: 21,
             category: EntityCategory::Conceptual,
             lines: lines![
-                ("≡", ["analytical technique", "systematic procedure"]),
-                ("≝", ["replicable steps", "procedural application", "methodological approach"]),
+                ("≡", ["analytical_technique", "systematic_procedure", "replicable_steps"]),
+                ("≝", "procedural application ∧ 'Apply [X]' natural ∧ HOW-writing"),
                 ("∂", [
-                    "⧏⊅{❖,⧊,⌬}",
-                    "⧏⊅⧊_meta (method-terms in epistemological discourse)",
-                    "doing→⧏ | discussing→⧊"
+                    "⧏⊅❖ (⧏ technique | ❖ institutional field)",
+                    "⧏⊅⧊ (⧏ doing | ⧊ discussing/critiquing)",
+                    "⧏⊅⌬ (⧏ analytical | ⌬ material/computational)"
                 ]),
                 ("⊡", [
-                    "typical: Ֆ6Շ6Գ7Բ6",
-                    "⧏⦑Western Blot⦒: Ֆ9Շ3Բ9",
-                    "⧏⦑Participant Observation⦒: Ֆ5Շ7Բ4",
-                    "⧏⦑Dialectics⦒: Ֆ4Շ9Գ9"
+                    "⧏: Ֆ6Շ6Գ7Բ6",
+                    "lab protocol: Ֆ9Շ3Բ9 | ethnographic: Ֆ5Շ7Բ4 | philosophical: Ֆ4Շ9Գ9"
                 ]),
                 ("⊛", [
-                    "⧏⦑Content Analysis|Discourse Analysis|Participant Observation⦒",
-                    "⧏⦑Genealogical Method|Comparative Method|Historical Method⦒"
-                ]),
-                ("⧠", [
-                    "Popper on 'holistic experiments'→⧊ (critiquing concept)",
-                    "methods textbook on 'holistic experiments'→⧏ (teaching procedure)",
-                    "'apply content analysis to corpus'→⧏",
-                    "'the idea of content analysis'→⧊"
+                    "qualitative: ⧏⦑Content Analysis|Discourse Analysis|Grounded Theory|Thematic Analysis⦒",
+                    "ethnographic: ⧏⦑Participant Observation|Thick Description|Life History Method⦒",
+                    "historical: ⧏⦑Genealogical Method|Comparative Method|Prosopography|Archival Method⦒",
+                    "quantitative: ⧏⦑Regression Analysis|Factor Analysis|Network Analysis|Time Series⦒",
+                    "philosophical: ⧏⦑Dialectics|Phenomenological Method|Hermeneutic Circle|Deconstruction⦒",
+                    "scientific: ⧏⦑Western Blot|PCR|Spectroscopy|Chromatography⦒"
                 ]),
                 ("◻", [
-                    "procedural: test{\"Apply [X]\" natural?→YES:⧏|NO:review}",
-                    "discourse: test{HOW-writing?→⧏|WHAT-writing?→⧊}",
-                    "  methodological (handbooks, protocols)→⧏",
-                    "  epistemological (philosophy of science)→⧊",
-                    "vs ❖: test{departments exist?→❖|technique within field?→⧏}",
-                    "vs ⌬: test{material/computational?→⌬|analytical?→⧏}"
+                    "discrimination:",
+                    "  'apply content analysis'→⧏ | 'the idea of content analysis'→⧊",
+                    "  Popper critiquing 'holistic experiments'→⧊ | methods textbook teaching it→⧏",
+                    "  methodological (handbooks, protocols)→⧏ | epistemological (philosophy)→⧊",
+                    "tests:",
+                    "  'Apply [X]' natural?→⧏ | 'Department of [X]'?→❖ | implemented system?→⌬"
                 ]),
                 ("≟", [
-                    "○₁ discourse: HOW?→continue | WHAT?→⧊",
-                    "○₂ procedural: replicable steps?→continue | abstract?→⧊",
-                    "○₃ institutional: departments/degrees?→❖ | technique?→continue",
-                    "○₄ technical: implemented system?→⌬ | analytical?→⧏"
+                    "test{HOW-writing?→continue | WHAT-writing?→⧊}",
+                    "test{replicable steps?→continue | abstract?→⧊}",
+                    "test{departments/degrees?→❖ | technique?→continue}",
+                    "test{material/computational?→⌬ | analytical?→⧏}"
                 ]),
-                ("⊨", "⧏⊂systematic procedures ∧ procedural application")
+                ("⊨", "⧏ ≡ systematic_procedure ∧ replicable ∧ 'Apply [X]' natural")
             ],
         },
     ]

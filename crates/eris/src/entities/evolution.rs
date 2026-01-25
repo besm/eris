@@ -17,39 +17,41 @@ pub fn get_entity_definitions() -> Vec<TransformationDef> {
             sort_order: 40,
             category: EntityCategory::Complex,
             lines: lines![
-                ("≡", "transformation ∧ directional change"),
-                ("≝", "directional transformation A→B→C ∧ temporal progression ∧ developmental stages ∧ unidirectional sequence"),
-                ("∂", "⧃⊅{☯static paradox,⟗bidirectional feedback,⧆dyadic opposition,⬢simultaneous}"),
-                ("∂", "⧃⊅⧊_transformation_concepts (analyzing change ≠ describing specific transformation)"),
-                ("◻", "◻{temporal sequence,progression direction,irreversibility}"),
-                ("⊛", "⧃⦑Magic→Religion→Science|Primitive→Modern Schema|Medicalization|Secularization|Slang Evolution⦒"),
-                ("⧠", [
-                    "⧃⦑Medicalization⦒: condition→medical frame (unidirectional, no return, no feedback)",
-                    "⧃⦑Secularization⦒: sacred→secular shift (directional historical process)",
-                    "⬢⦑Making Up People⦒: classification constitutes classified (simultaneity, no sequence)",
-                    "⟗⦑Multiple Personality Formation Loop⦒: diagnosis↔behavior↔criteria (bidirectional, returns)"
+                ("≡", ["transformation", "directional_change", "sequential_stages"]),
+                ("≝", "A→B→C unidirectional ∧ temporal progression ∧ irreversible"),
+                ("∂", [
+                    "⧃⊅⬢ (⧃ sequential | ⬢ simultaneous t₀=t₀)",
+                    "⧃⊅⟗ (⧃ unidirectional | ⟗ bidirectional feedback)",
+                    "⧃⊅⧆ (⧃ transforming | ⧆ static opposition)",
+                    "⧃⊅☯ (⧃ resolving | ☯ paradox persists)",
+                    "⧃⊅⧊ (⧃ specific transformation | ⧊ analyzing concept)"
                 ]),
-                ("⊡", "typical: Շ7Գ6Բ8"),
-                ("⊡", "⧃⦑Medicalization⦒: Շ8Գ7Բ9"),
+                ("⊡", [
+                    "⧃: Շ7Գ6Բ8",
+                    "⧃⦑Medicalization⦒: Շ8Գ7Բ9"
+                ]),
+                ("⊛", [
+                    "⧃⦑Medicalization|Secularization|Professionalization|Rationalization|Bureaucratization⦒",
+                    "⧃⦑Commodification|Financialization|Digitization|Globalization⦒",
+                    "⧃⦑Democratization|Decolonization|Industrialization|Urbanization⦒",
+                    "⧃⦑Magic→Religion→Science|Primitive→Modern Schema|Gemeinschaft→Gesellschaft⦒"
+                ]),
                 ("◻", [
-                    "Directional arrows→for sequences:",
-                    "  ⧃⦑A→B→C⦒",
-                    "  descriptive transformation names",
-                    "  temporal requirement{must describe change over time¬simultaneous states}",
-                    "  directionality{unidirectional→¬bidirectional↔}",
-                    "  composition{⧃∧⧆ valid,⧃∧⇋ valid}",
-                    "3-test algorithm:",
-                    "  test1 temporal{stages separated t₀<t₁<t₂?→continue|simultaneous t₀=t₀?→⬢}",
-                    "  test2 directionality{A→B unidirectional?→continue|A↔B bidirectional?→⟗}",
-                    "  test3 progression{irreversible transformation?→⧃|cyclical return?→⟗|static opposition?→⧆}"
+                    "naming: ⧃⦑[Process Name]⦒ | ⧃⦑A→B→C⦒ for staged",
+                    "criteria: t₀<t₁<t₂ ∧ unidirectional→ ∧ irreversible",
+                    "discrimination:",
+                    "  ⧃⦑Medicalization⦒: condition→medical frame (unidirectional, no return)",
+                    "  ⬢⦑Making Up People⦒: classification constitutes classified (t₀=t₀)",
+                    "  ⟗⦑Multiple Personality Loop⦒: diagnosis↔behavior (bidirectional)",
+                    "  ⧊⦑Transformation⦒: analyzing concept ¬specific process"
                 ]),
                 ("≟", [
-                    "○₁ discourse check: describing specific transformation?→continue | analyzing change concept?→⧊",
-                    "○₂ \"A becomes B over time\"→⧃",
-                    "○₃ \"A cycles back to A\"→⟗",
-                    "○₄ \"Classified as A makes one A\"→⬢"
+                    "test{specific transformation?→continue | analyzing concept?→⧊}",
+                    "test{t₀<t₁<t₂ sequential?→YES:⧃|simultaneous?→⬢}",
+                    "test{unidirectional?→YES:⧃|bidirectional?→⟗}",
+                    "test{irreversible?→YES:⧃|cyclical?→⟗|static?→⧆}"
                 ]),
-                ("⊨", "⧃⊂temporal transformations ∧ directional progression ∧ sequential stages ∧ unidirectional ∧ irreversible"),
+                ("⊨", "⧃ ≡ unidirectional ∧ sequential ∧ irreversible")
             ],
         },
     ]

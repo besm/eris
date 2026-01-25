@@ -17,24 +17,30 @@ pub fn get_entity_definitions() -> Vec<ParadoxDef> {
             sort_order: 33,
             category: EntityCategory::Relational,
             lines: lines![
-                ("≡", "paradox ∧ contradictory coexistence"),
-                ("≝", "simultaneous contradiction ∧ A∧¬A within single entity ∧ irresolvable tension"),
-                ("∂", "☯⊅{⧆external opposition,⟗temporal alternation}"),
-                ("◻", "◻{simultaneity,single entity locus,genuine contradiction}"),
-                ("⊛", "☯⦑Paradox|Social Science of Change|Counterintuitive Policy|Pyrrhic Victory⦒"),
+                ("≡", ["simultaneous_contradiction", "irresolvable_tension", "single_locus"]),
+                ("≝", "A∧¬A within single entity ∧ same moment ∧ genuine contradiction"),
+                ("∂", [
+                    "☯⊅⧆ (☯ internal contradiction | ⧆ external opposition)",
+                    "☯⊅⟗ (☯ simultaneous | ⟗ temporal alternation)"
+                ]),
+                ("⊛", [
+                    "☯⦑Pyrrhic Victory|Catch-22|Double Bind|Bootstrap Paradox⦒",
+                    "☯⦑Tolerance Paradox|Sovereignty Paradox|Observer's Paradox⦒",
+                    "☯⦑Knowing-by-Doing|Planned Spontaneity|Organized Anarchism⦒",
+                    "☯⦑Social Science of Change|Counterintuitive Policy|Unintended Consequences⦒"
+                ]),
                 ("◻", [
-                    "Contradictory coexistence within single entity:",
-                    "  simultaneous{A∧¬A same moment same entity}",
-                    "  ∂¬external dyadic opposition(use ⧆)",
-                    "  ∂¬temporal alternation(use ⟗)",
-                    "  genuine irresolvable contradiction"
+                    "criteria: A∧¬A ∧ same moment ∧ same entity ∧ irresolvable",
+                    "discrimination:",
+                    "  ☯⦑Double Bind⦒ (internal) vs ⧆⦑Mind vs Body⦒ (external)",
+                    "  ☯⦑Pyrrhic Victory⦒ (simultaneous) vs ⟗⦑Boom-Bust Cycle⦒ (alternating)"
                 ]),
                 ("≟", [
-                    "A∧¬A simultaneously within single?→☯",
-                    "external binary opposition?→⧆",
-                    "temporal alternation cycle?→⟗"
+                    "test{A∧¬A simultaneously within single?→YES:☯|NO:continue}",
+                    "test{external binary opposition?→YES:⧆|NO:continue}",
+                    "test{temporal alternation?→YES:⟗|NO:review}"
                 ]),
-                ("⊨", "☯⊂simultaneous contradictions ∧ single entity locus ∧ irresolvable"),
+                ("⊨", "☯ ≡ simultaneous_contradiction ∧ single_locus ∧ irresolvable")
             ],
         },
     ]

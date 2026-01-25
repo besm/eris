@@ -17,28 +17,37 @@ pub fn get_entity_definitions() -> Vec<LoopDef> {
             sort_order: 32,
             category: EntityCategory::Relational,
             lines: lines![
-                ("≡", "loop ∧ feedback cycle"),
-                ("≝", "recursive reinforcement ∧ bidirectional causality ∧ cyclical pattern"),
-                ("∂", "⟗⊅{⬢single moment,⧃unidirectional sequence}"),
-                ("∂", "⟗⊅⧊_loop_concepts (analyzing feedback concept ≠ describing specific loop)"),
-                ("◻", "◻{bidirectional feedback,repeated cycles,mutual reinforcement}"),
-                ("◻", "textual signals: 'fed back', 'reinforced', 'in turn', 'which then', 'cycle'"),
-                ("⊛", "⟗⦑Loop|Bandwagon Loop|Error-Confirmation Loop|Multiple Personality Formation Loop⦒"),
-                ("⧠", [
-                    "⟗⦑Multiple Personality Formation Loop⦒: diagnosis→patients exhibit more→criteria expand→therapy elicits more→'way to be a person' (1983→1991 visible iteration, 'fed back' in text)",
-                    "⬢⦑Making Up People⦒: classification constitutes classified (simultaneity, no iteration visible)",
-                    "⧃⦑Medicalization⦒: condition→medical frame (unidirectional transformation, no return)"
+                ("≡", ["feedback_cycle", "bidirectional_causality", "repeated_iteration"]),
+                ("≝", "A↔B↔C ∧ visible iteration ∧ mutual reinforcement"),
+                ("∂", [
+                    "⟗⊅⬢ (⟗ iterating | ⬢ simultaneous t₀=t₀)",
+                    "⟗⊅⧃ (⟗ bidirectional | ⧃ unidirectional)",
+                    "⟗⊅⧊ (⟗ specific loop | ⧊ analyzing concept)"
                 ]),
-                ("⊡", "Տ(iteration visibility)Բ(bidirectionality)Գ(cycle count)Դ(dynamics: dampen↔amplify)"),
-                ("⊡", "typical: Տ7Բ8Գ4Դ6"),
-                ("⊡", "⟗⦑Multiple Personality Formation Loop⦒: Տ9Բ8Գ5Դ9"),
+                ("⊡", [
+                    "⟗: Տ7Բ8Գ4",
+                    "⟗⦑Multiple Personality Formation Loop⦒: Տ9Բ8Գ5"
+                ]),
+                ("⊛", [
+                    "⟗⦑Multiple Personality Formation Loop|Bandwagon Loop|Error-Confirmation Loop⦒",
+                    "⟗⦑Hype Cycle|Boom-Bust Cycle|Vicious Circle|Virtuous Circle⦒",
+                    "⟗⦑Self-Fulfilling Prophecy Loop|Expectations Loop|Stigma Loop⦒"
+                ]),
+                ("◻", [
+                    "textual signals: 'fed back', 'reinforced', 'in turn', 'which then', 'cycle'",
+                    "criteria: bidirectional ∧ repeated ∧ visible iteration",
+                    "discrimination:",
+                    "  ⟗⦑Multiple Personality Loop⦒: diagnosis→exhibit→expand→elicit (1983→1991 iteration)",
+                    "  ⬢⦑Making Up People⦒: classification constitutes classified (t₀=t₀, no iteration)",
+                    "  ⧃⦑Medicalization⦒: condition→medical frame (unidirectional, no return)"
+                ]),
                 ("≟", [
-                    "○₁ discourse check: describing loop phenomenon?→continue | analyzing loop concept?→⧊",
-                    "○₂ bidirectional∧repeated?→⟗",
-                    "○₃ unidirectional?→⧃",
-                    "○₄ single moment constitution?→⬢"
+                    "test{specific loop?→continue | analyzing concept?→⧊}",
+                    "test{bidirectional∧repeated?→YES:⟗|NO:continue}",
+                    "test{unidirectional?→YES:⧃|NO:continue}",
+                    "test{simultaneous?→YES:⬢|NO:review}"
                 ]),
-                ("⊨", "⟗⊂feedback cycles ∧ bidirectional reinforcement ∧ repeated iteration"),
+                ("⊨", "⟗ ≡ feedback_cycle ∧ bidirectional ∧ repeated_iteration")
             ],
         },
     ]

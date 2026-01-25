@@ -17,43 +17,50 @@ pub fn get_entity_definitions() -> Vec<GroupDef> {
             sort_order: 7,
             category: EntityCategory::Primary,
             lines: lines![
-                ("≡", "human classification ∧ social category"),
-                ("≝", "classificatory systems ∧ group identities ∧ collective labels"),
-                ("∂", "⧈⊅{⧊abstractions,⚘individuals,⍚organizations} ∧ ◻ human reference"),
+                ("≡", ["human_classification", "social_category", "collective_label"]),
+                ("≝", "classificatory system ∧ group identity ∧ people-as-category"),
+                ("∂", [
+                    "⧈⊅⧊ (⧈ people | ⧊ abstract property)",
+                    "⧈⊅⚘ (⧈ category | ⚘ individual)",
+                    "⧈⊅⍚ (⧈ category | ⍚ organization)",
+                    "⧈⊅⚐ (⧈ supporters | ⚐ party)",
+                    "⧈⊅⌯ (⧈ adherents | ⌯ movement)"
+                ]),
+                ("⊡", [
+                    "⧈: Շ variable | Ֆ variable (folk→formal)",
+                    "occupational: Ֆ6Շ7",
+                    "diagnostic: Ֆ8Շ5",
+                    "ethnic: Ֆ3Շ6"
+                ]),
                 ("⊛", [
-                    "⧈⦑Engineers|Citizens|Patients|Sociologists⦒",
-                    "partisan: ⧈⦑Democrats|Republicans|Tories|Labourites⦒"
+                    "occupational: ⧈⦑Engineers|Priests|Bureaucrats|Physicians|Programmers|Clerks⦒",
+                    "legal/political: ⧈⦑Citizens|Metics|Slaves|Subjects|Refugees|Felons⦒",
+                    "diagnostic: ⧈⦑Patients|Schizophrenics|Autistics|Diabetics⦒",
+                    "social: ⧈⦑Early Adopters|Elites|Radicals|Intellectuals|Youth⦒",
+                    "ethnic/cultural: ⧈⦑Hebrews|Bushmen|Puritans|Creoles|Mestizos⦒",
+                    "partisan: ⧈⦑Democrats|Republicans|Tories|Labourites|Peronistas|Sandinistas⦒"
                 ]),
                 ("◻", [
-                    "emic ∧ actors' categories ∧ historical discourse terms ∂ etic judgments",                    "Collective nouns plural∨singular:",
-                    "  occupational: {⧈⦑Engineers|Priests|Bureaucrats|Chemist⦒}",
-                    "  legal/political: {⧈⦑Citizens|Metics|Slaves|Kings⦒}",
-                    "  diagnostic: {⧈⦑Patients|Schizophrenics|Depressive Maniacs⦒}",
-                    "  social roles: {⧈⦑Early Adopters|Elites|Radicals⦒}",
-                    "  ethnic/cultural: {⧈⦑Hebrews|Bushmen|Puritans⦒}",
-                    "  classificatory reference≫abstract property",
-                    "Occupational categories ALWAYS⧈(NEVER⧊):",
-                    "  ✓⧈⦑Engineers|Computer Programmers|Technical Professionals⦒",
-                    "  ∂✗⧊⦑Engineers⦒",
-                    "  occupational⊅⧊",
-                    "  ◻CRITICAL: {\"the [occupation]\"→⧈people≠concept}",
-                    "Diagnostic categories medical/psychological classifications:",
-                    "  ⧈⦑Patients|Schizophrenics|Depressive Maniacs⦒",
-                    "  medical categories legitimate",
-                    "Context-dependent \"the[X]\":",
-                    "  {\"the engineers\"→⧈people, \"engineering mindset\"→⧊concept}",
-                    "  {\"the citizens\"→⧈people, \"citizenship as legal status\"→⧊abstraction}"
+                    "emic categories ∧ actors' terms ∂ etic judgments",
+                    "occupational ALWAYS ⧈:",
+                    "  ✓⧈⦑Engineers⦒ | ✗⧊⦑Engineers⦒",
+                    "  'the [occupation]'→⧈ people ≠ concept",
+                    "partisan vs party:",
+                    "  'the Democrats voted'→⧈ (people)",
+                    "  'the Democratic Party nominated'→⚐ (organization)",
+                    "context:",
+                    "  'the engineers'→⧈ | 'engineering mindset'→⧊",
+                    "  'the citizens'→⧈ | 'citizenship'→⧊"
                 ]),
                 ("≟", [
-                    "\"the[X]\"=people?→⧈",
-                    "collective noun?→⧈",
-                    "occupational category?→⧈(◻□)",
-                    "diagnostic classification?→⧈",
-                    "abstract property without people reference?→⧊",
-                    "\"the Democrats voted\"→⧈ (people)",
-                    "\"the Democratic Party nominated\"→⚐ (organization)"
+                    "test{'the [X]' = people?→YES:⧈|NO:continue}",
+                    "test{occupational?→YES:⧈|NO:continue}",
+                    "test{diagnostic?→YES:⧈|NO:continue}",
+                    "test{partisan supporters?→YES:⧈|NO:continue}",
+                    "test{party organization?→YES:⚐|NO:continue}",
+                    "test{abstract property?→YES:⧊|NO:review}"
                 ]),
-                ("⊨", "⧈⊂human classifications ∧ □occupational⊂⧈"),
+                ("⊨", "⧈ ≡ human_classification ∧ people-as-category ∧ occupational⊂⧈")
             ],
         },
     ]

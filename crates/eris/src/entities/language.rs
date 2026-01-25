@@ -13,26 +13,41 @@ pub fn get_entity_definitions() -> Vec<LanguageDef> {
         LanguageDef {
             symbol: "⧩",
             name: "Language",
-            description: "Natural language with speakers, including historical stages and varieties",
+            description: "Natural language: references, non-trivial foreign terms, non-English passages",
             sort_order: 14,
             category: EntityCategory::Primary,
             lines: lines![
-                ("≡", "natural language ∧ linguistic system"),
-                ("≝", "human communication system ∧ linguistic code"),
-                ("∂", "⧩⊅{⧊(concept),⌬(tech)} ∧ ◻ linguistic system with speakers"),
-                ("⊛", "⧩⦑Greek|Latin|German|French|English|Sanskrit|Arabic⦒"),
+                ("≡", ["natural_language", "linguistic_system", "foreign_term_marker"]),
+                ("≝", "human communication system ∧ linguistic code ∧ non-English usage"),
+                ("∂", [
+                    "⧩⊅⧊ (⧩ specific language | ⧊ 'Language' as concept)",
+                    "⧩⊅⌬ (⧩ natural | ⌬ programming language)"
+                ]),
+                ("⊛", [
+                    "major: ⧩⦑English|French|German|Spanish|Portuguese|Russian|Arabic|Mandarin|Japanese⦒",
+                    "classical: ⧩⦑Greek|Latin|Sanskrit|Classical Arabic|Classical Chinese|Hebrew⦒",
+                    "varieties: ⧩⦑Katharevousa|Demotic Greek|Classical Latin|Vulgar Latin|Old English⦒",
+                    "regional: ⧩⦑Yoruba|Swahili|Hindi|Bengali|Tagalog|Quechua|Nahuatl⦒"
+                ]),
                 ("◻", [
-                    "Natural languages≫programming languages(→⌬)",
-                    "  specific language varieties{⧩⦑Katharevousa|Demotic Greek⦒}",
-                    "  historical stages{⧩⦑Classical Latin|Vulgar Latin|Old English⦒}",
-                    "  ∂{¬⧊⦑Language⦒abstract,¬⌬programming}"
+                    "tagging triggers:",
+                    "  reference: 'written in Greek' | 'the French term' | 'from Arabic'",
+                    "  non-trivial terms: Aufhebung | Weltanschauung | habitus | ressentiment | Dasein",
+                    "  passages: block quotes in non-English | extended foreign text",
+                    "  ✗trivial: café | résumé | et cetera — fully assimilated",
+                    "discrimination:",
+                    "  ⧩⦑German⦒ (language) vs ⧈⦑Germans⦒ (people)",
+                    "  ⧩⦑French⦒ (language) vs ⌖⦑France⦒ (place)",
+                    "  ⧩⦑Greek⦒ for 'λόγος' vs ⧊⦑Logos⦒ for concept discussion"
                 ]),
                 ("≟", [
-                    "natural language with speakers?→⧩",
-                    "programming language?→⌬",
-                    "abstract concept of language?→⧊"
+                    "test{natural language reference?→YES:⧩|NO:continue}",
+                    "test{non-trivial foreign term?→YES:⧩|NO:continue}",
+                    "test{non-English passage?→YES:⧩|NO:continue}",
+                    "test{programming language?→YES:⌬|NO:continue}",
+                    "test{abstract 'Language' concept?→YES:⧊|NO:review}"
                 ]),
-                ("⊨", "⧩⊂natural languages ∧ human communication systems"),
+                ("⊨", "⧩ ≡ natural_language ∧ (reference∨foreign_term∨passage)")
             ],
         },
     ]

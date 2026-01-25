@@ -18,56 +18,43 @@ pub fn get_entity_definitions() -> Vec<OrgDef> {
             category: EntityCategory::Primary,
             lines: lines![
                 ("≡", ["organization", "coordinated_group", "structured_collective"]),
-                ("≝", "⛫_coordination ∧ voluntary∨chartered membership ∧ shared purpose ∧ ¬enforcement_authority"),
+                ("≝", "⛫_coordination ∧ membership ∧ ¬enforcement_authority ∧ ¬nominates_candidates"),
                 ("∂", [
-                    "⍚⊅⎈ (⍚ ⛫_coordination | ⎈ ⛫_enforcement)",
-                    "⍚⊅⍢ (⍚ ⛫_general | ⍢ ⛫_educational)",
-                    "⍚⊅⌯ (⍚ ⛫_institutional | ⌯ ¬⛫_diffuse)",
-                    "⍚⊅⧈ (⍚ membership_voluntary | ⧈ category_ascribed)",
-                    "⍚⊃⚐ (⚐ specialized ⍚ | electoral nomination function)"
+                    "⍚⊅⎈ (⍚ coordination | ⎈ enforcement)",
+                    "⍚⊅⍢ (⍚ general | ⍢ educational)",
+                    "⍚⊅⌯ (⍚ institutional | ⌯ diffuse)",
+                    "⍚⊅⧈ (⍚ membership | ⧈ ascribed category)",
+                    "⍚⊃⚐ (⚐ specialized ⍚ | nominates candidates)"
                 ]),
                 ("⊡", [
                     "⍚: Բ7Փ7Ֆ6Պ5Հ6Շ5Ի6Ղ7Ց5",
-                    "⎈: Բ9Փ9Ֆ9Պ3Հ8Շ7Ի7Ղ9Ց3",
-                    "⍢: Բ7Փ8Ֆ7Պ6Հ7Շ5Ի7Ղ6Ց4",
-                    "⌯: Բ3Փ4Ֆ2Պ8Հ2Շ6Ի4Ղ5Ց7"
-                ]),
-                ("⊡", [
                     "gradients:",
-                    "⍚→⎈: Բ↑Փ↑Ֆ↑Պ↓Հ↑Ղ↑Ց↓ (hardens, formalizes, closes, deepens hierarchy, gains sovereignty)",
-                    "⍚→⌯: Բ↓Ֆ↓Պ↑Հ↓Ի↓Ց↑ (dissolves, informalizes, opens, flattens, fragments)",
-                    "⍚→⍢: Փ↑Ֆ↑ (specializes educational)",
-                    "⍚→⚐: adds electoral_nomination_function"
+                    "  →⎈: Բ↑Փ↑Ֆ↑Պ↓Հ↑Ղ↑Ց↓ | →⌯: Բ↓Ֆ↓Պ↑Հ↓Ի↓Ց↑ | →⚐: +nominates"
                 ]),
                 ("⊛", [
-                    "⍚⦑Apple|Toyota|Goldman Sachs|Samsung|Tata Group|Alibaba⦒",
-                    "⍚⦑Red Cross|Doctors Without Borders|ACLU|Oxfam|Amnesty International⦒",
-                    "⍚⦑Bell Labs|RAND Corporation|Santa Fe Institute|Brookings|Max Planck Society⦒",
-                    "⍚⦑American Bar Association|IEEE|Royal Society|British Medical Association⦒",
-                    "⍚⦑AFL-CIO|UAW|IG Metall|Solidarity|Congress of South African Trade Unions⦒",
-                    "⍚⦑East India Company|Hanseatic League|Académie française|Dutch East India Company⦒"
+                    "corporate: ⍚⦑Apple|Toyota|Goldman Sachs|Samsung|Tata Group|Alibaba|HSBC⦒",
+                    "nonprofit: ⍚⦑Red Cross|Doctors Without Borders|ACLU|Oxfam|Amnesty International⦒",
+                    "research: ⍚⦑Bell Labs|RAND Corporation|Santa Fe Institute|Brookings Institution|Max Planck Society|Fraunhofer Society⦒",
+                    "professional: ⍚⦑American Bar Association|IEEE|Royal Society|British Medical Association⦒",
+                    "labor: ⍚⦑AFL-CIO|UAW|IG Metall|Solidarity|Congress of South African Trade Unions⦒",
+                    "international: ⍚⦑United Nations|WHO|IMF|African Union⦒",
+                    "historical: ⍚⦑East India Company|Hanseatic League|Académie française|Dutch East India Company⦒"
+                ]),
+                ("◻", [
+                    "vector test: Բ≥6∧Ֆ≥5∧Պ≤6→institutional | Բ≤4∧Ֆ≤3∧Պ≥7→⌯",
+                    "discrimination:",
+                    "  ⍚⦑United Nations|WHO|IMF⦒ (facilitates) vs ⎈⦑WTO|ICC⦒ (compels)",
+                    "  ⍚⦑JPMorgan Chase|Deutsche Bank⦒ (commercial) vs ⎈⦑Federal Reserve|ECB⦒ (regulatory)"
                 ]),
                 ("≟", [
-                    "test{⛫_enforcement?→YES:⎈|NO:continue}",
-                    "test{⛫_educational_primary?→YES:⍢|NO:continue}",
-                    "test{nominates_candidates?→YES:⚐|NO:continue}",
-                    "test{⛫_coordination∧membership?→YES:⍚|NO:continue}",
-                    "test{diffuse_ideological?→YES:⌯|NO:continue}",
-                    "test{ascribed_category?→YES:⧈|NO:review}"
+                    "test{enforcement?→YES:⎈|NO:continue}",
+                    "test{educational primary?→YES:⍢|NO:continue}",
+                    "test{nominates candidates?→YES:⚐|NO:continue}",
+                    "test{coordination∧membership?→YES:⍚|NO:continue}",
+                    "test{diffuse ideological?→YES:⌯|NO:continue}",
+                    "test{ascribed category?→YES:⧈|NO:review}"
                 ]),
-                ("≟", [
-                    "vector_test:",
-                    "Բ≥6∧Ֆ≥5∧Պ≤6→⍚∨⎈∨⍢∨⚐ (institutional)",
-                    "Բ≤4∧Ֆ≤3∧Պ≥7→⌯ (movement)"
-                ]),
-                ("≟", [
-                    "⍚ examples:",
-                    "  commercial_banks: ⍚⦑JPMorgan Chase|Deutsche Bank|HSBC|Mitsubishi UFJ⦒ (¬enforcement∧profit_motive)",
-                    "  research: ⍚⦑Bell Labs|RAND|Brookings|Fraunhofer Society⦒ (⛫_coordination_research)",
-                    "  international: ⍚⦑United Nations|WHO|IMF|African Union⦒ (facilitates, ¬compels)",
-                    "  historical: ⍚⦑Royal Society|East India Company|Hanseatic League⦒ (⛫_coordination∧¬state_authority)"
-                ]),
-                ("⊨", "⍚ ≡ ⛫_coordination∧membership∧¬⛫_enforcement∧¬nominates_candidates ∧ Բ7Փ7Ֆ6Պ5"),
+                ("⊨", "⍚ ≡ ⛫_coordination ∧ membership ∧ ¬enforcement ∧ ¬nominates")
             ],
         },
     ]

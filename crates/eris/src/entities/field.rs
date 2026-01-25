@@ -17,44 +17,43 @@ pub fn get_entity_definitions() -> Vec<FieldDef> {
             sort_order: 6,
             category: EntityCategory::Primary,
             lines: lines![
-                ("≡", "academic discipline ∧ institutionalized domain"),
-                ("≝", "knowledge container ∧ institutional boundaries ∧ scholarly legitimacy"),
-                ("∂", "❖⊅{⧏procedures,⧊abstractions} ∧ ◻ institutional markers"),
-                ("⊛", "❖⦑Philosophy|Sociology|Quantum Mechanics|Knowledge Engineering⦒"),
+                ("≡", ["academic_discipline", "institutionalized_domain", "knowledge_container"]),
+                ("≝", "institutional boundaries ∧ scholarly legitimacy ∧ ∃{departments|degrees|journals|conferences}"),
+                ("∂", [
+                    "❖⊅⧏ (❖ field | ⧏ method within field)",
+                    "❖⊅⧊ (❖ institutional | ⧊ abstract concept)"
+                ]),
+                ("⊡", [
+                    "❖: Ֆ7Շ6Բ7",
+                    "core: Շ8Բ8 (physics, sociology)",
+                    "subdiscipline: Շ5Բ6 (quantum mechanics)",
+                    "interdiscipline: Շ6Բ5 (cognitive science)"
+                ]),
+                ("⊛", [
+                    "core: ❖⦑Physics|Chemistry|Biology|Sociology|Philosophy|History|Economics|Psychology⦒",
+                    "subdiscipline: ❖⦑Quantum Mechanics|Epistemology|Macroeconomics|Social Psychology⦒",
+                    "interdiscipline: ❖⦑Cognitive Science|Science and Technology Studies|Computational Linguistics|Bioethics⦒",
+                    "compound: ❖⦑Philosophy of Language|Sociology of Science|History of Mathematics|Philosophy of Mind⦒",
+                    "specialized: ❖⦑Mormon History|Classical Philology|Media Theory|Subaltern Studies|Africana Studies⦒",
+                    "regional: ❖⦑Sinology|Japanology|Indology|Slavic Studies|Latin American Studies⦒"
+                ]),
                 ("◻", [
-                    "Descriptive field names ∂¬abbreviations:",
-                    "  core: {❖⦑Physics|Sociology|Philosophy|History⦒}",
-                    "  subdisciplines: {❖⦑Quantum Mechanics|Knowledge Engineering|Epistemology⦒}",
-                    "  interdisciplines: {❖⦑Cognitive Science|Science and Technology Studies|Computational Linguistics⦒}",
-                    "  specialized: {❖⦑Mormon History|Classical Philology|Media Theory⦒}",
-                    "Institutional criterion ◻□markers:",
-                    "  departments: {\"Department of X\"exists}",
-                    "  degrees: {\"PhD in X\"granted}",
-                    "  journals: {\"Journal of X\"published}",
-                    "  conferences: {\"Conference on X\"convenes}",
-                    "  one marker sufficient|multiple typical",
-                    "Subdiscipline vs field both valid ❖:",
-                    "  core: {❖⦑Physics⦒parent discipline}",
-                    "  sub: {❖⦑Theoretical Physics|Quantum Mechanics⦒specializations}",
-                    "  specialization level ∂¬type discrimination",
-                    "Compound fields natural compounds valid:",
-                    "  ❖⦑Philosophy of Language|Sociology of Science⦒",
-                    "  ❖⦑History of Mathematics|Social Studies of Science⦒",
-                    "  ∂descriptive compounds(¬format violations)",
-                    "Hyphenated fields single ❖:",
-                    "  ❖⦑Science and Technology Studies⦒(interdisciplinary field)",
-                    "  ∂¬separate tags for components(STS=unified field)"
+                    "institutional markers (one sufficient):",
+                    "  'Department of X' | 'PhD in X' | 'Journal of X' | 'Conference on X'",
+                    "naming:",
+                    "  ✓❖⦑[Descriptive Name]⦒ | ✗abbreviations",
+                    "  ✓❖⦑Science and Technology Studies⦒ — unified field ¬separate tags",
+                    "  ✓❖⦑Philosophy of Language⦒ — compound valid",
+                    "discrimination:",
+                    "  'study phenomenology'→❖ | 'apply phenomenological method'→⧏",
+                    "  'epistemology as field'→❖ | 'epistemological question'→⧊"
                 ]),
                 ("≟", [
-                    "institutional→❖",
-                    "procedural→⧏",
-                    "abstract→⧊:",
-                    "  test{\"Department of X\"exists?→YES:❖|NO:continue}",
-                    "  test{\"Apply X method\"?→YES:⧏|NO:continue}",
-                    "  test{\"X is concept/idea\"?→YES:⧊|NO:review}",
-                    "  context-dependent{\"study phenomenology\"→❖, \"apply phenomenological method\"→⧏}"
+                    "test{'Department of X' exists?→YES:❖|NO:continue}",
+                    "test{'Apply X method'?→YES:⧏|NO:continue}",
+                    "test{abstract concept?→YES:⧊|NO:review}"
                 ]),
-                ("⊨", "❖⊂institutionalized domains ∧ □academic legitimacy"),
+                ("⊨", "❖ ≡ institutionalized_domain ∧ □academic_legitimacy")
             ],
         },
     ]

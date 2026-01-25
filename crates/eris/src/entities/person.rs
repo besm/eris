@@ -17,31 +17,39 @@ pub fn get_entity_definitions() -> Vec<PersonDef> {
             sort_order: 1,
             category: EntityCategory::Primary,
             lines: lines![
-                ("≡", "person ∧ named individual"),
-                ("≝", "human agent ∧ biographical subject ∧ attributed author"),
-                ("∂", "⚘⊅{⧈,⧊,fictional} ∧ ◻ historical attestation"),
+                ("≡", ["named_individual", "human_agent", "biographical_subject"]),
+                ("≝", "historical attestation ∧ proper name ∧ attributed author"),
+                ("∂", [
+                    "⚘⊅⧈ (⚘ individual | ⧈ category of people)",
+                    "⚘⊅⧊ (⚘ person | ⧊ role/concept)",
+                    "⚘⊅fictional (⚘ attested | fictional→∅)"
+                ]),
                 ("⊛", [
-                    "⚘⦑Full Name|Name of Place⦒ ∧ ⚘∈{⚘⊕⊙⊕⊳,⚘⊕⊙⊕𝄏⊕⊳}",
-                    "⚘→proper_name ∧ ⚘∈historical_record"
+                    "⚘⦑C.S. Peirce|W.E.B. Du Bois|J.L. Austin|Hannah Arendt|Simone de Beauvoir⦒",
+                    "⚘⦑Karl Marx|Max Weber|Émile Durkheim|Michel Foucault|Pierre Bourdieu⦒",
+                    "⚘⦑Ibn Khaldun|Frantz Fanon|Gayatri Spivak|Edward Said|Amartya Sen⦒",
+                    "⚘⦑Confucius|Mozi|Zhuangzi|Xuanzang|Wang Yangming⦒",
+                    "⚘⦑Pytheas of Massalia|Hypatia of Alexandria|Avicenna|Maimonides⦒"
                 ]),
                 ("◻", [
-                    "Scholarly standard ∂¬uniform:",
-                    "  Initials: {C.S. Peirce, W.E.B. Du Bois, J.L. Austin}",
-                    "  Full: {William James, John Stuart Mill, Karl Marx}",
-                    "  Mixed: {Thomas S. Kuhn}",
-                    "Toponym: ⚘⦑Pytheas of Massalia⦒≡complete_id",
-                    "  ∂{¬⚘⦑Pytheas⦒, ¬separate ⌖}",
-                    "  ∂{¬parentheses, ¬⚘⦑Person (Disambiguation)⦒}",
-                    "Compound: {⚘⊕⊙⊕⊳, ⚘⊕⊙⊕𝄏⊕⊳}",
-                    "Co-authors: →∧"
+                    "naming:",
+                    "  ✓⚘⦑J.L. Austin|W.E.B. Du Bois|C.S. Peirce⦒ — no space between initials",
+                    "  ✗⚘⦑J. L. Austin|W. E. B. Du Bois|C. S. Peirce⦒ — spaces between initials",
+                    "  toponym: ⚘⦑Pytheas of Massalia⦒ — complete_id ¬separate ⌖",
+                    "  ✗⚘⦑Person (Disambiguation)⦒ — no parenthetical",
+                    "  co-authors: ⚘⦑Author1∧Author2⦒",
+                    "compound citations:",
+                    "  ⚘⊙⊳⦑Author⦒⦑Year⦒⦑Title⦒ (book)",
+                    "  ⚘⊙𝄏⊳⦑Author⦒⦑Year⦒⦑Journal⦒⦑Article⦒ (article)"
                 ]),
                 ("≟", [
-                    "\"the [occupation]\"→⧈",
-                    "collective→⧈",
-                    "role→⧊",
-                    "fictional→∅"
+                    "test{named individual?→YES:⚘|NO:continue}",
+                    "test{'the [occupation]'?→YES:⧈|NO:continue}",
+                    "test{collective/category?→YES:⧈|NO:continue}",
+                    "test{role/concept?→YES:⧊|NO:continue}",
+                    "test{fictional?→YES:∅|NO:review}"
                 ]),
-                ("⊨", "⚘⊂historically attested individuals"),
+                ("⊨", "⚘ ≡ historically_attested ∧ named_individual")
             ],
         },
     ]

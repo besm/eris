@@ -17,31 +17,29 @@ pub fn get_entity_definitions() -> Vec<RelationDef> {
             sort_order: 30,
             category: EntityCategory::Relational,
             lines: lines![
-                ("≡", "relation ∧ tripartite entrainment"),
-                ("≝", "agent∧category∧behavior interaction ∧ mutual influence ∧ structural coupling"),
+                ("≡", ["tripartite_entrainment", "mutual_influence", "structural_coupling"]),
+                ("≝", "agent∧category∧behavior ∧ elements≥3 ∧ mutual influence"),
                 ("∂", [
-                    "◻□{tripartite:agent∧category∧behavior,elements≥3 mandatory}",
-                    "∂{¬dyadic use ⧆,¬generic relationships}"
+                    "⇋⊅⧆ (⇋ tripartite≥3 | ⧆ dyadic binary)",
+                    "⇋⊅⟗ (⇋ structural coupling | ⟗ iterating feedback)"
                 ]),
-                ("⊛", "⇋⦑Relation⦒ with tripartite structure"),
+                ("⊛", [
+                    "⇋⦑Classification-Person-Behavior|Diagnosis-Patient-Symptom|Label-Group-Action⦒",
+                    "⇋⦑Market-Investor-Price|Institution-Role-Practice|Norm-Agent-Conduct⦒"
+                ]),
                 ("◻", [
-                    "Tripartite structure ◻□mandatory:",
-                    "  agent{human/organizational actor}",
-                    "  category{classificatory system}",
-                    "  behavior{action/response pattern}",
-                    "  elements≥3(¬dyadic)",
-                    "  mutual influence evident",
-                    "∂dyadic dyadic relations→⧆¬⇋:",
-                    "  binary oppositions→⧆⦑A vs B⦒",
-                    "  ∂¬⇋for 2 elements",
-                    "  tripartite requirement strict"
+                    "structure □mandatory:",
+                    "  agent (human/organizational) ∧ category (classificatory) ∧ behavior (action/response)",
+                    "  elements≥3 ∧ mutual influence evident",
+                    "discrimination:",
+                    "  ⇋⦑Diagnosis-Patient-Symptom⦒ (tripartite) vs ⧆⦑Mind vs Body⦒ (dyadic)",
+                    "  elements=2→⧆ | elements≥3→⇋"
                 ]),
                 ("≟", [
-                    "elements≥3∧mutual influence?→⇋",
-                    "dyadic binary?→⧆",
-                    "general connection?→review"
+                    "test{elements≥3∧mutual influence?→YES:⇋|NO:continue}",
+                    "test{dyadic binary?→YES:⧆|NO:review}"
                 ]),
-                ("⊨", "⇋⊂tripartite entrainments ∧ □3 elements"),
+                ("⊨", "⇋ ≡ tripartite_entrainment ∧ □elements≥3")
             ],
         },
     ]

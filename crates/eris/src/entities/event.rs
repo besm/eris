@@ -17,49 +17,44 @@ pub fn get_entity_definitions() -> Vec<EventDef> {
             sort_order: 5,
             category: EntityCategory::Primary,
             lines: lines![
-                ("≡", ["discrete occurrence", "historical significance"]),
-                ("≝", ["specific occurrence", "precise timing", "bounded causality", "unique temporal placement"]),
+                ("≡", ["discrete_occurrence", "historical_significance", "bounded_causality"]),
+                ("≝", "specific occurrence ∧ causal unity ∧ ∃t₀happened(event,t₀)"),
                 ("∂", [
-                    "⌁⊅{⧖ sustained spans, ⊙ bare dates}",
-                    "⌁⊅⧊_event_categories (types of events ≠ discrete occurrences)",
-                    "occurred→⌁ | category of occurrences→⧊"
+                    "⌁⊅⧖ (⌁ discrete | ⧖ sustained)",
+                    "⌁⊅⊙ (⌁ named occurrence | ⊙ bare date)",
+                    "⌁⊅⧊ (⌁ specific occurrence | ⧊ category of occurrences)"
                 ]),
                 ("⊡", [
-                    "typical: Շ5Չ8Ֆ6",
-                    "⌁⦑Soviet Atomic Bomb Test⦒: Շ8Չ9Ֆ9",
-                    "⌁⦑Battle of Amorgos⦒: Շ4Չ9Ֆ5",
-                    "⌁⦑French Revolution⦒: Շ7Չ6Ֆ9"
+                    "⌁: Շ variable | Ֆ variable",
+                    "battle: Շ4Ֆ5 | revolution: Շ7Ֆ9 | conference: Շ6Ֆ7"
                 ]),
                 ("⊛", [
-                    "⌁⦑World War II|French Revolution|Battle of Amorgos⦒",
-                    "⌁⦑Bandung Conference|Soviet Atomic Bomb Test⦒"
-                ]),
-                ("⧠", [
-                    "'Car Accidents'→⧊ (category of events)",
-                    "'the 1955 Le Mans disaster'→⌁ (discrete occurrence)",
-                    "'Mining Accidents'→⧊ (type)",
-                    "'Sago Mine disaster'→⌁ (specific)",
-                    "'Cold War'→⧖ (sustained competition)",
-                    "'Cuban Missile Crisis'→⌁ (discrete within Cold War)"
+                    "revolutions: ⌁⦑French Revolution|Haitian Revolution|Mexican Revolution|Russian Revolution|Iranian Revolution⦒",
+                    "battles: ⌁⦑Battle of Amorgos|Battle of Plassey|Battle of Stalingrad|Fall of Constantinople⦒",
+                    "conferences: ⌁⦑Bandung Conference|Congress of Vienna|Yalta Conference|Treaty of Westphalia⦒",
+                    "crises: ⌁⦑Cuban Missile Crisis|Suez Crisis|Munich Crisis|Black Monday⦒",
+                    "tests/firsts: ⌁⦑Soviet Atomic Bomb Test|Moon Landing|Sputnik Launch⦒",
+                    "disasters: ⌁⦑1955 Le Mans Disaster|Sago Mine Disaster|Bhopal Disaster|Chernobyl⦒",
+                    "political: ⌁⦑Partition of India|Meiji Restoration|Tiananmen Square|Fall of the Berlin Wall⦒"
                 ]),
                 ("◻", [
-                    "naming: descriptive ∂¬dates in names",
-                    "  ✓⌁⦑Battle of Amorgos⦒ ✗⌁⦑March 15, 1963⦒",
-                    "duration: causal unity > temporal length",
-                    "  ⌁⦑WWII⦒ 6yrs single causal chain = one event",
-                    "  ⧖⦑Space Race⦒ sustained competition = era",
-                    "vs ⧖: test{Δt<1yr∧discrete→⌁ | Δt>10yr∧sustained→⧖}",
-                    "  1yr<Δt<10yr→test causal structure",
-                    "  grammatical: 'X occurred'→⌁ | 'during X'→⧖",
-                    "vs ⧊: test{specific occurrence?→⌁ | category of occurrences?→⧊}"
+                    "naming:",
+                    "  ✓⌁⦑[Descriptive Name]⦒ | ✗⌁⦑March 15, 1963⦒ — no bare dates",
+                    "causal unity > temporal length:",
+                    "  ⌁⦑French Revolution⦒ multi-year single causal chain = one event",
+                    "  ⧖⦑Cold War⦒ sustained competition = era",
+                    "discrimination:",
+                    "  'X occurred'→⌁ | 'during X'→⧖",
+                    "  'Car Accidents'→⧊ (category) | '1955 Le Mans Disaster'→⌁ (specific)",
+                    "  ⌁⦑Cuban Missile Crisis⦒ (discrete within ⧖⦑Cold War⦒)"
                 ]),
                 ("≟", [
-                    "○₁ specificity: discrete occurrence?→continue | category/type?→⧊",
-                    "○₂ duration: Δt<1yr∧discrete?→⌁ | sustained?→continue",
-                    "○₃ structure: single causal chain?→⌁ | ongoing competition?→⧖",
-                    "○₄ temporal: bare date?→⊙ | named occurrence?→⌁"
+                    "test{specific occurrence?→YES:⌁|category?→⧊}",
+                    "test{Δt<1yr∧discrete?→YES:⌁|NO:continue}",
+                    "test{single causal chain?→YES:⌁|sustained competition?→⧖}",
+                    "test{bare date?→YES:⊙|named occurrence?→⌁}"
                 ]),
-                ("⊨", "⌁⊂discrete occurrences ∧ ∂start ∧ ∂end ∧ ∃t₀happened(event,t₀)")
+                ("⊨", "⌁ ≡ discrete_occurrence ∧ causal_unity ∧ ∂start ∧ ∂end")
             ],
         },
     ]
