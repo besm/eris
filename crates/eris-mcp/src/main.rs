@@ -9,6 +9,7 @@
 //! - `list_operators` - List all operator symbols (optionally by module)
 //! - `search` - Search definitions by text
 //! - `all` - Get all definitions
+//! - `guide` - Get ERIS system documentation by topic
 
 use anyhow::Result;
 use serde::{Deserialize, Serialize};
@@ -21,6 +22,98 @@ use eris::{
     get_operator_symbols, get_entity_symbols,
 };
 use eris::frame::{get_workflow, list_workflows};
+
+// =============================================================================
+// Guide Content
+// =============================================================================
+
+const GUIDE_OVERVIEW: &str = r#"ERIS (Entity Reference and Information System) is a notation system for semantic tagging using Unicode symbols.
+
+Components:
+- 30 entity types (⚘ Person, ⧊ Concept, ⌖ Place, etc.)
+- 7 operator categories (~60+ operators)
+- Notation patterns for tags, citations, vectors
+- Frame system for operational context
+
+Use `guide` with topic: entities, operators, notation, patterns, prefixes, frames"#;
+
+const GUIDE_ENTITIES: &str = r#"Entity Types (30 total):
+
+Primary: ⚘ Person, ⌖ Place, ⧖ Era, ⊙ Date, ⌁ Event, ❖ Field, ⧈ Group, ⍚ Organization, ⎈ Agency, ⌬ Tech
+Institutional: ⎚ Identifier, ⍓ Publisher, ⍢ University, ⧩ Language, 𝄏 Journal
+Conceptual: ⧊ Concept, ⧏ Method, ⌯ Movement
+Relational: ⇋ Relation, ⧆ Tension, ⟗ Loop, ☯ Paradox
+Process: ⧃ Evolution, ⟴ Action, ⬢ Effect
+Compound: ⊳ Work (used in citations)
+User-defined: ⑀ Meta, ⋯ Question, ◈ Project, ⟡ Idea"#;
+
+const GUIDE_OPERATORS: &str = r#"Operator Categories:
+
+Armenian: Property vectors (0-9 scale) - Փ performativity, Գ generalizability, Վ validity
+Chronos: Temporal/teleological - ⍜ purpose, ω teleological vector, ι initiation
+Georgian: Workflow states - past/present/future contexts
+Logical: Mathematical notation - ≡, ≝, →, ∧, ∨, ∀, ∃, ⊂, ◻, ⊨
+Meta: Self-referential - documentation, schemas, examples
+Ontology: Constitution/grounding - creation, performativity, crystallization
+Semantic: Meaning dynamics - gravity wells, stability states
+
+Use `list_operators` with `module` parameter to list specific category."#;
+
+const GUIDE_NOTATION: &str = r#"Notation Types:
+
+Entity:    ⦑⦒ brackets    ⚘⦑Mary Douglas⦒
+Compound:  ⦑⦒ brackets    ⚘⊙⊳⦑Author⦒⦑Year⦒⦑Title⦒
+Vector:    ⟨⟩ brackets    ⊡⟨Փ9Գ8⟩
+Reference: ⟦⟧ brackets    ❧⟦12345⟧
+Date:      ⊙⦑⦒           ⊙⦑1984⦒, ⊙⦑2023-05-15⦒
+Era:       ⧖⦑⦒           ⧖⦑1980s⦒, ⧖⦑Nineteenth Century⦒"#;
+
+const GUIDE_PATTERNS: &str = r#"Compound Notation Patterns:
+
+BookCitation:       ⚘⊙⊳⦑Author⦒⦑Year⦒⦑Title⦒
+ArticleCitation:    ⚘⊙𝄏⊳⦑Author⦒⦑Year⦒⦑Journal⦒⦑Title⦒
+OrgBookCitation:    ⍚⊙⊳⦑Org⦒⦑Year⦒⦑Title⦒
+OrgArticleCitation: ⍚⊙𝄏⊳⦑Org⦒⦑Year⦒⦑Journal⦒⦑Title⦒
+DatedEvent:         ⌁⊙⦑Event⦒⦑Year⦒
+ProjectSection:     ◈§⦑Project⦒⦑Section⦒
+
+Multi-author: Use ∧ conjunction
+  ⚘⊙⊳⦑Lakoff∧Johnson⦒⦑1980⦒⦑Metaphors We Live By⦒"#;
+
+const GUIDE_PREFIXES: &str = r#"Definition Line Prefixes:
+
+≡  Equivalence/name - what the symbol represents
+≝  Defined as/essence - core meaning
+∂  Boundary/exclusions - what it is NOT
+⊛  Pattern examples - usage patterns
+◻  Constraints/requirements - rules for application
+≟  Discrimination rules - how to distinguish from similar
+⊨  Validation/evidence - how to verify correct usage
+⊡  Armenian property vector - property ratings"#;
+
+const GUIDE_FRAMES: &str = r#"Frame System (composable operational context):
+
+Role (Ψ):
+  nav - Navigational
+  pln - Planning
+  evl - Evaluative
+  crt - Creative
+  itg - Integration
+
+Context (⯐):
+  ann - Annotation
+  wfl - Workflow
+  str - Structural
+  eps - Epistemic
+
+Task (τ):
+  validate - Check correctness
+  tag - Apply entity tags
+  review - Assess and feedback
+  migrate - Transform content
+  query - Search/retrieve
+
+Composed spec: ⟜⟨Ψ.nav⊗⯐.wfl⊗τ.tag⟩"#;
 
 // =============================================================================
 // JSON-RPC Types
@@ -249,6 +342,19 @@ fn get_tools() -> Vec<Tool> {
                 "required": ["file"]
             }),
         },
+        Tool {
+            name: "guide",
+            description: "Get ERIS system documentation. Returns overview by default, or specific topic.",
+            input_schema: json!({
+                "type": "object",
+                "properties": {
+                    "topic": {
+                        "type": "string",
+                        "description": "Topic: overview, entities, operators, notation, patterns, prefixes, frames"
+                    }
+                }
+            }),
+        },
     ]
 }
 
@@ -457,6 +563,26 @@ fn handle_define(params: &Value) -> ToolResult {
     ToolResult::text(results.join("\n\n"))
 }
 
+fn handle_guide(params: &Value) -> ToolResult {
+    let topic = params.get("topic").and_then(|v| v.as_str()).unwrap_or("overview");
+
+    let text = match topic {
+        "overview" => GUIDE_OVERVIEW,
+        "entities" => GUIDE_ENTITIES,
+        "operators" => GUIDE_OPERATORS,
+        "notation" => GUIDE_NOTATION,
+        "patterns" => GUIDE_PATTERNS,
+        "prefixes" => GUIDE_PREFIXES,
+        "frames" => GUIDE_FRAMES,
+        _ => return ToolResult::error(format!(
+            "Unknown topic: '{}'. Available: overview, entities, operators, notation, patterns, prefixes, frames",
+            topic
+        )),
+    };
+
+    ToolResult::text(text)
+}
+
 // Module detection helpers (based on symbol ranges/patterns)
 fn is_armenian_symbol(s: &str) -> bool {
     s.chars().next().map(|c| ('\u{0530}'..='\u{058F}').contains(&c)).unwrap_or(false)
@@ -541,6 +667,7 @@ fn handle_request(request: JsonRpcRequest) -> JsonRpcResponse {
                 Some("closure") => handle_closure(&arguments),
                 Some("workflow") => handle_workflow(&arguments),
                 Some("define") => handle_define(&arguments),
+                Some("guide") => handle_guide(&arguments),
                 Some(name) => ToolResult::error(format!("Unknown tool: {}", name)),
                 None => ToolResult::error("Missing tool name"),
             };
