@@ -17,31 +17,34 @@ pub fn get_entity_definitions() -> Vec<ActionDef> {
             sort_order: 41,
             category: EntityCategory::Complex,
             lines: lines![
-                ("≡", ["symbolic_action", "meaningful_intervention"]),
-                ("≝", ["Burkean action ∧ rhetorical performance", "agency-requiring deed"]),
+                ("≡", ["symbolic_action", "meaningful_intervention", "rhetorical_performance"]),
+                ("≝", "Burkean action ∧ agency-requiring ∧ interpretive dimension"),
                 ("∂", [
                     "⟴⊅{mechanical, passive, automatic}",
                     "⟴⊅⬢ (⟴ performs | ⬢ constitutes)",
                     "⟴⊅⥅ (⟴ acts | ⥅ anticipates)",
-                    "⟴⊅◬ (⟴ agentive | ◬ emergent)"
+                    "⟴⊅◬ (⟴ agentive | ◬ emergent)",
+                    "⟴⊅⌁ (⟴ type of action | ⌁ specific occurrence)"
                 ]),
-                ("◻", "symbolic_dimension ∧ human_agency"),
                 ("⊛", [
-                    "gerunds: ⟴⦑Branding⦒ ∧ ⟴⦑Ordination⦒",
-                    "compounds: ⟴⦑Symbolic Enactment⦒ ∧ ⟴⦑Rhetorical Performance⦒",
-                    "X_as_Y: ⟴⦑Definition as Symbolic Act⦒ ∧ ⟴⦑Taboo as Symbolic Action⦒",
-                    "functional: ⟴⦑Priest-Prophet Function⦒",
-                    "⚘⦑Kenneth Burke⦒ Dramatism ∧ pentadic_analysis"
+                    "Burkean: ⟴⦑Scapegoating|Mortification|Purification|Identification|Transcendence⦒",
+                    "ritual: ⟴⦑Coronation|Inauguration|Ordination|Oath-Taking|Consecration⦒",
+                    "speech: ⟴⦑Declaration|Proclamation|Denunciation|Confession|Testimony⦒",
+                    "exclusion: ⟴⦑Excommunication|Censure|Banishment|Ostracism⦒",
+                    "memory: ⟴⦑Commemoration|Dedication|Memorial|Canonization⦒"
+                ]),
+                ("◻", [
+                    "symbolic_dimension ∧ human_agency",
+                    "discrimination:",
+                    "  'X performs Y'→⟴ | 'X creates Y'→⬢ | 'X emerges'→◬",
+                    "  ⟴⦑Scapegoating⦒ (type) vs ⌁⦑Trial of Socrates⦒ (instance)"
                 ]),
                 ("≟", [
-                    "meaningful∧interpretive?→continue | mechanical?→∅",
-                    "human∧social_agent?→continue | automatic?→◬_if_emergent",
-                    "\"X performs Y\"→⟴",
-                    "\"X creates Y\"→⬢",
-                    "\"X reveals Y\"→⥅",
-                    "\"X emerges\"→◬"
+                    "test{meaningful∧interpretive?→continue | mechanical?→∅}",
+                    "test{human∧social_agent?→continue | automatic?→◬}",
+                    "test{type of action?→⟴ | specific occurrence?→⌁}"
                 ]),
-                ("⊨", "⟴⊂symbolic_actions ∧ human_agency ∧ ⟴⊅{mechanical,automatic}"),
+                ("⊨", "⟴ ≡ symbolic_action ∧ human_agency ∧ ⟴⊅{mechanical,automatic}")
             ],
         },
     ]
