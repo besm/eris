@@ -37,8 +37,7 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                     "□⌺=permanently_stable ∧ ნ_⌺=currently_stable",
                     "components⨝→⌺",
                     "usage patterns 𝆌 ⌺",
-                    "thematic clustering via gravitational pull",
-                    "⌺≡𝀆✱ at rest"
+                    "⌺≡𝀆✱"
                 ]),
                 ("⊢", "⌺ attracts related content ⊢ semantic clustering ⊢ knowledge organization"),
             ],
@@ -57,10 +56,9 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                     "⧊ actively ⌻",
                     "◇(𝀷→⌻→𝀏→⌺)",
                     "new patterns 𝀷 coalescing",
-                    "moderate compression gaining coherence",
                     "𝀏 in progress",
-                    "many→𝀷→one integration",
-                    "contradictions 𝀗 into coherent ⌻"
+                    "many→𝀷→one",
+                    "contradictions 𝀗 into ⌻"
                 ]),
                 ("⊢", "⌻ transitional state ⊰ stable well ⊢ development in progress"),
             ],
@@ -77,10 +75,9 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                 ("∂", ["¬⌺ (lost stability)", "¬⌻ (not forming)", "warns instability"]),
                 ("⊛", [
                     "დ ⌺→⤋→𝁆→⌼",
-                    "✱ experiencing ⤋ ∧ 𝁆",
+                    "✱ experiencing ⤋∧𝁆",
                     "¬◇⌺ when ⌼",
                     "requires re-examination",
-                    "needs full elaboration for stability recovery",
                     "⌼≡𝁆 in progress"
                 ]),
                 ("⊢", "⌼ decay state ⊢ intervention required ⊢ policy clarification needed"),
@@ -100,7 +97,7 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                     "stability⤋ ∧ quality⤋ ∧ coherence⤋",
                     "tech debt ⤋ accumulation",
                     "↗ regression ⤋",
-                    "⤋→𝁆 trajectory to dissolution"
+                    "⤋→𝁆"
                 ]),
                 ("⊢", "⤋ trajectory ⊢ instability ⊢ requires intervention"),
             ],
@@ -146,12 +143,11 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                     "⥅≡⚘⦑I.A. Richards⦒ concept",
                     "⧈⥅𝀞 perception",
                     "model⥅determines observation",
-                    "⥅ preconfigures possibilities",
                     "⛫⥅reality",
                     "⥅→⌂ formation",
                     "tact≡⥅ applied to ⊚",
-                    "⥅◻⊚ (feedforward requires perspective-modeling)",
-                    "⥅→∑⊚ anticipation"
+                    "⥅◻⊚",
+                    "⥅→∑⊚"
                 ]),
                 ("⊢", [
                     "⥅ anticipation ⊢ shaped perception ⊢ constrained possibilities",
@@ -159,8 +155,8 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                     "⥅∧⊟→resilience (works best with uncertainty)"
                 ]),
                 ("⟷", [
-                    "⥅⟷⟲ (reciprocal)∧⥅⊰⟲ (enables)",
-                    "⥅⟷⛁ (memory)∧⥅⟷⥈ (Richards pair)"
+                    "⥅⟷⟲∧⥅⊰⟲",
+                    "⥅⟷⛁∧⥅⟷⥈"
                 ]),
             ],
             entity_type: None,
@@ -179,12 +175,11 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                 ]),
                 ("⊛", [
                     "exchange→⤇ of ☊",
-                    "⤇ reshapes foundations",
                     "surface→⤇→depth",
                     "incremental→⤇→paradigm",
                     "paradigm შ structural shift"
                 ]),
-                ("⊢", "⤇ transformation ⊢ new foundations ⊢ paradigm change"),
+                ("⊢", "⤇ transformation ⊢ new foundations"),
             ],
             entity_type: None,
         },
@@ -221,7 +216,6 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                     "⧈ 𝀞 𝀔",
                     "⛫𝀔≡⚘⦑Mary Douglas⦒",
                     "𝀔⟷𝀕 dialectic",
-                    "collective 𝀔",
                     "𝀔 styles→⚘⦑Ludwig Fleck⦒",
                     "⚘⦑Durkheim⦒ collective 𝀔",
                     "𝀔⊰𝀺",
@@ -266,10 +260,10 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                     "◬ from ⧈⇋𝀕",
                     "complexity◬simplicity",
                     "◬≠reduction",
-                    "⬢→◬ new realities",
-                    "◬ via ⟲ feedback",
+                    "⬢→◬",
+                    "◬ via ⟲",
                     "◬≡⚘⦑Jason Josephson Storm⦒ 𝀺",
-                    "◬✱ = attractor arising from interaction",
+                    "◬✱",
                     "⌻≡◬✱ specialized"
                 ]),
                 ("⊢", "◬ emergence ⊢ novel properties ⊢ irreducible complexity"),
@@ -292,7 +286,7 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                     "permeable ┃",
                     "┃ maintenance→order",
                     "overload can 𝀶 ┃",
-                    "┃ objects→◬ coordination"
+                    "┃ objects→◬"
                 ]),
                 ("⊢", "┃ boundaries ⊢ coordination ⊢ organizational order"),
             ],
@@ -335,10 +329,9 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                 ("⊛", [
                     "⟚≡𝄎 prediction",
                     "market confidence⟚actual growth",
-                    "⟚ self-fulfilling prophecy",
-                    "expectation⟚reality via ⟚",
+                    "expectation⟚reality",
                     "social belief⟚social fact",
-                    "⚘⦑Robert K. Merton⦒ prophecy via ⟚",
+                    "⚘⦑Robert K. Merton⦒ prophecy",
                     "⟟+⧈+⛣→⟚",
                     "⟚ 𝀖 via media",
                     "⟚→𝀺 not event",
@@ -361,12 +354,11 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                     "⟛ via authorized agents",
                     "law⟛social order",
                     "central bank⟛monetary reality",
-                    "⟛◻⊩ authority",
+                    "⟛◻⊩",
                     "⧈⟛practice⟛reality",
                     "⟛≡𝁚+⊩",
                     "⛫ power→⟛→𝀞 subjects",
-                    "⟛ 𝀐 legitimate ┃",
-                    "⟛ via 𝀐∧𝁚 creation"
+                    "⟛ 𝀐 legitimate ┃"
                 ]),
                 ("⊢", "⟛ institutional authority ⊢ legitimate reality ⊢ social order"),
             ],
@@ -380,7 +372,7 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
             lines: lines![
                 ("≡", ["relation", "structural_connection"]),
                 ("≝", ["network connection", "structural bond"]),
-                ("⊡", "Տ9 Delays8Ր7"),
+                ("⊡", "Տ9Ս8Ր7"),
                 ("⊛", [
                     "⋈→⛁ ⊨",
                     "⋈∈network topology",
@@ -401,7 +393,6 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                 ("⊡", "Ե8Բ7"),
                 ("⊛", [
                     "⊟→⌾→clarification",
-                    "⌾ needed",
                     "⌾→○⌾",
                     "uncertainty resolved via ⌾"
                 ]),
@@ -447,13 +438,11 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                 ]),
                 ("⊛", [
                     "⊚≡situated_observation",
-                    "how something will seem to people looking at it from angles other than our own",
                     "different readings per ⊚",
-                    "⚘→⊚ (each person has viewpoint)",
-                    "∑⊚→⊿ (perspectives enable triangulation)",
-                    "⊿⊨∀⊚ (triangulation validates across perspectives)",
-                    "⊚ formed under special circumstances",
-                    "⥅◻⊚ (feedforward requires perspective-modeling)"
+                    "⚘→⊚",
+                    "∑⊚→⊿",
+                    "⊿⊨∀⊚",
+                    "⥅◻⊚"
                 ]),
                 ("⊢", [
                     "single ⊚ ⊢ partial view ⊢ ¬◇whole",
@@ -461,9 +450,9 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                     "⊚ awareness ⊢ tact ⊢ ⥅ quality"
                 ]),
                 ("⟷", [
-                    "⊚⟷⯐ (perspective within context)",
+                    "⊚⟷⯐",
                     "⊚⟷⥅ (anticipating others' ⊚)",
-                    "⊚⟷⊿ (perspectives feed triangulation)"
+                    "⊚⟷⊿"
                 ]),
             ],
             entity_type: None,
@@ -505,23 +494,22 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                 ]),
                 ("⊛", [
                     "⥈≡⚘⦑I.A. Richards⦒ concept",
-                    "two thoughts active together...meaning is resultant of their interaction",
                     "word⥈word→emergent ℳ",
                     "ꕥ⥈ꕥ in ⯐",
                     "⥈ creates ☊",
                     "each ꕥ ⥈ with use over time",
                     "present⟷absent via ⥈",
-                    "∇⥈→☊ process"
+                    "∇⥈→☊"
                 ]),
                 ("⊢", [
                     "⥈9 ⊢ rich semantic field ⊢ ◇☊",
                     "⥈1 ⊢ isolated meanings ⊢ ¬◇◬",
-                    "⥈⊰⌺ (interanimation enables semantic crystallization)"
+                    "⥈⊰⌺"
                 ]),
                 ("⟷", [
-                    "⥈⟷⥅ (Richards: feedforward+interanimation)",
-                    "⥈⟷⌺ (⥈ builds toward ⌺)",
-                    "⥈⟷⛁ (⥈ accumulates in ⛁)"
+                    "⥈⟷⥅ (Richards pair)",
+                    "⥈⟷⌺ (builds toward)",
+                    "⥈⟷⛁ (accumulates in)"
                 ]),
             ],
             entity_type: None,
@@ -541,24 +529,19 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                     "☊≠⯐ (outcome vs space)"
                 ]),
                 ("⊛", [
-                    "⯐⩕→☊ analysis yields understanding",
+                    "⯐⩕→☊",
                     "⥈ creates ☊",
-                    "∇(⥅,┃,⥈)→☊ gradient toward comprehension",
-                    "⋂⊚→shared_☊ perspectives converge",
-                    "certainty⁻¹∝☊ (inverse: tight grip impedes)",
-                    "partial_☊⎊→∑ understandings merge",
+                    "∇(⥅,┃,⥈)→☊",
+                    "⋂⊚→shared_☊",
+                    "certainty⁻¹∝☊ (tight grip impedes)",
+                    "partial_☊⎊→∑",
                     "current_☊⊆potential"
                 ]),
                 ("⊢", [
                     "⥈9⊢rich semantic field⊢◇☊",
                     "⩕⊢structured insight⊢◇☊"
                 ]),
-                ("⟷", [
-                    "☊⟷⥈",
-                    "☊⟷⩕",
-                    "☊⟷◬",
-                    "☊⟷⯐"
-                ]),
+                ("⟷", ["☊⟷⥈", "☊⟷⩕", "☊⟷◬", "☊⟷⯐"]),
             ],
             entity_type: None,
         },

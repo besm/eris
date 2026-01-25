@@ -19,7 +19,7 @@ define_operator_module! {
 /// Get all ontology operator definitions
 pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
     vec![
-        // 𝀐 - Creates (κοντέβμα)
+        // 𝀐 - Creates
         OntologyOperatorDef {
             symbol: "𝀐",
             name: "creates",
@@ -28,32 +28,36 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
             lines: lines![
                 ("≡", ["creates", "brings_forth"]),
                 ("≝", ["ontological creation", "bringing into existence"]),
-                ("⊡", "Փ9Գ8"),
+                ("∂", ["𝀐⊃𝁚 (𝀐 general | 𝁚 performative-constitutive)"]),
                 ("⊛", [
-                    "⧈ 𝀐 kinds ∧ ⛣ 𝀐 obligations ∧ ⛫𝀐 facts",
-                    "𝀐≡𝁚 general ∧ naming 𝀐 existence"
+                    "⧈ 𝀐 kinds",
+                    "⛣ 𝀐 obligations",
+                    "⛫ 𝀐 facts",
+                    "naming 𝀐 existence"
                 ]),
             ],
         },
-        // 𝁚 - Constitutes (κρατημοϋπόρροον)
+        // 𝁚 - Constitutes
         OntologyOperatorDef {
             symbol: "𝁚",
             name: "constitutes",
             category: OntologyOperatorCategory::Constitution,
             property_vector: None,
             lines: lines![
-                ("≡", ["constitutes", "creates_reality"]),
-                ("≝", ["reality constitution", "performative creation", "holding together"]),
+                ("≡", ["constitutes", "creates_reality", "holding_together"]),
+                ("≝", ["reality constitution", "performative creation"]),
+                ("∂", ["𝁚⊂𝀐 (𝁚 performative | 𝀐 general)"]),
                 ("⊛", [
-                    "⧈𝁚reality ∧ naming𝁚existence ∧ ⧈𝁚being",
-                    "𝁚 via ⛫_power ∧ financial_⧈𝁚market_reality",
-                    "KB𝁚financial_reality",
+                    "⧈𝁚reality",
+                    "naming𝁚existence",
+                    "𝁚 via ⛫_power",
+                    "financial_⧈𝁚market_reality",
                     "𝁚 sustains coherence",
                     "parts𝁚whole"
                 ]),
             ],
         },
-        // 𝀼 - Syrma / Constitutive Extension (σύρμα)
+        // 𝀼 - Constitutive Extension (σύρμα)
         OntologyOperatorDef {
             symbol: "𝀼",
             name: "extension",
@@ -69,12 +73,11 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                     "requires constitutive trace"
                 ]),
                 ("⊛", [
-                    "theory𝀼reality ∧ model𝀼market ∧ concept𝀼framework",
-                    "economic models𝀼market behavior",
+                    "theory𝀼reality",
+                    "model𝀼market",
+                    "concept𝀼framework",
                     "𝀼 maintains continuous connection",
                     "extension leaves constitutive wake",
-                    "directional growth that shapes target",
-                    "theory𝀼market traders use model",
                     "𝀼 binds extending∧extended",
                     "σύρω: drag, draw along, trail"
                 ]),
@@ -85,7 +88,7 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                 ]),
             ],
         },
-        // �𝀏 - Crystallize (ψηφιστόν)
+        // 𝀏 - Crystallize
         OntologyOperatorDef {
             symbol: "𝀏",
             name: "crystallize",
@@ -100,20 +103,16 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                     "requires lattice formation"
                 ]),
                 ("⊛", [
-                    "𝀷→გ→𝀏 integration grounds then solidifies",
+                    "𝀷→გ→𝀏",
                     "⌻→𝀏→⌺",
                     "meaning ო𝀏 into stable form",
                     "consensus→𝀏",
-                    "𝀏 creates fixed structure",
                     "usage patterns 𝀏 semantics"
                 ]),
-                ("⊢", [
-                    "structural stability",
-                    "semantic fixity"
-                ]),
+                ("⊢", ["structural stability", "semantic fixity"]),
             ],
         },
-        // 𝀾 - Flow / Flux (ἀντικενοκύλισμα)
+        // 𝀾 - Flow / Flux
         OntologyOperatorDef {
             symbol: "𝀾",
             name: "flow",
@@ -129,20 +128,15 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                 ]),
                 ("⊛", [
                     "𝀾→✱→𝀆",
-                    "𝀾→⌺ semantic convergence",
-                    "semantic drift via 𝀾",
+                    "𝀾→⌺",
                     "basin→𝀾→✱",
-                    "meaning 𝀾 through usage toward ⌺",
                     "𝀾 velocity determines transition time",
                     "ჭ→𝀾"
                 ]),
-                ("⊢", [
-                    "trajectory formation",
-                    "attractor convergence"
-                ]),
+                ("⊢", ["trajectory formation", "attractor convergence"]),
             ],
         },
-        // 𝀸 - Perturbation (σεῖσμα)
+        // 𝀸 - Perturbation
         OntologyOperatorDef {
             symbol: "𝀸",
             name: "perturbation",
@@ -158,18 +152,15 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                 ]),
                 ("⊛", [
                     "𝀸→⌺ tests stability",
-                    "(weak 𝀸→⌺ recovers) ∨ (strong 𝀸→⌺→⌼)",
+                    "(weak 𝀸→⌺ recovers) ∨ (strong 𝀸→⌼)",
                     "𝀸 strength vs stability threshold",
                     "resilience≝resistance to 𝀸",
                     "𝀸 reveals basin boundaries"
                 ]),
-                ("⊢", [
-                    "stability test",
-                    "resilience measure"
-                ]),
+                ("⊢", ["stability test", "resilience measure"]),
             ],
         },
-        // 𝀆 - Equilibrium (ἴσον)
+        // 𝀆 - Equilibrium
         OntologyOperatorDef {
             symbol: "𝀆",
             name: "equilibrium",
@@ -184,19 +175,15 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                     "requires attractor residence"
                 ]),
                 ("⊛", [
-                    "system at 𝀆",
                     "𝀆≝✱ occupation",
                     "⌺ in 𝀆",
                     "𝀾→✱→𝀆",
                     "𝀸 can disrupt 𝀆"
                 ]),
-                ("⊢", [
-                    "stable residence",
-                    "no motion"
-                ]),
+                ("⊢", ["stable residence", "no motion"]),
             ],
         },
-        // 𝁀 - Oscillation (τρομικόν)
+        // 𝁀 - Oscillation
         OntologyOperatorDef {
             symbol: "𝁀",
             name: "oscillation",
@@ -212,19 +199,14 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                 ]),
                 ("⊛", [
                     "periodic ✱",
-                    "system in 𝁀",
                     "𝁀 confined to basin",
                     "not rest but not escape",
-                    "trembling within bounds",
                     "⟳ via 𝁀"
                 ]),
-                ("⊢", [
-                    "periodic return",
-                    "bounded cycling"
-                ]),
+                ("⊢", ["periodic return", "bounded cycling"]),
             ],
         },
-        // 𝁆 - Dissolution (ξηρὸν κλάσμα)
+        // 𝁆 - Dissolution
         OntologyOperatorDef {
             symbol: "𝁆",
             name: "dissolution",
@@ -241,18 +223,14 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                 ("⊛", [
                     "𝁆≡¬𝀏",
                     "⌺→შ→𝁆→𝀾",
-                    "structure შო into flux",
                     "crystalline→𝁆→fluid",
                     "⌼ experiencing 𝁆",
                     "𝀸 can trigger 𝁆"
                 ]),
-                ("⊢", [
-                    "structure loss",
-                    "return to flux"
-                ]),
+                ("⊢", ["structure loss", "return to flux"]),
             ],
         },
-        // � - Sublation / Aufhebung (ἐλαφρόν)
+        // 𝀗 - Sublation / Aufhebung
         OntologyOperatorDef {
             symbol: "𝀗",
             name: "sublation",
@@ -271,22 +249,15 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                     "thesis∧antithesis→𝀗→synthesis",
                     "Being∧Nothing→𝀗→Becoming",
                     "𝀗≡cancel∧preserve∧elevate",
-                    "contradiction 𝀗 to higher unity",
                     "𝀗 lightens by raising",
                     "feudalism→𝀗→capitalism (Marx)",
                     "⧆→𝀗→resolution at higher level",
-                    "𝀗 carries forward essential",
-                    "graceful elevation უviolence"
+                    "𝀗 carries forward essential"
                 ]),
-                ("⊢", [
-                    "contradiction resolved",
-                    "elevated integration",
-                    "nothing lost"
-                ]),
+                ("⊢", ["contradiction resolved", "elevated integration", "nothing lost"]),
             ],
         },
-
-        // 𝀞 - Shapes (Constitutive Shaping - Direct)
+        // 𝀞 - Shapes (Direct Constitutive)
         OntologyOperatorDef {
             symbol: "𝀞",
             name: "shapes",
@@ -295,11 +266,9 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
             lines: lines![
                 ("≡", ["constitutive_shaping", "molds_form"]),
                 ("≝", ["discourse→reality direct", "strong constitutive force"]),
-                ("⊡", "Փ8Բ7"),
                 ("∂", ["𝀞⊃⤑ (𝀞 direct | ⤑ indirect)"]),
                 ("⊛", [
                     "⧈⥅𝀞 perception",
-                    "⟟⥅𝀞 perception",
                     "discourse 𝀞 reality",
                     "⛫ power→⟛→𝀞 subjects",
                     "language 𝀞 thought",
@@ -308,7 +277,6 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                 ("⊢", "𝀞 shaping ⊢ constituted form ⊢ discourse effects"),
             ],
         },
-
         // 𝀕 - Behavior (Enacted Pattern)
         OntologyOperatorDef {
             symbol: "𝀕",
@@ -317,20 +285,17 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
             property_vector: Some("Փ8Բ7"),
             lines: lines![
                 ("≡", ["behavior", "enacted_pattern"]),
-                ("≝", ["observable behavior", "enacted regularities"]),
-                ("⊡", "Փ8Բ7"),
+                ("≝", ["observable regularities", "enacted patterns"]),
                 ("⊛", [
                     "◬ from ⧈⇋𝀕",
                     "𝀕⊱⧈",
                     "⧈→𝀕→𝆌→⧈",
                     "𝀔⬡𝀕",
-                    "𝀕 observable pattern",
                     "behavior→𝆌→⌂"
                 ]),
-                ("⊢", "𝀕 behavior ⊢ observable pattern ⊢ ⧈ reinforcement"),
+                ("⊢", "𝀕 behavior ⊢ ⧈ reinforcement"),
             ],
         },
-
         // ⌂ - Habitus (Embodied Dispositions)
         OntologyOperatorDef {
             symbol: "⌂",
@@ -340,21 +305,18 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
             lines: lines![
                 ("≡", ["habitus", "embodied_dispositions"]),
                 ("≝", ["Bourdieu's habitus", "durable dispositions", "structured structures"]),
-                ("⊡", "Ր8Գ7"),
                 ("⊛", [
                     "⌂ formed by 𝄃",
                     "𝄃⊱⌂",
-                    "⥅→⌂ formation",
+                    "⥅→⌂",
                     "behavior→𝆌→⌂",
-                    "⌂ generates practice",
                     "field∧⌂→practice",
                     "⌂≡structured structuring structure"
                 ]),
                 ("⊢", "⌂ habitus ⊢ durable dispositions ⊢ practical sense"),
             ],
         },
-
-        // 𝀶 - Destroys (Eliminates Structure)
+        // 𝀶 - Destroys
         OntologyOperatorDef {
             symbol: "𝀶",
             name: "destroys",
@@ -363,19 +325,16 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
             lines: lines![
                 ("≡", ["destroys", "eliminates_structure"]),
                 ("≝", ["destruction", "structural elimination"]),
-                ("⊡", "Ց9Փ6"),
                 ("⊛", [
                     "⟲ can 𝀶 or 𝆌",
                     "overload can 𝀶 ┃",
                     "crisis 𝀶 stability",
-                    "𝀶 → 𝁆 dissolution",
-                    "𝀶 removes structure",
+                    "𝀶→𝁆",
                     "revolution 𝀶 old order"
                 ]),
-                ("⊢", "𝀶 destruction ⊢ structure loss ⊢ dissolution"),
+                ("⊢", "𝀶 destruction ⊢ structure loss"),
             ],
         },
-
         // 𝀴 - Transforms (Qualitative Change)
         OntologyOperatorDef {
             symbol: "𝀴",
@@ -385,19 +344,16 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
             lines: lines![
                 ("≡", ["transforms", "qualitative_change"]),
                 ("≝", ["metamorphosis general", "any fundamental shift"]),
-                ("⊡", "Փ8Գ8"),
                 ("∂", ["𝀴⊃⤇ (𝀴 general | ⤇ foundational)"]),
                 ("⊛", [
                     "𝄎 awareness 𝀴",
                     "crisis 𝀴 system",
                     "learning 𝀴 understanding",
-                    "𝀴 not mere change",
                     "metamorphosis via 𝀴"
                 ]),
-                ("⊢", "𝀴 transformation ⊢ qualitative shift ⊢ new form"),
+                ("⊢", "𝀴 transformation ⊢ qualitative shift"),
             ],
         },
-
         // ⟒ - Grounds (Founds Reality)
         OntologyOperatorDef {
             symbol: "⟒",
@@ -423,7 +379,6 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                 ("⊢", "⟒ grounding ⊢ foundational support ⊢ material basis"),
             ],
         },
-
         // ⛁ - Memory (Persistence)
         OntologyOperatorDef {
             symbol: "⛁",
@@ -433,33 +388,25 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
             lines: lines![
                 ("≡", ["memory", "persistence"]),
                 ("≝", ["context preservation across time", "semantic storage"]),
-                ("⊡", "Լ9Բ8"),
                 ("∂", [
                     "⛁≠⌺ (⛁ stores|⌺ stabilizes)",
-                    "⛁≠დ (⛁ mechanism|დ reference)",
-                    "⛁ preserves|⌺ crystallizes"
+                    "⛁≠დ (⛁ mechanism|დ reference)"
                 ]),
                 ("⊛", [
                     "⛁ preserves ⯐ across time",
                     "დ⯐ held in ⛁",
-                    "⌺ flow in ⛁",
-                    "⩎→⛁ artifact persisted",
+                    "⩎→⛁",
                     "⛁ enables Տ across sessions",
-                    "⛁ grounds ⥅ (feedforward requires memory)"
+                    "⛁ grounds ⥅"
                 ]),
                 ("⊢", [
                     "⛁9 ⊢ ⯐ continuity ⊢ ◇accumulated understanding",
                     "⛁1 ⊢ ⯐ amnesia ⊢ ¬◇learning",
-                    "⛁⊰⥅ (memory enables anticipation)"
+                    "⛁⊰⥅"
                 ]),
-                ("⟷", [
-                    "⛁⟷⌺ (⛁ holds what ⌺ stabilizes)",
-                    "⛁⟷⯐ (⛁ preserves ⯐)",
-                    "⛁⟷Լ (⛁ enables lifespan)"
-                ]),
+                ("⟷", ["⛁⟷⌺", "⛁⟷⯐", "⛁⟷Լ"]),
             ],
         },
-
         // ⩎ - Entity / Node / Concrete Instance
         OntologyOperatorDef {
             symbol: "⩎",
@@ -468,33 +415,25 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
             property_vector: Some("Գ9Բ7"),
             lines: lines![
                 ("≡", ["entity", "node", "concrete_instance"]),
-                ("≝", ["grounded particular", "what patterns actualize into", "what operations transform"]),
-                ("⊡", "Գ9Բ7"),
+                ("≝", ["grounded particular", "what patterns actualize into"]),
                 ("∂", [
                     "⩎≠ᛝ (instance vs pattern)",
                     "⩎≠⯐ (thing vs space)",
                     "⩎≠⋕ (particular vs schema)"
                 ]),
                 ("⊛", [
-                    "ᛝ→გ⩎ pattern grounds to entity",
-                    "⩎→შ→⩎' transformation",
-                    "⩎⊃⩎ containment",
-                    "⩎↬⩎ connection",
-                    "⩎⊆system membership",
-                    "∘(⊨,გ)→⩎ operations yield entities"
+                    "ᛝ→გ⩎ (pattern grounds to entity)",
+                    "⩎→შ→⩎'",
+                    "⩎⊃⩎",
+                    "⩎↬⩎",
+                    "⩎⊆system",
+                    "∘(⊨,გ)→⩎"
                 ]),
-                ("⊢", [
-                    "⩎⊢particular⊢◇concrete",
-                    "ᛝ⊢◇⩎ patterns may instantiate"
-                ]),
-                ("⟷", [
-                    "⩎⟷ᛝ",
-                    "⩎⟷⛁"
-                ]),
+                ("⊢", ["⩎⊢particular⊢◇concrete", "ᛝ⊢◇⩎"]),
+                ("⟷", ["⩎⟷ᛝ", "⩎⟷⛁"]),
             ],
         },
-
-        // ⤑ - Shapes Through Influence (Indirect Constitutive)
+        // ⤑ - Shapes Through Influence (Indirect)
         OntologyOperatorDef {
             symbol: "⤑",
             name: "shapes_through_influence",
@@ -504,23 +443,21 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                 ("≡", ["constitutive_influence", "shapes_through_feedback"]),
                 ("≝", ["weaker than 𝀞", "indirect reality-shaping"]),
                 ("∂", [
-                    "⤑⊂𝀞 (⤑ weaker | 𝀞 direct)",
+                    "⤑⊂𝀞 (⤑ indirect | 𝀞 direct)",
                     "უmere influence",
-                    "უcausal effect",
                     "requires constitutive trace"
                 ]),
                 ("⊛", [
                     "⧈⤑𝀕",
                     "expectation⤑outcome",
                     "model⤑reality",
-                    "⤑ through feedback_loops",
+                    "⤑ through ⟲",
                     "discourse⤑possibilities"
                 ]),
-                ("⊢", "⤑ shaping ⊢ constitutive influence ⊢ reality effects"),
+                ("⊢", "⤑ shaping ⊢ constitutive influence"),
             ],
         },
-
-        // ⬟ - Performativity Chain (Symbol→Action→Reality)
+        // ⬟ - Performativity Chain
         OntologyOperatorDef {
             symbol: "⬟",
             name: "performativity_chain",
@@ -528,26 +465,23 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
             property_vector: Some("Փ8Գ7Վ7"),
             lines: lines![
                 ("≡", ["symbol_action_reality_chain", "performativity_pattern"]),
-                ("≝", ["symbol creates action creates reality", "Austin-Searle-Butler chain"]),
-                ("⊡", "Փ8Գ7Վ7"),
+                ("≝", ["symbol→action→reality", "Austin-Searle-Butler chain"]),
                 ("∂", [
                     "უmere representation",
                     "უdescription",
                     "requires performative force"
                 ]),
                 ("⊛", [
-                    "⬟≡performativity_pattern",
                     "ꕥ→ო→გ via ⬟",
                     "⛣⬟social_fact",
                     "model⬟𝀕⬟outcome",
                     "⬟ 𝀐 what_it_names",
                     "⚘Austin→⚘Searle→⚘Butler via ⬟"
                 ]),
-                ("⊢", "⬟ performativity ⊢ symbol→action→reality ⊢ constitutive speech"),
+                ("⊢", "⬟ performativity ⊢ symbol→action→reality"),
             ],
         },
-
-        // ⛣ - Speech Act (Performative Utterance)
+        // ⛣ - Speech Act
         OntologyOperatorDef {
             symbol: "⛣",
             name: "speech_act",
@@ -556,15 +490,13 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
             lines: lines![
                 ("≡", ["speech_act", "performative_utterance"]),
                 ("≝", ["Austin's speech act", "illocutionary force", "words that do"]),
-                ("⊡", "Փ8Բ7"),
                 ("∂", [
                     "უdescription",
                     "უconstative",
-                    "⛣→does_not_describe",
                     "requires performative force"
                 ]),
                 ("⊛", [
-                    "⛣≡⚘J.L. Austin_concept",
+                    "⛣≡⚘J.L. Austin",
                     "illocutionary⛣perlocutionary",
                     "⛣𝁚⛫_facts",
                     "promise⛣𝀐_obligation",
@@ -575,7 +507,6 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                 ("⊢", "⛣ speech act ⊢ performative force ⊢ social fact creation"),
             ],
         },
-
         // ⥎ - Interactive Kinds (Looping Effect)
         OntologyOperatorDef {
             symbol: "⥎",
@@ -584,16 +515,15 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
             property_vector: Some("Տ8Ս7"),
             lines: lines![
                 ("≡", ["interactive", "mutually_constitutive"]),
-                ("≝", ["Hacking's looping kinds", "classification affects classified", "human kinds"]),
-                ("⊡", "Տ8Ս7"),
+                ("≝", ["Hacking's looping kinds", "classification affects classified"]),
                 ("∂", [
                     "⥎≠passive",
                     "⥎≠natural kinds",
                     "requires awareness of classification"
                 ]),
                 ("⊛", [
-                    "⥎ kinds≡⚘Ian Hacking",
-                    "⧈⥎⚘→⟗loops",
+                    "⥎≡⚘Ian Hacking",
+                    "⧈⥎⚘→⟗",
                     "human_kinds≡⥎",
                     "⥎ 𝀴 both_parties",
                     "classification⥎classified⥎classification"
