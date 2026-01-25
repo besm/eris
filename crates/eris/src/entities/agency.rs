@@ -60,7 +60,8 @@ pub fn get_entity_definitions() -> Vec<GovernmentalAuthorityDef> {
                     "○₁ specificity: specific entity?→continue | power concept?→⧊",
                     "○₂ enforcement: statutory/regulatory power?→⎈ | advisory?→⍚",
                     "○₃ governmental: public sector?→continue | private?→⍚",
-                    "○₄ human: institution?→⎈ | faction/caucus?→⧈"
+                    "○₄ human: institution?→⎈ | faction/caucus?→⧈",
+                    "party_in_government: ⚐ contests, ⎈ governs — both valid, context determines"
                 ]),
                 ("⊨", "⎈⊂governmental authority ∧ enforcement power ∧ ⎈⊂⍚")
             ],

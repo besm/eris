@@ -20,7 +20,10 @@ pub fn get_entity_definitions() -> Vec<GroupDef> {
                 ("≡", "human classification ∧ social category"),
                 ("≝", "classificatory systems ∧ group identities ∧ collective labels"),
                 ("∂", "⧈⊅{⧊abstractions,⚘individuals,⍚organizations} ∧ ◻ human reference"),
-                ("⊛", "⧈⦑Engineers|Citizens|Patients|Sociologists⦒"),
+                ("⊛", [
+                    "⧈⦑Engineers|Citizens|Patients|Sociologists⦒",
+                    "partisan: ⧈⦑Democrats|Republicans|Tories|Labourites⦒"
+                ]),
                 ("◻", [
                     "emic ∧ actors' categories ∧ historical discourse terms ∂ etic judgments",                    "Collective nouns plural∨singular:",
                     "  occupational: {⧈⦑Engineers|Priests|Bureaucrats|Chemist⦒}",
@@ -46,7 +49,9 @@ pub fn get_entity_definitions() -> Vec<GroupDef> {
                     "collective noun?→⧈",
                     "occupational category?→⧈(◻□)",
                     "diagnostic classification?→⧈",
-                    "abstract property without people reference?→⧊"
+                    "abstract property without people reference?→⧊",
+                    "\"the Democrats voted\"→⧈ (people)",
+                    "\"the Democratic Party nominated\"→⚐ (organization)"
                 ]),
                 ("⊨", "⧈⊂human classifications ∧ □occupational⊂⧈"),
             ],

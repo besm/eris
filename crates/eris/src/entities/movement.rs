@@ -19,7 +19,10 @@ pub fn get_entity_definitions() -> Vec<MovementDef> {
             lines: lines![
                 ("≡", "social movement ∧ collective action"),
                 ("≝", "sustained mobilization ∧ political activism ∧ ideological coherence"),
-                ("∂", "⌯⊅{⍚formal organizations,⧈human categories,⧖eras,❖fields}"),
+                ("∂", [
+                    "⌯⊅{⍚formal organizations,⧈human categories,⧖eras,❖fields}",
+                    "⌯⊅⚐ (⌯ ¬nominates_candidates | ⚐ nominates_candidates)"
+                ]),
                 ("◻", "◻{social mobilization,collective identity,political/social goals}"),
                 ("⊛", "⌯⦑Civil Rights Movement|Feminism|Jansenism|Frankfurt School⦒"),
                 ("◻", [
@@ -39,7 +42,9 @@ pub fn get_entity_definitions() -> Vec<MovementDef> {
                     "sustained mobilization∧collective identity→⌯",
                     "formal organization→⍚",
                     "intellectual tradition¬institute→⌯",
-                    "academic field→❖"
+                    "academic field→❖",
+                    "nominates_candidates→⚐",
+                    "rejects_electoralism∧'party'_name→⌯: form decoupled from function"
                 ]),
                 ("⊨", "⌯⊂social movements ∧ sustained mobilization"),
             ],

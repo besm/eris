@@ -23,7 +23,8 @@ pub fn get_entity_definitions() -> Vec<OrgDef> {
                     "⍚⊅⎈ (⍚ ⛫_coordination | ⎈ ⛫_enforcement)",
                     "⍚⊅⍢ (⍚ ⛫_general | ⍢ ⛫_educational)",
                     "⍚⊅⌯ (⍚ ⛫_institutional | ⌯ ¬⛫_diffuse)",
-                    "⍚⊅⧈ (⍚ membership_voluntary | ⧈ category_ascribed)"
+                    "⍚⊅⧈ (⍚ membership_voluntary | ⧈ category_ascribed)",
+                    "⍚⊃⚐ (⚐ specialized ⍚ | electoral nomination function)"
                 ]),
                 ("⊡", [
                     "⍚: Բ7Փ7Ֆ6Պ5Հ6Շ5Ի6Ղ7Ց5",

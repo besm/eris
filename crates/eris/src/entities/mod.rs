@@ -13,6 +13,7 @@ pub mod field;
 pub mod group;
 pub mod organization;
 pub mod agency;
+pub mod party;
 pub mod tech;
 pub mod identifier;
 pub mod publisher;
@@ -94,7 +95,7 @@ macro_rules! aggregate_entities {
 }
 
 aggregate_entities!(
-    person, place, era, date, event, field, group, organization, agency,
+    person, place, era, date, event, field, group, organization, agency, party,
     tech, identifier, publisher, university, language, concept, method,
     movement, relation, tension, r#loop, paradox, evolution, action,
     effect, work, journal, meta, question, project, idea, section

@@ -59,6 +59,7 @@ pub fn get_entity_type_definitions() -> Vec<EntityTypeDef> {
     defs.extend(group::get_entity_type_definitions());
     defs.extend(organization::get_entity_type_definitions());
     defs.extend(agency::get_entity_type_definitions());
+    defs.extend(party::get_entity_type_definitions());
     defs.extend(tech::get_entity_type_definitions());
     defs.extend(identifier::get_entity_type_definitions());
     defs.extend(publisher::get_entity_type_definitions());
