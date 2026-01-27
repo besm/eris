@@ -10,3 +10,5 @@ repository.workspace = true
 regex = { workspace = true }
 paste = { workspace = true }
 once_cell = { workspace = true }
+serde = { workspace = true }
+ron = { workspace = true }

@@ -1,0 +1,17 @@
+(
+    symbol: "Ց",
+    name: "volatility",
+    category: "Core",
+    lines: [
+        ("⊡", "0≡□⌺|5≡○⌺|9≡⤋⌺"),
+        ("≡", "volatility"),
+        ("≡", "change_frequency"),
+        ("≝", "change prediction"),
+        ("≝", "system dynamics"),
+        ("⊛", "Ց→change_prediction ∧ Ց∈system_dynamics ∧ low_Ց→reliable_behavior"),
+        ("⊛", "high_Ց→frequent_updates"),
+        ("⊛", "𝀾 flow in volatile systems"),
+        ("⊛", "𝀆 equilibrium when stable"),
+        ("⊛", "𝁀 oscillation between states"),
+    ],
+)

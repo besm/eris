@@ -1,0 +1,16 @@
+(
+    symbol: "Տ",
+    name: "transitive",
+    category: "Relational",
+    lines: [
+        ("⊡", "0≡¬→|5≡∃→|9≡∀→"),
+        ("≡", "transitive"),
+        ("≡", "chain_propagation"),
+        ("≝", "inheritance chains"),
+        ("≝", "dependency graphs"),
+        ("⊛", "Տ→inheritance_chains"),
+        ("⊛", "Տ∈dependency_graphs"),
+        ("⊛", "Տ enables composition"),
+        ("⊢", "A→B→C⊃A→C via Տ"),
+    ],
+)

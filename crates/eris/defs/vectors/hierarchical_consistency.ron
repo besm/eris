@@ -1,0 +1,13 @@
+(
+    symbol: "Մ",
+    name: "hierarchical_consistency",
+    category: "SystemCoherence",
+    lines: [
+        ("≡", "hierarchical_consistency"),
+        ("≡", "level_coherence"),
+        ("≝", "structural organization"),
+        ("≝", "level alignment"),
+        ("⊛", "Մ8→good_hierarchy ∧ Մ∈structural_organization"),
+        ("⊛", "level_alignment→Մ_rating"),
+    ],
+)

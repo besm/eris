@@ -1,0 +1,21 @@
+(
+    symbol: "§",
+    name: "Section",
+    description: "User-defined section marker for document divisions",
+    sort_order: 104,
+    category: "UserDefined",
+    lines: [
+        ("≡", "section_marker"),
+        ("≡", "document_division"),
+        ("≡", "organizational_unit"),
+        ("≝", "bounded scope ∧ within ◈ or ⊳"),
+        ("∂", "∂ user-defined (¬ERIS detection)"),
+        ("∂", "§⊂◈ (§ divisions within projects)"),
+        ("∂", "§⊂⊳ (§ divisions within works)"),
+        ("⊛", "◈§⦑Binding Time⦒⦑The Archive Problem⦒"),
+        ("⊛", "◈§⦑LLMs and Feedforward⦒⦑Richards and Anticipation⦒"),
+        ("⊛", "◈§⦑Tainted Software⦒⦑Contagion Mechanics⦒"),
+        ("◻", "notation: ◈§⦑Project⦒⦑Section⦒ | §⦑Section⦒ when ◈ implicit"),
+        ("⊨", "§ ≡ user_defined ∧ subdivision ∧ bounded_scope"),
+    ],
+)

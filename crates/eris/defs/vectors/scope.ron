@@ -1,0 +1,19 @@
+(
+    symbol: "Շ",
+    name: "scope",
+    category: "Core",
+    lines: [
+        ("≡", "scope"),
+        ("≡", "reach"),
+        ("≝", "local↔universal spectrum ∧ domain_extent"),
+        ("⊡", "1: parochial ∧ single_context"),
+        ("⊡", "3: regional ∧ limited_domain"),
+        ("⊡", "5: national ∧ domain_specific"),
+        ("⊡", "7: transnational ∧ cross_domain"),
+        ("⊡", "9: universal ∧ context_independent"),
+        ("⊛", "spatial: Շ1(village)→Շ9(global)"),
+        ("⊛", "conceptual: Շ2(case_specific)→Շ9(general_law)"),
+        ("⊛", "temporal: Շ3(era_bound)→Շ8(transhistorical)"),
+        ("⊨", "Շ ≡ applicability_breadth"),
+    ],
+)

@@ -1,0 +1,14 @@
+(
+    symbol: "Ե",
+    name: "explanatory",
+    category: "Core",
+    lines: [
+        ("⊡", "0≡⊟⧊|5≡⌾⧊|9≡⊨⧊"),
+        ("≡", "explanatory"),
+        ("≡", "clarification_power"),
+        ("≝", "understanding enhancement"),
+        ("≝", "documentation quality"),
+        ("⊛", "Ե→understanding_enhancement ∧ Ե∈documentation_quality ∧ concept_Ե strength"),
+        ("⊛", "tutorial_Ե design"),
+    ],
+)

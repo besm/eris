@@ -1,0 +1,16 @@
+(
+    symbol: "Ս",
+    name: "symmetric",
+    category: "Relational",
+    lines: [
+        ("⊡", "0≡→⊥←|5≡→≈←|9≡→≡←"),
+        ("≡", "symmetric"),
+        ("≡", "bidirectional_equality"),
+        ("≝", "mutual relationships"),
+        ("≝", "partnership design"),
+        ("⊛", "Ս→mutual_relationships"),
+        ("⊛", "Ս∈partnership_design"),
+        ("⊛", "Ս enables cooperation"),
+        ("⊢", "A⋈B≡B⋈A via Ս"),
+    ],
+)

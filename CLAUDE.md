@@ -20,17 +20,23 @@ nix/                     # Tracked Nix output (repo root)
 
 crates/
 ├── eris/                # Core library
+│   ├── defs/
+│   │   ├── entities/    # Entity definitions in RON format (33 files)
+│   │   └── vectors/     # Vector property definitions in RON format (37 files)
 │   ├── src/
-│   │   ├── entities/    # 30 entity types (person, place, concept, etc.)
+│   │   ├── entities/    # Entity loading and types
+│   │   │   ├── mod.rs   # EntityType enum and lookup functions
+│   │   │   ├── loader.rs # RON file loading (RonEntityDef)
+│   │   │   └── types.rs # EntityTypeDef for tag composer
 │   │   ├── operators/   # 7 operator categories (~60+ operators)
 │   │   ├── notation/    # Tag parsing (compound, vector, reference, temporal)
 │   │   ├── frame/       # Composable context specs (role, context, task)
 │   │   ├── export.rs    # LLM prompt integration with prefix caching
-│   │   ├── sql.rs       # SQL generation from Rust definitions
+│   │   ├── sql.rs       # SQL generation from definitions
 │   │   ├── nix.rs       # Nix attr set generation
 │   │   ├── parsers/     # Tag validation utilities
 │   │   ├── symbols.rs   # Unicode symbol constants
-│   │   ├── macros.rs    # Code generation macros
+│   │   ├── macros.rs    # Operator code generation macros
 │   │   └── lib.rs       # Public API
 │   └── schema/          # Tracked SQL output
 │       ├── schema.sql   # DDL (tables, indexes, views)
@@ -116,38 +122,69 @@ Accessed via CLI flags, NOT included in `eris all`.
 
 ## Adding Entities
 
-1. Create module in `entities/` using `define_entity_module!`:
+Entity definitions are stored as RON files in `crates/eris/defs/entities/`.
 
-```rust
-define_entity_module! {
-    Entity {
-        Primary => "Primary entity types",
-    }
-}
+1. Create a new `.ron` file with the entity definition:
 
-pub fn get_entity_definitions() -> Vec<EntityDef> {
-    vec![
-        EntityDef {
-            symbol: "⚘",
-            name: "Person",
-            description: "Named individual",
-            sort_order: 1,
-            category: EntityCategory::Primary,
-            lines: lines![
-                ("≡", "person ∧ named individual"),
-                ("≝", "human agent"),
-                // ...
-            ],
-        },
-    ]
-}
+```ron
+// defs/entities/example.ron
+(
+    symbol: "⚘",
+    name: "Person",
+    description: "Named individual, human agent, biographical subject",
+    sort_order: 1,
+    category: "Primary",
+    lines: [
+        ("≡", "named_individual"),
+        ("≡", "human_agent"),
+        ("≝", "historical attestation ∧ proper name"),
+        ("∂", "⚘⊅⧈ (⚘ individual | ⧈ category of people)"),
+        ("⊛", "⚘⦑C.S. Peirce|W.E.B. Du Bois⦒"),
+        ("◻", "naming: ✓⚘⦑J.L. Austin⦒ — no space between initials"),
+        ("≟", "test{named individual?→YES:⚘|NO:continue}"),
+        ("⊨", "⚘ ≡ historically_attested ∧ named_individual"),
+    ],
+)
 ```
 
-2. Register in `entities/mod.rs` via `aggregate_entities!`
+2. Add `parse_entity(include_str!("../../defs/entities/example.ron"))` to `loader.rs`
+
+3. Add the corresponding `EntityType` variant to `mod.rs`
+
+Categories: Primary, Institutional, Conceptual, Relational, Process, Compound, UserDefined
 
 ## Adding Operators
 
-1. Create module in `operators/` using `define_operator_module!`:
+### Vector Properties (Armenian)
+
+Vector property definitions are stored as RON files in `crates/eris/defs/vectors/`.
+
+1. Create a new `.ron` file with the property definition:
+
+```ron
+// defs/vectors/functional.ron
+(
+    symbol: "Փ",
+    name: "functional",
+    category: "Core",
+    lines: [
+        ("⊡", "0≡∅⊙|5≡≈⊙|9≡⊨⊙"),
+        ("≡", "functional"),
+        ("≡", "operational_effectiveness"),
+        ("≝", "performance metrics"),
+        ("≝", "capability assessment"),
+        ("⊛", "Փ→performance_metrics ∧ Փ∈capability_assessment"),
+    ],
+)
+```
+
+2. Add `parse_operator(include_str!("../../defs/vectors/example.ron"))` to `operators/loader.rs`
+
+Categories: Core, Relational, Compression, SelfReference, SystemCoherence, Evolution, DesignBalance
+
+### Other Operators (Macro-based)
+
+For non-vector operators, use `define_operator_module!`:
 
 ```rust
 define_operator_module! {
@@ -169,7 +206,7 @@ pub fn get_logical_operator_definitions() -> Vec<LogicalOperatorDef> {
 }
 ```
 
-2. Register in `operators/mod.rs` via `aggregate_operators!`
+Register in `operators/mod.rs` via `aggregate_operators!`
 
 ## CLI Usage
 

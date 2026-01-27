@@ -1,0 +1,13 @@
+(
+    symbol: "մ",
+    name: "metamodel",
+    category: "SelfReference",
+    lines: [
+        ("≡", "metamodel"),
+        ("≡", "structural_abstraction"),
+        ("≝", "architectural layer"),
+        ("≝", "abstraction level"),
+        ("⊛", "մ9→strong_metamodel ∧ մ∈architectural_layer"),
+        ("⊛", "abstraction_level→մ_measure"),
+    ],
+)

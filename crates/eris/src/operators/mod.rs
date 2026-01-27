@@ -39,6 +39,7 @@
 
 pub mod armenian;
 pub mod chronos;
+pub mod loader;
 pub mod georgian;
 pub mod logical;
 pub mod meta;

@@ -1,0 +1,15 @@
+(
+    symbol: "Ձ",
+    name: "symbolic_stability",
+    category: "SystemCoherence",
+    lines: [
+        ("≡", "symbolic_stability"),
+        ("≡", "notation_persistence"),
+        ("≝", "temporal consistency"),
+        ("≝", "symbol durability"),
+        ("⊛", "Ձ9→stable_notation ∧ Ձ∈temporal_consistency"),
+        ("⊛", "symbol_durability→Ձ_measure"),
+        ("⊛", "𝀏 crystallization increases stability"),
+        ("⊛", "𝁆 dissolution reduces stability"),
+    ],
+)

@@ -1,0 +1,13 @@
+(
+    symbol: "ղ",
+    name: "quality_improvement",
+    category: "Evolution",
+    lines: [
+        ("≡", "quality_improvement"),
+        ("≡", "enhancement_trajectory"),
+        ("≝", "ԶՎ vector component"),
+        ("≝", "quality delta measurement"),
+        ("⊛", "ղ9→excellent_improvement ∧ ղ∈ԶՎ_vector"),
+        ("⊛", "quality_delta→ղ_measurement"),
+    ],
+)

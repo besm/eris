@@ -1,0 +1,16 @@
+(
+    symbol: "Լ",
+    name: "lifespan",
+    category: "Core",
+    lines: [
+        ("⊡", "0≡⤋○|5≡≈○|9≡□○"),
+        ("≡", "lifespan"),
+        ("≡", "temporal_durability"),
+        ("≝", "maintenance requirements"),
+        ("≝", "sustainability design"),
+        ("⊛", "Լ→maintenance_requirements ∧ Լ∈sustainability_design ∧ code_Լ planning"),
+        ("⊛", "legacy_Լ management"),
+        ("⊛", "𝁆 dissolution as systems age"),
+        ("⊛", "𝀏 crystallization through stabilization"),
+    ],
+)

@@ -3,6 +3,7 @@
 #[macro_use]
 pub mod macros;
 
+pub mod citations;
 pub mod entities;
 pub mod export;
 pub mod frame;
@@ -22,6 +23,7 @@ use std::collections::HashSet;
 pub fn get_all_definitions() -> Vec<String> {
     let mut defs = operators::get_all_definitions();
     defs.extend(entities::get_all_definitions());
+    defs.extend(citations::get_all_definitions());
     defs
 }
 

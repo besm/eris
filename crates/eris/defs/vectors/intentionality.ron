@@ -1,0 +1,14 @@
+(
+    symbol: "Ը",
+    name: "intentionality",
+    category: "Core",
+    lines: [
+        ("⊡", "0≡∅⍜|5≡⌾⍜|9≡⊨⍜"),
+        ("≡", "intentionality"),
+        ("≡", "purposeful_design"),
+        ("≝", "design intention"),
+        ("≝", "deliberate construction"),
+        ("⊛", "Ը→design_intention ∧ Ը∈deliberate_construction ∧ Ը→planned_behavior"),
+        ("⊛", "Ը→goal_alignment"),
+    ],
+)

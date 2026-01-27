@@ -1,0 +1,19 @@
+(
+    symbol: "Ֆ",
+    name: "formalization",
+    category: "SystemCoherence",
+    lines: [
+        ("≡", "formalization"),
+        ("≡", "codification_degree"),
+        ("≝", "tacit↔explicit spectrum ∧ informal↔codified"),
+        ("⊡", "1: tacit_knowledge ∧ oral_tradition ∧ implicit_norms"),
+        ("⊡", "3: conventions ∧ soft_expectations"),
+        ("⊡", "5: documented_practices ∧ written_guidelines"),
+        ("⊡", "7: formal_rules ∧ explicit_procedures"),
+        ("⊡", "9: legal_code ∧ axiomatic_system ∧ protocol_specification"),
+        ("⊛", "⧊: Ֆ1(intuition)→Ֆ9(theorem)"),
+        ("⊛", "⧏: Ֆ2(craft)→Ֆ8(algorithm)"),
+        ("⊛", "⛫: Ֆ3(custom)→Ֆ9(statute)"),
+        ("⊨", "Ֆ ≡ explicitness∧transmissibility"),
+    ],
+)

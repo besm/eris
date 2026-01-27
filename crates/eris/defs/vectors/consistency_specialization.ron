@@ -1,0 +1,13 @@
+(
+    symbol: "Ք",
+    name: "consistency_specialization",
+    category: "DesignBalance",
+    lines: [
+        ("≡", "consistency_specialization"),
+        ("≡", "uniformity_adaptation_balance"),
+        ("≝", "design flexibility"),
+        ("≝", "standard-custom balance"),
+        ("⊛", "Ք8→good_specialization ∧ Ք∈design_flexibility"),
+        ("⊛", "standard_custom→Ք_measure"),
+    ],
+)

@@ -1,0 +1,14 @@
+(
+    symbol: "խ",
+    name: "contextualization",
+    category: "Core",
+    lines: [
+        ("⊡", "0≡⊥⯐|5≡∩⯐|9≡⊆⯐"),
+        ("≡", "contextualization"),
+        ("≡", "situational_adaptation"),
+        ("≝", "environment fitting"),
+        ("≝", "usage context sensitivity"),
+        ("⊛", "խ→environment_fitting ∧ խ∈usage_⯐ ∧ 𐤆_խ sensitivity"),
+        ("⊛", "խ enables portability"),
+    ],
+)

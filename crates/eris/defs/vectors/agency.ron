@@ -1,0 +1,19 @@
+(
+    symbol: "Ղ",
+    name: "agency",
+    category: "Core",
+    lines: [
+        ("≡", "agency"),
+        ("≡", "self_direction"),
+        ("≝", "dependent↔autonomous spectrum ∧ causal_origination"),
+        ("⊡", "1: puppet ∧ fully_determined"),
+        ("⊡", "3: constrained ∧ limited_options"),
+        ("⊡", "5: semi-autonomous ∧ conditional_freedom"),
+        ("⊡", "7: self-directing ∧ initiative"),
+        ("⊡", "9: sovereign ∧ unconstrained_origination"),
+        ("⊛", "⍚: Ղ2(subsidiary)→Ղ8(independent)"),
+        ("⊛", "⚘: Ղ3(conscript)→Ղ7(free_agent)"),
+        ("⊛", "⧊: Ղ1(epiphenomenal)→Ղ6(causal_concept)"),
+        ("⊨", "Ղ ≡ origination_capacity"),
+    ],
+)

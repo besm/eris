@@ -1,0 +1,13 @@
+(
+    symbol: "Ճ",
+    name: "component_stability",
+    category: "Evolution",
+    lines: [
+        ("≡", "component_stability"),
+        ("≡", "element_persistence"),
+        ("≝", "durability measure"),
+        ("≝", "component lifespan"),
+        ("⊛", "Ճ8→stable_components ∧ Ճ∈durability_measure"),
+        ("⊛", "component_lifespan→Ճ_score"),
+    ],
+)

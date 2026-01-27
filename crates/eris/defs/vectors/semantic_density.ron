@@ -1,0 +1,14 @@
+(
+    symbol: "Վ",
+    name: "semantic_density",
+    category: "Core",
+    lines: [
+        ("⊡", "0≡∅≐|5≡≈≐|9≡∞≐"),
+        ("≡", "semantic_density"),
+        ("≡", "meaning_concentration"),
+        ("≝", "compression ratio"),
+        ("≝", "expressivity efficiency"),
+        ("⊛", "Վ∝compression_ratio ∧ semantic_Վ optimization ∧ Վ→expressivity_efficiency"),
+        ("⊛", "symbol_Վ analysis"),
+    ],
+)

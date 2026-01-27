@@ -121,78 +121,21 @@ pub fn generate_default() -> String {
     .to_string()
 }
 
-/// Get entity definitions with category info
+/// Get entity definitions with category info from RON loader
 fn get_entity_defs() -> Vec<(String, String, String, String, i32, Vec<(String, String)>)> {
-    use crate::entities::*;
-
-    let mut results = Vec::new();
-
-    macro_rules! process_entity {
-        ($mod:ident, $cat:expr) => {
-            for def in $mod::get_entity_definitions() {
-                let lines: Vec<(String, String)> = def
-                    .lines
-                    .iter()
-                    .map(|(p, c)| (p.to_string(), c.to_string()))
-                    .collect();
-                results.push((
-                    def.symbol.to_string(),
-                    def.name.to_string(),
-                    def.description.to_string(),
-                    $cat.to_string(),
-                    def.sort_order,
-                    lines,
-                ));
-            }
-        };
-    }
-
-    // Primary entities
-    process_entity!(person, "Primary");
-    process_entity!(place, "Primary");
-    process_entity!(era, "Primary");
-    process_entity!(date, "Primary");
-    process_entity!(event, "Primary");
-    process_entity!(field, "Primary");
-    process_entity!(group, "Primary");
-    process_entity!(organization, "Primary");
-    process_entity!(agency, "Primary");
-    process_entity!(tech, "Primary");
-
-    // Institutional entities
-    process_entity!(identifier, "Institutional");
-    process_entity!(publisher, "Institutional");
-    process_entity!(university, "Institutional");
-    process_entity!(language, "Institutional");
-    process_entity!(journal, "Institutional");
-
-    // Conceptual entities
-    process_entity!(concept, "Conceptual");
-    process_entity!(method, "Conceptual");
-    process_entity!(movement, "Conceptual");
-
-    // Relational entities
-    process_entity!(relation, "Relational");
-    process_entity!(tension, "Relational");
-    process_entity!(r#loop, "Relational");
-    process_entity!(paradox, "Relational");
-
-    // Process entities
-    process_entity!(evolution, "Process");
-    process_entity!(action, "Process");
-    process_entity!(effect, "Process");
-
-    // Compound entities
-    process_entity!(work, "Compound");
-
-    // User-defined entities
-    process_entity!(meta, "UserDefined");
-    process_entity!(question, "UserDefined");
-    process_entity!(project, "UserDefined");
-    process_entity!(idea, "UserDefined");
-    process_entity!(section, "UserDefined");
-
-    results
+    crate::entities::loader::load_all_entities()
+        .iter()
+        .map(|e| {
+            (
+                e.symbol.clone(),
+                e.name.clone(),
+                e.description.clone(),
+                e.category.clone(),
+                e.sort_order,
+                e.lines.clone(),
+            )
+        })
+        .collect()
 }
 
 /// Get operator definitions with module info

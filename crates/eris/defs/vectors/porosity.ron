@@ -1,0 +1,19 @@
+(
+    symbol: "Պ",
+    name: "porosity",
+    category: "Relational",
+    lines: [
+        ("≡", "porosity"),
+        ("≡", "permeability"),
+        ("≝", "closed↔permeable spectrum ∧ boundary_flow_rate"),
+        ("⊡", "1: hermetic ∧ no_exchange"),
+        ("⊡", "3: guarded ∧ selective_admission"),
+        ("⊡", "5: semi-permeable ∧ regulated_flow"),
+        ("⊡", "7: porous ∧ easy_transit"),
+        ("⊡", "9: open ∧ boundary≈nominal"),
+        ("⊛", "membership: Պ2(secret_society)→Պ8(open_movement)"),
+        ("⊛", "information: Պ1(classified)→Պ9(public_domain)"),
+        ("⊛", "influence: Պ3(insulated)→Պ7(responsive)"),
+        ("⊨", "Պ ≡ flow_across_Բ"),
+    ],
+)

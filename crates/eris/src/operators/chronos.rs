@@ -68,9 +68,9 @@ pub fn get_chronos_operator_definitions() -> Vec<ChronosOperatorDef> {
                 ("⟷", ["⍜⟷ε", "⍜⟷θ"]),
             ],
             entity_type: Some(EntityTypeDef {
-                symbol: "⍜",
-                name: "Purpose",
-                description: "Goal, objective, teleological anchor, intentional target",
+                symbol: "⍜".to_string(),
+                name: "Purpose".to_string(),
+                description: "Goal, objective, teleological anchor, intentional target".to_string(),
                 sort_order: 100, // Place after standard entities but before user-defined (200+)
             }),
         },

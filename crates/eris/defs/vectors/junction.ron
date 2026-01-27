@@ -1,0 +1,13 @@
+(
+    symbol: "Յ",
+    name: "junction",
+    category: "SelfReference",
+    lines: [
+        ("≡", "junction"),
+        ("≡", "connection_quality"),
+        ("≝", "integration points"),
+        ("≝", "interface strength"),
+        ("⊛", "Յ7→adequate_junctions ∧ Յ∈integration_points"),
+        ("⊛", "interface_strength→Յ_value"),
+    ],
+)

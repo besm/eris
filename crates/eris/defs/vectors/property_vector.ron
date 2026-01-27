@@ -1,0 +1,15 @@
+(
+    symbol: "⇀",
+    name: "property_vector",
+    category: "Core",
+    lines: [
+        ("≡", "property_vector"),
+        ("≡", "assessment_vector"),
+        ("≝", "composed property measurement"),
+        ("≝", "multi-dimensional quality encoding"),
+        ("⊛", "⇀≡∘(property,value) ∧ Բ9Գ7Վ8≡∘(Բ(9),Գ(7),Վ(8))"),
+        ("⊛", "⇀∈[0,9]ℤ_domain ∧ ∑⇀→holistic_⊨"),
+        ("⊛", "⇀⊨system_⊙ ∧ ⇀→quantified_☊"),
+        ("⊛", "⇀⊆full_armenian_property_set"),
+    ],
+)

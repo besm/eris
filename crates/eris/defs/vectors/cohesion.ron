@@ -1,0 +1,19 @@
+(
+    symbol: "Ի",
+    name: "cohesion",
+    category: "SystemCoherence",
+    lines: [
+        ("≡", "cohesion"),
+        ("≡", "internal_unity"),
+        ("≝", "fragmented↔unified spectrum ∧ internal_alignment"),
+        ("⊡", "1: factionalized ∧ internal_conflict"),
+        ("⊡", "3: loosely_affiliated ∧ divergent_aims"),
+        ("⊡", "5: moderate_agreement ∧ some_tension"),
+        ("⊡", "7: aligned ∧ shared_direction"),
+        ("⊡", "9: monolithic ∧ unified_action"),
+        ("⊛", "⍚: Ի3(fractious_coalition)→Ի8(disciplined_firm)"),
+        ("⊛", "⌯: Ի2(broad_tent)→Ի7(ideological_core)"),
+        ("⊛", "⧊: Ի4(contested_concept)→Ի9(settled_definition)"),
+        ("⊨", "Ի ≡ internal_∧¬external"),
+    ],
+)
