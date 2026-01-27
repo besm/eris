@@ -5,22 +5,9 @@ ERIS (Entity Reference and Information System) is a notation system for semantic
 ## Build & Test
 
 ```bash
-cargo build              # Build all crates
+./build.sh               # Build, install to ~/bin, update tracked files
 cargo test               # Run tests
-cargo run -p eris-cli    # Run CLI
-
-# After modifying entity/operator definitions, regenerate and commit tracked files:
-eris sql --update && eris nix --update
-```
-
-## Post-Build Install
-
-After building, install binaries to `~/bin`:
-
-```bash
-cargo build --release -p eris-cli -p eris-mcp
-cp target/release/eris ~/bin/eris
-cp target/release/eris-mcp ~/bin/eris-mcp
+cargo run -p eris-cli    # Run CLI (dev build)
 ```
 
 ## Project Structure
@@ -206,14 +193,12 @@ eris --tasks                 # List all tasks
 eris sql                     # Full output (schema + data)
 eris sql --schema            # Schema only (DDL)
 eris sql --data              # Data only (INSERT statements)
-eris sql --check             # Verify tracked files match generated
 eris sql --update            # Regenerate tracked schema files
 
 # Nix export
 eris nix                     # Output default.nix (imports both)
 eris nix --entities          # Entities only
 eris nix --operators         # Operators only
-eris nix --check             # Verify tracked files match generated
 eris nix --update            # Regenerate tracked nix files
 ```
 
@@ -256,8 +241,7 @@ SQL output is tracked in `crates/eris/schema/`:
 - `schema.sql` - DDL (tables, indexes, views)
 - `data.sql` - INSERT statements (~500KB)
 
-Use `eris sql --check` in CI to verify tracked files match generated output.
-Use `eris sql --update` to regenerate after modifying entity/operator definitions.
+Run `eris sql --update` after modifying entity/operator definitions.
 
 ## Nix Generation
 
@@ -322,8 +306,7 @@ Nix output is tracked in `nix/` at repo root:
 - `entities.nix` - Flat entity attr sets
 - `operators.nix` - Module-nested operator attr sets
 
-Use `eris nix --check` in CI to verify tracked files match generated output.
-Use `eris nix --update` to regenerate after modifying entity/operator definitions.
+Run `eris nix --update` after modifying entity/operator definitions.
 
 ## LLM Integration
 
