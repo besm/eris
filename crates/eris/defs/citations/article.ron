@@ -1,0 +1,22 @@
+(
+    name: "ArticleCitation",
+    pattern: "⚘⊙𝄏⊳",
+    template: "⚘⊙𝄏⊳⦑Author⦒⦑Year⦒⦑Journal⦒⦑Article⦒",
+    description: "Journal/periodical article citation",
+    slots: [
+        ("Author", "Person name(s). Multi-author: use ∧ conjunction"),
+        ("Year", "Publication year (4 digits)"),
+        ("Journal", "Full journal name, include subtitle if official"),
+        ("Article", "Article title, main title only"),
+    ],
+    examples: [
+        "⚘⊙𝄏⊳⦑C.S. Peirce⦒⦑1878⦒⦑Popular Science Monthly⦒⦑How to Make Our Ideas Clear⦒",
+        "⚘⊙𝄏⊳⦑J.L. Austin⦒⦑1946⦒⦑Proceedings of the Aristotelian Society⦒⦑Other Minds⦒",
+        "⚘⊙𝄏⊳⦑Watson∧Crick⦒⦑1953⦒⦑Nature⦒⦑Molecular Structure of Nucleic Acids⦒",
+    ],
+    constraints: [
+        "Author names: no spaces between initials",
+        "Journal: full name, no abbreviations unless established (e.g., PNAS)",
+        "Article title: main title only, no subtitles",
+    ],
+)

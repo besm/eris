@@ -1,0 +1,20 @@
+(
+    name: "OrgBookCitation",
+    pattern: "⍚⊙⊳",
+    template: "⍚⊙⊳⦑Organization⦒⦑Year⦒⦑Title⦒",
+    description: "Organization-authored book (reports, standards, institutional publications)",
+    slots: [
+        ("Organization", "Authoring organization name"),
+        ("Year", "Publication year (4 digits)"),
+        ("Title", "Main title only"),
+    ],
+    examples: [
+        "⍚⊙⊳⦑World Health Organization⦒⦑2020⦒⦑Global Health Estimates⦒",
+        "⍚⊙⊳⦑RAND Corporation⦒⦑1964⦒⦑A Million Random Digits⦒",
+        "⍚⊙⊳⦑United Nations⦒⦑2015⦒⦑Transforming Our World⦒",
+    ],
+    constraints: [
+        "Use for institutional authorship, not individual authors at institutions",
+        "Organization: full official name",
+    ],
+)

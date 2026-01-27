@@ -1,0 +1,20 @@
+(
+    name: "OrgArticleCitation",
+    pattern: "⍚⊙𝄏⊳",
+    template: "⍚⊙𝄏⊳⦑Organization⦒⦑Year⦒⦑Journal⦒⦑Article⦒",
+    description: "Organization-authored article in periodical",
+    slots: [
+        ("Organization", "Authoring organization name"),
+        ("Year", "Publication year (4 digits)"),
+        ("Journal", "Full journal/periodical name"),
+        ("Article", "Article title"),
+    ],
+    examples: [
+        "⍚⊙𝄏⊳⦑Congressional Budget Office⦒⦑2023⦒⦑CBO Reports⦒⦑Budget and Economic Outlook⦒",
+        "⍚⊙𝄏⊳⦑Bureau of Labor Statistics⦒⦑2024⦒⦑Monthly Labor Review⦒⦑Employment Projections⦒",
+    ],
+    constraints: [
+        "Use for institutional authorship in periodicals",
+        "Journal: full name of publication venue",
+    ],
+)
