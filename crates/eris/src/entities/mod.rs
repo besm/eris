@@ -35,6 +35,7 @@ pub mod meta;
 pub mod question;
 pub mod project;
 pub mod idea;
+pub mod user;
 pub mod section;
 
 macro_rules! aggregate_entities {
@@ -98,5 +99,5 @@ aggregate_entities!(
     person, place, era, date, event, field, group, organization, agency, party,
     tech, identifier, publisher, university, language, concept, method,
     movement, relation, tension, r#loop, paradox, evolution, action,
-    effect, work, journal, meta, question, project, idea, section
+    effect, work, journal, meta, question, project, idea, user, section
 );
