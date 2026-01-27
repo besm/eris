@@ -5,7 +5,7 @@ use clap::{Parser, Subcommand};
 use eris::{
     get_all_definitions, get_all_symbols, lookup_symbol,
     get_operator_symbols, get_entity_symbols, lookup_operator, lookup_entity,
-    sql,
+    nix, sql,
 };
 use eris::operators::get_all_definitions as get_operator_definitions;
 use eris::entities::get_all_definitions as get_entity_definitions;
@@ -114,6 +114,21 @@ enum Command {
         #[arg(long)]
         check: bool,
         /// Update tracked schema files
+        #[arg(long)]
+        update: bool,
+    },
+    /// Export definitions as Nix attr sets
+    Nix {
+        /// Output only entities
+        #[arg(long)]
+        entities: bool,
+        /// Output only operators
+        #[arg(long)]
+        operators: bool,
+        /// Check if tracked nix files are up to date
+        #[arg(long)]
+        check: bool,
+        /// Update tracked nix files
         #[arg(long)]
         update: bool,
     },
@@ -356,6 +371,63 @@ fn main() -> Result<()> {
                 println_or_exit!("{}", sql::generate_full());
             }
         }
+        Command::Nix { entities, operators, check, update } => {
+            let nix_dir = get_nix_dir()?;
+
+            if check {
+                // Verify tracked files match generated
+                let entities_path = nix_dir.join("entities.nix");
+                let operators_path = nix_dir.join("operators.nix");
+                let default_path = nix_dir.join("default.nix");
+
+                let mut ok = true;
+
+                for (path, generated) in [
+                    (&entities_path, nix::generate_entities()),
+                    (&operators_path, nix::generate_operators()),
+                    (&default_path, nix::generate_default()),
+                ] {
+                    if path.exists() {
+                        let tracked = std::fs::read_to_string(path)?;
+                        if tracked != generated {
+                            eprintln!("{} is out of date", path.file_name().unwrap().to_string_lossy());
+                            ok = false;
+                        }
+                    } else {
+                        eprintln!("{} not found", path.file_name().unwrap().to_string_lossy());
+                        ok = false;
+                    }
+                }
+
+                if ok {
+                    println_or_exit!("Nix files are up to date");
+                } else {
+                    return Err(anyhow!("Nix out of sync - run 'eris nix --update'"));
+                }
+            } else if update {
+                // Update tracked files
+                std::fs::create_dir_all(&nix_dir)?;
+
+                let entities_path = nix_dir.join("entities.nix");
+                let operators_path = nix_dir.join("operators.nix");
+                let default_path = nix_dir.join("default.nix");
+
+                std::fs::write(&entities_path, nix::generate_entities())?;
+                std::fs::write(&operators_path, nix::generate_operators())?;
+                std::fs::write(&default_path, nix::generate_default())?;
+
+                println_or_exit!("Updated {}", entities_path.display());
+                println_or_exit!("Updated {}", operators_path.display());
+                println_or_exit!("Updated {}", default_path.display());
+            } else if entities {
+                println_or_exit!("{}", nix::generate_entities());
+            } else if operators {
+                println_or_exit!("{}", nix::generate_operators());
+            } else {
+                // Default: output default.nix (imports both)
+                println_or_exit!("{}", nix::generate_default());
+            }
+        }
         Command::Lookup(args) => {
             let symbol = args.join(" ");
             if let Some(text) = lookup_symbol(&symbol) {
@@ -396,4 +468,28 @@ fn get_schema_dir() -> Result<PathBuf> {
 
     // Fallback: use current directory
     Ok(std::env::current_dir()?.join("schema"))
+}
+
+/// Find the nix directory (at repo root)
+fn get_nix_dir() -> Result<PathBuf> {
+    let mut dir = std::env::current_dir()?;
+
+    // Look for workspace Cargo.toml to find repo root
+    loop {
+        let cargo_toml = dir.join("Cargo.toml");
+        if cargo_toml.exists() {
+            let content = std::fs::read_to_string(&cargo_toml)?;
+            if content.contains("[workspace]") {
+                // Workspace root - nix goes at repo root
+                return Ok(dir.join("nix"));
+            }
+        }
+
+        if !dir.pop() {
+            break;
+        }
+    }
+
+    // Fallback: use current directory
+    Ok(std::env::current_dir()?.join("nix"))
 }

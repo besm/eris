@@ -8,6 +8,9 @@ ERIS (Entity Reference and Information System) is a notation system for semantic
 cargo build              # Build all crates
 cargo test               # Run tests
 cargo run -p eris-cli    # Run CLI
+
+# After modifying entity/operator definitions, regenerate and commit tracked files:
+eris sql --update && eris nix --update
 ```
 
 ## Post-Build Install
@@ -23,18 +26,28 @@ cp target/release/eris-mcp ~/bin/eris-mcp
 ## Project Structure
 
 ```
+nix/                     # Tracked Nix output (repo root)
+├── default.nix          # Main entry point
+├── entities.nix         # Entity attr sets
+└── operators.nix        # Operator attr sets (nested by module)
+
 crates/
 ├── eris/                # Core library
-│   └── src/
-│       ├── entities/    # 30 entity types (person, place, concept, etc.)
-│       ├── operators/   # 7 operator categories (~60+ operators)
-│       ├── notation/    # Tag parsing (compound, vector, reference, temporal)
-│       ├── frame/       # Composable context specs (role, context, task)
-│       ├── export.rs    # LLM prompt integration with prefix caching
-│       ├── parsers/     # Tag validation utilities
-│       ├── symbols.rs   # Unicode symbol constants
-│       ├── macros.rs    # Code generation macros
-│       └── lib.rs       # Public API
+│   ├── src/
+│   │   ├── entities/    # 30 entity types (person, place, concept, etc.)
+│   │   ├── operators/   # 7 operator categories (~60+ operators)
+│   │   ├── notation/    # Tag parsing (compound, vector, reference, temporal)
+│   │   ├── frame/       # Composable context specs (role, context, task)
+│   │   ├── export.rs    # LLM prompt integration with prefix caching
+│   │   ├── sql.rs       # SQL generation from Rust definitions
+│   │   ├── nix.rs       # Nix attr set generation
+│   │   ├── parsers/     # Tag validation utilities
+│   │   ├── symbols.rs   # Unicode symbol constants
+│   │   ├── macros.rs    # Code generation macros
+│   │   └── lib.rs       # Public API
+│   └── schema/          # Tracked SQL output
+│       ├── schema.sql   # DDL (tables, indexes, views)
+│       └── data.sql     # INSERT statements
 └── eris-cli/            # CLI binary
 ```
 
@@ -188,7 +201,129 @@ eris --role evl --task tag   # Compose frame specification
 eris --roles                 # List all roles
 eris --contexts              # List all contexts
 eris --tasks                 # List all tasks
+
+# SQL export
+eris sql                     # Full output (schema + data)
+eris sql --schema            # Schema only (DDL)
+eris sql --data              # Data only (INSERT statements)
+eris sql --check             # Verify tracked files match generated
+eris sql --update            # Regenerate tracked schema files
+
+# Nix export
+eris nix                     # Output default.nix (imports both)
+eris nix --entities          # Entities only
+eris nix --operators         # Operators only
+eris nix --check             # Verify tracked files match generated
+eris nix --update            # Regenerate tracked nix files
 ```
+
+## SQL Generation
+
+The `sql.rs` module generates SQLite-compatible SQL from Rust definitions, providing an alternative export format for database integration.
+
+### Schema Structure
+
+```sql
+-- Core tables
+symbols              -- Unified symbol registry (entity/operator/bracket)
+entity_categories    -- Category groupings (Primary, Institutional, etc.)
+entities             -- Entity definitions
+entity_definition_lines  -- Prefixed definition lines per entity
+operator_modules     -- Module groupings (armenian, chronos, etc.)
+operator_categories  -- Category within each module
+operators            -- Operator definitions
+operator_definition_lines  -- Prefixed definition lines per operator
+
+-- Views
+v_entities           -- Entities with category name joined
+v_operators          -- Operators with module/category names joined
+v_all_symbols        -- Union of all entity and operator symbols
+```
+
+### Generation Functions
+
+```rust
+use eris::sql;
+
+sql::generate_schema()  // DDL: CREATE TABLE, INDEX, VIEW
+sql::generate_data()    // DML: INSERT statements
+sql::generate_full()    // Both combined
+```
+
+### Tracked Files
+
+SQL output is tracked in `crates/eris/schema/`:
+- `schema.sql` - DDL (tables, indexes, views)
+- `data.sql` - INSERT statements (~500KB)
+
+Use `eris sql --check` in CI to verify tracked files match generated output.
+Use `eris sql --update` to regenerate after modifying entity/operator definitions.
+
+## Nix Generation
+
+The `nix.rs` module generates Nix attribute sets from Rust definitions.
+
+### Access Patterns
+
+```nix
+# Entities (flat)
+entity.person
+entity.place
+entity.tension
+
+# Operators (module-nested)
+operator.logical.equivalence
+operator.logical.forall
+operator.armenian.performativity
+operator.chronos.purpose
+```
+
+### Generated Structure
+
+```nix
+# default.nix
+{
+  entity = import ./entities.nix;
+  operator = import ./operators.nix;
+}
+
+# entities.nix
+{
+  person = { symbol = "⚘"; name = "Person"; category = "Primary"; ... };
+  place = { symbol = "⌖"; name = "Place"; category = "Primary"; ... };
+}
+
+# operators.nix
+{
+  logical = {
+    equivalence = { symbol = "≡"; name = "Equivalence"; ... };
+    forall = { symbol = "∀"; name = "ForAll"; ... };
+  };
+  armenian = {
+    performativity = { symbol = "Փ"; ... };
+  };
+}
+```
+
+### Generation Functions
+
+```rust
+use eris::nix;
+
+nix::generate_entities()   // entities.nix content
+nix::generate_operators()  // operators.nix content
+nix::generate_default()    // default.nix content
+```
+
+### Tracked Files
+
+Nix output is tracked in `nix/` at repo root:
+- `default.nix` - Main entry point
+- `entities.nix` - Flat entity attr sets
+- `operators.nix` - Module-nested operator attr sets
+
+Use `eris nix --check` in CI to verify tracked files match generated output.
+Use `eris nix --update` to regenerate after modifying entity/operator definitions.
 
 ## LLM Integration
 

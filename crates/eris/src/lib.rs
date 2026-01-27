@@ -8,6 +8,7 @@ pub mod export;
 pub mod frame;
 pub mod notation;
 pub mod operators;
+pub mod nix;
 pub mod parsers;
 pub mod sql;
 pub mod symbols;
