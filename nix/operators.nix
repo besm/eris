@@ -5,7 +5,7 @@
     antisymmetric = {
       symbol = "Ա";
       name = "antisymmetric";
-      category = "Core";
+      category = "\"Core\"";
       lines = [
         { prefix = "⊡"; content = "0≡⟷≡|5≡→≺←|9≡⊩≺"; }
         { prefix = "≡"; content = "antisymmetric"; }
@@ -21,7 +21,7 @@
     boundary = {
       symbol = "Բ";
       name = "boundary";
-      category = "Core";
+      category = "\"Core\"";
       lines = [
         { prefix = "⊡"; content = "0≡∅∂|5≡⊨∂|9≡⊩∂"; }
         { prefix = "≡"; content = "boundary"; }
@@ -37,7 +37,7 @@
     generalizability = {
       symbol = "Գ";
       name = "generalizability";
-      category = "Core";
+      category = "\"Core\"";
       lines = [
         { prefix = "⊡"; content = "0≡⊂❖|5≡∩❖|9≡∀❖"; }
         { prefix = "≡"; content = "generalizability"; }
@@ -51,7 +51,7 @@
     explanatory = {
       symbol = "Ե";
       name = "explanatory";
-      category = "Core";
+      category = "\"Core\"";
       lines = [
         { prefix = "⊡"; content = "0≡⊟⧊|5≡⌾⧊|9≡⊨⧊"; }
         { prefix = "≡"; content = "explanatory"; }
@@ -65,7 +65,7 @@
     intentionality = {
       symbol = "Ը";
       name = "intentionality";
-      category = "Core";
+      category = "\"Core\"";
       lines = [
         { prefix = "⊡"; content = "0≡∅⍜|5≡⌾⍜|9≡⊨⍜"; }
         { prefix = "≡"; content = "intentionality"; }
@@ -79,7 +79,7 @@
     contextualization = {
       symbol = "խ";
       name = "contextualization";
-      category = "Core";
+      category = "\"Core\"";
       lines = [
         { prefix = "⊡"; content = "0≡⊥⯐|5≡∩⯐|9≡⊆⯐"; }
         { prefix = "≡"; content = "contextualization"; }
@@ -93,7 +93,7 @@
     lifespan = {
       symbol = "Լ";
       name = "lifespan";
-      category = "Core";
+      category = "\"Core\"";
       lines = [
         { prefix = "⊡"; content = "0≡⤋○|5≡≈○|9≡□○"; }
         { prefix = "≡"; content = "lifespan"; }
@@ -109,7 +109,7 @@
     functional = {
       symbol = "Փ";
       name = "functional";
-      category = "Core";
+      category = "\"Core\"";
       lines = [
         { prefix = "⊡"; content = "0≡∅⊙|5≡≈⊙|9≡⊨⊙"; }
         { prefix = "≡"; content = "functional"; }
@@ -123,7 +123,7 @@
     semantic_density = {
       symbol = "Վ";
       name = "semantic_density";
-      category = "Core";
+      category = "\"Core\"";
       lines = [
         { prefix = "⊡"; content = "0≡∅≐|5≡≈≐|9≡∞≐"; }
         { prefix = "≡"; content = "semantic_density"; }
@@ -137,7 +137,7 @@
     volatility = {
       symbol = "Ց";
       name = "volatility";
-      category = "Core";
+      category = "\"Core\"";
       lines = [
         { prefix = "⊡"; content = "0≡□⌺|5≡○⌺|9≡⤋⌺"; }
         { prefix = "≡"; content = "volatility"; }
@@ -154,7 +154,7 @@
     transitive = {
       symbol = "Տ";
       name = "transitive";
-      category = "Relational";
+      category = "\"Relational\"";
       lines = [
         { prefix = "⊡"; content = "0≡¬→|5≡∃→|9≡∀→"; }
         { prefix = "≡"; content = "transitive"; }
@@ -170,7 +170,7 @@
     symmetric = {
       symbol = "Ս";
       name = "symmetric";
-      category = "Relational";
+      category = "\"Relational\"";
       lines = [
         { prefix = "⊡"; content = "0≡→⊥←|5≡→≈←|9≡→≡←"; }
         { prefix = "≡"; content = "symmetric"; }
@@ -186,7 +186,7 @@
     reflexive = {
       symbol = "Ր";
       name = "reflexive";
-      category = "Relational";
+      category = "\"Relational\"";
       lines = [
         { prefix = "⊡"; content = "0≡¬⟳|5≡∃⟳|9≡∀⟳"; }
         { prefix = "≡"; content = "reflexive"; }
@@ -200,7 +200,7 @@
     total = {
       symbol = "Օ";
       name = "total";
-      category = "Relational";
+      category = "\"Relational\"";
       lines = [
         { prefix = "⊡"; content = "0≡∃∅|5≡≈∀|9≡∀⊨"; }
         { prefix = "≡"; content = "total"; }
@@ -215,7 +215,7 @@
     symbolic_economy = {
       symbol = "ջ";
       name = "symbolic_economy";
-      category = "Compression";
+      category = "\"Compression\"";
       lines = [
         { prefix = "≡"; content = "symbolic_economy"; }
         { prefix = "≡"; content = "notation_efficiency"; }
@@ -228,7 +228,7 @@
     reference_efficiency = {
       symbol = "ռ";
       name = "reference_efficiency";
-      category = "Compression";
+      category = "\"Compression\"";
       lines = [
         { prefix = "≡"; content = "reference_efficiency"; }
         { prefix = "≡"; content = "citation_optimization"; }
@@ -242,7 +242,7 @@
     recursion = {
       symbol = "ժ";
       name = "recursion";
-      category = "SelfReference";
+      category = "\"SelfReference\"";
       lines = [
         { prefix = "≡"; content = "recursion"; }
         { prefix = "≡"; content = "self_referential_depth"; }
@@ -255,7 +255,7 @@
     coherence = {
       symbol = "թ";
       name = "coherence";
-      category = "SelfReference";
+      category = "\"SelfReference\"";
       lines = [
         { prefix = "≡"; content = "coherence"; }
         { prefix = "≡"; content = "internal_consistency"; }
@@ -268,7 +268,7 @@
     naming = {
       symbol = "ն";
       name = "naming";
-      category = "SelfReference";
+      category = "\"SelfReference\"";
       lines = [
         { prefix = "≡"; content = "naming"; }
         { prefix = "≡"; content = "identifier_quality"; }
@@ -281,7 +281,7 @@
     metamodel = {
       symbol = "մ";
       name = "metamodel";
-      category = "SelfReference";
+      category = "\"SelfReference\"";
       lines = [
         { prefix = "≡"; content = "metamodel"; }
         { prefix = "≡"; content = "structural_abstraction"; }
@@ -294,7 +294,7 @@
     junction = {
       symbol = "Յ";
       name = "junction";
-      category = "SelfReference";
+      category = "\"SelfReference\"";
       lines = [
         { prefix = "≡"; content = "junction"; }
         { prefix = "≡"; content = "connection_quality"; }
@@ -307,7 +307,7 @@
     conceptual_orthogonality = {
       symbol = "ծ";
       name = "conceptual_orthogonality";
-      category = "SystemCoherence";
+      category = "\"SystemCoherence\"";
       lines = [
         { prefix = "≡"; content = "conceptual_orthogonality"; }
         { prefix = "≡"; content = "concern_separation"; }
@@ -320,7 +320,7 @@
     knowledge_propagation = {
       symbol = "կ";
       name = "knowledge_propagation";
-      category = "SystemCoherence";
+      category = "\"SystemCoherence\"";
       lines = [
         { prefix = "≡"; content = "knowledge_propagation"; }
         { prefix = "≡"; content = "information_flow"; }
@@ -333,7 +333,7 @@
     hierarchical_consistency = {
       symbol = "Մ";
       name = "hierarchical_consistency";
-      category = "SystemCoherence";
+      category = "\"SystemCoherence\"";
       lines = [
         { prefix = "≡"; content = "hierarchical_consistency"; }
         { prefix = "≡"; content = "level_coherence"; }
@@ -346,7 +346,7 @@
     symbolic_stability = {
       symbol = "Ձ";
       name = "symbolic_stability";
-      category = "SystemCoherence";
+      category = "\"SystemCoherence\"";
       lines = [
         { prefix = "≡"; content = "symbolic_stability"; }
         { prefix = "≡"; content = "notation_persistence"; }
@@ -361,7 +361,7 @@
     quality_improvement = {
       symbol = "ղ";
       name = "quality_improvement";
-      category = "Evolution";
+      category = "\"Evolution\"";
       lines = [
         { prefix = "≡"; content = "quality_improvement"; }
         { prefix = "≡"; content = "enhancement_trajectory"; }
@@ -374,7 +374,7 @@
     component_stability = {
       symbol = "Ճ";
       name = "component_stability";
-      category = "Evolution";
+      category = "\"Evolution\"";
       lines = [
         { prefix = "≡"; content = "component_stability"; }
         { prefix = "≡"; content = "element_persistence"; }
@@ -387,7 +387,7 @@
     simplicity_expressiveness = {
       symbol = "շ";
       name = "simplicity_expressiveness";
-      category = "DesignBalance";
+      category = "\"DesignBalance\"";
       lines = [
         { prefix = "≡"; content = "simplicity_expressiveness"; }
         { prefix = "≡"; content = "elegance_power_balance"; }
@@ -400,7 +400,7 @@
     orthogonality_integration = {
       symbol = "Ո";
       name = "orthogonality_integration";
-      category = "DesignBalance";
+      category = "\"DesignBalance\"";
       lines = [
         { prefix = "≡"; content = "orthogonality_integration"; }
         { prefix = "≡"; content = "separation_connection_balance"; }
@@ -413,7 +413,7 @@
     consistency_specialization = {
       symbol = "Ք";
       name = "consistency_specialization";
-      category = "DesignBalance";
+      category = "\"DesignBalance\"";
       lines = [
         { prefix = "≡"; content = "consistency_specialization"; }
         { prefix = "≡"; content = "uniformity_adaptation_balance"; }
@@ -426,7 +426,7 @@
     formalization = {
       symbol = "Ֆ";
       name = "formalization";
-      category = "SystemCoherence";
+      category = "\"SystemCoherence\"";
       lines = [
         { prefix = "≡"; content = "formalization"; }
         { prefix = "≡"; content = "codification_degree"; }
@@ -445,7 +445,7 @@
     porosity = {
       symbol = "Պ";
       name = "porosity";
-      category = "Relational";
+      category = "\"Relational\"";
       lines = [
         { prefix = "≡"; content = "porosity"; }
         { prefix = "≡"; content = "permeability"; }
@@ -464,7 +464,7 @@
     hierarchy = {
       symbol = "Հ";
       name = "hierarchy";
-      category = "SystemCoherence";
+      category = "\"SystemCoherence\"";
       lines = [
         { prefix = "≡"; content = "hierarchy"; }
         { prefix = "≡"; content = "nesting_depth"; }
@@ -483,7 +483,7 @@
     scope = {
       symbol = "Շ";
       name = "scope";
-      category = "Core";
+      category = "\"Core\"";
       lines = [
         { prefix = "≡"; content = "scope"; }
         { prefix = "≡"; content = "reach"; }
@@ -502,7 +502,7 @@
     cohesion = {
       symbol = "Ի";
       name = "cohesion";
-      category = "SystemCoherence";
+      category = "\"SystemCoherence\"";
       lines = [
         { prefix = "≡"; content = "cohesion"; }
         { prefix = "≡"; content = "internal_unity"; }
@@ -521,7 +521,7 @@
     agency = {
       symbol = "Ղ";
       name = "agency";
-      category = "Core";
+      category = "\"Core\"";
       lines = [
         { prefix = "≡"; content = "agency"; }
         { prefix = "≡"; content = "self_direction"; }
@@ -540,7 +540,7 @@
     property_vector = {
       symbol = "⇀";
       name = "property_vector";
-      category = "Core";
+      category = "\"Core\"";
       lines = [
         { prefix = "≡"; content = "property_vector"; }
         { prefix = "≡"; content = "assessment_vector"; }

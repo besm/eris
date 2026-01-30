@@ -351,6 +351,52 @@
       { prefix = "⊨"; content = "⎈ ≡ ⛫_enforcement ∧ sovereign∨delegated ∧ public_sector"; }
     ];
   };
+  political-party = {
+    symbol = "⚐";
+    name = "Political Party";
+    description = "Electoral organization that nominates candidates for public office";
+    category = "Primary";
+    sortOrder = 9;
+    lines = [
+      { prefix = "≡"; content = "political_party"; }
+      { prefix = "≡"; content = "electoral_organization"; }
+      { prefix = "≡"; content = "candidate_nominating_body"; }
+      { prefix = "≝"; content = "nominates candidates for public office ∧ contests or seeks to contest elections"; }
+      { prefix = "∂"; content = "⚐⊂⍚ (⚐ specialized ⍚ | electoral function)"; }
+      { prefix = "∂"; content = "⚐⊅⌯ (⚐ institutionalized∧nominates | ⌯ diffuse∧¬nominates)"; }
+      { prefix = "∂"; content = "⚐⊅⎈ (⚐ contests for power | ⎈ holds∧exercises power)"; }
+      { prefix = "∂"; content = "⚐⊅⧈ (⚐ organization | ⧈ supporters as category)"; }
+      { prefix = "⊡"; content = "⚐: Բ6Փ7Ֆ5Պ5Հ6Շ6Ի6Ղ6Ց6"; }
+      { prefix = "⊡"; content = "major: Բ7Փ8Ֆ6Պ4Հ7Շ7Ի7Ղ7Ց4"; }
+      { prefix = "⊡"; content = "minor: Բ5Փ5Ֆ4Պ6Հ4Շ4Ի5Ղ4Ց7"; }
+      { prefix = "⊡"; content = "gradients:"; }
+      { prefix = "⊡"; content = "  ⚐→⎈: electoral_victory→governing_authority"; }
+      { prefix = "⊡"; content = "  ⚐→⌯: Ֆ↓Պ↑Բ↓ (abandons elections)"; }
+      { prefix = "⊡"; content = "  ⌯→⚐: Ֆ↑Պ↓Բ↑ (institutionalizes)"; }
+      { prefix = "◻"; content = "naming: national specificity required"; }
+      { prefix = "◻"; content = "  ⚐⦑[Name] ([Country])⦒: ⚐⦑Labour Party (UK)|Democratic Party (United States)|Liberal Party (Australia)⦒"; }
+      { prefix = "◻"; content = "  ⚐⦑[Name] ([Acronym])⦒: ⚐⦑Communist Party of Germany (KPD)|African National Congress (ANC)|Bharatiya Janata Party (BJP)⦒"; }
+      { prefix = "◻"; content = "  ⚐⦑[Unique Name]⦒: ⚐⦑Fidesz|Syriza|Podemos|Likud|Baath|Kuomintang⦒"; }
+      { prefix = "◻"; content = "  ✗⚐⦑Communist Party|Socialist Party|Democratic Party|Republican Party|Labour Party|Liberal Party|Nazi Party⦒ — which country?"; }
+      { prefix = "◻"; content = "  rationale: parties are national entities, generic names semantically empty"; }
+      { prefix = "⊛"; content = "⚐⦑Democratic Party (United States)|Labour Party (UK)|Bharatiya Janata Party (BJP)|African National Congress (ANC)|Partido dos Trabalhadores (PT)⦒"; }
+      { prefix = "⊛"; content = "⚐⦑Liberal Democratic Party (Japan)|Fidesz|Likud|Morena (Mexico)|Syriza⦒"; }
+      { prefix = "⊛"; content = "⚐⦑Communist Party of the Soviet Union (CPSU)|Communist Party of China (CPC)|French Communist Party (PCF)|Communist Party of Germany (KPD)⦒"; }
+      { prefix = "⊛"; content = "⚐⦑National Socialist German Workers' Party (NSDAP)|Bolshevik Party|Kuomintang (KMT)|Baath Party (Syria)⦒"; }
+      { prefix = "≟"; content = "test{nominates_candidates?→YES:⚐|NO:continue}"; }
+      { prefix = "≟"; content = "test{rejects_electoralism?→YES:⌯|NO:continue}"; }
+      { prefix = "≟"; content = "test{governing_apparatus?→YES:⎈|NO:continue}"; }
+      { prefix = "≟"; content = "test{supporters_as_people?→YES:⧈⦑Democrats|Republicans⦒|NO:review}"; }
+      { prefix = "≟"; content = "test{⚐⦑[Adj]* Party⦒ ∧ ¬country ∧ ¬acronym?→REJECT}"; }
+      { prefix = "≟"; content = "edge_cases:"; }
+      { prefix = "≟"; content = "  banned_seeking_restoration→⚐: seeks to contest"; }
+      { prefix = "≟"; content = "  vanguard_rejecting_elections→⌯: ¬nominates"; }
+      { prefix = "≟"; content = "  party_in_government: ⚐ contests ∧ ⎈ governs (both valid)"; }
+      { prefix = "≟"; content = "  faction_within_party→⧈: ⧈⦑Progressive Democrats|Tea Party Republicans⦒"; }
+      { prefix = "≟"; content = "  party_became_state: ⚐⦑NSDAP⦒∧⎈⦑Nazi Germany⦒, ⚐⦑Bolshevik Party⦒∧⎈⦑Soviet Union⦒"; }
+      { prefix = "⊨"; content = "⚐ ≡ nominates_candidates ∧ contests_elections ∧ national_specificity ∧ ⚐⊂⍚"; }
+    ];
+  };
   tech = {
     symbol = "⌬";
     name = "Tech";
@@ -398,7 +444,7 @@
     symbol = "⎚";
     name = "Identifier";
     description = "Standardized persistent identifier with external authority (ISBN, DOI, ORCID)";
-    category = "Institutional";
+    category = "Primary";
     sortOrder = 11;
     lines = [
       { prefix = "≡"; content = "unique_identifier"; }
@@ -426,7 +472,7 @@
     symbol = "⍓";
     name = "Publisher";
     description = "Publishing house with content distribution as primary function";
-    category = "Institutional";
+    category = "Primary";
     sortOrder = 12;
     lines = [
       { prefix = "≡"; content = "publishing_house"; }
@@ -468,7 +514,7 @@
     symbol = "⍢";
     name = "University";
     description = "Educational institution with degree-granting authority and teaching/research mission";
-    category = "Institutional";
+    category = "Primary";
     sortOrder = 13;
     lines = [
       { prefix = "≡"; content = "educational_institution"; }
@@ -512,7 +558,7 @@
     symbol = "⧩";
     name = "Language";
     description = "Natural language: references, non-trivial foreign terms, non-English passages";
-    category = "Institutional";
+    category = "Primary";
     sortOrder = 14;
     lines = [
       { prefix = "≡"; content = "natural_language"; }
@@ -540,39 +586,6 @@
       { prefix = "≟"; content = "test{programming language?→YES:⌬|NO:continue}"; }
       { prefix = "≟"; content = "test{abstract 'Language' concept?→YES:⧊|NO:review}"; }
       { prefix = "⊨"; content = "⧩ ≡ natural_language ∧ (reference∨foreign_term∨passage)"; }
-    ];
-  };
-  journal = {
-    symbol = "𝄏";
-    name = "Journal";
-    description = "Periodical publication: academic journals, magazines, newspapers";
-    category = "Institutional";
-    sortOrder = 51;
-    lines = [
-      { prefix = "≡"; content = "periodical_publication"; }
-      { prefix = "≡"; content = "serial_venue"; }
-      { prefix = "≡"; content = "regular_issues"; }
-      { prefix = "≝"; content = "serial format ∧ publication regularity ∧ institutional|commercial periodical"; }
-      { prefix = "∂"; content = "𝄏⊅⊳ (𝄏 serial | ⊳ standalone work)"; }
-      { prefix = "∂"; content = "𝄏⊅⍚ (𝄏 publication | ⍚ publishing organization)"; }
-      { prefix = "∂"; content = "𝄏⊅⍓ (𝄏 periodical | ⍓ press/publisher)"; }
-      { prefix = "⊛"; content = "academic: 𝄏⦑Nature|Science|Daedalus|Mind|Annales|Past & Present⦒"; }
-      { prefix = "⊛"; content = "magazines: 𝄏⦑Harper's Magazine|Fortune|The New Yorker|Der Spiegel|L'Express⦒"; }
-      { prefix = "⊛"; content = "newspapers: 𝄏⦑Financial Times|Asahi Shinbun|Le Monde|Frankfurter Allgemeine⦒"; }
-      { prefix = "⊛"; content = "reviews: 𝄏⦑London Review of Books|New York Review of Books|Times Literary Supplement⦒"; }
-      { prefix = "⊛"; content = "historical: 𝄏⦑Popular Science Monthly|Der Monat|Edinburgh Review|Mercure de France⦒"; }
-      { prefix = "⊛"; content = "trade/underground: 𝄏⦑Byte|Datamation|2600: The Hacker Quarterly|FidoNews⦒"; }
-      { prefix = "◻"; content = "naming:"; }
-      { prefix = "◻"; content = "  ✓𝄏⦑[Full Name]⦒ | ✗abbreviations unless established"; }
-      { prefix = "◻"; content = "  ✓𝄏⦑Dialogue: A Journal of Mormon Thought⦒ — include subtitle when official"; }
-      { prefix = "◻"; content = "discrimination:"; }
-      { prefix = "◻"; content = "  𝄏⦑Daedalus⦒ (publication) vs ⍚⦑American Academy of Arts and Sciences⦒ (publisher)"; }
-      { prefix = "◻"; content = "  periodic issues→𝄏 | one-time→⊳"; }
-      { prefix = "◻"; content = "compound citation: ⚘⊙𝄏⊳⦑Author⦒⦑Year⦒⦑Journal⦒⦑Article⦒"; }
-      { prefix = "≟"; content = "test{periodic issues?→YES:𝄏|NO:continue}"; }
-      { prefix = "≟"; content = "test{one-time publication?→YES:⊳|NO:continue}"; }
-      { prefix = "≟"; content = "test{publishing organization?→YES:⍚|NO:review}"; }
-      { prefix = "⊨"; content = "𝄏 ≡ serial_publication ∧ periodic_issues"; }
     ];
   };
   concept = {
@@ -810,7 +823,7 @@
     symbol = "⧃";
     name = "Transformation";
     description = "Unidirectional temporal transformation with sequential developmental stages";
-    category = "Process";
+    category = "Complex";
     sortOrder = 40;
     lines = [
       { prefix = "≡"; content = "transformation"; }
@@ -846,38 +859,32 @@
     symbol = "⟴";
     name = "Symbolic Action";
     description = "Burkean symbolic action with meaningful dimension and human agency";
-    category = "Process";
+    category = "Complex";
     sortOrder = 41;
     lines = [
       { prefix = "≡"; content = "symbolic_action"; }
-      { prefix = "≡"; content = "meaningful_intervention"; }
-      { prefix = "≡"; content = "rhetorical_performance"; }
-      { prefix = "≝"; content = "Burkean action ∧ agency-requiring ∧ interpretive dimension"; }
-      { prefix = "∂"; content = "⟴⊅{mechanical, passive, automatic}"; }
-      { prefix = "∂"; content = "⟴⊅⬢ (⟴ performs | ⬢ constitutes)"; }
-      { prefix = "∂"; content = "⟴⊅⥅ (⟴ acts | ⥅ anticipates)"; }
-      { prefix = "∂"; content = "⟴⊅◬ (⟴ agentive | ◬ emergent)"; }
-      { prefix = "∂"; content = "⟴⊅⌁ (⟴ type of action | ⌁ specific occurrence)"; }
-      { prefix = "⊛"; content = "Burkean: ⟴⦑Scapegoating|Mortification|Purification|Identification|Transcendence⦒"; }
-      { prefix = "⊛"; content = "ritual: ⟴⦑Coronation|Inauguration|Ordination|Oath-Taking|Consecration⦒"; }
-      { prefix = "⊛"; content = "speech: ⟴⦑Declaration|Proclamation|Denunciation|Confession|Testimony⦒"; }
-      { prefix = "⊛"; content = "exclusion: ⟴⦑Excommunication|Censure|Banishment|Ostracism⦒"; }
-      { prefix = "⊛"; content = "memory: ⟴⦑Commemoration|Dedication|Memorial|Canonization⦒"; }
-      { prefix = "◻"; content = "symbolic_dimension ∧ human_agency"; }
-      { prefix = "◻"; content = "discrimination:"; }
-      { prefix = "◻"; content = "  'X performs Y'→⟴ | 'X creates Y'→⬢ | 'X emerges'→◬"; }
-      { prefix = "◻"; content = "  ⟴⦑Scapegoating⦒ (type) vs ⌁⦑Trial of Socrates⦒ (instance)"; }
-      { prefix = "≟"; content = "test{meaningful∧interpretive?→continue | mechanical?→∅}"; }
-      { prefix = "≟"; content = "test{human∧social_agent?→continue | automatic?→◬}"; }
-      { prefix = "≟"; content = "test{type of action?→⟴ | specific occurrence?→⌁}"; }
-      { prefix = "⊨"; content = "⟴ ≡ symbolic_action ∧ human_agency ∧ ⟴⊅{mechanical,automatic}"; }
+      { prefix = "≡"; content = "Burkean_performance"; }
+      { prefix = "≝"; content = "agency ∧ interpretation ∧ ℳ-bearing act"; }
+      { prefix = "∂"; content = "⟴⊅{mechanical,passive,automatic}"; }
+      { prefix = "∂"; content = "⟴|⬢ (performs|constitutes)"; }
+      { prefix = "∂"; content = "⟴|⥅ (acts|anticipates)"; }
+      { prefix = "∂"; content = "⟴|◬ (agentive|emergent)"; }
+      { prefix = "∂"; content = "⟴|⌁ (type|instance)"; }
+      { prefix = "⊛"; content = "⟴⦑Scapegoating|Mortification|Identification|Transcendence⦒→⚘Burke"; }
+      { prefix = "⊛"; content = "⟴⦑Coronation|Ordination|Oath-Taking⦒→ritual"; }
+      { prefix = "⊛"; content = "⟴⦑Declaration|Denunciation|Testimony⦒→speech"; }
+      { prefix = "⊛"; content = "⟴⦑Excommunication|Banishment|Ostracism⦒→exclusion"; }
+      { prefix = "≟"; content = "ℳ∧interpretive?→continue|mechanical?→∅"; }
+      { prefix = "≟"; content = "⚘agent?→⟴|automatic?→◬"; }
+      { prefix = "≟"; content = "type?→⟴|occurrence?→⌁"; }
+      { prefix = "⊨"; content = "⟴ ≡ ⚘agency ∧ ℳ-act ∧ ⟴⊅automatic"; }
     ];
   };
   effect = {
     symbol = "⬢";
     name = "Effect";
     description = "Performative reality-making with instantaneous constitution (t₀=t₀)";
-    category = "Process";
+    category = "Complex";
     sortOrder = 42;
     lines = [
       { prefix = "≡"; content = "performative_effect"; }
@@ -942,6 +949,39 @@
       { prefix = "≟"; content = "test{one-time publication?→YES:⊳|NO:continue}"; }
       { prefix = "≟"; content = "test{periodic issues?→YES:𝄏|NO:review}"; }
       { prefix = "⊨"; content = "⊳ ≡ citation_component ∧ □compound_form ∧ main_title_only"; }
+    ];
+  };
+  journal = {
+    symbol = "𝄏";
+    name = "Journal";
+    description = "Periodical publication: academic journals, magazines, newspapers";
+    category = "Compound";
+    sortOrder = 51;
+    lines = [
+      { prefix = "≡"; content = "periodical_publication"; }
+      { prefix = "≡"; content = "serial_venue"; }
+      { prefix = "≡"; content = "regular_issues"; }
+      { prefix = "≝"; content = "serial format ∧ publication regularity ∧ institutional|commercial periodical"; }
+      { prefix = "∂"; content = "𝄏⊅⊳ (𝄏 serial | ⊳ standalone work)"; }
+      { prefix = "∂"; content = "𝄏⊅⍚ (𝄏 publication | ⍚ publishing organization)"; }
+      { prefix = "∂"; content = "𝄏⊅⍓ (𝄏 periodical | ⍓ press/publisher)"; }
+      { prefix = "⊛"; content = "academic: 𝄏⦑Nature|Science|Daedalus|Mind|Annales|Past & Present⦒"; }
+      { prefix = "⊛"; content = "magazines: 𝄏⦑Harper's Magazine|Fortune|The New Yorker|Der Spiegel|L'Express⦒"; }
+      { prefix = "⊛"; content = "newspapers: 𝄏⦑Financial Times|Asahi Shinbun|Le Monde|Frankfurter Allgemeine⦒"; }
+      { prefix = "⊛"; content = "reviews: 𝄏⦑London Review of Books|New York Review of Books|Times Literary Supplement⦒"; }
+      { prefix = "⊛"; content = "historical: 𝄏⦑Popular Science Monthly|Der Monat|Edinburgh Review|Mercure de France⦒"; }
+      { prefix = "⊛"; content = "trade/underground: 𝄏⦑Byte|Datamation|2600: The Hacker Quarterly|FidoNews⦒"; }
+      { prefix = "◻"; content = "naming:"; }
+      { prefix = "◻"; content = "  ✓𝄏⦑[Full Name]⦒ | ✗abbreviations unless established"; }
+      { prefix = "◻"; content = "  ✓𝄏⦑Dialogue: A Journal of Mormon Thought⦒ — include subtitle when official"; }
+      { prefix = "◻"; content = "discrimination:"; }
+      { prefix = "◻"; content = "  𝄏⦑Daedalus⦒ (publication) vs ⍚⦑American Academy of Arts and Sciences⦒ (publisher)"; }
+      { prefix = "◻"; content = "  periodic issues→𝄏 | one-time→⊳"; }
+      { prefix = "◻"; content = "compound citation: ⚘⊙𝄏⊳⦑Author⦒⦑Year⦒⦑Journal⦒⦑Article⦒"; }
+      { prefix = "≟"; content = "test{periodic issues?→YES:𝄏|NO:continue}"; }
+      { prefix = "≟"; content = "test{one-time publication?→YES:⊳|NO:continue}"; }
+      { prefix = "≟"; content = "test{publishing organization?→YES:⍚|NO:review}"; }
+      { prefix = "⊨"; content = "𝄏 ≡ serial_publication ∧ periodic_issues"; }
     ];
   };
   meta = {
@@ -1021,6 +1061,29 @@
       { prefix = "∂"; content = "⟡⊅◈ (⟡ nascent | ◈ bounded project)"; }
       { prefix = "◻"; content = "lifecycle: ⟡→◈ (idea matures) | ◈→⟡ (project spawns idea)"; }
       { prefix = "⊨"; content = "⟡ ≡ user_owned_idea ∧ user-defined"; }
+    ];
+  };
+  user = {
+    symbol = "⋖";
+    name = "User";
+    description = "Self-reference marker for user operating the system";
+    category = "UserDefined";
+    sortOrder = 104;
+    lines = [
+      { prefix = "≡"; content = "participant"; }
+      { prefix = "≡"; content = "operating_subject"; }
+      { prefix = "≝"; content = "the one navigating the system ∧ first person in ⯐"; }
+      { prefix = "∂"; content = "⋖≠⚘ (⋖ self | ⚘ named other)"; }
+      { prefix = "∂"; content = "⋖≠dupe (⋖ co-constitutes | dupe deceived)"; }
+      { prefix = "∂"; content = "⋖≠customer (⋖ navigates | customer queries)"; }
+      { prefix = "⊛"; content = "⋖ ⊰ ⯐ (user shapes context)"; }
+      { prefix = "⊛"; content = "⯐ ⊰ ⋖ (context shapes user)"; }
+      { prefix = "⊛"; content = "⋖ ∈ encounter as participant"; }
+      { prefix = "⊛"; content = "⋖.⥅ → anticipatory apparatus"; }
+      { prefix = "⊛"; content = "⋖.⥅ at stake through use"; }
+      { prefix = "⊛"; content = "⋖.properties → system-specific"; }
+      { prefix = "⥈"; content = "⚘⧊⦑I.A. Richards⦒⦑Feedforward⦒"; }
+      { prefix = "⥈"; content = "⚘⧊⦑Sherry Turkle⦒⦑Participant⦒"; }
     ];
   };
   section = {

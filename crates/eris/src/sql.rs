@@ -296,7 +296,7 @@ fn get_entity_defs_with_categories() -> Vec<(String, String, String, String, i32
                 e.description.clone(),
                 e.category.clone(),
                 e.sort_order,
-                e.lines.clone(),
+                e.lines(),
             )
         })
         .collect()

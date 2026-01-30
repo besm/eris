@@ -132,7 +132,7 @@ fn get_entity_defs() -> Vec<(String, String, String, String, i32, Vec<(String, S
                 e.description.clone(),
                 e.category.clone(),
                 e.sort_order,
-                e.lines.clone(),
+                e.lines(),
             )
         })
         .collect()

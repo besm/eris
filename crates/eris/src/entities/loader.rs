@@ -1,6 +1,10 @@
 //! RON entity definition loader
 //!
 //! Loads entity definitions from RON files at compile time.
+//!
+//! Supports two formats:
+//! - Legacy: `lines: [("≡", "value"), ...]` tuple array
+//! - Structured: `"≡": ["value", ...]` prefix symbols as field names
 
 use once_cell::sync::Lazy;
 use serde::Deserialize;
@@ -13,33 +17,104 @@ pub struct RonEntityDef {
     pub description: String,
     pub sort_order: i32,
     pub category: String,
+
+    /// Legacy format: explicit Vec of (prefix, content) tuples
+    #[serde(default)]
     pub lines: Vec<(String, String)>,
+
+    /// Structured format fields (maps to ERIS prefix symbols)
+    /// ≡ equivalence
+    #[serde(default)]
+    pub equivalence: Vec<String>,
+    /// ≝ definition
+    #[serde(default)]
+    pub definition: Vec<String>,
+    /// ∂ boundary
+    #[serde(default)]
+    pub boundary: Vec<String>,
+    /// ⊡ vector properties
+    #[serde(default)]
+    pub vector: Vec<String>,
+    /// ⊛ examples
+    #[serde(default)]
+    pub examples: Vec<String>,
+    /// ◻ constraints
+    #[serde(default)]
+    pub constraints: Vec<String>,
+    /// ≟ discrimination
+    #[serde(default)]
+    pub discrimination: Vec<String>,
+    /// ⊨ validation
+    #[serde(default)]
+    pub validation: Vec<String>,
 }
 
 impl RonEntityDef {
+    /// Get definition lines as tuples, supporting both legacy and structured formats.
+    ///
+    /// - Legacy format: returns `self.lines` directly
+    /// - Structured format: converts named fields to tuples in canonical prefix order
+    pub fn lines(&self) -> Vec<(String, String)> {
+        // If legacy format has data, use it
+        if !self.lines.is_empty() {
+            return self.lines.clone();
+        }
+
+        // Convert structured format to tuples in canonical prefix order
+        let mut result = Vec::new();
+
+        for v in &self.equivalence {
+            result.push(("≡".to_string(), v.clone()));
+        }
+        for v in &self.definition {
+            result.push(("≝".to_string(), v.clone()));
+        }
+        for v in &self.boundary {
+            result.push(("∂".to_string(), v.clone()));
+        }
+        for v in &self.vector {
+            result.push(("⊡".to_string(), v.clone()));
+        }
+        for v in &self.examples {
+            result.push(("⊛".to_string(), v.clone()));
+        }
+        for v in &self.constraints {
+            result.push(("◻".to_string(), v.clone()));
+        }
+        for v in &self.discrimination {
+            result.push(("≟".to_string(), v.clone()));
+        }
+        for v in &self.validation {
+            result.push(("⊨".to_string(), v.clone()));
+        }
+
+        result
+    }
+
     /// Render entity definition as formatted ERIS text
     ///
     /// Replicates the output format from the original macro-based system.
     pub fn to_eris_text(&self) -> String {
         let symbol = &self.symbol;
         let symbol_width = symbol.chars().count();
+        let lines = self.lines();
 
-        if self.lines.is_empty() {
+        if lines.is_empty() {
             return format!("{} {}", symbol, self.name);
         }
 
         let mut result = format!(
             "{} {} {}",
             symbol,
-            self.lines[0].0,
-            self.lines[0].1
+            lines[0].0,
+            lines[0].1
         );
 
         // Indent subsequent lines to align with first line's prefix
         let indent = " ".repeat(symbol_width + 1);
-        let mut prev_prefix = &self.lines[0].0;
+        let mut prev_prefix = &lines[0].0;
 
-        for line in &self.lines[1..] {
+        for line in &lines[1..] {
             let prefix_display = if &line.0 == prev_prefix {
                 " ".repeat(line.0.chars().count())
             } else {
@@ -141,12 +216,12 @@ mod tests {
         for entity in entities {
             assert!(!entity.symbol.is_empty(), "Entity symbol should not be empty");
             assert!(!entity.name.is_empty(), "Entity name should not be empty");
-            assert!(!entity.lines.is_empty(), "Entity lines should not be empty");
+            assert!(!entity.lines().is_empty(), "Entity lines should not be empty");
         }
     }
 
     #[test]
-    fn test_to_eris_text_format() {
+    fn test_to_eris_text_format_legacy() {
         let entity = RonEntityDef {
             symbol: "⚘".to_string(),
             name: "Person".to_string(),
@@ -158,11 +233,65 @@ mod tests {
                 ("≡".to_string(), "human_agent".to_string()),
                 ("≝".to_string(), "historical attestation".to_string()),
             ],
+            equivalence: vec![],
+            definition: vec![],
+            boundary: vec![],
+            vector: vec![],
+            examples: vec![],
+            constraints: vec![],
+            discrimination: vec![],
+            validation: vec![],
         };
 
         let text = entity.to_eris_text();
         assert!(text.starts_with("⚘ ≡ named_individual"));
         assert!(text.contains("  human_agent")); // Repeated prefix becomes spaces
         assert!(text.contains("≝ historical")); // New prefix shown
+    }
+
+    #[test]
+    fn test_structured_format_parsing() {
+        let ron_str = r#"(
+            symbol: "⟴",
+            name: "Test",
+            description: "Test entity",
+            sort_order: 1,
+            category: "Test",
+            equivalence: ["symbolic_action", "Burkean_performance"],
+            definition: ["agency ∧ interpretation"],
+        )"#;
+
+        let entity: RonEntityDef = ron::from_str(ron_str).unwrap();
+        let lines = entity.lines();
+
+        assert_eq!(lines.len(), 3);
+        assert_eq!(lines[0], ("≡".to_string(), "symbolic_action".to_string()));
+        assert_eq!(lines[1], ("≡".to_string(), "Burkean_performance".to_string()));
+        assert_eq!(lines[2], ("≝".to_string(), "agency ∧ interpretation".to_string()));
+    }
+
+    #[test]
+    fn test_structured_format_rendering() {
+        let entity = RonEntityDef {
+            symbol: "⟴".to_string(),
+            name: "Test".to_string(),
+            description: "Test".to_string(),
+            sort_order: 1,
+            category: "Test".to_string(),
+            lines: vec![],
+            equivalence: vec!["a".to_string(), "b".to_string()],
+            definition: vec!["c".to_string()],
+            boundary: vec![],
+            vector: vec![],
+            examples: vec![],
+            constraints: vec![],
+            discrimination: vec![],
+            validation: vec![],
+        };
+
+        let text = entity.to_eris_text();
+        assert!(text.starts_with("⟴ ≡ a"));
+        assert!(text.contains("  b")); // Repeated prefix becomes spaces
+        assert!(text.contains("≝ c")); // New prefix shown
     }
 }
