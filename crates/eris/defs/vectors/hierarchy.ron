@@ -2,18 +2,14 @@
     symbol: "Հ",
     name: "hierarchy",
     category: "SystemCoherence",
-    lines: [
-        ("≡", "hierarchy"),
-        ("≡", "nesting_depth"),
-        ("≝", "flat↔nested spectrum ∧ vertical_structure"),
-        ("⊡", "1: peer_network ∧ no_ranks"),
-        ("⊡", "3: informal_leadership ∧ shallow"),
-        ("⊡", "5: moderate_levels ∧ clear_roles"),
-        ("⊡", "7: deep_hierarchy ∧ chain_of_command"),
-        ("⊡", "9: rigid_stratification ∧ many_levels"),
-        ("⊛", "⍚: Հ2(cooperative)→Հ8(corporation)"),
-        ("⊛", "⧏: Հ1(heuristic)→Հ7(nested_procedure)"),
-        ("⊛", "⧊: Հ3(cluster)→Հ8(taxonomy)"),
-        ("⊨", "Հ ≡ vertical_differentiation"),
+
+    equivalence: ["hierarchy", "nesting_depth"],
+    definition: ["flat↔nested ∧ vertical_structure"],
+    vector: ["1≡peer∧¬ranks|5≡moderate_levels|9≡rigid_stratification"],
+    examples: [
+        "⍚: Հ2(cooperative)→Հ8(corporation)",
+        "⧏: Հ1(heuristic)→Հ7(nested_procedure)",
+        "⧊: Հ3(cluster)→Հ8(taxonomy)",
     ],
+    validation: ["Հ ≡ vertical_differentiation"],
 )

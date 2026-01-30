@@ -29,6 +29,8 @@ pub struct RonOperatorDef {
     pub vector: Vec<String>,
     #[serde(default)]
     pub examples: Vec<String>,
+    #[serde(default)]
+    pub validation: Vec<String>,
 }
 
 impl RonOperatorDef {
@@ -50,6 +52,9 @@ impl RonOperatorDef {
         }
         for v in &self.examples {
             result.push(("⊛".to_string(), v.clone()));
+        }
+        for v in &self.validation {
+            result.push(("⊨".to_string(), v.clone()));
         }
         result
     }

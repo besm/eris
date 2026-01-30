@@ -58,13 +58,6 @@
       name = "intentionality";
       category = "\"Core\"";
       lines = [
-        { prefix = "⊡"; content = "0≡∅⍜|5≡⌾⍜|9≡⊨⍜"; }
-        { prefix = "≡"; content = "intentionality"; }
-        { prefix = "≡"; content = "purposeful_design"; }
-        { prefix = "≝"; content = "design intention"; }
-        { prefix = "≝"; content = "deliberate construction"; }
-        { prefix = "⊛"; content = "Ը→design_intention ∧ Ը∈deliberate_construction ∧ Ը→planned_behavior"; }
-        { prefix = "⊛"; content = "Ը→goal_alignment"; }
       ];
     };
     contextualization = {
@@ -457,18 +450,6 @@
       name = "hierarchy";
       category = "\"SystemCoherence\"";
       lines = [
-        { prefix = "≡"; content = "hierarchy"; }
-        { prefix = "≡"; content = "nesting_depth"; }
-        { prefix = "≝"; content = "flat↔nested spectrum ∧ vertical_structure"; }
-        { prefix = "⊡"; content = "1: peer_network ∧ no_ranks"; }
-        { prefix = "⊡"; content = "3: informal_leadership ∧ shallow"; }
-        { prefix = "⊡"; content = "5: moderate_levels ∧ clear_roles"; }
-        { prefix = "⊡"; content = "7: deep_hierarchy ∧ chain_of_command"; }
-        { prefix = "⊡"; content = "9: rigid_stratification ∧ many_levels"; }
-        { prefix = "⊛"; content = "⍚: Հ2(cooperative)→Հ8(corporation)"; }
-        { prefix = "⊛"; content = "⧏: Հ1(heuristic)→Հ7(nested_procedure)"; }
-        { prefix = "⊛"; content = "⧊: Հ3(cluster)→Հ8(taxonomy)"; }
-        { prefix = "⊨"; content = "Հ ≡ vertical_differentiation"; }
       ];
     };
     scope = {
