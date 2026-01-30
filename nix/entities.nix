@@ -828,31 +828,21 @@
     lines = [
       { prefix = "≡"; content = "transformation"; }
       { prefix = "≡"; content = "directional_change"; }
-      { prefix = "≡"; content = "sequential_stages"; }
-      { prefix = "≝"; content = "A→B→C unidirectional ∧ temporal progression ∧ irreversible"; }
-      { prefix = "∂"; content = "⧃⊅⬢ (⧃ sequential | ⬢ simultaneous t₀=t₀)"; }
-      { prefix = "∂"; content = "⧃⊅⟗ (⧃ unidirectional | ⟗ bidirectional feedback)"; }
-      { prefix = "∂"; content = "⧃⊅⧆ (⧃ transforming | ⧆ static opposition)"; }
-      { prefix = "∂"; content = "⧃⊅☯ (⧃ resolving | ☯ paradox persists)"; }
-      { prefix = "∂"; content = "⧃⊅⧊ (⧃ specific transformation | ⧊ analyzing concept)"; }
-      { prefix = "⊡"; content = "⧃: Շ7Գ6Բ8"; }
-      { prefix = "⊡"; content = "⧃⦑Medicalization⦒: Շ8Գ7Բ9"; }
-      { prefix = "⊛"; content = "⧃⦑Medicalization|Secularization|Professionalization|Rationalization|Bureaucratization⦒"; }
-      { prefix = "⊛"; content = "⧃⦑Commodification|Financialization|Digitization|Globalization⦒"; }
-      { prefix = "⊛"; content = "⧃⦑Democratization|Decolonization|Industrialization|Urbanization⦒"; }
-      { prefix = "⊛"; content = "⧃⦑Magic→Religion→Science|Primitive→Modern Schema|Gemeinschaft→Gesellschaft⦒"; }
-      { prefix = "◻"; content = "naming: ⧃⦑[Process Name]⦒ | ⧃⦑A→B→C⦒ for staged"; }
-      { prefix = "◻"; content = "criteria: t₀<t₁<t₂ ∧ unidirectional→ ∧ irreversible"; }
-      { prefix = "◻"; content = "discrimination:"; }
-      { prefix = "◻"; content = "  ⧃⦑Medicalization⦒: condition→medical frame (unidirectional, no return)"; }
-      { prefix = "◻"; content = "  ⬢⦑Making Up People⦒: classification constitutes classified (t₀=t₀)"; }
-      { prefix = "◻"; content = "  ⟗⦑Multiple Personality Loop⦒: diagnosis↔behavior (bidirectional)"; }
-      { prefix = "◻"; content = "  ⧊⦑Transformation⦒: analyzing concept ¬specific process"; }
-      { prefix = "≟"; content = "test{specific transformation?→continue | analyzing concept?→⧊}"; }
-      { prefix = "≟"; content = "test{t₀<t₁<t₂ sequential?→YES:⧃|simultaneous?→⬢}"; }
-      { prefix = "≟"; content = "test{unidirectional?→YES:⧃|bidirectional?→⟗}"; }
-      { prefix = "≟"; content = "test{irreversible?→YES:⧃|cyclical?→⟗|static?→⧆}"; }
-      { prefix = "⊨"; content = "⧃ ≡ unidirectional ∧ sequential ∧ irreversible"; }
+      { prefix = "≝"; content = "A→B→C ∧ t₀<t₁<t₂ ∧ ¬reversible"; }
+      { prefix = "∂"; content = "⧃|⬢ (sequential|simultaneous)"; }
+      { prefix = "∂"; content = "⧃|⟗ (unidirectional|bidirectional)"; }
+      { prefix = "∂"; content = "⧃|⧆ (transforming|static)"; }
+      { prefix = "∂"; content = "⧃|☯ (resolving|persisting)"; }
+      { prefix = "∂"; content = "⧃|⧊ (specific|concept)"; }
+      { prefix = "⊡"; content = "Շ7Գ6Բ8"; }
+      { prefix = "⊛"; content = "-ization: ⧃⦑Medicalization|Secularization|Rationalization|Bureaucratization|Professionalization⦒"; }
+      { prefix = "⊛"; content = "-ification: ⧃⦑Commodification|Financialization|Digitization⦒"; }
+      { prefix = "⊛"; content = "-ation: ⧃⦑Globalization|Democratization|Decolonization|Urbanization⦒"; }
+      { prefix = "⊛"; content = "staged: ⧃⦑Magic→Religion→Science|Gemeinschaft→Gesellschaft⦒"; }
+      { prefix = "≟"; content = "specific?→continue|concept?→⧊"; }
+      { prefix = "≟"; content = "t₀<t₁?→⧃|t₀=t₀?→⬢"; }
+      { prefix = "≟"; content = "→?→⧃|↔?→⟗|static?→⧆"; }
+      { prefix = "⊨"; content = "⧃ ≡ → ∧ sequential ∧ ¬⟳"; }
     ];
   };
   symbolic-action = {

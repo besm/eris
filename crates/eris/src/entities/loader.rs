@@ -172,7 +172,7 @@ fn load_all_entities_inner() -> Vec<RonEntityDef> {
         parse_entity(include_str!("../../defs/entities/loop.ron")),
         parse_entity(include_str!("../../defs/entities/paradox.ron")),
         // Process entities
-        parse_entity(include_str!("../../defs/entities/evolution.ron")),
+        parse_entity(include_str!("../../defs/entities/transformation.ron")),
         parse_entity(include_str!("../../defs/entities/action.ron")),
         parse_entity(include_str!("../../defs/entities/effect.ron")),
         // Compound entities

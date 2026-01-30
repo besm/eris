@@ -1,0 +1,30 @@
+(
+    symbol: "⧃",
+    name: "Transformation",
+    description: "Unidirectional temporal transformation with sequential developmental stages",
+    sort_order: 40,
+    category: "Complex",
+
+    equivalence: ["transformation", "directional_change"],
+    definition: ["A→B→C ∧ t₀<t₁<t₂ ∧ ¬reversible"],
+    vector: ["Շ7Գ6Բ8"],
+    boundary: [
+        "⧃|⬢ (sequential|simultaneous)",
+        "⧃|⟗ (unidirectional|bidirectional)",
+        "⧃|⧆ (transforming|static)",
+        "⧃|☯ (resolving|persisting)",
+        "⧃|⧊ (specific|concept)",
+    ],
+    examples: [
+        "-ization: ⧃⦑Medicalization|Secularization|Rationalization|Bureaucratization|Professionalization⦒",
+        "-ification: ⧃⦑Commodification|Financialization|Digitization⦒",
+        "-ation: ⧃⦑Globalization|Democratization|Decolonization|Urbanization⦒",
+        "staged: ⧃⦑Magic→Religion→Science|Gemeinschaft→Gesellschaft⦒",
+    ],
+    discrimination: [
+        "specific?→continue|concept?→⧊",
+        "t₀<t₁?→⧃|t₀=t₀?→⬢",
+        "→?→⧃|↔?→⟗|static?→⧆",
+    ],
+    validation: ["⧃ ≡ → ∧ sequential ∧ ¬⟳"],
+)
