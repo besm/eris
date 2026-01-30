@@ -1,6 +1,10 @@
 //! RON operator definition loader
 //!
 //! Loads vector property definitions from RON files at compile time.
+//!
+//! Supports two formats:
+//! - Legacy: `lines: [("≡", "value"), ...]` tuple array
+//! - Structured: semantic field names
 
 use once_cell::sync::Lazy;
 use serde::Deserialize;
@@ -11,29 +15,65 @@ pub struct RonOperatorDef {
     pub symbol: String,
     pub name: String,
     pub category: String,
+
+    /// Legacy format: explicit Vec of (prefix, content) tuples
+    #[serde(default)]
     pub lines: Vec<(String, String)>,
+
+    /// Structured format fields (maps to ERIS prefix symbols)
+    #[serde(default)]
+    pub equivalence: Vec<String>,
+    #[serde(default)]
+    pub definition: Vec<String>,
+    #[serde(default)]
+    pub vector: Vec<String>,
+    #[serde(default)]
+    pub examples: Vec<String>,
 }
 
 impl RonOperatorDef {
+    /// Get definition lines as tuples, supporting both legacy and structured formats.
+    pub fn lines(&self) -> Vec<(String, String)> {
+        if !self.lines.is_empty() {
+            return self.lines.clone();
+        }
+
+        let mut result = Vec::new();
+        for v in &self.equivalence {
+            result.push(("≡".to_string(), v.clone()));
+        }
+        for v in &self.vector {
+            result.push(("⊡".to_string(), v.clone()));
+        }
+        for v in &self.definition {
+            result.push(("≝".to_string(), v.clone()));
+        }
+        for v in &self.examples {
+            result.push(("⊛".to_string(), v.clone()));
+        }
+        result
+    }
+
     /// Render operator definition as formatted ERIS text
     pub fn to_eris_text(&self) -> String {
         let symbol = &self.symbol;
         let symbol_width = symbol.chars().count();
+        let lines = self.lines();
 
-        if self.lines.is_empty() {
+        if lines.is_empty() {
             return format!("{} {}", symbol, self.name);
         }
 
         let mut result = format!(
             "{} {} {}",
-            symbol, self.lines[0].0, self.lines[0].1
+            symbol, lines[0].0, lines[0].1
         );
 
         // Indent subsequent lines to align with first line's prefix
         let indent = " ".repeat(symbol_width + 1);
-        let mut prev_prefix = &self.lines[0].0;
+        let mut prev_prefix = &lines[0].0;
 
-        for line in &self.lines[1..] {
+        for line in &lines[1..] {
             let prefix_display = if &line.0 == prev_prefix {
                 " ".repeat(line.0.chars().count())
             } else {
@@ -133,7 +173,26 @@ mod tests {
         for v in vectors {
             assert!(!v.symbol.is_empty(), "Vector symbol should not be empty");
             assert!(!v.name.is_empty(), "Vector name should not be empty");
-            assert!(!v.lines.is_empty(), "Vector lines should not be empty");
+            assert!(!v.lines().is_empty(), "Vector lines should not be empty");
         }
+    }
+
+    #[test]
+    fn test_structured_format() {
+        let ron_str = r#"(
+            symbol: "Բ",
+            name: "boundary",
+            category: "Core",
+            equivalence: ["boundary", "interface"],
+            vector: ["0≡∅∂|5≡⊨∂|9≡⊩∂"],
+            definition: ["separation clarity"],
+        )"#;
+
+        let op: RonOperatorDef = ron::from_str(ron_str).unwrap();
+        let lines = op.lines();
+
+        assert_eq!(lines.len(), 4);
+        assert_eq!(lines[0].0, "≡");
+        assert_eq!(lines[2].0, "⊡");
     }
 }

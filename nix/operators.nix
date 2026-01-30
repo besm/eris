@@ -23,15 +23,6 @@
       name = "boundary";
       category = "\"Core\"";
       lines = [
-        { prefix = "⊡"; content = "0≡∅∂|5≡⊨∂|9≡⊩∂"; }
-        { prefix = "≡"; content = "boundary"; }
-        { prefix = "≡"; content = "interface_definition"; }
-        { prefix = "≝"; content = "interface specification"; }
-        { prefix = "≝"; content = "separation clarity"; }
-        { prefix = "⊛"; content = "Բ→interface_specification ∧ Բ∈architectural_concern ∧ service∂service via Բ"; }
-        { prefix = "⊛"; content = "API_Բ design ∧ ┃≡Բ specialized"; }
-        { prefix = "⊛"; content = "𝁆 dissolution when boundaries fail"; }
-        { prefix = "⊛"; content = "𝀏 crystallization when boundaries stabilize"; }
       ];
     };
     generalizability = {

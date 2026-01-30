@@ -2,15 +2,14 @@
     symbol: "Բ",
     name: "boundary",
     category: "Core",
-    lines: [
-        ("⊡", "0≡∅∂|5≡⊨∂|9≡⊩∂"),
-        ("≡", "boundary"),
-        ("≡", "interface_definition"),
-        ("≝", "interface specification"),
-        ("≝", "separation clarity"),
-        ("⊛", "Բ→interface_specification ∧ Բ∈architectural_concern ∧ service∂service via Բ"),
-        ("⊛", "API_Բ design ∧ ┃≡Բ specialized"),
-        ("⊛", "𝁆 dissolution when boundaries fail"),
-        ("⊛", "𝀏 crystallization when boundaries stabilize"),
+
+    equivalence: ["boundary", "interface"],
+    vector: ["0≡∅∂|5≡⊨∂|9≡⊩∂"],
+    definition: ["separation clarity ∧ specification"],
+    examples: [
+        "Բ→architectural_concern",
+        "service∂service via Բ",
+        "┃≡Բ_specialized",
+        "Բ⤋→𝁆|Բ⌺→𝀏",
     ],
 )
