@@ -1105,5 +1105,47 @@ pub fn get_logical_operator_definitions() -> Vec<LogDef> {
                 ("⟷", ["⊬⟷⊟ (orphaned loops need clarification)"]),
             ],
         },
+        // ⊲ - Subcommand (subordinate structure)
+        LogDef {
+            symbol: "⊲",
+            name: "subcommand",
+            category: LogicalOperatorCategory::Process,
+            lines: lines![
+                ("≡", ["subcommand", "subordinate_command"]),
+                ("≝", ["child command within root", "nested executable action"]),
+                ("∂", [
+                    "⊲≠◩ (⊲ child | ◩ root)",
+                    "⊲⊂◩ (subcommand contained in command)"
+                ]),
+                ("⊛", [
+                    "◩ root⊲child hierarchy",
+                    "⊲ books — Query books",
+                    "⊲ completions ◻--shell — Generate completions",
+                    "CLI: ◩→⊲→⊲ nesting"
+                ]),
+                ("⊢", "⊲ subcommand ⊢ hierarchical CLI structure ⊢ action subdivision"),
+            ],
+        },
+        // ⊝ - Optional (omittable element)
+        LogDef {
+            symbol: "⊝",
+            name: "optional",
+            category: LogicalOperatorCategory::Workflow,
+            lines: lines![
+                ("≡", ["optional", "omittable"]),
+                ("≝", ["may be absent", "not required for validity"]),
+                ("∂", [
+                    "⊝≠◻ (⊝ optional | ◻ required)",
+                    "⊝ absence valid"
+                ]),
+                ("⊛", [
+                    "⊝--flag optional argument",
+                    "⊝ parameter may omit",
+                    "◻ required ∧ ⊝ optional spectrum",
+                    "CLI: ⊲ cmd ⊝--verbose ◻--input"
+                ]),
+                ("⊢", "⊝ optional ⊢ valid without ⊢ graceful absence"),
+            ],
+        },
     ]
 }

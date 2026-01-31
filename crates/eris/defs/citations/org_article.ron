@@ -10,11 +10,12 @@
         ("Article", "Article title"),
     ],
     examples: [
-        "⍚⊙𝄏⊳⦑Congressional Budget Office⦒⦑2023⦒⦑CBO Reports⦒⦑Budget and Economic Outlook⦒",
-        "⍚⊙𝄏⊳⦑Bureau of Labor Statistics⦒⦑2024⦒⦑Monthly Labor Review⦒⦑Employment Projections⦒",
+        "⍚⊙𝄏⊳⦑World Health Organization⦒⦑2020⦒⦑Bulletin of the WHO⦒⦑COVID-19 Strategic Response⦒",
+        "⍚⊙𝄏⊳⦑RAND Corporation⦒⦑1968⦒⦑Management Science⦒⦑Systems Analysis and Policy Planning⦒",
     ],
     constraints: [
         "Use for institutional authorship in periodicals",
         "Journal: full name of publication venue",
+        "⍚ only — for ⎈-authored articles use ⎈⊙𝄏⊳",
     ],
 )

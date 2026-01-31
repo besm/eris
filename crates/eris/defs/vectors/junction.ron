@@ -2,12 +2,8 @@
     symbol: "Յ",
     name: "junction",
     category: "SelfReference",
-    lines: [
-        ("≡", "junction"),
-        ("≡", "connection_quality"),
-        ("≝", "integration points"),
-        ("≝", "interface strength"),
-        ("⊛", "Յ7→adequate_junctions ∧ Յ∈integration_points"),
-        ("⊛", "interface_strength→Յ_value"),
-    ],
+
+    equivalence: ["junction", "connection_quality"],
+    definition: ["integration_points ∧ interface_strength"],
+    examples: ["Յ7→adequate|interface_strength→Յ"],
 )

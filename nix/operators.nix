@@ -280,12 +280,6 @@
       name = "junction";
       category = "\"SelfReference\"";
       lines = [
-        { prefix = "≡"; content = "junction"; }
-        { prefix = "≡"; content = "connection_quality"; }
-        { prefix = "≝"; content = "integration points"; }
-        { prefix = "≝"; content = "interface strength"; }
-        { prefix = "⊛"; content = "Յ7→adequate_junctions ∧ Յ∈integration_points"; }
-        { prefix = "⊛"; content = "interface_strength→Յ_value"; }
       ];
     };
     conceptual_orthogonality = {
@@ -2476,6 +2470,42 @@
         { prefix = "⊛"; content = "requires triage"; }
         { prefix = "⊛"; content = "often surfaces as surprise"; }
         { prefix = "⟷"; content = "⊬⟷⊟ (orphaned loops need clarification)"; }
+      ];
+    };
+    subcommand = {
+      symbol = "⊲";
+      name = "subcommand";
+      category = "Process";
+      lines = [
+        { prefix = "≡"; content = "subcommand"; }
+        { prefix = "≡"; content = "subordinate_command"; }
+        { prefix = "≝"; content = "child command within root"; }
+        { prefix = "≝"; content = "nested executable action"; }
+        { prefix = "∂"; content = "⊲≠◩ (⊲ child | ◩ root)"; }
+        { prefix = "∂"; content = "⊲⊂◩ (subcommand contained in command)"; }
+        { prefix = "⊛"; content = "◩ root⊲child hierarchy"; }
+        { prefix = "⊛"; content = "⊲ books — Query books"; }
+        { prefix = "⊛"; content = "⊲ completions ◻--shell — Generate completions"; }
+        { prefix = "⊛"; content = "CLI: ◩→⊲→⊲ nesting"; }
+        { prefix = "⊢"; content = "⊲ subcommand ⊢ hierarchical CLI structure ⊢ action subdivision"; }
+      ];
+    };
+    optional = {
+      symbol = "⊝";
+      name = "optional";
+      category = "Workflow";
+      lines = [
+        { prefix = "≡"; content = "optional"; }
+        { prefix = "≡"; content = "omittable"; }
+        { prefix = "≝"; content = "may be absent"; }
+        { prefix = "≝"; content = "not required for validity"; }
+        { prefix = "∂"; content = "⊝≠◻ (⊝ optional | ◻ required)"; }
+        { prefix = "∂"; content = "⊝ absence valid"; }
+        { prefix = "⊛"; content = "⊝--flag optional argument"; }
+        { prefix = "⊛"; content = "⊝ parameter may omit"; }
+        { prefix = "⊛"; content = "◻ required ∧ ⊝ optional spectrum"; }
+        { prefix = "⊛"; content = "CLI: ⊲ cmd ⊝--verbose ◻--input"; }
+        { prefix = "⊢"; content = "⊝ optional ⊢ valid without ⊢ graceful absence"; }
       ];
     };
   };
