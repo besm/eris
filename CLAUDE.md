@@ -2,10 +2,20 @@
 
 ERIS (Entity Reference and Information System) is a notation system for semantic tagging using Unicode symbols. It provides a formal vocabulary for classifying entities, expressing relationships, and structuring knowledge.
 
+## Installation
+
+```bash
+# Install to Nix profile (recommended)
+nix profile install .
+
+# Upgrade after rebuilding
+nix profile upgrade eris
+```
+
 ## Build & Test
 
 ```bash
-./build.sh               # Build, install to ~/bin, update tracked files
+./build.sh               # Build release, update tracked files
 cargo test               # Run tests
 cargo run -p eris-cli    # Run CLI (dev build)
 ```
@@ -13,7 +23,8 @@ cargo run -p eris-cli    # Run CLI (dev build)
 ## Project Structure
 
 ```
-nix/                     # Tracked Nix output (repo root)
+flake.nix                # Nix flake for installation
+nix/                     # Tracked Nix output (data export)
 ├── default.nix          # Main entry point
 ├── entities.nix         # Entity attr sets
 └── operators.nix        # Operator attr sets (nested by module)
