@@ -12,7 +12,7 @@
         "⚘⊙⊳⦑Thomas S. Kuhn⦒⦑1962⦒⦑The Structure of Scientific Revolutions⦒",
         "⚘⊙⊳⦑Michel Foucault⦒⦑1975⦒⦑Discipline and Punish⦒",
         "⚘⊙⊳⦑Edward Said⦒⦑1978⦒⦑Orientalism⦒",
-        "⚘⊙⊳⦑Lakoff∧Johnson⦒⦑1980⦒⦑Metaphors We Live By⦒",
+        "⚘⊙⊳⦑George Lakoff∧Mark Johnson⦒⦑1980⦒⦑Metaphors We Live By⦒",
     ],
     constraints: [
         "Author names: no spaces between initials (J.L. Austin, not J. L. Austin)",

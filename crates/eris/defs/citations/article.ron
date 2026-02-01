@@ -12,7 +12,7 @@
     examples: [
         "⚘⊙𝄏⊳⦑C.S. Peirce⦒⦑1878⦒⦑Popular Science Monthly⦒⦑How to Make Our Ideas Clear⦒",
         "⚘⊙𝄏⊳⦑J.L. Austin⦒⦑1946⦒⦑Proceedings of the Aristotelian Society⦒⦑Other Minds⦒",
-        "⚘⊙𝄏⊳⦑Watson∧Crick⦒⦑1953⦒⦑Nature⦒⦑Molecular Structure of Nucleic Acids⦒",
+        "⚘⊙𝄏⊳⦑James D. Watson∧Francis Crick⦒⦑1953⦒⦑Nature⦒⦑Molecular Structure of Nucleic Acids⦒",
     ],
     constraints: [
         "Author names: no spaces between initials",
