@@ -1,0 +1,27 @@
+// α - Alignment (Teleological Vector Component)
+// Goal-path coherence
+(
+    symbol: "α",
+    name: "alignment",
+    category: "Teleological",
+    lines: [
+        ("≡", "alignment"),
+        ("≡", "path_criticality"),
+        ("≝", "goal-path coherence"),
+        ("≝", "ω component"),
+        ("⊡", "0≡misaligned|5≡contributing|9≡critical_path"),
+        ("∂", "α≠ι (alignment≠intention)"),
+        ("∂", "α≠ε (aligned≠executed)"),
+        ("∂", "α≠θ (path≠horizon)"),
+        ("⊛", "α ∈ ω(ιαε)"),
+        ("⊛", "α1→tangential∧divergent"),
+        ("⊛", "α9→core_path∧essential"),
+        ("⊛", "α measures fit→✱"),
+        ("⊛", "α1→𝀸"),
+        ("⊢", "α9 ⊢ minimal waste ⊢ ◇goal"),
+        ("⊢", "α1∧ι9 ⊢ frustrated purpose ⊢ ⧆"),
+        ("⊢", "ι⊰α⊰ε"),
+        ("⟷", "α⟷⯐"),
+        ("⟷", "α⟷✱"),
+    ],
+)

@@ -1,0 +1,19 @@
+// ≺ - Precedes (Temporal Ordering)
+// Ordered before / sequential ordering
+(
+    symbol: "≺",
+    name: "precedes",
+    category: "Temporal",
+    lines: [
+        ("≡", "precedes"),
+        ("≡", "ordered before"),
+        ("≝", "sequential ordering"),
+        ("≝", "temporal precedence"),
+        ("∂", "¬⊰ (causal enabling)"),
+        ("∂", "¬→ (logical implication)"),
+        ("∂", "simple ordering only"),
+        ("⊛", "workflow stages (○₁≺○₂≺○₃)"),
+        ("⊛", "≺ chains"),
+        ("⊛", "process dependencies"),
+    ],
+)

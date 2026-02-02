@@ -1,0 +1,28 @@
+// ε - Execution (Teleological Vector Component)
+// Action integration
+(
+    symbol: "ε",
+    name: "execution",
+    category: "Teleological",
+    lines: [
+        ("≡", "execution"),
+        ("≡", "implementation_flow"),
+        ("≝", "action integration"),
+        ("≝", "ω component"),
+        ("⊡", "0≡fragmented|5≡coordinated|9≡integrated_flow"),
+        ("∂", "ε≠𝀾 (ε measures|𝀾 names)"),
+        ("∂", "ε≠ϕ (ε∈ω purposive|ϕ diagnostic)"),
+        ("∂", "ε≠α (doing≠directing)"),
+        ("⊛", "ε ∈ ω(ιαε)"),
+        ("⊛", "ε1→scattered∧interrupted"),
+        ("⊛", "ε9→smooth∧continuous"),
+        ("⊛", "ε⊧𝀾"),
+        ("⊛", "ε◻γ"),
+        ("⊢", "ε9 ⊢ 𝀾 ⊢ ◇completion"),
+        ("⊢", "ε1 ⊢ 𝀸 vulnerability ⊢ ¬◇completion"),
+        ("⊢", "ι∧α∧¬ε ⊢ paralysis"),
+        ("⟷", "ε⟷γ (ε depletes γ)"),
+        ("⟷", "ε⟷ς (ε◻ς when ς9)"),
+        ("⟷", "ε⟷𝀾"),
+    ],
+)

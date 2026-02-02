@@ -1,0 +1,20 @@
+// 𝄎 - Reflexive (Self-Referential)
+// Self-aware structure / meta-level observation
+(
+    symbol: "𝄎",
+    name: "reflexive",
+    category: "Causal",
+    lines: [
+        ("≡", "reflexive"),
+        ("≡", "self_referential"),
+        ("≝", "self-aware structure"),
+        ("≝", "meta-level observation"),
+        ("⊡", "Ր8Տ7"),
+        ("⊛", "𝄎 loops→⟗"),
+        ("⊛", "𝄎 prediction→⟚"),
+        ("⊛", "𝄎 awareness 𝀴"),
+        ("⊛", "𝄎 𝀺→complexity"),
+        ("⊛", "sociology≡𝄎"),
+        ("⊢", "𝄎 ⊢ second-order observation ⊢ systems theory"),
+    ],
+)

@@ -1,0 +1,21 @@
+// 𝄃 - Repeats (Iterative Pattern)
+// Temporal iteration / pattern recurrence
+(
+    symbol: "𝄃",
+    name: "repeats",
+    category: "Temporal",
+    lines: [
+        ("≡", "repeats"),
+        ("≡", "iterates_pattern"),
+        ("≝", "temporal iteration"),
+        ("≝", "pattern recurrence"),
+        ("⊡", "Ր7Փ6"),
+        ("⊛", "performativity via 𝄃"),
+        ("⊛", "𝄃 𝆌 ⧈"),
+        ("⊛", "ritual 𝄃"),
+        ("⊛", "𝄃→sedimentation"),
+        ("⊛", "⌂ formed by 𝄃"),
+        ("⊛", "𝄃→⚘Judith Butler_gender"),
+        ("⊢", "𝄃⊱⌂ (repetition results in infrastructure)"),
+    ],
+)

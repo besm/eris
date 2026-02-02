@@ -1,0 +1,22 @@
+// ⟖ - Recursive Process (f(f(x)))
+// Complexity generation / function on output
+(
+    symbol: "⟖",
+    name: "recursive_process",
+    category: "Causal",
+    lines: [
+        ("≡", "recursive_process"),
+        ("≡", "function_on_output"),
+        ("≝", "f(f(x)) structure"),
+        ("≝", "complexity generation"),
+        ("⊡", "Ր9Տ8"),
+        ("∂", "⟖⊂⟳ (⟖ specialized | ⟳ general)"),
+        ("⊛", "definition⟖self_reference⟖definition"),
+        ("⊛", "⟖ generates_complexity"),
+        ("⊛", "language⟖metalanguage⟖"),
+        ("⊛", "consciousness⟖self_awareness⟖"),
+        ("⊛", "⟖→𝄎 structures"),
+        ("⊛", "⟖ 𝀙 with each cycle"),
+        ("⊢", "⟖ ⊢ hierarchical complexity ⊢ self-organization"),
+    ],
+)

@@ -1,0 +1,23 @@
+// ⊱ - Follows Resulting (Causal-Temporal)
+// Emergent causation / consequential temporal flow
+(
+    symbol: "⊱",
+    name: "follows_resulting",
+    category: "Causal",
+    lines: [
+        ("≡", "follows_resulting"),
+        ("≡", "emergent_causation"),
+        ("≝", "consequential temporal flow"),
+        ("≝", "resultant emergence through time"),
+        ("⊛", "action⊱reality"),
+        ("⊛", "⟟⊱confirmation"),
+        ("⊛", "⊱ emerges_from"),
+        ("⊛", "𝀕⊱⧈"),
+        ("⊛", "𝄃⊱⌂"),
+        ("⊛", "𝀺⊱◬"),
+        ("∂", "⊱≠≻ resultant_not_sequential"),
+        ("∂", "¬mere temporal succession"),
+        ("∂", "requires causal emergence"),
+        ("⊢", "Causal action ⊢ ⊱ resulting state ⊢ temporal emergence"),
+    ],
+)

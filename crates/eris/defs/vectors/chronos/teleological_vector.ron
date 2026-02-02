@@ -1,0 +1,24 @@
+// ω - Teleological Vector
+// Purpose measurement container: ω(ιαε)
+(
+    symbol: "ω",
+    name: "teleological_vector",
+    category: "Teleological",
+    lines: [
+        ("≡", "teleological_vector"),
+        ("≡", "purpose_measurement"),
+        ("≝", "ω(ιαε) composite"),
+        ("≝", "⍜ quantification"),
+        ("∂", "ω≠μ (purpose≠physics)"),
+        ("∂", "ω measures why|μ measures how"),
+        ("∂", "ω≠⊡"),
+        ("⊛", "ω ⊂ ⍜"),
+        ("⊛", "ι,α,ε ∈ ω"),
+        ("⊛", "Notation: Entity→ω(ι9α8ε7)"),
+        ("⊛", "ω∘μ→complete temporal assessment"),
+        ("⊢", "ω(ι9α9ε9) ⊢ maximal purposive 𝀾"),
+        ("⊢", "ω(ι1α1ε1) ⊢ purposeless drift"),
+        ("⟷", "ω9⟷ϕ9"),
+        ("⟷", "ω1⟷Ց9"),
+    ],
+)

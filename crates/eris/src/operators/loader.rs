@@ -1,13 +1,39 @@
 //! RON operator definition loader
 //!
-//! Loads vector property definitions from RON files at compile time.
+//! Loads operator definitions from RON files at compile time.
 //!
 //! Supports two formats:
 //! - Legacy: `lines: [("≡", "value"), ...]` tuple array
 //! - Structured: semantic field names
+//!
+//! Two loader types:
+//! - `load_vectors()`: Armenian + chronos property vectors (49 total)
+//! - `load_chronos_operators()`: Non-vector chronos operators (19 total)
 
 use once_cell::sync::Lazy;
 use serde::Deserialize;
+
+use crate::entities::types::EntityTypeDef;
+
+/// Entity type definition for RON deserialization
+#[derive(Debug, Clone, Deserialize)]
+pub struct RonEntityTypeDef {
+    pub symbol: String,
+    pub name: String,
+    pub description: String,
+    pub sort_order: i32,
+}
+
+impl From<RonEntityTypeDef> for EntityTypeDef {
+    fn from(ron: RonEntityTypeDef) -> Self {
+        EntityTypeDef {
+            symbol: ron.symbol,
+            name: ron.name,
+            description: ron.description,
+            sort_order: ron.sort_order,
+        }
+    }
+}
 
 /// Operator definition loaded from RON file
 #[derive(Debug, Clone, Deserialize)]
@@ -15,6 +41,10 @@ pub struct RonOperatorDef {
     pub symbol: String,
     pub name: String,
     pub category: String,
+
+    /// Optional: if this operator also functions as an entity type
+    #[serde(default)]
+    pub entity_type: Option<RonEntityTypeDef>,
 
     /// Legacy format: explicit Vec of (prefix, content) tuples
     #[serde(default)]
@@ -90,6 +120,11 @@ impl RonOperatorDef {
 
         result
     }
+
+    /// Get entity type if this operator also functions as an entity
+    pub fn entity_type(&self) -> Option<EntityTypeDef> {
+        self.entity_type.clone().map(|e| e.into())
+    }
 }
 
 /// Parse a RON operator definition
@@ -151,6 +186,24 @@ fn load_vectors_inner() -> Vec<RonOperatorDef> {
         // Core properties (third batch)
         parse_operator(include_str!("../../defs/vectors/agency.ron")),
         parse_operator(include_str!("../../defs/vectors/property_vector.ron")),
+
+        // Chronos vectors - Teleological
+        parse_operator(include_str!("../../defs/vectors/chronos/teleological_vector.ron")),
+        parse_operator(include_str!("../../defs/vectors/chronos/intentionality_tele.ron")),
+        parse_operator(include_str!("../../defs/vectors/chronos/alignment.ron")),
+        parse_operator(include_str!("../../defs/vectors/chronos/execution.ron")),
+
+        // Chronos vectors - Temporal (Physics)
+        parse_operator(include_str!("../../defs/vectors/chronos/physics_vector.ron")),
+        parse_operator(include_str!("../../defs/vectors/chronos/horizon.ron")),
+        parse_operator(include_str!("../../defs/vectors/chronos/density.ron")),
+        parse_operator(include_str!("../../defs/vectors/chronos/precision.ron")),
+        parse_operator(include_str!("../../defs/vectors/chronos/sync.ron")),
+
+        // Chronos vectors - Assessment
+        parse_operator(include_str!("../../defs/vectors/chronos/consistency.ron")),
+        parse_operator(include_str!("../../defs/vectors/chronos/flux.ron")),
+        parse_operator(include_str!("../../defs/vectors/chronos/capacity.ron")),
     ]
 }
 
@@ -162,6 +215,50 @@ pub fn load_vectors() -> &'static Vec<RonOperatorDef> {
     &VECTORS
 }
 
+// ============================================================================
+// Chronos Operator Loader (non-vector operators)
+// ============================================================================
+
+/// Load all chronos operator definitions from embedded RON files
+fn load_chronos_operators_inner() -> Vec<RonOperatorDef> {
+    vec![
+        // Teleological (with entity_type)
+        parse_operator(include_str!("../../defs/chronos/teleological_anchor.ron")),
+
+        // Temporal
+        parse_operator(include_str!("../../defs/chronos/always.ron")),
+        parse_operator(include_str!("../../defs/chronos/eventually.ron")),
+        parse_operator(include_str!("../../defs/chronos/precedes.ron")),
+        parse_operator(include_str!("../../defs/chronos/succeeds.ron")),
+        parse_operator(include_str!("../../defs/chronos/prediction.ron")),
+        parse_operator(include_str!("../../defs/chronos/repeats.ron")),
+        parse_operator(include_str!("../../defs/chronos/simultaneous.ron")),
+        parse_operator(include_str!("../../defs/chronos/state.ron")),
+        parse_operator(include_str!("../../defs/chronos/process.ron")),
+        parse_operator(include_str!("../../defs/chronos/accelerates.ron")),
+
+        // Causal
+        parse_operator(include_str!("../../defs/chronos/follows_resulting.ron")),
+        parse_operator(include_str!("../../defs/chronos/feedback_loop.ron")),
+        parse_operator(include_str!("../../defs/chronos/recursive_process.ron")),
+        parse_operator(include_str!("../../defs/chronos/reflexive_op.ron")),
+        parse_operator(include_str!("../../defs/chronos/reinforces.ron")),
+        parse_operator(include_str!("../../defs/chronos/subverts.ron")),
+
+        // Becoming
+        parse_operator(include_str!("../../defs/chronos/prehension.ron")),
+        parse_operator(include_str!("../../defs/chronos/concrescence.ron")),
+    ]
+}
+
+/// Cached chronos operator definitions
+static CHRONOS_OPERATORS: Lazy<Vec<RonOperatorDef>> = Lazy::new(load_chronos_operators_inner);
+
+/// Get all loaded chronos operator definitions
+pub fn load_chronos_operators() -> &'static Vec<RonOperatorDef> {
+    &CHRONOS_OPERATORS
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -169,7 +266,7 @@ mod tests {
     #[test]
     fn test_load_vectors() {
         let vectors = load_vectors();
-        assert_eq!(vectors.len(), 37, "Expected 37 vector property definitions");
+        assert_eq!(vectors.len(), 49, "Expected 49 vector property definitions (37 armenian + 12 chronos)");
     }
 
     #[test]
@@ -199,5 +296,32 @@ mod tests {
         assert_eq!(lines.len(), 4);
         assert_eq!(lines[0].0, "≡");
         assert_eq!(lines[2].0, "⊡");
+    }
+
+    #[test]
+    fn test_load_chronos_operators() {
+        let ops = load_chronos_operators();
+        assert_eq!(ops.len(), 19, "Expected 19 chronos operator definitions");
+    }
+
+    #[test]
+    fn test_chronos_operator_has_required_fields() {
+        let ops = load_chronos_operators();
+        for op in ops {
+            assert!(!op.symbol.is_empty(), "Operator symbol should not be empty");
+            assert!(!op.name.is_empty(), "Operator name should not be empty");
+            assert!(!op.lines().is_empty(), "Operator lines should not be empty");
+        }
+    }
+
+    #[test]
+    fn test_chronos_entity_type() {
+        let ops = load_chronos_operators();
+        let with_entity = ops.iter().filter(|op| op.entity_type.is_some()).count();
+        assert_eq!(with_entity, 1, "Expected 1 operator with entity_type (⍜)");
+
+        let purpose = ops.iter().find(|op| op.symbol == "⍜").unwrap();
+        let entity_type = purpose.entity_type().unwrap();
+        assert_eq!(entity_type.name, "Purpose");
     }
 }

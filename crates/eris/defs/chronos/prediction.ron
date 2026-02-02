@@ -1,0 +1,22 @@
+// ⟟ - Prediction (Anticipatory Projection)
+// Future state modeling / expectation formation
+(
+    symbol: "⟟",
+    name: "prediction",
+    category: "Temporal",
+    lines: [
+        ("≡", "prediction"),
+        ("≡", "anticipatory_projection"),
+        ("≝", "future state modeling"),
+        ("≝", "expectation formation"),
+        ("⊡", "Փ8Ե7"),
+        ("⊛", "⟟→future_state"),
+        ("⊛", "model⟟outcome"),
+        ("⊛", "⟟⥅𝀞_perception"),
+        ("⊛", "expectation⟟𝀕⟟result"),
+        ("⊛", "⟟→⟚ when 𝄎"),
+        ("⊛", "⟟→⛣ performative"),
+        ("⊛", "⟟ 𝀐 what it predicts"),
+        ("⊢", "⟟⊱confirmation (prediction results in confirmation)"),
+    ],
+)

@@ -1,0 +1,18 @@
+// ≻ - Succeeds (Temporal Ordering)
+// Ordered after / sequential succession
+(
+    symbol: "≻",
+    name: "succeeds",
+    category: "Temporal",
+    lines: [
+        ("≡", "succeeds"),
+        ("≡", "ordered after"),
+        ("≝", "sequential succession"),
+        ("≝", "temporal following"),
+        ("∂", "¬(A≺B) ≡ (B≻A)"),
+        ("∂", "inverse of ≺"),
+        ("⊛", "deployment≻testing ∧ parent≻child lifecycle ∧ future≻present"),
+        ("⊛", "lifecycle stages where parent≻child necessarily holds"),
+        ("⊢", "A≺B ⊢ B≻A ⊢ temporal ordering consistency"),
+    ],
+)

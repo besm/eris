@@ -1,0 +1,29 @@
+// θ - Horizon (Physics Vector Component)
+// Planning distance / temporal scope
+(
+    symbol: "θ",
+    name: "horizon",
+    category: "Temporal",
+    lines: [
+        ("≡", "horizon"),
+        ("≡", "planning_distance"),
+        ("≝", "temporal scope"),
+        ("≝", "μ component"),
+        ("⊡", "0≡immediate(hours)|5≡medium(weeks)|9≡extended(months+)"),
+        ("∂", "θ≠Լ (planning≠duration)"),
+        ("∂", "θ≠⍜ (distance≠purpose)"),
+        ("∂", "θ≠წ (θ⊃წ but measures reach)"),
+        ("⊛", "θ ∈ μ(θδπς)"),
+        ("⊛", "θ1→reactive∧short-term"),
+        ("⊛", "θ9→strategic∧long-range"),
+        ("⊛", "θ sets temporal ⯐ ∂"),
+        ("⊛", "θ⊰⟟"),
+        ("⊛", "◈∈θ (projects have planning horizons)"),
+        ("⊢", "θ9 ⊢ ◇strategic positioning"),
+        ("⊢", "θ1 ⊢ reactive უ strategy"),
+        ("⊢", "θ9∧ι1 ⊢ vision უ will"),
+        ("⟷", "θ⟷⍜"),
+        ("⟷", "θ⟷⟟"),
+        ("⟷", "θ1→Ց9"),
+    ],
+)

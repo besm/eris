@@ -1,0 +1,31 @@
+// ⍜ - Teleological Anchor / Purpose Entity
+// Dual-purpose: both operator and entity type
+(
+    symbol: "⍜",
+    name: "teleological_anchor",
+    category: "Teleological",
+    entity_type: Some((
+        symbol: "⍜",
+        name: "Purpose",
+        description: "Goal, objective, teleological anchor, intentional target",
+        sort_order: 100,
+    )),
+    lines: [
+        ("≡", "teleological_anchor"),
+        ("≡", "purpose_dimension"),
+        ("≝", "goal-oriented force"),
+        ("≝", "why behind when"),
+        ("⊡", "0≡incidental|5≡directional|9≡teleological"),
+        ("∂", "⍜≠Փ (capability უ direction)"),
+        ("∂", "⍜≠δ (density უ purpose)"),
+        ("∂", "⍜≠Ը (⍜ measures|Ը describes)"),
+        ("⊛", "⍜ binds temporal→goal hierarchy"),
+        ("⊛", "ω ⊂ ⍜"),
+        ("⊛", "⍜ exerts scheduling pressure"),
+        ("⊛", "⍜1→drift|⍜9→telos"),
+        ("⊢", "⍜9 ⊢ structured allocation ⊢ ◇goal"),
+        ("⊢", "⍜1 ⊢ reactive motion ⊢ ¬◇goal"),
+        ("⟷", "⍜⟷ε"),
+        ("⟷", "⍜⟷θ"),
+    ],
+)

@@ -1,0 +1,31 @@
+// λ - Consistency (Diagnostic Vector)
+// Temporal pattern stability / behavioral regularity
+(
+    symbol: "λ",
+    name: "consistency",
+    category: "Assessment",
+    lines: [
+        ("≡", "consistency"),
+        ("≡", "temporal_pattern_stability"),
+        ("≝", "behavioral regularity"),
+        ("≝", "diagnostic"),
+        ("⊡", "0≡erratic|5≡patterned|9≡invariant"),
+        ("∂", "λ≠թ (temporal≠logical)"),
+        ("∂", "λ≠ delays (behavioral≠symbolic)"),
+        ("∂", "λ measures pattern∘time|թ measures internal logic"),
+        ("⊛", "λ diagnostic (λ∉ω ∧ λ∉μ)"),
+        ("⊛", "λ1→erratic∧unpredictable"),
+        ("⊛", "λ9→stable∧reliable"),
+        ("⊛", "λ⊧𝀏"),
+        ("⊛", "λ9→⌺"),
+        ("⊛", "λ1→Ց9"),
+        ("⊛", "⋯∈λ1 (questions indicate inconsistency)"),
+        ("⊢", "λ9 ⊢ ⟟ reliable ⊢ ◇planning"),
+        ("⊢", "λ1 ⊢ ¬⟟ ⊢ reactive უ planning"),
+        ("⊢", "λ⊰θ extension"),
+        ("⟷", "λ⟷𝀏"),
+        ("⟷", "λ⁻¹∝Ց"),
+        ("⟷", "λ⟷⌺"),
+        ("⟷", "λ⟷θ"),
+    ],
+)

@@ -1,0 +1,25 @@
+// μ - Physics Vector
+// Temporal structure measurement container: μ(θδπς)
+(
+    symbol: "μ",
+    name: "physics_vector",
+    category: "Temporal",
+    lines: [
+        ("≡", "physics_vector"),
+        ("≡", "temporal_structure_measurement"),
+        ("≝", "μ(θδπς) composite"),
+        ("≝", "time-shape quantification"),
+        ("∂", "μ≠ω (physics≠teleology)"),
+        ("∂", "μ measures how structured|ω measures why used"),
+        ("∂", "μ≠Լ"),
+        ("⊛", "θ,δ,π,ς ∈ μ"),
+        ("⊛", "Notation: Entity→μ(θ7δ3π8ς2)"),
+        ("⊛", "μ∘ω→complete temporal assessment"),
+        ("⊛", "μ describes container|ω describes content"),
+        ("⊢", "μ(θ9δ9π9ς9) ⊢ maximal constraint ⊢ brittleness"),
+        ("⊢", "μ(θ1δ1π1ς1) ⊢ minimal structure ⊢ drift"),
+        ("⊢", "optimal μ ⊢ ⧆(structure∧flexibility)"),
+        ("⟷", "μ⟷⯐"),
+        ("⟷", "δ9∧ς9→γ⤋"),
+    ],
+)

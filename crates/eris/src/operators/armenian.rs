@@ -4,6 +4,17 @@
 
 use super::loader::{load_vectors, RonOperatorDef};
 
+/// Armenian vector categories (excludes chronos vectors)
+const ARMENIAN_CATEGORIES: &[&str] = &[
+    "Core",
+    "Relational",
+    "Compression",
+    "SelfReference",
+    "SystemCoherence",
+    "Evolution",
+    "DesignBalance",
+];
+
 /// Property value type (0-9 scale)
 pub type PropertyValue = u8;
 
@@ -12,17 +23,25 @@ pub fn validate_property_value(value: PropertyValue) -> bool {
     value <= 9
 }
 
-/// Get all Armenian operator definitions
+/// Check if a category is an Armenian category
+fn is_armenian_category(category: &str) -> bool {
+    ARMENIAN_CATEGORIES.contains(&category)
+}
+
+/// Get all Armenian operator definitions (filtered from unified vector loader)
 pub fn get_armenian_operator_definitions() -> Vec<RonOperatorDef> {
-    load_vectors().clone()
+    load_vectors()
+        .iter()
+        .filter(|op| is_armenian_category(&op.category))
+        .cloned()
+        .collect()
 }
 
 /// Get a specific Armenian operator by symbol
 pub fn get_armenian_operator(symbol: &str) -> Option<RonOperatorDef> {
-    load_vectors()
-        .iter()
+    get_armenian_operator_definitions()
+        .into_iter()
         .find(|op| op.symbol == symbol)
-        .cloned()
 }
 
 #[cfg(test)]

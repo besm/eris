@@ -1,0 +1,29 @@
+// ς - Sync (Physics Vector Component)
+// Coordination dependency / synchronization requirements
+(
+    symbol: "ς",
+    name: "sync",
+    category: "Temporal",
+    lines: [
+        ("≡", "sync"),
+        ("≡", "coordination_dependency"),
+        ("≝", "synchronization requirements"),
+        ("≝", "μ component"),
+        ("⊡", "0≡independent|5≡coordinated|9≡tightly_coupled"),
+        ("∂", "ς≠π (sync≠precision)"),
+        ("∂", "ς≠⋈ (temporal≠structural)"),
+        ("∂", "ς measures coupling|π measures tolerance"),
+        ("⊛", "ς ∈ μ(θδπς)"),
+        ("⊛", "ς1→autonomous∧decoupled"),
+        ("⊛", "ς9→interdependent∧synchronized"),
+        ("⊛", "ς9→bottleneck vulnerability"),
+        ("⊛", "ς→⋈ temporal"),
+        ("⊛", "ς9→ε◻others"),
+        ("⊢", "ς9 ⊢ coordination overhead ⊢ cascade risk"),
+        ("⊢", "ς1 ⊢ autonomy ⊢ უ coordination benefit"),
+        ("⊢", "ς9∧π9∧δ9 ⊢ system fragility"),
+        ("⟷", "ς⟷⋈"),
+        ("⟷", "ς⟷┃"),
+        ("⟷", "ς⟷ε"),
+    ],
+)

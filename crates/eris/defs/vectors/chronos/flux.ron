@@ -1,0 +1,30 @@
+// ϕ - Flux (Diagnostic Vector)
+// Flow state measure / dynamic fluidity
+(
+    symbol: "ϕ",
+    name: "flux",
+    category: "Assessment",
+    lines: [
+        ("≡", "flux"),
+        ("≡", "flow_state_measure"),
+        ("≝", "dynamic fluidity"),
+        ("≝", "diagnostic"),
+        ("⊡", "0≡blocked|5≡moving|9≡flowing"),
+        ("∂", "ϕ≠𝀾 (ϕ measures|𝀾 names)"),
+        ("∂", "ϕ≠ε (general≠purposive)"),
+        ("∂", "ϕ diagnostic|ε teleological"),
+        ("⊛", "ϕ diagnostic (ϕ∉ω ∧ ϕ∉μ)"),
+        ("⊛", "ϕ1→blocked∧stagnant"),
+        ("⊛", "ϕ9→flowing∧dynamic"),
+        ("⊛", "ϕ measures 𝀾"),
+        ("⊛", "ϕ1→𝁆 risk"),
+        ("⊛", "ϕ9→𝀷 active"),
+        ("⊢", "ϕ9 ⊢ momentum ⊢ 𝀾"),
+        ("⊢", "ϕ1 ⊢ stagnation ⊢ 𝁆 risk"),
+        ("⊢", "ϕ◻γ"),
+        ("⟷", "ϕ⟷𝀾"),
+        ("⟷", "ϕ⟷γ"),
+        ("⟷", "ϕ⟷δ (δ⁻¹∝ϕ)"),
+        ("⟷", "ϕ⟷ε"),
+    ],
+)

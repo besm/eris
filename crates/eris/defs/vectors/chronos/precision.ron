@@ -1,0 +1,28 @@
+// π - Precision (Physics Vector Component)
+// Timing rigidity / scheduling granularity
+(
+    symbol: "π",
+    name: "precision",
+    category: "Temporal",
+    lines: [
+        ("≡", "precision"),
+        ("≡", "timing_rigidity"),
+        ("≝", "scheduling granularity"),
+        ("≝", "μ component"),
+        ("⊡", "0≡loose|5≡structured|9≡rigid"),
+        ("∂", "π≠ς (precision უ sync)"),
+        ("∂", "π≠α (temporal≠goal)"),
+        ("∂", "π measures tolerance|ς measures coupling"),
+        ("⊛", "π ∈ μ(θδπς)"),
+        ("⊛", "π1→fluid∧adaptable"),
+        ("⊛", "π9→fixed∧strict"),
+        ("⊛", "π9→𝀸 vulnerability"),
+        ("⊛", "π constrains ε"),
+        ("⊢", "π9 ⊢ exact coordination ⊢ brittleness"),
+        ("⊢", "π1 ⊢ temporal slack ⊢ ◇absorption"),
+        ("⊢", "π9∧ς9 ⊢ maximal rigidity ⊢ cascade failure risk"),
+        ("⟷", "π⟷ε"),
+        ("⟷", "π⟷𝀸 (π9→𝀸 impact amplified)"),
+        ("⟷", "π⟷λ"),
+    ],
+)

@@ -1,0 +1,18 @@
+// ◇ - Eventually (Modal-Temporal)
+// Future possibility / temporal achievement
+(
+    symbol: "◇",
+    name: "eventually",
+    category: "Temporal",
+    lines: [
+        ("≡", "eventually"),
+        ("≡", "future possibility"),
+        ("≝", "temporal achievement"),
+        ("≝", "goal realization"),
+        ("⊛", "◇ workflow completion"),
+        ("⊛", "◇ validation goals"),
+        ("⊛", "◇ eventual consistency"),
+        ("∂", "¬□ (immediate/always)"),
+        ("∂", "temporal progression required"),
+    ],
+)

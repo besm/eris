@@ -1,0 +1,32 @@
+// γ - Capacity (Diagnostic Vector)
+// Energy reserve / resource availability
+(
+    symbol: "γ",
+    name: "capacity",
+    category: "Assessment",
+    lines: [
+        ("≡", "capacity"),
+        ("≡", "energy_reserve"),
+        ("≝", "resource availability"),
+        ("≝", "diagnostic"),
+        ("⊡", "0≡depleted|5≡adequate|9≡abundant"),
+        ("∂", "γ≠Լ (energy≠duration)"),
+        ("∂", "γ≠ε (having≠using)"),
+        ("∂", "γ≠ϕ (reserve≠flow)"),
+        ("⊛", "γ diagnostic (γ∉ω ∧ γ∉μ)"),
+        ("⊛", "γ1→depleted∧exhausted"),
+        ("⊛", "γ9→energized∧capable"),
+        ("⊛", "γ⤋→𝁆"),
+        ("⊛", "γ constrains ε ceiling"),
+        ("⊛", "γ⊰ϕ"),
+        ("⊛", "δ9∧ς9→γ⤋"),
+        ("⊢", "γ9 ⊢ sustained performance ⊢ resilience"),
+        ("⊢", "γ1 ⊢ ¬◇ε ⊢ 𝁆 imminent"),
+        ("⊢", "γ⊰ε⊰ϕ"),
+        ("⟷", "γ⟷ε (γ bounds ε)"),
+        ("⟷", "γ⟷ϕ (γ⊰ϕ)"),
+        ("⟷", "γ⟷δ (δ→γ⤋)"),
+        ("⟷", "γ⟷𝁆"),
+        ("⟷", "γ⟷Լ"),
+    ],
+)

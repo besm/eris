@@ -1,0 +1,28 @@
+// δ - Density (Physics Vector Component)
+// Time allocation intensity / commitment volume
+(
+    symbol: "δ",
+    name: "density",
+    category: "Temporal",
+    lines: [
+        ("≡", "density"),
+        ("≡", "commitment_volume"),
+        ("≝", "time allocation intensity"),
+        ("≝", "μ component"),
+        ("⊡", "0≡sparse|5≡moderate|9≡saturated"),
+        ("∂", "δ≠Վ (temporal≠semantic)"),
+        ("∂", "δ≠≐ (commitment≠compression)"),
+        ("∂", "δ measures packing|Վ measures meaning-per-symbol"),
+        ("⊛", "δ ∈ μ(θδπς)"),
+        ("⊛", "δ1→flexible∧slack"),
+        ("⊛", "δ9→packed∧constrained"),
+        ("⊛", "δ9→γ⤋"),
+        ("⊛", "δ⁻¹∝ε"),
+        ("⊢", "δ9 ⊢ ¬◇flexibility ⊢ 𝀸 vulnerability"),
+        ("⊢", "δ1 ⊢ slack ⊢ ◇absorption"),
+        ("⊢", "δ9∧ς9 ⊢ maximal constraint ⊢ brittleness"),
+        ("⟷", "δ⟷γ (δ9→γ⤋)"),
+        ("⟷", "δ⟷ε (δ⁻¹∝ε)"),
+        ("⟷", "δ9∧𝀸→Ց9"),
+    ],
+)

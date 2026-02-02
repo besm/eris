@@ -1,0 +1,23 @@
+// ⟲ - Feedback Loop (Circular Causation)
+// Output→input mechanism / general self-reinforcement
+(
+    symbol: "⟲",
+    name: "feedback_loop",
+    category: "Causal",
+    lines: [
+        ("≡", "feedback_loop"),
+        ("≡", "circular_causation"),
+        ("≝", "output→input mechanism"),
+        ("≝", "general self-reinforcement"),
+        ("⊡", "Ր9Տ8"),
+        ("∂", "⟲⊅⟗ (⟲ mechanism | ⟗ named instance)"),
+        ("∂", "⟲ operator | ⟗ entity-taggable"),
+        ("⊛", "⟟→outcome⟲⟟"),
+        ("⊛", "⧈→𝀕⟲⧈"),
+        ("⊛", "⟲ amplifies initial_conditions"),
+        ("⊛", "market⟲sentiment⟲price"),
+        ("⊛", "⟲ 𝀖 𝀺→◬"),
+        ("⊛", "⟲ can 𝀶 or 𝆌"),
+        ("⊢", "⟲ ⊢ non-linear dynamics ⊢ emergent behavior"),
+    ],
+)

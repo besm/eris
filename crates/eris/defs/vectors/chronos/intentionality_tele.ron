@@ -1,0 +1,27 @@
+// ι - Intentionality (Teleological Vector Component)
+// Goal orientation strength
+(
+    symbol: "ι",
+    name: "intentionality",
+    category: "Teleological",
+    lines: [
+        ("≡", "intentionality"),
+        ("≡", "goal_orientation_strength"),
+        ("≝", "deliberateness measure"),
+        ("≝", "ω component"),
+        ("⊡", "0≡incidental|5≡purposeful|9≡strategic"),
+        ("∂", "ι≠Ը (ι measures|Ը names)"),
+        ("∂", "ι≠⍜ (ι∈ω⊂⍜)"),
+        ("∂", "ι≠α (orientation≠alignment)"),
+        ("⊛", "ι ∈ ω(ιαε)"),
+        ("⊛", "ι1→happenstance∧reactive"),
+        ("⊛", "ι9→deliberate∧goal-driven"),
+        ("⊛", "ι→𝀐"),
+        ("⊛", "ι⊰α"),
+        ("⊛", "⟡∈ι (ideas embody intentionality)"),
+        ("⊢", "ι9 ⊢ ◇α9"),
+        ("⊢", "ι1 ⊢ α≤ι"),
+        ("⟷", "ι⟷Ը"),
+        ("⟷", "ι⟷⟟"),
+    ],
+)

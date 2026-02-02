@@ -1,0 +1,22 @@
+// 𝆌 - Reinforces (Feedback Reinforcement)
+// Pattern strengthening through repetition
+(
+    symbol: "𝆌",
+    name: "reinforces",
+    category: "Causal",
+    lines: [
+        ("≡", "reinforces"),
+        ("≡", "strengthens_pattern"),
+        ("≝", "feedback reinforcement"),
+        ("≝", "pattern strengthening through repetition"),
+        ("⊡", "Փ8Տ7"),
+        ("⊛", "𝄃 𝆌 ⧈"),
+        ("⊛", "⧈→𝀕→𝆌→⧈"),
+        ("⊛", "usage patterns 𝆌 ⌺"),
+        ("⊛", "⛫ 𝆌 itself"),
+        ("⊛", "⟲ can 𝀶 or 𝆌"),
+        ("⊛", "𝆌 stabilizes patterns"),
+        ("⊛", "behavior→𝆌→⌂"),
+        ("⊢", "𝆌 reinforcement ⊢ pattern stability ⊢ habitus formation"),
+    ],
+)

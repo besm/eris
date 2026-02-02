@@ -1,0 +1,20 @@
+// ⏣ - State (Process State)
+// Workflow position / current condition
+(
+    symbol: "⏣",
+    name: "state",
+    category: "Temporal",
+    lines: [
+        ("≡", "state"),
+        ("≡", "process_state"),
+        ("≝", "workflow position"),
+        ("≝", "current condition"),
+        ("⊡", "Ր9Լ8խ6"),
+        ("⊛", "ნ⏣∈∘workflow_chain"),
+        ("⊛", "○(⏣)→○⏣"),
+        ("⊛", "⏣=position"),
+        ("⊛", "track ⏣ through session"),
+        ("⊛", "⑀⏣ (meta markers track state)"),
+        ("⊢", "⏣ state ⊢ position tracking ⊢ workflow progression"),
+    ],
+)

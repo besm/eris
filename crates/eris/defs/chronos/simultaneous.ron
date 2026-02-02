@@ -1,0 +1,23 @@
+// ⬡ - Simultaneous (Concurrent)
+// Temporal co-occurrence / synchronic relation
+(
+    symbol: "⬡",
+    name: "simultaneous",
+    category: "Temporal",
+    lines: [
+        ("≡", "simultaneous"),
+        ("≡", "concurrent"),
+        ("≝", "temporal co-occurrence"),
+        ("≝", "synchronic relation"),
+        ("⊛", "⧈⬡reality"),
+        ("⊛", "naming⬡existence"),
+        ("⊛", "⬡ co_constitutive"),
+        ("⊛", "model⬡world"),
+        ("⊛", "observer⬡observed⬡"),
+        ("⊛", "𝀔⬡𝀕"),
+        ("⊛", "⛫⬡subjects"),
+        ("∂", "¬sequential"),
+        ("∂", "¬causal priority"),
+        ("∂", "mutual co-presence"),
+    ],
+)
