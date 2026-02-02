@@ -1,14 +1,16 @@
+// ⵅ - Reflexive (supersedes Ր)
 (
-    symbol: "Ր",
+    symbol: "ⵅ",
     name: "reflexive",
     category: "Relational",
+    supersedes: Some("Ր"),
     lines: [
         ("⊡", "0≡¬⟳|5≡∃⟳|9≡∀⟳"),
         ("≡", "reflexive"),
         ("≡", "self_reference"),
         ("≝", "self awareness"),
         ("≝", "recursive structures"),
-        ("⊛", "Ր→self_awareness ∧ Ր∈⟳_structures ∧ Ր enables introspection"),
-        ("⊛", "A⋈A via Ր ∧ 𝄎≡Ր specialized"),
+        ("⊛", "ⵅ→self_awareness ∧ ⵅ∈⟳_structures ∧ ⵅ enables introspection"),
+        ("⊛", "A⋈A via ⵅ ∧ 𝄎≡ⵅ specialized"),
     ],
 )

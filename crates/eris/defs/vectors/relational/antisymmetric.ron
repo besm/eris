@@ -1,0 +1,18 @@
+// ⵔ - Antisymmetric (supersedes Ա)
+(
+    symbol: "ⵔ",
+    name: "antisymmetric",
+    category: "Relational",
+    supersedes: Some("Ա"),
+    lines: [
+        ("⊡", "0≡⟷≡|5≡→≺←|9≡⊩≺"),
+        ("≡", "antisymmetric"),
+        ("≡", "directional_ordering"),
+        ("≝", "hierarchical structure enforcement"),
+        ("≝", "precedence design"),
+        ("⊛", "ⵔ→hierarchical_structures"),
+        ("⊛", "ⵔ∈precedence_design"),
+        ("⊛", "ⵔ enables ranking"),
+        ("⊢", "A≺B∧B≺A⊃A≡B via ⵔ"),
+    ],
+)

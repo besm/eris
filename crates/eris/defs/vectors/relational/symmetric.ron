@@ -1,16 +1,18 @@
+// ⵖ - Symmetric (supersedes Ս)
 (
-    symbol: "Ս",
+    symbol: "ⵖ",
     name: "symmetric",
     category: "Relational",
+    supersedes: Some("Ս"),
     lines: [
         ("⊡", "0≡→⊥←|5≡→≈←|9≡→≡←"),
         ("≡", "symmetric"),
         ("≡", "bidirectional_equality"),
         ("≝", "mutual relationships"),
         ("≝", "partnership design"),
-        ("⊛", "Ս→mutual_relationships"),
-        ("⊛", "Ս∈partnership_design"),
-        ("⊛", "Ս enables cooperation"),
-        ("⊢", "A⋈B≡B⋈A via Ս"),
+        ("⊛", "ⵖ→mutual_relationships"),
+        ("⊛", "ⵖ∈partnership_design"),
+        ("⊛", "ⵖ enables cooperation"),
+        ("⊢", "A⋈B≡B⋈A via ⵖ"),
     ],
 )

@@ -1,15 +1,17 @@
+// ⵀ - Total (supersedes Օ)
 (
-    symbol: "Օ",
+    symbol: "ⵀ",
     name: "total",
     category: "Relational",
+    supersedes: Some("Օ"),
     lines: [
         ("⊡", "0≡∃∅|5≡≈∀|9≡∀⊨"),
         ("≡", "total"),
         ("≡", "complete_coverage"),
         ("≝", "exhaustive enumeration"),
         ("≝", "completeness validation"),
-        ("⊛", "Օ→exhaustive_enumeration"),
-        ("⊛", "Օ∈completeness_validation"),
-        ("⊢", "∀x∈domain⊃relation(x) via Օ"),
+        ("⊛", "ⵀ→exhaustive_enumeration"),
+        ("⊛", "ⵀ∈completeness_validation"),
+        ("⊢", "∀x∈domain⊃relation(x) via ⵀ"),
     ],
 )

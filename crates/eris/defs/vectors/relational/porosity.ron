@@ -1,7 +1,9 @@
+// ⵒ - Porosity (supersedes Պ)
 (
-    symbol: "Պ",
+    symbol: "ⵒ",
     name: "porosity",
     category: "Relational",
+    supersedes: Some("Պ"),
     lines: [
         ("≡", "porosity"),
         ("≡", "permeability"),
@@ -11,9 +13,9 @@
         ("⊡", "5: semi-permeable ∧ regulated_flow"),
         ("⊡", "7: porous ∧ easy_transit"),
         ("⊡", "9: open ∧ boundary≈nominal"),
-        ("⊛", "membership: Պ2(secret_society)→Պ8(open_movement)"),
-        ("⊛", "information: Պ1(classified)→Պ9(public_domain)"),
-        ("⊛", "influence: Պ3(insulated)→Պ7(responsive)"),
-        ("⊨", "Պ ≡ flow_across_Բ"),
+        ("⊛", "membership: ⵒ2(secret_society)→ⵒ8(open_movement)"),
+        ("⊛", "information: ⵒ1(classified)→ⵒ9(public_domain)"),
+        ("⊛", "influence: ⵒ3(insulated)→ⵒ7(responsive)"),
+        ("⊨", "ⵒ ≡ flow_across_Բ"),
     ],
 )

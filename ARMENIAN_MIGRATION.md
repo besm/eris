@@ -22,7 +22,7 @@ Migrate the 36 Armenian vector property symbols to Tifinagh (U+2D30–U+2D7F) wh
 | Cluster | Count | Status | Directory |
 |---------|-------|--------|-----------|
 | Stability | 4 | ✅ | `vectors/stability/` |
-| Relational | 6 | ❌ | — |
+| Relational | 6 | ✅ | `vectors/relational/` |
 | Core | 10 | ❌ | — |
 | SelfReference | 5 | ❌ | — |
 | SystemCoherence | 6 | ❌ | — |
@@ -30,7 +30,7 @@ Migrate the 36 Armenian vector property symbols to Tifinagh (U+2D30–U+2D7F) wh
 | Evolution | 1 | ❌ | — |
 | DesignBalance | 3 | ❌ | — |
 
-**Progress:** 4/36 (11%)
+**Progress:** 10/36 (28%)
 
 ## Completed Migrations
 
@@ -43,18 +43,18 @@ Migrate the 36 Armenian vector property symbols to Tifinagh (U+2D30–U+2D7F) wh
 | Ճ | ⵛ | component_stability | `stability/component.ron` |
 | Ձ | ⵙ | symbolic_stability | `stability/symbolic.ron` |
 
-## Pending Migrations
-
 ### Relational (6 symbols)
 
-| Old | New | Name |
-|-----|-----|------|
-| Ա | — | antisymmetric |
-| Տ | — | transitive |
-| Ս | — | symmetric |
-| Ր | — | reflexive |
-| Օ | — | total |
-| Պ | — | porosity |
+| Old | New | Name | File |
+|-----|-----|------|------|
+| Ա | ⵔ | antisymmetric | `relational/antisymmetric.ron` |
+| Տ | ⵕ | transitive | `relational/transitive.ron` |
+| Ս | ⵖ | symmetric | `relational/symmetric.ron` |
+| Ր | ⵅ | reflexive | `relational/reflexive.ron` |
+| Օ | ⵀ | total | `relational/total.ron` |
+| Պ | ⵒ | porosity | `relational/porosity.ron` |
+
+## Pending Migrations
 
 ### Core (10 symbols)
 

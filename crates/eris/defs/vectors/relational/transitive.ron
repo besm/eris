@@ -1,16 +1,18 @@
+// ⵕ - Transitive (supersedes Տ)
 (
-    symbol: "Տ",
+    symbol: "ⵕ",
     name: "transitive",
     category: "Relational",
+    supersedes: Some("Տ"),
     lines: [
         ("⊡", "0≡¬→|5≡∃→|9≡∀→"),
         ("≡", "transitive"),
         ("≡", "chain_propagation"),
         ("≝", "inheritance chains"),
         ("≝", "dependency graphs"),
-        ("⊛", "Տ→inheritance_chains"),
-        ("⊛", "Տ∈dependency_graphs"),
-        ("⊛", "Տ enables composition"),
-        ("⊢", "A→B→C⊃A→C via Տ"),
+        ("⊛", "ⵕ→inheritance_chains"),
+        ("⊛", "ⵕ∈dependency_graphs"),
+        ("⊛", "ⵕ enables composition"),
+        ("⊢", "A→B→C⊃A→C via ⵕ"),
     ],
 )

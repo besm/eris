@@ -140,8 +140,8 @@ fn parse_operator(ron_str: &str) -> RonOperatorDef {
 /// Order matches original armenian.rs for output equivalence
 fn load_vectors_inner() -> Vec<RonOperatorDef> {
     vec![
-        // Core properties (first batch)
-        parse_operator(include_str!("../../defs/vectors/antisymmetric.ron")),
+        // Relational properties (antisymmetric moved here for grouping)
+        parse_operator(include_str!("../../defs/vectors/relational/antisymmetric.ron")),
         parse_operator(include_str!("../../defs/vectors/boundary.ron")),
         parse_operator(include_str!("../../defs/vectors/generalizability.ron")),
         parse_operator(include_str!("../../defs/vectors/explanatory.ron")),
@@ -152,10 +152,10 @@ fn load_vectors_inner() -> Vec<RonOperatorDef> {
         parse_operator(include_str!("../../defs/vectors/semantic_density.ron")),
         parse_operator(include_str!("../../defs/vectors/stability/volatility.ron")),
         // Relational properties (first batch)
-        parse_operator(include_str!("../../defs/vectors/transitive.ron")),
-        parse_operator(include_str!("../../defs/vectors/symmetric.ron")),
-        parse_operator(include_str!("../../defs/vectors/reflexive.ron")),
-        parse_operator(include_str!("../../defs/vectors/total.ron")),
+        parse_operator(include_str!("../../defs/vectors/relational/transitive.ron")),
+        parse_operator(include_str!("../../defs/vectors/relational/symmetric.ron")),
+        parse_operator(include_str!("../../defs/vectors/relational/reflexive.ron")),
+        parse_operator(include_str!("../../defs/vectors/relational/total.ron")),
         // Compression properties
         parse_operator(include_str!("../../defs/vectors/symbolic_economy.ron")),
         parse_operator(include_str!("../../defs/vectors/reference_efficiency.ron")),
@@ -180,7 +180,7 @@ fn load_vectors_inner() -> Vec<RonOperatorDef> {
         // SystemCoherence properties (second batch)
         parse_operator(include_str!("../../defs/vectors/formalization.ron")),
         // Relational properties (second batch)
-        parse_operator(include_str!("../../defs/vectors/porosity.ron")),
+        parse_operator(include_str!("../../defs/vectors/relational/porosity.ron")),
         // SystemCoherence properties (third batch)
         parse_operator(include_str!("../../defs/vectors/hierarchy.ron")),
         // Core properties (second batch)
