@@ -9,7 +9,7 @@
         ("≡", "function_on_output"),
         ("≝", "f(f(x)) structure"),
         ("≝", "complexity generation"),
-        ("⊡", "Ր9Տ8"),
+        ("⊡", "ⵅ9ⵕ8"),
         ("∂", "⟖⊂⟳ (⟖ specialized | ⟳ general)"),
         ("⊛", "definition⟖self_reference⟖definition"),
         ("⊛", "⟖ generates_complexity"),

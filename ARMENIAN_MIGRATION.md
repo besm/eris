@@ -133,6 +133,26 @@ Migrate the 36 Armenian vector property symbols to Tifinagh (U+2D30–U+2D7F) wh
 - `get_armenian_operator()` finds by new OR old symbol
 - Categories renamed: `ARMENIAN_CATEGORIES` → `PROPERTY_CATEGORIES`
 
+### Migration Script
+
+`vector_migrate.sh` updates cross-references in entity and chronos definitions:
+
+```bash
+# Single vector
+./vector_migrate.sh transitive
+
+# All vectors with supersedes
+for f in crates/eris/defs/vectors/**/*.ron; do
+  ./vector_migrate.sh "$(basename "$f" .ron)"
+done
+```
+
+Output shows before/after counts:
+```
+transitive: Տ → ⵕ (6 files)
+  6 → 0 remaining
+```
+
 ### Directory Structure
 
 ```
@@ -142,7 +162,13 @@ defs/vectors/
 │   ├── lifespan.ron     # ⵜ
 │   ├── component.ron    # ⵛ
 │   └── symbolic.ron     # ⵙ
-├── relational/          # Planned
+├── relational/          # Migrated
+│   ├── antisymmetric.ron # ⵔ
+│   ├── transitive.ron    # ⵕ
+│   ├── symmetric.ron     # ⵖ
+│   ├── reflexive.ron     # ⵅ
+│   ├── total.ron         # ⵀ
+│   └── porosity.ron      # ⵒ
 ├── core/                # Planned
 ├── selfreference/       # Planned
 ├── coherence/           # Planned
