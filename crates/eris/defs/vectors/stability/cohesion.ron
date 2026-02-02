@@ -1,7 +1,9 @@
+// ⵞ - Cohesion (supersedes Ի)
 (
-    symbol: "Ի",
+    symbol: "ⵞ",
     name: "cohesion",
-    category: "SystemCoherence",
+    category: "Stability",
+    supersedes: Some("Ի"),
     lines: [
         ("≡", "cohesion"),
         ("≡", "internal_unity"),
@@ -11,9 +13,9 @@
         ("⊡", "5: moderate_agreement ∧ some_tension"),
         ("⊡", "7: aligned ∧ shared_direction"),
         ("⊡", "9: monolithic ∧ unified_action"),
-        ("⊛", "⍚: Ի3(fractious_coalition)→Ի8(disciplined_firm)"),
-        ("⊛", "⌯: Ի2(broad_tent)→Ի7(ideological_core)"),
-        ("⊛", "⧊: Ի4(contested_concept)→Ի9(settled_definition)"),
-        ("⊨", "Ի ≡ internal_∧¬external"),
+        ("⊛", "⍚: ⵞ3(fractious_coalition)→ⵞ8(disciplined_firm)"),
+        ("⊛", "⌯: ⵞ2(broad_tent)→ⵞ7(ideological_core)"),
+        ("⊛", "⧊: ⵞ4(contested_concept)→ⵞ9(settled_definition)"),
+        ("⊨", "ⵞ ≡ internal_∧¬external"),
     ],
 )
