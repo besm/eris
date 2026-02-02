@@ -1,0 +1,16 @@
+// ⵝ - Explanatory (supersedes Ե)
+(
+    symbol: "ⵝ",
+    name: "explanatory",
+    category: "Expression",
+    supersedes: Some("Ե"),
+    lines: [
+        ("≡", "explanatory"),
+        ("≡", "clarification_power"),
+        ("≝", "understanding enhancement"),
+        ("≝", "documentation quality"),
+        ("⊡", "0≡⊟⧊|5≡⌾⧊|9≡⊨⧊"),
+        ("⊛", "ⵝ→understanding_enhancement ∧ ⵝ∈documentation_quality ∧ concept_ⵝ strength"),
+        ("⊛", "tutorial_ⵝ design"),
+    ],
+)

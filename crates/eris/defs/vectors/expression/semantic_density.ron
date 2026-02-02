@@ -1,0 +1,16 @@
+// ⵐ - Semantic Density (supersedes Վ)
+(
+    symbol: "ⵐ",
+    name: "semantic_density",
+    category: "Expression",
+    supersedes: Some("Վ"),
+    lines: [
+        ("≡", "semantic_density"),
+        ("≡", "meaning_concentration"),
+        ("≝", "compression ratio"),
+        ("≝", "expressivity efficiency"),
+        ("⊡", "0≡∅≐|5≡≈≐|9≡∞≐"),
+        ("⊛", "ⵐ∝compression_ratio ∧ semantic_ⵐ optimization ∧ ⵐ→expressivity_efficiency"),
+        ("⊛", "symbol_ⵐ analysis"),
+    ],
+)
