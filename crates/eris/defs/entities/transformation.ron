@@ -7,7 +7,7 @@
 
     equivalence: ["transformation", "directional_change"],
     definition: ["A→B→C ∧ t₀<t₁<t₂ ∧ ¬reversible"],
-    vector: ["Շ7Գ6Բ8"],
+    vector: ["Շ7Գ6ⵗ8"],
     boundary: [
         "⧃|⬢ (sequential|simultaneous)",
         "⧃|⟗ (unidirectional|bidirectional)",

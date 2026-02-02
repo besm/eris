@@ -1,0 +1,17 @@
+// ⵗ - Boundary (supersedes Բ)
+(
+    symbol: "ⵗ",
+    name: "boundary",
+    category: "Stability",
+    supersedes: Some("Բ"),
+    lines: [
+        ("≡", "boundary"),
+        ("≡", "interface"),
+        ("≝", "separation clarity ∧ specification"),
+        ("⊡", "0≡∅∂|5≡⊨∂|9≡⊩∂"),
+        ("⊛", "ⵗ→architectural_concern"),
+        ("⊛", "service∂service via ⵗ"),
+        ("⊛", "┃≡ⵗ_specialized"),
+        ("⊛", "ⵗ⤋→𝁆|ⵗ⌺→𝀏"),
+    ],
+)
