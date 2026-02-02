@@ -15,7 +15,7 @@
         ("∂", "⌖⊅⌁ (⌖ place | ⌁ event at place)"),
         ("∂", "⌖⊅⍢ (⌖ city | ⍢ university there)"),
         ("∂", "⌖⊅⚘ (⌖ standalone | ¬separate when ∈⚘ name)"),
-        ("⊡", "Շ variable: continent Շ9 | nation Շ7 | city Շ5 | neighborhood Շ3"),
+        ("⊡", "ⵋ variable: continent ⵋ9 | nation ⵋ7 | city ⵋ5 | neighborhood ⵋ3"),
         ("⊛", "⌖⦑Africa|Asia|Europe|North America|South America|Antarctica⦒"),
         ("⊛", "⌖⦑France|Japan|Brazil|Nigeria|India|Egypt|Mexico|Indonesia⦒"),
         ("⊛", "⌖⦑Midwest|Patagonia|Siberia|Sahel|Levant|Maghreb|Balkans|Punjab⦒"),

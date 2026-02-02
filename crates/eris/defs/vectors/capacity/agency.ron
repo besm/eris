@@ -1,7 +1,9 @@
+// ⵓ - Agency (supersedes Ղ)
 (
-    symbol: "Ղ",
+    symbol: "ⵓ",
     name: "agency",
-    category: "Core",
+    category: "Capacity",
+    supersedes: Some("Ղ"),
     lines: [
         ("≡", "agency"),
         ("≡", "self_direction"),
@@ -11,9 +13,9 @@
         ("⊡", "5: semi-autonomous ∧ conditional_freedom"),
         ("⊡", "7: self-directing ∧ initiative"),
         ("⊡", "9: sovereign ∧ unconstrained_origination"),
-        ("⊛", "⍚: Ղ2(subsidiary)→Ղ8(independent)"),
-        ("⊛", "⚘: Ղ3(conscript)→Ղ7(free_agent)"),
-        ("⊛", "⧊: Ղ1(epiphenomenal)→Ղ6(causal_concept)"),
-        ("⊨", "Ղ ≡ origination_capacity"),
+        ("⊛", "⍚: ⵓ2(subsidiary)→ⵓ8(independent)"),
+        ("⊛", "⚘: ⵓ3(conscript)→ⵓ7(free_agent)"),
+        ("⊛", "⧊: ⵓ1(epiphenomenal)→ⵓ6(causal_concept)"),
+        ("⊨", "ⵓ ≡ origination_capacity"),
     ],
 )

@@ -1,0 +1,16 @@
+// ⵘ - Generalizability (supersedes Գ)
+(
+    symbol: "ⵘ",
+    name: "generalizability",
+    category: "Extension",
+    supersedes: Some("Գ"),
+    lines: [
+        ("≡", "generalizability"),
+        ("≡", "pattern_extension"),
+        ("≝", "reuse potential"),
+        ("≝", "design flexibility"),
+        ("⊡", "0≡⊂❖|5≡∩❖|9≡∀❖"),
+        ("⊛", "ⵘ→reuse_potential ∧ ⵘ∈design_flexibility ∧ ᛝ_ⵘ across domains"),
+        ("⊛", "framework_ⵘ assessment"),
+    ],
+)

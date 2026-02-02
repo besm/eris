@@ -1,0 +1,16 @@
+// ⵇ - Contextualization (supersedes խ)
+(
+    symbol: "ⵇ",
+    name: "contextualization",
+    category: "Extension",
+    supersedes: Some("խ"),
+    lines: [
+        ("≡", "contextualization"),
+        ("≡", "situational_adaptation"),
+        ("≝", "environment fitting"),
+        ("≝", "usage context sensitivity"),
+        ("⊡", "0≡⊥⯐|5≡∩⯐|9≡⊆⯐"),
+        ("⊛", "ⵇ→environment_fitting ∧ ⵇ∈usage_⯐ ∧ 𐤆_ⵇ sensitivity"),
+        ("⊛", "ⵇ enables portability"),
+    ],
+)

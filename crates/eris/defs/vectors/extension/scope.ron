@@ -1,7 +1,9 @@
+// ⵋ - Scope (supersedes Շ)
 (
-    symbol: "Շ",
+    symbol: "ⵋ",
     name: "scope",
-    category: "Core",
+    category: "Extension",
+    supersedes: Some("Շ"),
     lines: [
         ("≡", "scope"),
         ("≡", "reach"),
@@ -11,9 +13,9 @@
         ("⊡", "5: national ∧ domain_specific"),
         ("⊡", "7: transnational ∧ cross_domain"),
         ("⊡", "9: universal ∧ context_independent"),
-        ("⊛", "spatial: Շ1(village)→Շ9(global)"),
-        ("⊛", "conceptual: Շ2(case_specific)→Շ9(general_law)"),
-        ("⊛", "temporal: Շ3(era_bound)→Շ8(transhistorical)"),
-        ("⊨", "Շ ≡ applicability_breadth"),
+        ("⊛", "spatial: ⵋ1(village)→ⵋ9(global)"),
+        ("⊛", "conceptual: ⵋ2(case_specific)→ⵋ9(general_law)"),
+        ("⊛", "temporal: ⵋ3(era_bound)→ⵋ8(transhistorical)"),
+        ("⊨", "ⵋ ≡ applicability_breadth"),
     ],
 )

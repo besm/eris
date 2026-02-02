@@ -1,0 +1,16 @@
+// ⵟ - Functional (supersedes Փ)
+(
+    symbol: "ⵟ",
+    name: "functional",
+    category: "Capacity",
+    supersedes: Some("Փ"),
+    lines: [
+        ("≡", "functional"),
+        ("≡", "operational_effectiveness"),
+        ("≝", "performance metrics"),
+        ("≝", "capability assessment"),
+        ("⊡", "0≡∅⊙|5≡≈⊙|9≡⊨⊙"),
+        ("⊛", "ⵟ→performance_metrics ∧ ⵟ∈capability_assessment ∧ system_ⵟ validation"),
+        ("⊛", "⍜⊧ⵟ_embodiment"),
+    ],
+)

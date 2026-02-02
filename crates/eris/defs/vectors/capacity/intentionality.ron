@@ -1,0 +1,14 @@
+// ⵢ - Intentionality (supersedes Ը)
+(
+    symbol: "ⵢ",
+    name: "intentionality",
+    category: "Capacity",
+    supersedes: Some("Ը"),
+    lines: [
+        ("≡", "intentionality"),
+        ("≡", "purposeful_design"),
+        ("≝", "design_intention ∧ deliberate_construction"),
+        ("⊡", "0≡∅⍜|5≡⌾⍜|9≡⊨⍜"),
+        ("⊛", "ⵢ→planned_behavior ∧ ⵢ→goal_alignment"),
+    ],
+)
