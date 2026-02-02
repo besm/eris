@@ -1,0 +1,15 @@
+// ⵤ - Symbolic Economy (supersedes ջ)
+(
+    symbol: "ⵤ",
+    name: "symbolic_economy",
+    category: "Expression",
+    supersedes: Some("ջ"),
+    lines: [
+        ("≡", "symbolic_economy"),
+        ("≡", "notation_efficiency"),
+        ("≝", "notation density"),
+        ("≝", "economic expression"),
+        ("⊛", "ⵤ8→good_symbolic_density ∧ ⵤ∈economic_notation"),
+        ("⊛", "symbol_count→ⵤ_ratio"),
+    ],
+)

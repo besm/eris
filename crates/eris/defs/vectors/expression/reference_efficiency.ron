@@ -1,14 +1,16 @@
+// ⵎ - Reference Efficiency (supersedes ռ)
 (
-    symbol: "ռ",
+    symbol: "ⵎ",
     name: "reference_efficiency",
-    category: "Compression",
+    category: "Expression",
+    supersedes: Some("ռ"),
     lines: [
         ("≡", "reference_efficiency"),
         ("≡", "citation_optimization"),
         ("≝", "cross-reference quality"),
         ("≝", "link optimization"),
-        ("⊛", "ռ9→excellent_referencing ∧ ռ∈cross_reference_quality"),
-        ("⊛", "link_density→ռ_score"),
+        ("⊛", "ⵎ9→excellent_referencing ∧ ⵎ∈cross_reference_quality"),
+        ("⊛", "link_density→ⵎ_score"),
         ("⊛", "𝀷 concrescence through reference integration"),
     ],
 )
