@@ -46,6 +46,10 @@ pub struct RonOperatorDef {
     #[serde(default)]
     pub entity_type: Option<RonEntityTypeDef>,
 
+    /// Optional: symbol this definition supersedes (for migrations)
+    #[serde(default)]
+    pub supersedes: Option<String>,
+
     /// Legacy format: explicit Vec of (prefix, content) tuples
     #[serde(default)]
     pub lines: Vec<(String, String)>,
@@ -143,10 +147,10 @@ fn load_vectors_inner() -> Vec<RonOperatorDef> {
         parse_operator(include_str!("../../defs/vectors/explanatory.ron")),
         parse_operator(include_str!("../../defs/vectors/intentionality.ron")),
         parse_operator(include_str!("../../defs/vectors/contextualization.ron")),
-        parse_operator(include_str!("../../defs/vectors/lifespan.ron")),
+        parse_operator(include_str!("../../defs/vectors/stability/lifespan.ron")),
         parse_operator(include_str!("../../defs/vectors/functional.ron")),
         parse_operator(include_str!("../../defs/vectors/semantic_density.ron")),
-        parse_operator(include_str!("../../defs/vectors/volatility.ron")),
+        parse_operator(include_str!("../../defs/vectors/stability/volatility.ron")),
         // Relational properties (first batch)
         parse_operator(include_str!("../../defs/vectors/transitive.ron")),
         parse_operator(include_str!("../../defs/vectors/symmetric.ron")),
@@ -165,10 +169,10 @@ fn load_vectors_inner() -> Vec<RonOperatorDef> {
         parse_operator(include_str!("../../defs/vectors/conceptual_orthogonality.ron")),
         parse_operator(include_str!("../../defs/vectors/knowledge_propagation.ron")),
         parse_operator(include_str!("../../defs/vectors/hierarchical_consistency.ron")),
-        parse_operator(include_str!("../../defs/vectors/symbolic_stability.ron")),
+        parse_operator(include_str!("../../defs/vectors/stability/symbolic.ron")),
         // Evolution properties
         parse_operator(include_str!("../../defs/vectors/quality_improvement.ron")),
-        parse_operator(include_str!("../../defs/vectors/component_stability.ron")),
+        parse_operator(include_str!("../../defs/vectors/stability/component.ron")),
         // DesignBalance properties
         parse_operator(include_str!("../../defs/vectors/simplicity_expressiveness.ron")),
         parse_operator(include_str!("../../defs/vectors/orthogonality_integration.ron")),

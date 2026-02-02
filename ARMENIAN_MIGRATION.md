@@ -1,4 +1,4 @@
-# Armenian Alphabet Migration
+# Property Vector Symbol Migration
 
 ## Problem
 
@@ -6,117 +6,162 @@ The Armenian Unicode block (U+0530–U+058F) causes encoding issues when process
 
 ## Goal
 
-Migrate the 37 Armenian vector property symbols to a new, LLM-friendly alphabet while preserving semantic meaning and maintaining a supersession trail.
+Migrate the 36 Armenian vector property symbols to Tifinagh (U+2D30–U+2D7F) while preserving semantic meaning and maintaining a supersession trail.
 
-## Current Armenian Symbols
+## Target Alphabet
 
-| Symbol | Name | Category | File |
-|--------|------|----------|------|
-| Ա | antisymmetric | Relational | antisymmetric.ron |
-| Բ | boundary | Core | boundary.ron |
-| Գ | generalizability | Core | generalizability.ron |
-| Delays| explanatory | Core | explanatory.ron |
-| Delays| intentionality | Core | intentionality.ron |
-| խ | contextualization | Core | contextualization.ron |
-| Լ | lifespan | Core | lifespan.ron |
-| Փ | functional | Core | functional.ron |
-| Վ | semantic_density | Core | semantic_density.ron |
-| Ց | volatility | Core | volatility.ron |
-| Տ | transitive | Relational | transitive.ron |
-| Delays| symmetric | Relational | symmetric.ron |
-| Ր | reflexive | Relational | reflexive.ron |
-| Օ | total | Relational | total.ron |
-| delays| symbolic_economy | Compression | symbolic_economy.ron |
-| ռ | reference_efficiency | Compression | reference_efficiency.ron |
-| ժ | recursion | SelfReference | recursion.ron |
-| delays| coherence | SelfReference | coherence.ron |
-| delays| naming | SelfReference | naming.ron |
-| մ | metamodel | SelfReference | metamodel.ron |
-| Delays| junction | SelfReference | junction.ron |
-| ծ | conceptual_orthogonality | SystemCoherence | conceptual_orthogonality.ron |
-| delays| knowledge_propagation | SystemCoherence | knowledge_propagation.ron |
-| Մ | hierarchical_consistency | SystemCoherence | hierarchical_consistency.ron |
-| Ձ | symbolic_stability | SystemCoherence | symbolic_stability.ron |
-| ղ | quality_improvement | Evolution | quality_improvement.ron |
-| Ճ | component_stability | Evolution | component_stability.ron |
-| շ | simplicity_expressiveness | DesignBalance | simplicity_expressiveness.ron |
-| Ո | orthogonality_integration | DesignBalance | orthogonality_integration.ron |
-| Ք | consistency_specialization | DesignBalance | consistency_specialization.ron |
-| Ֆ | formalization | SystemCoherence | formalization.ron |
-| Պ | porosity | Relational | porosity.ron |
-| Հ | hierarchy | SystemCoherence | hierarchy.ron |
-| Շ | scope | Core | scope.ron |
-| Ի | cohesion | SystemCoherence | cohesion.ron |
-| Ղ | agency | Core | agency.ron |
-| ⇀ | property_vector | Core | property_vector.ron |
+**Tifinagh** (U+2D30–U+2D7F) — 59 characters available, 36 needed.
 
-## Migration Format
+- Berber/Tuareg script with geometric aesthetic
+- Good BMP font support (Noto Sans Tifinagh)
+- No collisions with existing ERIS symbols
+- 23 spare characters for future expansion
 
-Each migrated definition will include a `supersedes` field:
+## Migration Status
+
+| Cluster | Count | Status | Directory |
+|---------|-------|--------|-----------|
+| Stability | 4 | ✅ | `vectors/stability/` |
+| Relational | 6 | ❌ | — |
+| Core | 10 | ❌ | — |
+| SelfReference | 5 | ❌ | — |
+| SystemCoherence | 6 | ❌ | — |
+| Compression | 2 | ❌ | — |
+| Evolution | 1 | ❌ | — |
+| DesignBalance | 3 | ❌ | — |
+
+**Progress:** 4/36 (11%)
+
+## Completed Migrations
+
+### Stability (4 symbols)
+
+| Old | New | Name | File |
+|-----|-----|------|------|
+| Ց | ⵥ | volatility | `stability/volatility.ron` |
+| Լ | ⵜ | lifespan | `stability/lifespan.ron` |
+| Ճ | ⵛ | component_stability | `stability/component.ron` |
+| Ձ | ⵙ | symbolic_stability | `stability/symbolic.ron` |
+
+## Pending Migrations
+
+### Relational (6 symbols)
+
+| Old | New | Name |
+|-----|-----|------|
+| Ա | — | antisymmetric |
+| Տ | — | transitive |
+| Ս | — | symmetric |
+| Ր | — | reflexive |
+| Օ | — | total |
+| Պ | — | porosity |
+
+### Core (10 symbols)
+
+| Old | New | Name |
+|-----|-----|------|
+| Բ | — | boundary |
+| Գ | — | generalizability |
+| Delays | — | explanatory |
+| Ը | — | intentionality |
+| խ | — | contextualization |
+| Փ | — | functional |
+| Վ | — | semantic_density |
+| Շ | — | scope |
+| Ղ | — | agency |
+| ⇀ | ⇀ | property_vector (keep) |
+
+### SelfReference (5 symbols)
+
+| Old | New | Name |
+|-----|-----|------|
+| delays | — | recursion |
+| delays | — | coherence |
+| delays | — | naming |
+| delays | — | metamodel |
+| Յ | — | junction |
+
+### SystemCoherence (6 symbols)
+
+| Old | New | Name |
+|-----|-----|------|
+| ծ | — | conceptual_orthogonality |
+| delays | — | knowledge_propagation |
+| Մ | — | hierarchical_consistency |
+| Ֆ | — | formalization |
+| Delays | — | hierarchy |
+| Ի | — | cohesion |
+
+### Compression (2 symbols)
+
+| Old | New | Name |
+|-----|-----|------|
+| delays | — | symbolic_economy |
+| ռ | — | reference_efficiency |
+
+### Evolution (1 symbol)
+
+| Old | New | Name |
+|-----|-----|------|
+| ղ | — | quality_improvement |
+
+### DesignBalance (3 symbols)
+
+| Old | New | Name |
+|-----|-----|------|
+| շ | — | simplicity_expressiveness |
+| Ո | — | orthogonality_integration |
+| Ք | — | consistency_specialization |
+
+## Implementation
+
+### RON Format
 
 ```ron
 (
-    symbol: "X",           // New symbol from target alphabet
-    name: "boundary",
-    category: "Core",
-    supersedes: "Բ",       // Original Armenian symbol
-    // ... rest of definition
+    symbol: "ⵥ",
+    name: "volatility",
+    category: "Stability",
+    supersedes: Some("Ց"),
+    lines: [...],
 )
 ```
 
-## Target Alphabet Candidates
+### Loader Support
 
-| Option | Block | Range | Notes |
-|--------|-------|-------|-------|
-| Latin Extended | U+0100–U+024F | Ā-ɏ | Familiar, wide support |
-| Cyrillic | U+0400–U+04FF | А-ӿ | Similar to Armenian issue? |
-| Mathematical | U+1D400–U+1D7FF | 𝐀-𝟿 | Bold/italic variants |
-| Box Drawing | U+2500–U+257F | ─-╿ | Geometric consistency |
-| Geometric Shapes | U+25A0–U+25FF | ■-◿ | Visual clarity |
-| Custom Ligatures | — | — | Composable from basic Latin |
+- `supersedes` field added to `RonOperatorDef`
+- `get_armenian_operator()` finds by new OR old symbol
+- Categories renamed: `ARMENIAN_CATEGORIES` → `PROPERTY_CATEGORIES`
 
-## Migration Steps
+### Directory Structure
 
-1. **Select target alphabet** — Choose symbols with:
-   - Wide Unicode support
-   - LLM tokenization stability
-   - Visual distinctiveness
-   - Mnemonic connection to meaning
-
-2. **Create mapping table** — Document old→new for all 37 symbols
-
-3. **Update RON files** — Add `supersedes` field, change `symbol`
-
-4. **Update loader** — Support `supersedes` field in `RonOperatorDef`
-
-5. **Add migration CLI** — `eris migrate --check` to validate
-
-6. **Update documentation** — CLAUDE.md, MIGRATION.md
-
-7. **Create deprecation notice** — Old symbols remain valid for parsing but new output uses new symbols
+```
+defs/vectors/
+├── stability/           # Migrated
+│   ├── volatility.ron   # ⵥ
+│   ├── lifespan.ron     # ⵜ
+│   ├── component.ron    # ⵛ
+│   └── symbolic.ron     # ⵙ
+├── relational/          # Planned
+├── core/                # Planned
+├── selfreference/       # Planned
+├── coherence/           # Planned
+├── compression/         # Planned
+├── evolution/           # Planned
+├── balance/             # Planned
+└── *.ron                # Legacy (unmigrated)
+```
 
 ## Backwards Compatibility
 
-- Old tags with Armenian symbols continue to parse
-- New output uses new alphabet
-- `eris lookup` shows both old and new symbols
-- Migration guide for existing tagged content
+- Old tags with Armenian symbols continue to parse via `supersedes` lookup
+- New output uses Tifinagh symbols
+- `eris lookup Ց` returns the ⵥ definition
+- Migration guide for existing tagged content (future)
 
-## Questions to Resolve
+## Questions Resolved
 
-- [ ] Which target alphabet to use?
-- [ ] Should we batch migrate or gradual rollout?
-- [ ] How long to support dual-symbol recognition?
-- [ ] Any symbols that should NOT migrate?
-
-## Status
-
-| Phase | Status |
-|-------|--------|
-| Problem identification | ✅ |
-| Symbol inventory | ✅ |
-| Target alphabet selection | ❌ |
-| Mapping table | ❌ |
-| Implementation | ❌ |
-| Testing | ❌ |
-| Documentation | ❌ |
+- [x] Which target alphabet? → **Tifinagh**
+- [x] Batch or gradual? → **Gradual by semantic cluster**
+- [ ] How long to support dual-symbol recognition? → TBD
+- [x] Any symbols that should NOT migrate? → **⇀ (property_vector)** stays

@@ -1,14 +1,16 @@
+// ⵙ - Symbolic Stability (supersedes Ձ)
 (
-    symbol: "Ձ",
+    symbol: "ⵙ",
     name: "symbolic_stability",
-    category: "SystemCoherence",
+    category: "Stability",
+    supersedes: Some("Ձ"),
     lines: [
         ("≡", "symbolic_stability"),
         ("≡", "notation_persistence"),
         ("≝", "temporal consistency"),
         ("≝", "symbol durability"),
-        ("⊛", "Ձ9→stable_notation ∧ Ձ∈temporal_consistency"),
-        ("⊛", "symbol_durability→Ձ_measure"),
+        ("⊛", "ⵙ9→stable_notation ∧ ⵙ∈temporal_consistency"),
+        ("⊛", "symbol_durability→ⵙ_measure"),
         ("⊛", "𝀏 crystallization increases stability"),
         ("⊛", "𝁆 dissolution reduces stability"),
     ],

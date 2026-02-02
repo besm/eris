@@ -1,0 +1,15 @@
+// ⵛ - Component Stability (supersedes Ճ)
+(
+    symbol: "ⵛ",
+    name: "component_stability",
+    category: "Stability",
+    supersedes: Some("Ճ"),
+    lines: [
+        ("≡", "component_stability"),
+        ("≡", "element_persistence"),
+        ("≝", "durability measure"),
+        ("≝", "component lifespan"),
+        ("⊛", "ⵛ8→stable_components ∧ ⵛ∈durability_measure"),
+        ("⊛", "component_lifespan→ⵛ_score"),
+    ],
+)

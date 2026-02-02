@@ -1,11 +1,14 @@
-//! ERIS Armenian property assessment system
+//! ERIS property vector assessment system
 //!
 //! Vector property definitions are loaded from RON files in `defs/vectors/`.
+//!
+//! Symbols use Tifinagh script (U+2D30–U+2D7F) for stability dimensions,
+//! with legacy Armenian symbols tracked via `supersedes` field.
 
 use super::loader::{load_vectors, RonOperatorDef};
 
-/// Armenian vector categories (excludes chronos vectors)
-const ARMENIAN_CATEGORIES: &[&str] = &[
+/// Property vector categories (excludes chronos vectors)
+const PROPERTY_CATEGORIES: &[&str] = &[
     "Core",
     "Relational",
     "Compression",
@@ -13,6 +16,7 @@ const ARMENIAN_CATEGORIES: &[&str] = &[
     "SystemCoherence",
     "Evolution",
     "DesignBalance",
+    "Stability",
 ];
 
 /// Property value type (0-9 scale)
@@ -23,25 +27,25 @@ pub fn validate_property_value(value: PropertyValue) -> bool {
     value <= 9
 }
 
-/// Check if a category is an Armenian category
-fn is_armenian_category(category: &str) -> bool {
-    ARMENIAN_CATEGORIES.contains(&category)
+/// Check if a category is a property vector category
+fn is_property_category(category: &str) -> bool {
+    PROPERTY_CATEGORIES.contains(&category)
 }
 
-/// Get all Armenian operator definitions (filtered from unified vector loader)
+/// Get all property vector definitions (filtered from unified vector loader)
 pub fn get_armenian_operator_definitions() -> Vec<RonOperatorDef> {
     load_vectors()
         .iter()
-        .filter(|op| is_armenian_category(&op.category))
+        .filter(|op| is_property_category(&op.category))
         .cloned()
         .collect()
 }
 
-/// Get a specific Armenian operator by symbol
+/// Get a specific property vector by symbol (checks both new and superseded symbols)
 pub fn get_armenian_operator(symbol: &str) -> Option<RonOperatorDef> {
     get_armenian_operator_definitions()
         .into_iter()
-        .find(|op| op.symbol == symbol)
+        .find(|op| op.symbol == symbol || op.supersedes.as_deref() == Some(symbol))
 }
 
 #[cfg(test)]
