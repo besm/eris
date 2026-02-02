@@ -2,7 +2,7 @@
 (
     symbol: "ⵗ",
     name: "boundary",
-    category: "Stability",
+    category: "Organization",
     supersedes: Some("Բ"),
     lines: [
         ("≡", "boundary"),

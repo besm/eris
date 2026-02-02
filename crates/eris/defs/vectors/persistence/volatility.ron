@@ -2,7 +2,7 @@
 (
     symbol: "ⵥ",
     name: "volatility",
-    category: "Stability",
+    category: "Persistence",
     supersedes: Some("Ց"),
     lines: [
         ("⊡", "0≡□⌺|5≡○⌺|9≡⤋⌺"),

@@ -2,7 +2,7 @@
 (
     symbol: "ⵛ",
     name: "component_stability",
-    category: "Stability",
+    category: "Persistence",
     supersedes: Some("Ճ"),
     lines: [
         ("≡", "component_stability"),

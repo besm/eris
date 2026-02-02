@@ -1,7 +1,9 @@
+// ⵆ - Formalization (supersedes Ֆ)
 (
-    symbol: "Ֆ",
+    symbol: "ⵆ",
     name: "formalization",
-    category: "SystemCoherence",
+    category: "Organization",
+    supersedes: Some("Ֆ"),
     lines: [
         ("≡", "formalization"),
         ("≡", "codification_degree"),
@@ -11,9 +13,9 @@
         ("⊡", "5: documented_practices ∧ written_guidelines"),
         ("⊡", "7: formal_rules ∧ explicit_procedures"),
         ("⊡", "9: legal_code ∧ axiomatic_system ∧ protocol_specification"),
-        ("⊛", "⧊: Ֆ1(intuition)→Ֆ9(theorem)"),
-        ("⊛", "⧏: Ֆ2(craft)→Ֆ8(algorithm)"),
-        ("⊛", "⛫: Ֆ3(custom)→Ֆ9(statute)"),
-        ("⊨", "Ֆ ≡ explicitness∧transmissibility"),
+        ("⊛", "⧊: ⵆ1(intuition)→ⵆ9(theorem)"),
+        ("⊛", "⧏: ⵆ2(craft)→ⵆ8(algorithm)"),
+        ("⊛", "⛫: ⵆ3(custom)→ⵆ9(statute)"),
+        ("⊨", "ⵆ ≡ explicitness∧transmissibility"),
     ],
 )

@@ -2,7 +2,7 @@
 (
     symbol: "ⵞ",
     name: "cohesion",
-    category: "Stability",
+    category: "Organization",
     supersedes: Some("Ի"),
     lines: [
         ("≡", "cohesion"),

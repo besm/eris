@@ -1,0 +1,19 @@
+// ⵄ - Hierarchy (supersedes Հ)
+(
+    symbol: "ⵄ",
+    name: "hierarchy",
+    category: "Organization",
+    supersedes: Some("Հ"),
+    lines: [
+        ("≡", "hierarchy"),
+        ("≡", "nesting_depth"),
+        ("≝", "flat↔nested ∧ vertical_structure"),
+        ("⊡", "1: peer ∧ no_ranks"),
+        ("⊡", "5: moderate_levels"),
+        ("⊡", "9: rigid_stratification"),
+        ("⊛", "⍚: ⵄ2(cooperative)→ⵄ8(corporation)"),
+        ("⊛", "⧏: ⵄ1(heuristic)→ⵄ7(nested_procedure)"),
+        ("⊛", "⧊: ⵄ3(cluster)→ⵄ8(taxonomy)"),
+        ("⊨", "ⵄ ≡ vertical_differentiation"),
+    ],
+)

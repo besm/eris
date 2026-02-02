@@ -2,7 +2,7 @@
 (
     symbol: "ⵜ",
     name: "lifespan",
-    category: "Stability",
+    category: "Persistence",
     supersedes: Some("Լ"),
     lines: [
         ("⊡", "0≡⤋○|5≡≈○|9≡□○"),

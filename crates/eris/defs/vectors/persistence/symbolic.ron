@@ -2,7 +2,7 @@
 (
     symbol: "ⵙ",
     name: "symbolic_stability",
-    category: "Stability",
+    category: "Persistence",
     supersedes: Some("Ձ"),
     lines: [
         ("≡", "symbolic_stability"),
