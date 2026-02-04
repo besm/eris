@@ -54,7 +54,7 @@
       { prefix = "∂"; content = "⌖⊅⌁ (⌖ place | ⌁ event at place)"; }
       { prefix = "∂"; content = "⌖⊅⍢ (⌖ city | ⍢ university there)"; }
       { prefix = "∂"; content = "⌖⊅⚘ (⌖ standalone | ¬separate when ∈⚘ name)"; }
-      { prefix = "⊡"; content = "Շ variable: continent Շ9 | nation Շ7 | city Շ5 | neighborhood Շ3"; }
+      { prefix = "⊡"; content = "ⵋ variable: continent ⵋ9 | nation ⵋ7 | city ⵋ5 | neighborhood ⵋ3"; }
       { prefix = "⊛"; content = "⌖⦑Africa|Asia|Europe|North America|South America|Antarctica⦒"; }
       { prefix = "⊛"; content = "⌖⦑France|Japan|Brazil|Nigeria|India|Egypt|Mexico|Indonesia⦒"; }
       { prefix = "⊛"; content = "⌖⦑Midwest|Patagonia|Siberia|Sahel|Levant|Maghreb|Balkans|Punjab⦒"; }
@@ -96,8 +96,8 @@
       { prefix = "∂"; content = "⧖⊅⊙ (⧖ span | ⊙ point)"; }
       { prefix = "∂"; content = "⧖⊅⌁ (⧖ sustained | ⌁ discrete event)"; }
       { prefix = "∂"; content = "⧖⊅⌖ (⧖ temporal | ⌖ metonymic place→era)"; }
-      { prefix = "⊡"; content = "⧖: Շ variable | Ֆ variable"; }
-      { prefix = "⊡"; content = "century: Շ8Ֆ7 | decade: Շ7Ֆ5 | named era: Շ6Ֆ8"; }
+      { prefix = "⊡"; content = "⧖: ⵋ variable | ⵆ variable"; }
+      { prefix = "⊡"; content = "century: ⵋ8ⵆ7 | decade: ⵋ7ⵆ5 | named era: ⵋ6ⵆ8"; }
       { prefix = "⊛"; content = "centuries: ⧖⦑Eighteenth Century|Nineteenth Century|Early Twentieth Century⦒"; }
       { prefix = "⊛"; content = "decades: ⧖⦑1920s|1960s|1970s|1980s|The Sixties|The Twenties⦒"; }
       { prefix = "⊛"; content = "named: ⧖⦑Victorian Era|Industrial Era|Gilded Age|Jazz Age|Meiji Era|Qing Dynasty⦒"; }
@@ -165,8 +165,8 @@
       { prefix = "∂"; content = "⌁⊅⧖ (⌁ discrete | ⧖ sustained)"; }
       { prefix = "∂"; content = "⌁⊅⊙ (⌁ named occurrence | ⊙ bare date)"; }
       { prefix = "∂"; content = "⌁⊅⧊ (⌁ specific occurrence | ⧊ category of occurrences)"; }
-      { prefix = "⊡"; content = "⌁: Շ variable | Ֆ variable"; }
-      { prefix = "⊡"; content = "battle: Շ4Ֆ5 | revolution: Շ7Ֆ9 | conference: Շ6Ֆ7"; }
+      { prefix = "⊡"; content = "⌁: ⵋ variable | ⵆ variable"; }
+      { prefix = "⊡"; content = "battle: ⵋ4ⵆ5 | revolution: ⵋ7ⵆ9 | conference: ⵋ6ⵆ7"; }
       { prefix = "⊛"; content = "revolutions: ⌁⦑French Revolution|Haitian Revolution|Mexican Revolution|Russian Revolution|Iranian Revolution⦒"; }
       { prefix = "⊛"; content = "battles: ⌁⦑Battle of Amorgos|Battle of Plassey|Battle of Stalingrad|Fall of Constantinople⦒"; }
       { prefix = "⊛"; content = "conferences: ⌁⦑Bandung Conference|Congress of Vienna|Yalta Conference|Treaty of Westphalia⦒"; }
@@ -203,10 +203,10 @@
       { prefix = "≝"; content = "institutional boundaries ∧ scholarly legitimacy ∧ ∃{departments|degrees|journals|conferences}"; }
       { prefix = "∂"; content = "❖⊅⧏ (❖ field | ⧏ method within field)"; }
       { prefix = "∂"; content = "❖⊅⧊ (❖ institutional | ⧊ abstract concept)"; }
-      { prefix = "⊡"; content = "❖: Ֆ7Շ6Բ7"; }
-      { prefix = "⊡"; content = "core: Շ8Բ8 (physics, sociology)"; }
-      { prefix = "⊡"; content = "subdiscipline: Շ5Բ6 (quantum mechanics)"; }
-      { prefix = "⊡"; content = "interdiscipline: Շ6Բ5 (cognitive science)"; }
+      { prefix = "⊡"; content = "❖: ⵆ7ⵋ6ⵗ7"; }
+      { prefix = "⊡"; content = "core: ⵋ8ⵗ8 (physics, sociology)"; }
+      { prefix = "⊡"; content = "subdiscipline: ⵋ5ⵗ6 (quantum mechanics)"; }
+      { prefix = "⊡"; content = "interdiscipline: ⵋ6ⵗ5 (cognitive science)"; }
       { prefix = "⊛"; content = "core: ❖⦑Physics|Chemistry|Biology|Sociology|Philosophy|History|Economics|Psychology⦒"; }
       { prefix = "⊛"; content = "subdiscipline: ❖⦑Quantum Mechanics|Epistemology|Macroeconomics|Social Psychology⦒"; }
       { prefix = "⊛"; content = "interdiscipline: ❖⦑Cognitive Science|Science and Technology Studies|Computational Linguistics|Bioethics⦒"; }
@@ -244,10 +244,10 @@
       { prefix = "∂"; content = "⧈⊅⍚ (⧈ category | ⍚ organization)"; }
       { prefix = "∂"; content = "⧈⊅⚐ (⧈ supporters | ⚐ party)"; }
       { prefix = "∂"; content = "⧈⊅⌯ (⧈ adherents | ⌯ movement)"; }
-      { prefix = "⊡"; content = "⧈: Շ variable | Ֆ variable (folk→formal)"; }
-      { prefix = "⊡"; content = "occupational: Ֆ6Շ7"; }
-      { prefix = "⊡"; content = "diagnostic: Ֆ8Շ5"; }
-      { prefix = "⊡"; content = "ethnic: Ֆ3Շ6"; }
+      { prefix = "⊡"; content = "⧈: ⵋ variable | ⵆ variable (folk→formal)"; }
+      { prefix = "⊡"; content = "occupational: ⵆ6ⵋ7"; }
+      { prefix = "⊡"; content = "diagnostic: ⵆ8ⵋ5"; }
+      { prefix = "⊡"; content = "ethnic: ⵆ3ⵋ6"; }
       { prefix = "⊛"; content = "occupational: ⧈⦑Engineers|Priests|Bureaucrats|Physicians|Programmers|Clerks⦒"; }
       { prefix = "⊛"; content = "legal/political: ⧈⦑Citizens|Metics|Slaves|Subjects|Refugees|Felons⦒"; }
       { prefix = "⊛"; content = "diagnostic: ⧈⦑Patients|Schizophrenics|Autistics|Diabetics⦒"; }
@@ -289,9 +289,9 @@
       { prefix = "∂"; content = "⍚⊅⌯ (⍚ institutional | ⌯ diffuse)"; }
       { prefix = "∂"; content = "⍚⊅⧈ (⍚ membership | ⧈ ascribed category)"; }
       { prefix = "∂"; content = "⍚⊃⚐ (⚐ specialized ⍚ | nominates candidates)"; }
-      { prefix = "⊡"; content = "⍚: Բ7Փ7Ֆ6Պ5Հ6Շ5Ի6Ղ7Ց5"; }
+      { prefix = "⊡"; content = "⍚: ⵗ7ⵟ7ⵆ6ⵒ5ⵄ6ⵋ5ⵞ6ⵓ7ⵥ5"; }
       { prefix = "⊡"; content = "gradients:"; }
-      { prefix = "⊡"; content = "  →⎈: Բ↑Փ↑Ֆ↑Պ↓Հ↑Ղ↑Ց↓ | →⌯: Բ↓Ֆ↓Պ↑Հ↓Ի↓Ց↑ | →⚐: +nominates"; }
+      { prefix = "⊡"; content = "  →⎈: ⵗ↑ⵟ↑ⵆ↑ⵒ↓ⵄ↑ⵓ↑ⵥ↓ | →⌯: ⵗ↓ⵆ↓ⵒ↑ⵄ↓ⵞ↓ⵥ↑ | →⚐: +nominates"; }
       { prefix = "⊛"; content = "corporate: ⍚⦑Apple|Toyota|Goldman Sachs|Samsung|Tata Group|Alibaba|HSBC⦒"; }
       { prefix = "⊛"; content = "nonprofit: ⍚⦑Red Cross|Doctors Without Borders|ACLU|Oxfam|Amnesty International⦒"; }
       { prefix = "⊛"; content = "research: ⍚⦑Bell Labs|RAND Corporation|Santa Fe Institute|Brookings Institution|Max Planck Society|Fraunhofer Society⦒"; }
@@ -299,7 +299,7 @@
       { prefix = "⊛"; content = "labor: ⍚⦑AFL-CIO|UAW|IG Metall|Solidarity|Congress of South African Trade Unions⦒"; }
       { prefix = "⊛"; content = "international: ⍚⦑United Nations|WHO|IMF|African Union⦒"; }
       { prefix = "⊛"; content = "historical: ⍚⦑East India Company|Hanseatic League|Académie française|Dutch East India Company⦒"; }
-      { prefix = "◻"; content = "vector test: Բ≥6∧Ֆ≥5∧Պ≤6→institutional | Բ≤4∧Ֆ≤3∧Պ≥7→⌯"; }
+      { prefix = "◻"; content = "vector test: ⵗ≥6∧ⵆ≥5∧ⵒ≤6→institutional | ⵗ≤4∧ⵆ≤3∧ⵒ≥7→⌯"; }
       { prefix = "◻"; content = "discrimination:"; }
       { prefix = "◻"; content = "  ⍚⦑United Nations|WHO|IMF⦒ (facilitates) vs ⎈⦑WTO|ICC⦒ (compels)"; }
       { prefix = "◻"; content = "  ⍚⦑JPMorgan Chase|Deutsche Bank⦒ (commercial) vs ⎈⦑Federal Reserve|ECB⦒ (regulatory)"; }
@@ -327,8 +327,8 @@
       { prefix = "∂"; content = "⎈⊅⚐ (⎈ holds∧exercises | ⚐ contests for power)"; }
       { prefix = "∂"; content = "⎈⊅⧈ (⎈ institution | ⧈ faction/supporters)"; }
       { prefix = "∂"; content = "⎈⊅⧊ (⎈ specific entity | ⧊ power concept)"; }
-      { prefix = "⊡"; content = "⎈: Փ9Ֆ8Հ7Ղ8"; }
-      { prefix = "⊡"; content = "regulatory: Փ8Ֆ9Հ6Ղ6 | legislative: Փ9Ֆ9Հ8Ղ9 | supranational: Փ8Ֆ7Հ7Ղ7"; }
+      { prefix = "⊡"; content = "⎈: ⵟ9ⵆ8ⵄ7ⵓ8"; }
+      { prefix = "⊡"; content = "regulatory: ⵟ8ⵆ9ⵄ6ⵓ6 | legislative: ⵟ9ⵆ9ⵄ8ⵓ9 | supranational: ⵟ8ⵆ7ⵄ7ⵓ7"; }
       { prefix = "⊛"; content = "legislative: ⎈⦑U.S. Congress|Parliament (UK)|Bundestag|National People's Congress|Knesset|Diet of Japan⦒"; }
       { prefix = "⊛"; content = "judicial: ⎈⦑Supreme Court (US)|European Court of Justice|Constitutional Court (Germany)⦒"; }
       { prefix = "⊛"; content = "regulatory: ⎈⦑EPA|FDA|FCC|SEC|Ofcom|BaFin|CNIL⦒"; }
@@ -366,13 +366,13 @@
       { prefix = "∂"; content = "⚐⊅⌯ (⚐ institutionalized∧nominates | ⌯ diffuse∧¬nominates)"; }
       { prefix = "∂"; content = "⚐⊅⎈ (⚐ contests for power | ⎈ holds∧exercises power)"; }
       { prefix = "∂"; content = "⚐⊅⧈ (⚐ organization | ⧈ supporters as category)"; }
-      { prefix = "⊡"; content = "⚐: Բ6Փ7Ֆ5Պ5Հ6Շ6Ի6Ղ6Ց6"; }
-      { prefix = "⊡"; content = "major: Բ7Փ8Ֆ6Պ4Հ7Շ7Ի7Ղ7Ց4"; }
-      { prefix = "⊡"; content = "minor: Բ5Փ5Ֆ4Պ6Հ4Շ4Ի5Ղ4Ց7"; }
+      { prefix = "⊡"; content = "⚐: ⵗ6ⵟ7ⵆ5ⵒ5ⵄ6ⵋ6ⵞ6ⵓ6ⵥ6"; }
+      { prefix = "⊡"; content = "major: ⵗ7ⵟ8ⵆ6ⵒ4ⵄ7ⵋ7ⵞ7ⵓ7ⵥ4"; }
+      { prefix = "⊡"; content = "minor: ⵗ5ⵟ5ⵆ4ⵒ6ⵄ4ⵋ4ⵞ5ⵓ4ⵥ7"; }
       { prefix = "⊡"; content = "gradients:"; }
       { prefix = "⊡"; content = "  ⚐→⎈: electoral_victory→governing_authority"; }
-      { prefix = "⊡"; content = "  ⚐→⌯: Ֆ↓Պ↑Բ↓ (abandons elections)"; }
-      { prefix = "⊡"; content = "  ⌯→⚐: Ֆ↑Պ↓Բ↑ (institutionalizes)"; }
+      { prefix = "⊡"; content = "  ⚐→⌯: ⵆ↓ⵒ↑ⵗ↓ (abandons elections)"; }
+      { prefix = "⊡"; content = "  ⌯→⚐: ⵆ↑ⵒ↓ⵗ↑ (institutionalizes)"; }
       { prefix = "◻"; content = "naming: national specificity required"; }
       { prefix = "◻"; content = "  ⚐⦑[Name] ([Country])⦒: ⚐⦑Labour Party (UK)|Democratic Party (United States)|Liberal Party (Australia)⦒"; }
       { prefix = "◻"; content = "  ⚐⦑[Name] ([Acronym])⦒: ⚐⦑Communist Party of Germany (KPD)|African National Congress (ANC)|Bharatiya Janata Party (BJP)⦒"; }
@@ -412,9 +412,9 @@
       { prefix = "∂"; content = "⌬⊅⧏ (⌬ technical system | ⧏ analytical procedure)"; }
       { prefix = "∂"; content = "⌬⊅⍚ (⌬ artifact | ⍚ organization providing tech)"; }
       { prefix = "∂"; content = "⌬⊅⍓ (⌬ platform without curation | ⍓ editorial selection)"; }
-      { prefix = "⊡"; content = "⌬: Բ7Փ8Ֆ6Պ5Հ6Շ6Ի7Ղ6Ց6"; }
-      { prefix = "⊡"; content = "infrastructure: Բ8Փ9Շ8 (widespread, foundational)"; }
-      { prefix = "⊡"; content = "platform: Բ6Փ7Պ6 (user-facing, permeable)"; }
+      { prefix = "⊡"; content = "⌬: ⵗ7ⵟ8ⵆ6ⵒ5ⵄ6ⵋ6ⵞ7ⵓ6ⵥ6"; }
+      { prefix = "⊡"; content = "infrastructure: ⵗ8ⵟ9ⵋ8 (widespread, foundational)"; }
+      { prefix = "⊡"; content = "platform: ⵗ6ⵟ7ⵒ6 (user-facing, permeable)"; }
       { prefix = "⊛"; content = "hardware: ⌬⦑Computer|Microprocessor|ENIAC|IBM System/360|Ferranti Mark 1|BESM-6⦒"; }
       { prefix = "⊛"; content = "software: ⌬⦑UNIX|Linux|Windows|LISP|COBOL|Multics⦒"; }
       { prefix = "⊛"; content = "networks: ⌬⦑Internet|Arpanet|SAGE System|Minitel|SWIFT|Fidonet⦒"; }
@@ -482,9 +482,9 @@
       { prefix = "∂"; content = "⍓⊂⍚ (⍓ specialized ⍚ | publishing function)"; }
       { prefix = "∂"; content = "⍓⊅⍢ (⍓ press | ⍢ university)"; }
       { prefix = "∂"; content = "⍓⊅⌬ (⍓ editorial selection | ⌬ platform without curation)"; }
-      { prefix = "⊡"; content = "⍓: Բ6Փ7Ֆ5Պ5Հ5Շ5Ի6Ղ6Ց5"; }
-      { prefix = "⊡"; content = "university_press: Փ7Ֆ6Շ4"; }
-      { prefix = "⊡"; content = "commercial: Փ8Ֆ5Շ6"; }
+      { prefix = "⊡"; content = "⍓: ⵗ6ⵟ7ⵆ5ⵒ5ⵄ5ⵋ5ⵞ6ⵓ6ⵥ5"; }
+      { prefix = "⊡"; content = "university_press: ⵟ7ⵆ6ⵋ4"; }
+      { prefix = "⊡"; content = "commercial: ⵟ8ⵆ5ⵋ6"; }
       { prefix = "⊛"; content = "university: ⍓⦑MIT Press|Cambridge University Press|Oxford University Press|Harvard University Press|Princeton University Press|Éditions de l'EHESS⦒"; }
       { prefix = "⊛"; content = "commercial_anglophone: ⍓⦑Penguin Random House|HarperCollins|Norton|Faber|Verso|Bloomsbury⦒"; }
       { prefix = "⊛"; content = "commercial_european: ⍓⦑Gallimard|Suhrkamp|Feltrinelli|Tusquets|Actes Sud|Fischer Verlag⦒"; }
@@ -524,9 +524,9 @@
       { prefix = "∂"; content = "⍢⊂⍚ (⍢ specialized ⍚ | educational function)"; }
       { prefix = "∂"; content = "⍢⊅⍓ (⍢ institution | ⍓ press/publisher)"; }
       { prefix = "∂"; content = "⍢⊅⍚_research (⍢ degree-granting | ⍚ research-only)"; }
-      { prefix = "⊡"; content = "⍢: Բ7Փ8Ֆ7Պ6Հ7Շ5Ի7Ղ6Ց4"; }
-      { prefix = "⊡"; content = "research_university: Փ9Ֆ8Հ7"; }
-      { prefix = "⊡"; content = "liberal_arts: Փ7Ֆ6Հ5"; }
+      { prefix = "⊡"; content = "⍢: ⵗ7ⵟ8ⵆ7ⵒ6ⵄ7ⵋ5ⵞ7ⵓ6ⵥ4"; }
+      { prefix = "⊡"; content = "research_university: ⵟ9ⵆ8ⵄ7"; }
+      { prefix = "⊡"; content = "liberal_arts: ⵟ7ⵆ6ⵄ5"; }
       { prefix = "⊛"; content = "⍢⦑Harvard University|MIT|Stanford University|University of Chicago|Yale University⦒"; }
       { prefix = "⊛"; content = "⍢⦑Oxford|Cambridge|London School of Economics|Imperial College London|Edinburgh⦒"; }
       { prefix = "⊛"; content = "⍢⦑ETH Zurich|Sorbonne|Humboldt University|Leiden University|Uppsala University⦒"; }
@@ -604,8 +604,8 @@
       { prefix = "∂"; content = "⧊⊅⧏ (⧊ framework | ⧏ procedural)"; }
       { prefix = "∂"; content = "⧊⊅⌬ (⧊ abstract | ⌬ implemented)"; }
       { prefix = "∂"; content = "⧊⊅⚐ (⧊ ideology | ⚐ party)"; }
-      { prefix = "⊡"; content = "⧊: Շ variable (Շ9 universal→Շ3 domain-specific)"; }
-      { prefix = "⊡"; content = "philosophical: Շ9Գ9 | political: Շ8Գ8 | analytical: Շ7Գ7"; }
+      { prefix = "⊡"; content = "⧊: ⵋ variable (ⵋ9 universal→ⵋ3 domain-specific)"; }
+      { prefix = "⊡"; content = "philosophical: ⵋ9ⵘ9 | political: ⵋ8ⵘ8 | analytical: ⵋ7ⵘ7"; }
       { prefix = "⊛"; content = "philosophical: ⧊⦑Free Will|Consciousness|Mind|Self|Being|Causation⦒"; }
       { prefix = "⊛"; content = "political: ⧊⦑Democracy|Capitalism|Sovereignty|Liberty|Republic|Citizenship⦒"; }
       { prefix = "⊛"; content = "social: ⧊⦑Class|Gender|Culture|Society|Power|Identity|Habitus⦒"; }
@@ -646,8 +646,8 @@
       { prefix = "∂"; content = "⧏⊅❖ (⧏ technique | ❖ institutional field)"; }
       { prefix = "∂"; content = "⧏⊅⧊ (⧏ doing | ⧊ discussing/critiquing)"; }
       { prefix = "∂"; content = "⧏⊅⌬ (⧏ analytical | ⌬ material/computational)"; }
-      { prefix = "⊡"; content = "⧏: Ֆ6Շ6Գ7Բ6"; }
-      { prefix = "⊡"; content = "lab protocol: Ֆ9Շ3Բ9 | ethnographic: Ֆ5Շ7Բ4 | philosophical: Ֆ4Շ9Գ9"; }
+      { prefix = "⊡"; content = "⧏: ⵆ6ⵋ6ⵘ7ⵗ6"; }
+      { prefix = "⊡"; content = "lab protocol: ⵆ9ⵋ3ⵗ9 | ethnographic: ⵆ5ⵋ7ⵗ4 | philosophical: ⵆ4ⵋ9ⵘ9"; }
       { prefix = "⊛"; content = "qualitative: ⧏⦑Content Analysis|Discourse Analysis|Grounded Theory|Thematic Analysis⦒"; }
       { prefix = "⊛"; content = "ethnographic: ⧏⦑Participant Observation|Thick Description|Life History Method⦒"; }
       { prefix = "⊛"; content = "historical: ⧏⦑Genealogical Method|Comparative Method|Prosopography|Archival Method⦒"; }
@@ -683,8 +683,8 @@
       { prefix = "∂"; content = "⌯⊅⧈ (⌯ movement | ⧈ adherents as category)"; }
       { prefix = "∂"; content = "⌯⊅⧖ (⌯ mobilization | ⧖ temporal period)"; }
       { prefix = "∂"; content = "⌯⊅❖ (⌯ activism | ❖ academic field)"; }
-      { prefix = "⊡"; content = "⌯: Բ3Փ4Ֆ2Պ8Հ2Շ6Ի4Ղ5Ց7"; }
-      { prefix = "⊡"; content = "→⍚|⚐: Բ↑Ֆ↑Պ↓ | →diffuse: Պ↑Ի↓Ց↑"; }
+      { prefix = "⊡"; content = "⌯: ⵗ3ⵟ4ⵆ2ⵒ8ⵄ2ⵋ6ⵞ4ⵓ5ⵥ7"; }
+      { prefix = "⊡"; content = "→⍚|⚐: ⵗ↑ⵆ↑ⵒ↓ | →diffuse: ⵒ↑ⵞ↓ⵥ↑"; }
       { prefix = "⊛"; content = "⌯⦑Civil Rights Movement|Labor Movement|Anti-War Movement|Occupy|Black Lives Matter⦒"; }
       { prefix = "⊛"; content = "⌯⦑Feminism|Environmentalism|LGBTQ Rights Movement|Disability Rights Movement⦒"; }
       { prefix = "⊛"; content = "⌯⦑Solidarity (Poland)|Arab Spring|Umbrella Movement|Landless Workers' Movement (Brazil)⦒"; }
@@ -774,8 +774,8 @@
       { prefix = "∂"; content = "⟗⊅⬢ (⟗ iterating | ⬢ simultaneous t₀=t₀)"; }
       { prefix = "∂"; content = "⟗⊅⧃ (⟗ bidirectional | ⧃ unidirectional)"; }
       { prefix = "∂"; content = "⟗⊅⧊ (⟗ specific loop | ⧊ analyzing concept)"; }
-      { prefix = "⊡"; content = "⟗: Տ7Բ8Գ4"; }
-      { prefix = "⊡"; content = "⟗⦑Multiple Personality Formation Loop⦒: Տ9Բ8Գ5"; }
+      { prefix = "⊡"; content = "⟗: ⵕ7ⵗ8ⵘ4"; }
+      { prefix = "⊡"; content = "⟗⦑Multiple Personality Formation Loop⦒: ⵕ9ⵗ8ⵘ5"; }
       { prefix = "⊛"; content = "⟗⦑Multiple Personality Formation Loop|Bandwagon Loop|Error-Confirmation Loop⦒"; }
       { prefix = "⊛"; content = "⟗⦑Hype Cycle|Boom-Bust Cycle|Vicious Circle|Virtuous Circle⦒"; }
       { prefix = "⊛"; content = "⟗⦑Self-Fulfilling Prophecy Loop|Expectations Loop|Stigma Loop⦒"; }
@@ -834,7 +834,7 @@
       { prefix = "∂"; content = "⧃|⧆ (transforming|static)"; }
       { prefix = "∂"; content = "⧃|☯ (resolving|persisting)"; }
       { prefix = "∂"; content = "⧃|⧊ (specific|concept)"; }
-      { prefix = "⊡"; content = "Շ7Գ6Բ8"; }
+      { prefix = "⊡"; content = "ⵋ7ⵘ6ⵗ8"; }
       { prefix = "⊛"; content = "-ization: ⧃⦑Medicalization|Secularization|Rationalization|Bureaucratization|Professionalization⦒"; }
       { prefix = "⊛"; content = "-ification: ⧃⦑Commodification|Financialization|Digitization⦒"; }
       { prefix = "⊛"; content = "-ation: ⧃⦑Globalization|Democratization|Decolonization|Urbanization⦒"; }
@@ -886,8 +886,8 @@
       { prefix = "∂"; content = "⬢⊅⟗ (⬢ single | ⟗ iterating)"; }
       { prefix = "∂"; content = "⬢⊅⧃ (⬢ constitutes | ⧃ transforms)"; }
       { prefix = "∂"; content = "⬢⊅⧊ (⬢ specific effect | ⧊ analyzing concept of effect)"; }
-      { prefix = "⊡"; content = "⬢: Պ7Փ5Տ4"; }
-      { prefix = "⊡"; content = "⬢⦑Making Up People⦒: Պ8Փ6Տ3"; }
+      { prefix = "⊡"; content = "⬢: ⵒ7ⵟ5ⵕ4"; }
+      { prefix = "⊡"; content = "⬢⦑Making Up People⦒: ⵒ8ⵟ6ⵕ3"; }
       { prefix = "⊛"; content = "⬢⦑Making Up People|Classification Creates Order|Ritual Creates Experience⦒"; }
       { prefix = "⊛"; content = "⬢⦑Prediction Creates Reality|Statistics Create Reality|Naming Creates Existence⦒"; }
       { prefix = "⊛"; content = "⬢⦑Bandwagon Effect|Pygmalion Effect|Observer Effect⦒"; }

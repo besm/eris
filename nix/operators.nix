@@ -1,552 +1,11 @@
 # ERIS Operator Definitions
 # Generated from Rust definitions - do not edit manually
 {
-  armenian = {
-    antisymmetric = {
-      symbol = "Ա";
-      name = "antisymmetric";
-      category = "\"Core\"";
-      lines = [
-        { prefix = "⊡"; content = "0≡⟷≡|5≡→≺←|9≡⊩≺"; }
-        { prefix = "≡"; content = "antisymmetric"; }
-        { prefix = "≡"; content = "directional_ordering"; }
-        { prefix = "≝"; content = "hierarchical structure enforcement"; }
-        { prefix = "≝"; content = "precedence design"; }
-        { prefix = "⊛"; content = "Ա→hierarchical_structures"; }
-        { prefix = "⊛"; content = "Ա∈precedence_design"; }
-        { prefix = "⊛"; content = "Ա enables ranking"; }
-        { prefix = "⊢"; content = "A≺B∧B≺A⊃A≡B via Ա"; }
-      ];
-    };
-    boundary = {
-      symbol = "Բ";
-      name = "boundary";
-      category = "\"Core\"";
-      lines = [
-      ];
-    };
-    generalizability = {
-      symbol = "Գ";
-      name = "generalizability";
-      category = "\"Core\"";
-      lines = [
-        { prefix = "⊡"; content = "0≡⊂❖|5≡∩❖|9≡∀❖"; }
-        { prefix = "≡"; content = "generalizability"; }
-        { prefix = "≡"; content = "pattern_extension"; }
-        { prefix = "≝"; content = "reuse potential"; }
-        { prefix = "≝"; content = "design flexibility"; }
-        { prefix = "⊛"; content = "Գ→reuse_potential ∧ Գ∈design_flexibility ∧ ᛝ_Գ across domains"; }
-        { prefix = "⊛"; content = "framework_Գ assessment"; }
-      ];
-    };
-    explanatory = {
-      symbol = "Ե";
-      name = "explanatory";
-      category = "\"Core\"";
-      lines = [
-        { prefix = "⊡"; content = "0≡⊟⧊|5≡⌾⧊|9≡⊨⧊"; }
-        { prefix = "≡"; content = "explanatory"; }
-        { prefix = "≡"; content = "clarification_power"; }
-        { prefix = "≝"; content = "understanding enhancement"; }
-        { prefix = "≝"; content = "documentation quality"; }
-        { prefix = "⊛"; content = "Ե→understanding_enhancement ∧ Ե∈documentation_quality ∧ concept_Ե strength"; }
-        { prefix = "⊛"; content = "tutorial_Ե design"; }
-      ];
-    };
-    intentionality = {
-      symbol = "Ը";
-      name = "intentionality";
-      category = "\"Core\"";
-      lines = [
-      ];
-    };
-    contextualization = {
-      symbol = "խ";
-      name = "contextualization";
-      category = "\"Core\"";
-      lines = [
-        { prefix = "⊡"; content = "0≡⊥⯐|5≡∩⯐|9≡⊆⯐"; }
-        { prefix = "≡"; content = "contextualization"; }
-        { prefix = "≡"; content = "situational_adaptation"; }
-        { prefix = "≝"; content = "environment fitting"; }
-        { prefix = "≝"; content = "usage context sensitivity"; }
-        { prefix = "⊛"; content = "խ→environment_fitting ∧ խ∈usage_⯐ ∧ 𐤆_խ sensitivity"; }
-        { prefix = "⊛"; content = "խ enables portability"; }
-      ];
-    };
-    lifespan = {
-      symbol = "Լ";
-      name = "lifespan";
-      category = "\"Core\"";
-      lines = [
-        { prefix = "⊡"; content = "0≡⤋○|5≡≈○|9≡□○"; }
-        { prefix = "≡"; content = "lifespan"; }
-        { prefix = "≡"; content = "temporal_durability"; }
-        { prefix = "≝"; content = "maintenance requirements"; }
-        { prefix = "≝"; content = "sustainability design"; }
-        { prefix = "⊛"; content = "Լ→maintenance_requirements ∧ Լ∈sustainability_design ∧ code_Լ planning"; }
-        { prefix = "⊛"; content = "legacy_Լ management"; }
-        { prefix = "⊛"; content = "𝁆 dissolution as systems age"; }
-        { prefix = "⊛"; content = "𝀏 crystallization through stabilization"; }
-      ];
-    };
-    functional = {
-      symbol = "Փ";
-      name = "functional";
-      category = "\"Core\"";
-      lines = [
-        { prefix = "⊡"; content = "0≡∅⊙|5≡≈⊙|9≡⊨⊙"; }
-        { prefix = "≡"; content = "functional"; }
-        { prefix = "≡"; content = "operational_effectiveness"; }
-        { prefix = "≝"; content = "performance metrics"; }
-        { prefix = "≝"; content = "capability assessment"; }
-        { prefix = "⊛"; content = "Փ→performance_metrics ∧ Փ∈capability_assessment ∧ system_Փ validation"; }
-        { prefix = "⊛"; content = "⍜⊧Փ_embodiment"; }
-      ];
-    };
-    semantic_density = {
-      symbol = "Վ";
-      name = "semantic_density";
-      category = "\"Core\"";
-      lines = [
-        { prefix = "⊡"; content = "0≡∅≐|5≡≈≐|9≡∞≐"; }
-        { prefix = "≡"; content = "semantic_density"; }
-        { prefix = "≡"; content = "meaning_concentration"; }
-        { prefix = "≝"; content = "compression ratio"; }
-        { prefix = "≝"; content = "expressivity efficiency"; }
-        { prefix = "⊛"; content = "Վ∝compression_ratio ∧ semantic_Վ optimization ∧ Վ→expressivity_efficiency"; }
-        { prefix = "⊛"; content = "symbol_Վ analysis"; }
-      ];
-    };
-    volatility = {
-      symbol = "Ց";
-      name = "volatility";
-      category = "\"Core\"";
-      lines = [
-        { prefix = "⊡"; content = "0≡□⌺|5≡○⌺|9≡⤋⌺"; }
-        { prefix = "≡"; content = "volatility"; }
-        { prefix = "≡"; content = "change_frequency"; }
-        { prefix = "≝"; content = "change prediction"; }
-        { prefix = "≝"; content = "system dynamics"; }
-        { prefix = "⊛"; content = "Ց→change_prediction ∧ Ց∈system_dynamics ∧ low_Ց→reliable_behavior"; }
-        { prefix = "⊛"; content = "high_Ց→frequent_updates"; }
-        { prefix = "⊛"; content = "𝀾 flow in volatile systems"; }
-        { prefix = "⊛"; content = "𝀆 equilibrium when stable"; }
-        { prefix = "⊛"; content = "𝁀 oscillation between states"; }
-      ];
-    };
-    transitive = {
-      symbol = "Տ";
-      name = "transitive";
-      category = "\"Relational\"";
-      lines = [
-        { prefix = "⊡"; content = "0≡¬→|5≡∃→|9≡∀→"; }
-        { prefix = "≡"; content = "transitive"; }
-        { prefix = "≡"; content = "chain_propagation"; }
-        { prefix = "≝"; content = "inheritance chains"; }
-        { prefix = "≝"; content = "dependency graphs"; }
-        { prefix = "⊛"; content = "Տ→inheritance_chains"; }
-        { prefix = "⊛"; content = "Տ∈dependency_graphs"; }
-        { prefix = "⊛"; content = "Տ enables composition"; }
-        { prefix = "⊢"; content = "A→B→C⊃A→C via Տ"; }
-      ];
-    };
-    symmetric = {
-      symbol = "Ս";
-      name = "symmetric";
-      category = "\"Relational\"";
-      lines = [
-        { prefix = "⊡"; content = "0≡→⊥←|5≡→≈←|9≡→≡←"; }
-        { prefix = "≡"; content = "symmetric"; }
-        { prefix = "≡"; content = "bidirectional_equality"; }
-        { prefix = "≝"; content = "mutual relationships"; }
-        { prefix = "≝"; content = "partnership design"; }
-        { prefix = "⊛"; content = "Ս→mutual_relationships"; }
-        { prefix = "⊛"; content = "Ս∈partnership_design"; }
-        { prefix = "⊛"; content = "Ս enables cooperation"; }
-        { prefix = "⊢"; content = "A⋈B≡B⋈A via Ս"; }
-      ];
-    };
-    reflexive = {
-      symbol = "Ր";
-      name = "reflexive";
-      category = "\"Relational\"";
-      lines = [
-        { prefix = "⊡"; content = "0≡¬⟳|5≡∃⟳|9≡∀⟳"; }
-        { prefix = "≡"; content = "reflexive"; }
-        { prefix = "≡"; content = "self_reference"; }
-        { prefix = "≝"; content = "self awareness"; }
-        { prefix = "≝"; content = "recursive structures"; }
-        { prefix = "⊛"; content = "Ր→self_awareness ∧ Ր∈⟳_structures ∧ Ր enables introspection"; }
-        { prefix = "⊛"; content = "A⋈A via Ր ∧ 𝄎≡Ր specialized"; }
-      ];
-    };
-    total = {
-      symbol = "Օ";
-      name = "total";
-      category = "\"Relational\"";
-      lines = [
-        { prefix = "⊡"; content = "0≡∃∅|5≡≈∀|9≡∀⊨"; }
-        { prefix = "≡"; content = "total"; }
-        { prefix = "≡"; content = "complete_coverage"; }
-        { prefix = "≝"; content = "exhaustive enumeration"; }
-        { prefix = "≝"; content = "completeness validation"; }
-        { prefix = "⊛"; content = "Օ→exhaustive_enumeration"; }
-        { prefix = "⊛"; content = "Օ∈completeness_validation"; }
-        { prefix = "⊢"; content = "∀x∈domain⊃relation(x) via Օ"; }
-      ];
-    };
-    symbolic_economy = {
-      symbol = "ջ";
-      name = "symbolic_economy";
-      category = "\"Compression\"";
-      lines = [
-        { prefix = "≡"; content = "symbolic_economy"; }
-        { prefix = "≡"; content = "notation_efficiency"; }
-        { prefix = "≝"; content = "notation density"; }
-        { prefix = "≝"; content = "economic expression"; }
-        { prefix = "⊛"; content = "ջ8→good_symbolic_density ∧ ջ∈economic_notation"; }
-        { prefix = "⊛"; content = "symbol_count→ջ_ratio"; }
-      ];
-    };
-    reference_efficiency = {
-      symbol = "ռ";
-      name = "reference_efficiency";
-      category = "\"Compression\"";
-      lines = [
-        { prefix = "≡"; content = "reference_efficiency"; }
-        { prefix = "≡"; content = "citation_optimization"; }
-        { prefix = "≝"; content = "cross-reference quality"; }
-        { prefix = "≝"; content = "link optimization"; }
-        { prefix = "⊛"; content = "ռ9→excellent_referencing ∧ ռ∈cross_reference_quality"; }
-        { prefix = "⊛"; content = "link_density→ռ_score"; }
-        { prefix = "⊛"; content = "𝀷 concrescence through reference integration"; }
-      ];
-    };
-    recursion = {
-      symbol = "ժ";
-      name = "recursion";
-      category = "\"SelfReference\"";
-      lines = [
-        { prefix = "≡"; content = "recursion"; }
-        { prefix = "≡"; content = "self_referential_depth"; }
-        { prefix = "≝"; content = "recursive capability"; }
-        { prefix = "≝"; content = "ՍՎ vector component"; }
-        { prefix = "⊛"; content = "ժ8→high_recursive_capability ∧ ժ∈ՍՎ_vector"; }
-        { prefix = "⊛"; content = "meta_levels→ժ_depth"; }
-      ];
-    };
-    coherence = {
-      symbol = "թ";
-      name = "coherence";
-      category = "\"SelfReference\"";
-      lines = [
-        { prefix = "≡"; content = "coherence"; }
-        { prefix = "≡"; content = "internal_consistency"; }
-        { prefix = "≝"; content = "consistency measure"; }
-        { prefix = "≝"; content = "logical alignment"; }
-        { prefix = "⊛"; content = "թ9→excellent_coherence ∧ թ∈consistency_measure"; }
-        { prefix = "⊛"; content = "logical_alignment→թ_score"; }
-      ];
-    };
-    naming = {
-      symbol = "ն";
-      name = "naming";
-      category = "\"SelfReference\"";
-      lines = [
-        { prefix = "≡"; content = "naming"; }
-        { prefix = "≡"; content = "identifier_quality"; }
-        { prefix = "≝"; content = "naming convention"; }
-        { prefix = "≝"; content = "semantic clarity"; }
-        { prefix = "⊛"; content = "ն8→good_naming_convention ∧ ն∈semantic_clarity"; }
-        { prefix = "⊛"; content = "name_precision→ն_rating"; }
-      ];
-    };
-    metamodel = {
-      symbol = "մ";
-      name = "metamodel";
-      category = "\"SelfReference\"";
-      lines = [
-        { prefix = "≡"; content = "metamodel"; }
-        { prefix = "≡"; content = "structural_abstraction"; }
-        { prefix = "≝"; content = "architectural layer"; }
-        { prefix = "≝"; content = "abstraction level"; }
-        { prefix = "⊛"; content = "մ9→strong_metamodel ∧ մ∈architectural_layer"; }
-        { prefix = "⊛"; content = "abstraction_level→մ_measure"; }
-      ];
-    };
-    junction = {
-      symbol = "Յ";
-      name = "junction";
-      category = "\"SelfReference\"";
-      lines = [
-      ];
-    };
-    conceptual_orthogonality = {
-      symbol = "ծ";
-      name = "conceptual_orthogonality";
-      category = "\"SystemCoherence\"";
-      lines = [
-        { prefix = "≡"; content = "conceptual_orthogonality"; }
-        { prefix = "≡"; content = "concern_separation"; }
-        { prefix = "≝"; content = "architectural principle"; }
-        { prefix = "≝"; content = "independence measure"; }
-        { prefix = "⊛"; content = "ծ9→excellent_separation ∧ ծ∈architectural_principle"; }
-        { prefix = "⊛"; content = "independence→ծ_measure"; }
-      ];
-    };
-    knowledge_propagation = {
-      symbol = "կ";
-      name = "knowledge_propagation";
-      category = "\"SystemCoherence\"";
-      lines = [
-        { prefix = "≡"; content = "knowledge_propagation"; }
-        { prefix = "≡"; content = "information_flow"; }
-        { prefix = "≝"; content = "information architecture"; }
-        { prefix = "≝"; content = "propagation efficiency"; }
-        { prefix = "⊛"; content = "կ9→optimal_knowledge_flow ∧ կ∈information_architecture"; }
-        { prefix = "⊛"; content = "propagation_efficiency→կ"; }
-      ];
-    };
-    hierarchical_consistency = {
-      symbol = "Մ";
-      name = "hierarchical_consistency";
-      category = "\"SystemCoherence\"";
-      lines = [
-        { prefix = "≡"; content = "hierarchical_consistency"; }
-        { prefix = "≡"; content = "level_coherence"; }
-        { prefix = "≝"; content = "structural organization"; }
-        { prefix = "≝"; content = "level alignment"; }
-        { prefix = "⊛"; content = "Մ8→good_hierarchy ∧ Մ∈structural_organization"; }
-        { prefix = "⊛"; content = "level_alignment→Մ_rating"; }
-      ];
-    };
-    symbolic_stability = {
-      symbol = "Ձ";
-      name = "symbolic_stability";
-      category = "\"SystemCoherence\"";
-      lines = [
-        { prefix = "≡"; content = "symbolic_stability"; }
-        { prefix = "≡"; content = "notation_persistence"; }
-        { prefix = "≝"; content = "temporal consistency"; }
-        { prefix = "≝"; content = "symbol durability"; }
-        { prefix = "⊛"; content = "Ձ9→stable_notation ∧ Ձ∈temporal_consistency"; }
-        { prefix = "⊛"; content = "symbol_durability→Ձ_measure"; }
-        { prefix = "⊛"; content = "𝀏 crystallization increases stability"; }
-        { prefix = "⊛"; content = "𝁆 dissolution reduces stability"; }
-      ];
-    };
-    quality_improvement = {
-      symbol = "ղ";
-      name = "quality_improvement";
-      category = "\"Evolution\"";
-      lines = [
-        { prefix = "≡"; content = "quality_improvement"; }
-        { prefix = "≡"; content = "enhancement_trajectory"; }
-        { prefix = "≝"; content = "ԶՎ vector component"; }
-        { prefix = "≝"; content = "quality delta measurement"; }
-        { prefix = "⊛"; content = "ղ9→excellent_improvement ∧ ղ∈ԶՎ_vector"; }
-        { prefix = "⊛"; content = "quality_delta→ղ_measurement"; }
-      ];
-    };
-    component_stability = {
-      symbol = "Ճ";
-      name = "component_stability";
-      category = "\"Evolution\"";
-      lines = [
-        { prefix = "≡"; content = "component_stability"; }
-        { prefix = "≡"; content = "element_persistence"; }
-        { prefix = "≝"; content = "durability measure"; }
-        { prefix = "≝"; content = "component lifespan"; }
-        { prefix = "⊛"; content = "Ճ8→stable_components ∧ Ճ∈durability_measure"; }
-        { prefix = "⊛"; content = "component_lifespan→Ճ_score"; }
-      ];
-    };
-    simplicity_expressiveness = {
-      symbol = "շ";
-      name = "simplicity_expressiveness";
-      category = "\"DesignBalance\"";
-      lines = [
-        { prefix = "≡"; content = "simplicity_expressiveness"; }
-        { prefix = "≡"; content = "elegance_power_balance"; }
-        { prefix = "≝"; content = "ՆԲ vector component"; }
-        { prefix = "≝"; content = "complexity-utility ratio"; }
-        { prefix = "⊛"; content = "շ6→moderate_balance ∧ շ∈ՆԲ_vector"; }
-        { prefix = "⊛"; content = "complexity_utility→շ_ratio"; }
-      ];
-    };
-    orthogonality_integration = {
-      symbol = "Ո";
-      name = "orthogonality_integration";
-      category = "\"DesignBalance\"";
-      lines = [
-        { prefix = "≡"; content = "orthogonality_integration"; }
-        { prefix = "≡"; content = "separation_connection_balance"; }
-        { prefix = "≝"; content = "architectural tension"; }
-        { prefix = "≝"; content = "independence-cohesion balance"; }
-        { prefix = "⊛"; content = "Ո9→optimal_balance ∧ Ո∈architectural_tension"; }
-        { prefix = "⊛"; content = "independence_cohesion→Ո"; }
-      ];
-    };
-    consistency_specialization = {
-      symbol = "Ք";
-      name = "consistency_specialization";
-      category = "\"DesignBalance\"";
-      lines = [
-        { prefix = "≡"; content = "consistency_specialization"; }
-        { prefix = "≡"; content = "uniformity_adaptation_balance"; }
-        { prefix = "≝"; content = "design flexibility"; }
-        { prefix = "≝"; content = "standard-custom balance"; }
-        { prefix = "⊛"; content = "Ք8→good_specialization ∧ Ք∈design_flexibility"; }
-        { prefix = "⊛"; content = "standard_custom→Ք_measure"; }
-      ];
-    };
-    formalization = {
-      symbol = "Ֆ";
-      name = "formalization";
-      category = "\"SystemCoherence\"";
-      lines = [
-        { prefix = "≡"; content = "formalization"; }
-        { prefix = "≡"; content = "codification_degree"; }
-        { prefix = "≝"; content = "tacit↔explicit spectrum ∧ informal↔codified"; }
-        { prefix = "⊡"; content = "1: tacit_knowledge ∧ oral_tradition ∧ implicit_norms"; }
-        { prefix = "⊡"; content = "3: conventions ∧ soft_expectations"; }
-        { prefix = "⊡"; content = "5: documented_practices ∧ written_guidelines"; }
-        { prefix = "⊡"; content = "7: formal_rules ∧ explicit_procedures"; }
-        { prefix = "⊡"; content = "9: legal_code ∧ axiomatic_system ∧ protocol_specification"; }
-        { prefix = "⊛"; content = "⧊: Ֆ1(intuition)→Ֆ9(theorem)"; }
-        { prefix = "⊛"; content = "⧏: Ֆ2(craft)→Ֆ8(algorithm)"; }
-        { prefix = "⊛"; content = "⛫: Ֆ3(custom)→Ֆ9(statute)"; }
-        { prefix = "⊨"; content = "Ֆ ≡ explicitness∧transmissibility"; }
-      ];
-    };
-    porosity = {
-      symbol = "Պ";
-      name = "porosity";
-      category = "\"Relational\"";
-      lines = [
-        { prefix = "≡"; content = "porosity"; }
-        { prefix = "≡"; content = "permeability"; }
-        { prefix = "≝"; content = "closed↔permeable spectrum ∧ boundary_flow_rate"; }
-        { prefix = "⊡"; content = "1: hermetic ∧ no_exchange"; }
-        { prefix = "⊡"; content = "3: guarded ∧ selective_admission"; }
-        { prefix = "⊡"; content = "5: semi-permeable ∧ regulated_flow"; }
-        { prefix = "⊡"; content = "7: porous ∧ easy_transit"; }
-        { prefix = "⊡"; content = "9: open ∧ boundary≈nominal"; }
-        { prefix = "⊛"; content = "membership: Պ2(secret_society)→Պ8(open_movement)"; }
-        { prefix = "⊛"; content = "information: Պ1(classified)→Պ9(public_domain)"; }
-        { prefix = "⊛"; content = "influence: Պ3(insulated)→Պ7(responsive)"; }
-        { prefix = "⊨"; content = "Պ ≡ flow_across_Բ"; }
-      ];
-    };
-    hierarchy = {
-      symbol = "Հ";
-      name = "hierarchy";
-      category = "\"SystemCoherence\"";
-      lines = [
-      ];
-    };
-    scope = {
-      symbol = "Շ";
-      name = "scope";
-      category = "\"Core\"";
-      lines = [
-        { prefix = "≡"; content = "scope"; }
-        { prefix = "≡"; content = "reach"; }
-        { prefix = "≝"; content = "local↔universal spectrum ∧ domain_extent"; }
-        { prefix = "⊡"; content = "1: parochial ∧ single_context"; }
-        { prefix = "⊡"; content = "3: regional ∧ limited_domain"; }
-        { prefix = "⊡"; content = "5: national ∧ domain_specific"; }
-        { prefix = "⊡"; content = "7: transnational ∧ cross_domain"; }
-        { prefix = "⊡"; content = "9: universal ∧ context_independent"; }
-        { prefix = "⊛"; content = "spatial: Շ1(village)→Շ9(global)"; }
-        { prefix = "⊛"; content = "conceptual: Շ2(case_specific)→Շ9(general_law)"; }
-        { prefix = "⊛"; content = "temporal: Շ3(era_bound)→Շ8(transhistorical)"; }
-        { prefix = "⊨"; content = "Շ ≡ applicability_breadth"; }
-      ];
-    };
-    cohesion = {
-      symbol = "Ի";
-      name = "cohesion";
-      category = "\"SystemCoherence\"";
-      lines = [
-        { prefix = "≡"; content = "cohesion"; }
-        { prefix = "≡"; content = "internal_unity"; }
-        { prefix = "≝"; content = "fragmented↔unified spectrum ∧ internal_alignment"; }
-        { prefix = "⊡"; content = "1: factionalized ∧ internal_conflict"; }
-        { prefix = "⊡"; content = "3: loosely_affiliated ∧ divergent_aims"; }
-        { prefix = "⊡"; content = "5: moderate_agreement ∧ some_tension"; }
-        { prefix = "⊡"; content = "7: aligned ∧ shared_direction"; }
-        { prefix = "⊡"; content = "9: monolithic ∧ unified_action"; }
-        { prefix = "⊛"; content = "⍚: Ի3(fractious_coalition)→Ի8(disciplined_firm)"; }
-        { prefix = "⊛"; content = "⌯: Ի2(broad_tent)→Ի7(ideological_core)"; }
-        { prefix = "⊛"; content = "⧊: Ի4(contested_concept)→Ի9(settled_definition)"; }
-        { prefix = "⊨"; content = "Ի ≡ internal_∧¬external"; }
-      ];
-    };
-    agency = {
-      symbol = "Ղ";
-      name = "agency";
-      category = "\"Core\"";
-      lines = [
-        { prefix = "≡"; content = "agency"; }
-        { prefix = "≡"; content = "self_direction"; }
-        { prefix = "≝"; content = "dependent↔autonomous spectrum ∧ causal_origination"; }
-        { prefix = "⊡"; content = "1: puppet ∧ fully_determined"; }
-        { prefix = "⊡"; content = "3: constrained ∧ limited_options"; }
-        { prefix = "⊡"; content = "5: semi-autonomous ∧ conditional_freedom"; }
-        { prefix = "⊡"; content = "7: self-directing ∧ initiative"; }
-        { prefix = "⊡"; content = "9: sovereign ∧ unconstrained_origination"; }
-        { prefix = "⊛"; content = "⍚: Ղ2(subsidiary)→Ղ8(independent)"; }
-        { prefix = "⊛"; content = "⚘: Ղ3(conscript)→Ղ7(free_agent)"; }
-        { prefix = "⊛"; content = "⧊: Ղ1(epiphenomenal)→Ղ6(causal_concept)"; }
-        { prefix = "⊨"; content = "Ղ ≡ origination_capacity"; }
-      ];
-    };
-    property_vector = {
-      symbol = "⇀";
-      name = "property_vector";
-      category = "\"Core\"";
-      lines = [
-        { prefix = "≡"; content = "property_vector"; }
-        { prefix = "≡"; content = "assessment_vector"; }
-        { prefix = "≝"; content = "composed property measurement"; }
-        { prefix = "≝"; content = "multi-dimensional quality encoding"; }
-        { prefix = "⊛"; content = "⇀≡∘(property,value) ∧ Բ9Գ7Վ8≡∘(Բ(9),Գ(7),Վ(8))"; }
-        { prefix = "⊛"; content = "⇀∈[0,9]ℤ_domain ∧ ∑⇀→holistic_⊨"; }
-        { prefix = "⊛"; content = "⇀⊨system_⊙ ∧ ⇀→quantified_☊"; }
-        { prefix = "⊛"; content = "⇀⊆full_armenian_property_set"; }
-      ];
-    };
-  };
   chronos = {
-    teleological_anchor = {
-      symbol = "⍜";
-      name = "teleological_anchor";
-      category = "Teleological";
-      lines = [
-        { prefix = "≡"; content = "teleological_anchor"; }
-        { prefix = "≡"; content = "purpose_dimension"; }
-        { prefix = "≝"; content = "goal-oriented force"; }
-        { prefix = "≝"; content = "why behind when"; }
-        { prefix = "⊡"; content = "0≡incidental|5≡directional|9≡teleological"; }
-        { prefix = "∂"; content = "⍜≠Փ (capability უ direction)"; }
-        { prefix = "∂"; content = "⍜≠δ (density უ purpose)"; }
-        { prefix = "∂"; content = "⍜≠Ը (⍜ measures|Ը describes)"; }
-        { prefix = "⊛"; content = "⍜ binds temporal→goal hierarchy"; }
-        { prefix = "⊛"; content = "ω ⊂ ⍜"; }
-        { prefix = "⊛"; content = "⍜ exerts scheduling pressure"; }
-        { prefix = "⊛"; content = "⍜1→drift|⍜9→telos"; }
-        { prefix = "⊢"; content = "⍜9 ⊢ structured allocation ⊢ ◇goal"; }
-        { prefix = "⊢"; content = "⍜1 ⊢ reactive motion ⊢ ¬◇goal"; }
-        { prefix = "⟷"; content = "⍜⟷ε"; }
-        { prefix = "⟷"; content = "⍜⟷θ"; }
-      ];
-    };
     teleological_vector = {
       symbol = "ω";
       name = "teleological_vector";
-      category = "Teleological";
+      category = "\"Teleological\"";
       lines = [
         { prefix = "≡"; content = "teleological_vector"; }
         { prefix = "≡"; content = "purpose_measurement"; }
@@ -568,7 +27,7 @@
     intentionality = {
       symbol = "ι";
       name = "intentionality";
-      category = "Teleological";
+      category = "\"Teleological\"";
       lines = [
         { prefix = "≡"; content = "intentionality"; }
         { prefix = "≡"; content = "goal_orientation_strength"; }
@@ -593,7 +52,7 @@
     alignment = {
       symbol = "α";
       name = "alignment";
-      category = "Teleological";
+      category = "\"Teleological\"";
       lines = [
         { prefix = "≡"; content = "alignment"; }
         { prefix = "≡"; content = "path_criticality"; }
@@ -618,7 +77,7 @@
     execution = {
       symbol = "ε";
       name = "execution";
-      category = "Teleological";
+      category = "\"Teleological\"";
       lines = [
         { prefix = "≡"; content = "execution"; }
         { prefix = "≡"; content = "implementation_flow"; }
@@ -644,7 +103,7 @@
     physics_vector = {
       symbol = "μ";
       name = "physics_vector";
-      category = "Temporal";
+      category = "\"Temporal\"";
       lines = [
         { prefix = "≡"; content = "physics_vector"; }
         { prefix = "≡"; content = "temporal_structure_measurement"; }
@@ -667,7 +126,7 @@
     horizon = {
       symbol = "θ";
       name = "horizon";
-      category = "Temporal";
+      category = "\"Temporal\"";
       lines = [
         { prefix = "≡"; content = "horizon"; }
         { prefix = "≡"; content = "planning_distance"; }
@@ -694,7 +153,7 @@
     density = {
       symbol = "δ";
       name = "density";
-      category = "Temporal";
+      category = "\"Temporal\"";
       lines = [
         { prefix = "≡"; content = "density"; }
         { prefix = "≡"; content = "commitment_volume"; }
@@ -720,7 +179,7 @@
     precision = {
       symbol = "π";
       name = "precision";
-      category = "Temporal";
+      category = "\"Temporal\"";
       lines = [
         { prefix = "≡"; content = "precision"; }
         { prefix = "≡"; content = "timing_rigidity"; }
@@ -746,7 +205,7 @@
     sync = {
       symbol = "ς";
       name = "sync";
-      category = "Temporal";
+      category = "\"Temporal\"";
       lines = [
         { prefix = "≡"; content = "sync"; }
         { prefix = "≡"; content = "coordination_dependency"; }
@@ -773,16 +232,16 @@
     consistency = {
       symbol = "λ";
       name = "consistency";
-      category = "Assessment";
+      category = "\"Assessment\"";
       lines = [
         { prefix = "≡"; content = "consistency"; }
         { prefix = "≡"; content = "temporal_pattern_stability"; }
         { prefix = "≝"; content = "behavioral regularity"; }
         { prefix = "≝"; content = "diagnostic"; }
         { prefix = "⊡"; content = "0≡erratic|5≡patterned|9≡invariant"; }
-        { prefix = "∂"; content = "λ≠թ (temporal≠logical)"; }
+        { prefix = "∂"; content = "λ≠ⵌ (temporal≠logical)"; }
         { prefix = "∂"; content = "λ≠ delays (behavioral≠symbolic)"; }
-        { prefix = "∂"; content = "λ measures pattern∘time|թ measures internal logic"; }
+        { prefix = "∂"; content = "λ measures pattern∘time|ⵌ measures internal logic"; }
         { prefix = "⊛"; content = "λ diagnostic (λ∉ω ∧ λ∉μ)"; }
         { prefix = "⊛"; content = "λ1→erratic∧unpredictable"; }
         { prefix = "⊛"; content = "λ9→stable∧reliable"; }
@@ -802,7 +261,7 @@
     flux = {
       symbol = "ϕ";
       name = "flux";
-      category = "Assessment";
+      category = "\"Assessment\"";
       lines = [
         { prefix = "≡"; content = "flux"; }
         { prefix = "≡"; content = "flow_state_measure"; }
@@ -830,7 +289,7 @@
     capacity = {
       symbol = "γ";
       name = "capacity";
-      category = "Assessment";
+      category = "\"Assessment\"";
       lines = [
         { prefix = "≡"; content = "capacity"; }
         { prefix = "≡"; content = "energy_reserve"; }
@@ -857,31 +316,33 @@
         { prefix = "⟷"; content = "γ⟷Լ"; }
       ];
     };
-    follows_resulting = {
-      symbol = "⊱";
-      name = "follows_resulting";
-      category = "Causal";
+    teleological_anchor = {
+      symbol = "⍜";
+      name = "teleological_anchor";
+      category = "\"Teleological\"";
       lines = [
-        { prefix = "≡"; content = "follows_resulting"; }
-        { prefix = "≡"; content = "emergent_causation"; }
-        { prefix = "≝"; content = "consequential temporal flow"; }
-        { prefix = "≝"; content = "resultant emergence through time"; }
-        { prefix = "⊛"; content = "action⊱reality"; }
-        { prefix = "⊛"; content = "⟟⊱confirmation"; }
-        { prefix = "⊛"; content = "⊱ emerges_from"; }
-        { prefix = "⊛"; content = "𝀕⊱⧈"; }
-        { prefix = "⊛"; content = "𝄃⊱⌂"; }
-        { prefix = "⊛"; content = "𝀺⊱◬"; }
-        { prefix = "∂"; content = "⊱≠≻ resultant_not_sequential"; }
-        { prefix = "∂"; content = "¬mere temporal succession"; }
-        { prefix = "∂"; content = "requires causal emergence"; }
-        { prefix = "⊢"; content = "Causal action ⊢ ⊱ resulting state ⊢ temporal emergence"; }
+        { prefix = "≡"; content = "teleological_anchor"; }
+        { prefix = "≡"; content = "purpose_dimension"; }
+        { prefix = "≝"; content = "goal-oriented force"; }
+        { prefix = "≝"; content = "why behind when"; }
+        { prefix = "⊡"; content = "0≡incidental|5≡directional|9≡teleological"; }
+        { prefix = "∂"; content = "⍜≠ⵟ (capability უ direction)"; }
+        { prefix = "∂"; content = "⍜≠δ (density უ purpose)"; }
+        { prefix = "∂"; content = "⍜≠ⵢ (⍜ measures|ⵢ describes)"; }
+        { prefix = "⊛"; content = "⍜ binds temporal→goal hierarchy"; }
+        { prefix = "⊛"; content = "ω ⊂ ⍜"; }
+        { prefix = "⊛"; content = "⍜ exerts scheduling pressure"; }
+        { prefix = "⊛"; content = "⍜1→drift|⍜9→telos"; }
+        { prefix = "⊢"; content = "⍜9 ⊢ structured allocation ⊢ ◇goal"; }
+        { prefix = "⊢"; content = "⍜1 ⊢ reactive motion ⊢ ¬◇goal"; }
+        { prefix = "⟷"; content = "⍜⟷ε"; }
+        { prefix = "⟷"; content = "⍜⟷θ"; }
       ];
     };
     always = {
       symbol = "□";
       name = "always";
-      category = "Temporal";
+      category = "\"Temporal\"";
       lines = [
         { prefix = "≡"; content = "always"; }
         { prefix = "≡"; content = "invariant condition"; }
@@ -899,7 +360,7 @@
     eventually = {
       symbol = "◇";
       name = "eventually";
-      category = "Temporal";
+      category = "\"Temporal\"";
       lines = [
         { prefix = "≡"; content = "eventually"; }
         { prefix = "≡"; content = "future possibility"; }
@@ -915,7 +376,7 @@
     precedes = {
       symbol = "≺";
       name = "precedes";
-      category = "Temporal";
+      category = "\"Temporal\"";
       lines = [
         { prefix = "≡"; content = "precedes"; }
         { prefix = "≡"; content = "ordered before"; }
@@ -932,7 +393,7 @@
     succeeds = {
       symbol = "≻";
       name = "succeeds";
-      category = "Temporal";
+      category = "\"Temporal\"";
       lines = [
         { prefix = "≡"; content = "succeeds"; }
         { prefix = "≡"; content = "ordered after"; }
@@ -948,13 +409,13 @@
     prediction = {
       symbol = "⟟";
       name = "prediction";
-      category = "Temporal";
+      category = "\"Temporal\"";
       lines = [
         { prefix = "≡"; content = "prediction"; }
         { prefix = "≡"; content = "anticipatory_projection"; }
         { prefix = "≝"; content = "future state modeling"; }
         { prefix = "≝"; content = "expectation formation"; }
-        { prefix = "⊡"; content = "Փ8Ե7"; }
+        { prefix = "⊡"; content = "ⵟ8ⵝ7"; }
         { prefix = "⊛"; content = "⟟→future_state"; }
         { prefix = "⊛"; content = "model⟟outcome"; }
         { prefix = "⊛"; content = "⟟⥅𝀞_perception"; }
@@ -968,13 +429,13 @@
     repeats = {
       symbol = "𝄃";
       name = "repeats";
-      category = "Temporal";
+      category = "\"Temporal\"";
       lines = [
         { prefix = "≡"; content = "repeats"; }
         { prefix = "≡"; content = "iterates_pattern"; }
         { prefix = "≝"; content = "temporal iteration"; }
         { prefix = "≝"; content = "pattern recurrence"; }
-        { prefix = "⊡"; content = "Ր7Փ6"; }
+        { prefix = "⊡"; content = "ⵅ7ⵟ6"; }
         { prefix = "⊛"; content = "performativity via 𝄃"; }
         { prefix = "⊛"; content = "𝄃 𝆌 ⧈"; }
         { prefix = "⊛"; content = "ritual 𝄃"; }
@@ -987,7 +448,7 @@
     simultaneous = {
       symbol = "⬡";
       name = "simultaneous";
-      category = "Temporal";
+      category = "\"Temporal\"";
       lines = [
         { prefix = "≡"; content = "simultaneous"; }
         { prefix = "≡"; content = "concurrent"; }
@@ -1008,13 +469,13 @@
     state = {
       symbol = "⏣";
       name = "state";
-      category = "Temporal";
+      category = "\"Temporal\"";
       lines = [
         { prefix = "≡"; content = "state"; }
         { prefix = "≡"; content = "process_state"; }
         { prefix = "≝"; content = "workflow position"; }
         { prefix = "≝"; content = "current condition"; }
-        { prefix = "⊡"; content = "Ր9Լ8խ6"; }
+        { prefix = "⊡"; content = "ⵅ9ⵜ8ⵇ6"; }
         { prefix = "⊛"; content = "ნ⏣∈∘workflow_chain"; }
         { prefix = "⊛"; content = "○(⏣)→○⏣"; }
         { prefix = "⊛"; content = "⏣=position"; }
@@ -1023,16 +484,76 @@
         { prefix = "⊢"; content = "⏣ state ⊢ position tracking ⊢ workflow progression"; }
       ];
     };
+    process = {
+      symbol = "𝀺";
+      name = "process";
+      category = "\"Temporal\"";
+      lines = [
+        { prefix = "≡"; content = "process"; }
+        { prefix = "≡"; content = "ongoing_activity"; }
+        { prefix = "≝"; content = "temporal unfolding"; }
+        { prefix = "≝"; content = "dynamic becoming"; }
+        { prefix = "⊡"; content = "ⵟ9ⵘ8"; }
+        { prefix = "⊛"; content = "reality≡𝀺 not thing"; }
+        { prefix = "⊛"; content = "⧈ as 𝀺"; }
+        { prefix = "⊛"; content = "𝀺 ontology→⚘Heraclitus"; }
+        { prefix = "⊛"; content = "𝀺≫substance"; }
+        { prefix = "⊛"; content = "social≡𝀺"; }
+        { prefix = "⊛"; content = "𝀺→⚘Whitehead_philosophy"; }
+        { prefix = "⊛"; content = "𝀺⊱◬"; }
+        { prefix = "⊢"; content = "𝀺 ⊢ becoming over being ⊢ process metaphysics"; }
+      ];
+    };
+    accelerates = {
+      symbol = "𝀖";
+      name = "accelerates";
+      category = "\"Temporal\"";
+      lines = [
+        { prefix = "≡"; content = "accelerates"; }
+        { prefix = "≡"; content = "speeds_process"; }
+        { prefix = "≝"; content = "temporal acceleration"; }
+        { prefix = "≝"; content = "process intensification"; }
+        { prefix = "⊡"; content = "ⵟ8ⵥ7"; }
+        { prefix = "⊛"; content = "⟲ 𝀖 𝀺→◬"; }
+        { prefix = "⊛"; content = "⟚ 𝀖 via media"; }
+        { prefix = "⊛"; content = "technology 𝀖 social change"; }
+        { prefix = "⊛"; content = "𝀖 feedback loops"; }
+        { prefix = "⊛"; content = "crisis 𝀖 transformation"; }
+        { prefix = "⊛"; content = "𝀖 → compressed temporality"; }
+        { prefix = "⊢"; content = "𝀖 acceleration ⊢ intensified dynamics ⊢ rapid emergence"; }
+      ];
+    };
+    follows_resulting = {
+      symbol = "⊱";
+      name = "follows_resulting";
+      category = "\"Causal\"";
+      lines = [
+        { prefix = "≡"; content = "follows_resulting"; }
+        { prefix = "≡"; content = "emergent_causation"; }
+        { prefix = "≝"; content = "consequential temporal flow"; }
+        { prefix = "≝"; content = "resultant emergence through time"; }
+        { prefix = "⊛"; content = "action⊱reality"; }
+        { prefix = "⊛"; content = "⟟⊱confirmation"; }
+        { prefix = "⊛"; content = "⊱ emerges_from"; }
+        { prefix = "⊛"; content = "𝀕⊱⧈"; }
+        { prefix = "⊛"; content = "𝄃⊱⌂"; }
+        { prefix = "⊛"; content = "𝀺⊱◬"; }
+        { prefix = "∂"; content = "⊱≠≻ resultant_not_sequential"; }
+        { prefix = "∂"; content = "¬mere temporal succession"; }
+        { prefix = "∂"; content = "requires causal emergence"; }
+        { prefix = "⊢"; content = "Causal action ⊢ ⊱ resulting state ⊢ temporal emergence"; }
+      ];
+    };
     feedback_loop = {
       symbol = "⟲";
       name = "feedback_loop";
-      category = "Causal";
+      category = "\"Causal\"";
       lines = [
         { prefix = "≡"; content = "feedback_loop"; }
         { prefix = "≡"; content = "circular_causation"; }
         { prefix = "≝"; content = "output→input mechanism"; }
         { prefix = "≝"; content = "general self-reinforcement"; }
-        { prefix = "⊡"; content = "Ր9Տ8"; }
+        { prefix = "⊡"; content = "ⵅ9ⵕ8"; }
         { prefix = "∂"; content = "⟲⊅⟗ (⟲ mechanism | ⟗ named instance)"; }
         { prefix = "∂"; content = "⟲ operator | ⟗ entity-taggable"; }
         { prefix = "⊛"; content = "⟟→outcome⟲⟟"; }
@@ -1047,13 +568,13 @@
     recursive_process = {
       symbol = "⟖";
       name = "recursive_process";
-      category = "Causal";
+      category = "\"Causal\"";
       lines = [
         { prefix = "≡"; content = "recursive_process"; }
         { prefix = "≡"; content = "function_on_output"; }
         { prefix = "≝"; content = "f(f(x)) structure"; }
         { prefix = "≝"; content = "complexity generation"; }
-        { prefix = "⊡"; content = "Ր9Տ8"; }
+        { prefix = "⊡"; content = "ⵅ9ⵕ8"; }
         { prefix = "∂"; content = "⟖⊂⟳ (⟖ specialized | ⟳ general)"; }
         { prefix = "⊛"; content = "definition⟖self_reference⟖definition"; }
         { prefix = "⊛"; content = "⟖ generates_complexity"; }
@@ -1067,13 +588,13 @@
     reflexive = {
       symbol = "𝄎";
       name = "reflexive";
-      category = "Causal";
+      category = "\"Causal\"";
       lines = [
         { prefix = "≡"; content = "reflexive"; }
         { prefix = "≡"; content = "self_referential"; }
         { prefix = "≝"; content = "self-aware structure"; }
         { prefix = "≝"; content = "meta-level observation"; }
-        { prefix = "⊡"; content = "Ր8Տ7"; }
+        { prefix = "⊡"; content = "ⵅ8ⵕ7"; }
         { prefix = "⊛"; content = "𝄎 loops→⟗"; }
         { prefix = "⊛"; content = "𝄎 prediction→⟚"; }
         { prefix = "⊛"; content = "𝄎 awareness 𝀴"; }
@@ -1082,30 +603,52 @@
         { prefix = "⊢"; content = "𝄎 ⊢ second-order observation ⊢ systems theory"; }
       ];
     };
-    process = {
-      symbol = "𝀺";
-      name = "process";
-      category = "Temporal";
+    reinforces = {
+      symbol = "𝆌";
+      name = "reinforces";
+      category = "\"Causal\"";
       lines = [
-        { prefix = "≡"; content = "process"; }
-        { prefix = "≡"; content = "ongoing_activity"; }
-        { prefix = "≝"; content = "temporal unfolding"; }
-        { prefix = "≝"; content = "dynamic becoming"; }
-        { prefix = "⊡"; content = "Փ9Գ8"; }
-        { prefix = "⊛"; content = "reality≡𝀺 not thing"; }
-        { prefix = "⊛"; content = "⧈ as 𝀺"; }
-        { prefix = "⊛"; content = "𝀺 ontology→⚘Heraclitus"; }
-        { prefix = "⊛"; content = "𝀺≫substance"; }
-        { prefix = "⊛"; content = "social≡𝀺"; }
-        { prefix = "⊛"; content = "𝀺→⚘Whitehead_philosophy"; }
-        { prefix = "⊛"; content = "𝀺⊱◬"; }
-        { prefix = "⊢"; content = "𝀺 ⊢ becoming over being ⊢ process metaphysics"; }
+        { prefix = "≡"; content = "reinforces"; }
+        { prefix = "≡"; content = "strengthens_pattern"; }
+        { prefix = "≝"; content = "feedback reinforcement"; }
+        { prefix = "≝"; content = "pattern strengthening through repetition"; }
+        { prefix = "⊡"; content = "ⵟ8ⵕ7"; }
+        { prefix = "⊛"; content = "𝄃 𝆌 ⧈"; }
+        { prefix = "⊛"; content = "⧈→𝀕→𝆌→⧈"; }
+        { prefix = "⊛"; content = "usage patterns 𝆌 ⌺"; }
+        { prefix = "⊛"; content = "⛫ 𝆌 itself"; }
+        { prefix = "⊛"; content = "⟲ can 𝀶 or 𝆌"; }
+        { prefix = "⊛"; content = "𝆌 stabilizes patterns"; }
+        { prefix = "⊛"; content = "behavior→𝆌→⌂"; }
+        { prefix = "⊢"; content = "𝆌 reinforcement ⊢ pattern stability ⊢ habitus formation"; }
+      ];
+    };
+    subverts = {
+      symbol = "𝁤";
+      name = "subverts";
+      category = "\"Causal\"";
+      lines = [
+        { prefix = "≡"; content = "subverts"; }
+        { prefix = "≡"; content = "undermines_from_within"; }
+        { prefix = "≝"; content = "performative subversion"; }
+        { prefix = "≝"; content = "norm undermining through iteration"; }
+        { prefix = "⊡"; content = "ⵥ8ⵟ7"; }
+        { prefix = "∂"; content = "უdirect opposition"; }
+        { prefix = "∂"; content = "უexternal attack"; }
+        { prefix = "∂"; content = "requires working within structure"; }
+        { prefix = "⊛"; content = "𝁤 expected_⧈"; }
+        { prefix = "⊛"; content = "performative 𝁤"; }
+        { prefix = "⊛"; content = "⟴ can 𝁤 norms"; }
+        { prefix = "⊛"; content = "𝁤→new_possibilities"; }
+        { prefix = "⊛"; content = "parody 𝁤 original"; }
+        { prefix = "⊛"; content = "𝁤→⚘Judith Butler_drag"; }
+        { prefix = "⊢"; content = "𝁤 subversion ⊢ internal undermining ⊢ new possibilities"; }
       ];
     };
     prehension = {
       symbol = "𝀃";
       name = "prehension";
-      category = "Becoming";
+      category = "\"Becoming\"";
       lines = [
         { prefix = "≡"; content = "prehension"; }
         { prefix = "≡"; content = "feeling forth"; }
@@ -1135,7 +678,7 @@
     concrescence = {
       symbol = "𝀷";
       name = "concrescence";
-      category = "Becoming";
+      category = "\"Becoming\"";
       lines = [
         { prefix = "≡"; content = "concrescence"; }
         { prefix = "≡"; content = "pressing into unity"; }
@@ -1156,67 +699,6 @@
         { prefix = "⊛"; content = "∀ actual occasions through 𝀷"; }
         { prefix = "⊛"; content = "πιάζω: grasp, press, seize"; }
         { prefix = "⊢"; content = "unified occasion ⊢ becoming complete"; }
-      ];
-    };
-    reinforces = {
-      symbol = "𝆌";
-      name = "reinforces";
-      category = "Causal";
-      lines = [
-        { prefix = "≡"; content = "reinforces"; }
-        { prefix = "≡"; content = "strengthens_pattern"; }
-        { prefix = "≝"; content = "feedback reinforcement"; }
-        { prefix = "≝"; content = "pattern strengthening through repetition"; }
-        { prefix = "⊡"; content = "Փ8Տ7"; }
-        { prefix = "⊛"; content = "𝄃 𝆌 ⧈"; }
-        { prefix = "⊛"; content = "⧈→𝀕→𝆌→⧈"; }
-        { prefix = "⊛"; content = "usage patterns 𝆌 ⌺"; }
-        { prefix = "⊛"; content = "⛫ 𝆌 itself"; }
-        { prefix = "⊛"; content = "⟲ can 𝀶 or 𝆌"; }
-        { prefix = "⊛"; content = "𝆌 stabilizes patterns"; }
-        { prefix = "⊛"; content = "behavior→𝆌→⌂"; }
-        { prefix = "⊢"; content = "𝆌 reinforcement ⊢ pattern stability ⊢ habitus formation"; }
-      ];
-    };
-    accelerates = {
-      symbol = "𝀖";
-      name = "accelerates";
-      category = "Temporal";
-      lines = [
-        { prefix = "≡"; content = "accelerates"; }
-        { prefix = "≡"; content = "speeds_process"; }
-        { prefix = "≝"; content = "temporal acceleration"; }
-        { prefix = "≝"; content = "process intensification"; }
-        { prefix = "⊡"; content = "Փ8Ց7"; }
-        { prefix = "⊛"; content = "⟲ 𝀖 𝀺→◬"; }
-        { prefix = "⊛"; content = "⟚ 𝀖 via media"; }
-        { prefix = "⊛"; content = "technology 𝀖 social change"; }
-        { prefix = "⊛"; content = "𝀖 feedback loops"; }
-        { prefix = "⊛"; content = "crisis 𝀖 transformation"; }
-        { prefix = "⊛"; content = "𝀖 → compressed temporality"; }
-        { prefix = "⊢"; content = "𝀖 acceleration ⊢ intensified dynamics ⊢ rapid emergence"; }
-      ];
-    };
-    subverts = {
-      symbol = "𝁤";
-      name = "subverts";
-      category = "Causal";
-      lines = [
-        { prefix = "≡"; content = "subverts"; }
-        { prefix = "≡"; content = "undermines_from_within"; }
-        { prefix = "≝"; content = "performative subversion"; }
-        { prefix = "≝"; content = "norm undermining through iteration"; }
-        { prefix = "⊡"; content = "Ց8Փ7"; }
-        { prefix = "∂"; content = "უdirect opposition"; }
-        { prefix = "∂"; content = "უexternal attack"; }
-        { prefix = "∂"; content = "requires working within structure"; }
-        { prefix = "⊛"; content = "𝁤 expected_⧈"; }
-        { prefix = "⊛"; content = "performative 𝁤"; }
-        { prefix = "⊛"; content = "⟴ can 𝁤 norms"; }
-        { prefix = "⊛"; content = "𝁤→new_possibilities"; }
-        { prefix = "⊛"; content = "parody 𝁤 original"; }
-        { prefix = "⊛"; content = "𝁤→⚘Judith Butler_drag"; }
-        { prefix = "⊢"; content = "𝁤 subversion ⊢ internal undermining ⊢ new possibilities"; }
       ];
     };
   };
@@ -3215,6 +2697,421 @@
         { prefix = "⊛"; content = "⥎ 𝀴 both_parties"; }
         { prefix = "⊛"; content = "classification⥎classified⥎classification"; }
         { prefix = "⊢"; content = "⥎ interactive ⊢ looping effect ⊢ mutual constitution"; }
+      ];
+    };
+  };
+  property = {
+    volatility = {
+      symbol = "ⵥ";
+      name = "volatility";
+      category = "\"Persistence\"";
+      lines = [
+        { prefix = "⊡"; content = "0≡□⌺|5≡○⌺|9≡⤋⌺"; }
+        { prefix = "≡"; content = "volatility"; }
+        { prefix = "≡"; content = "change_frequency"; }
+        { prefix = "≝"; content = "change prediction"; }
+        { prefix = "≝"; content = "system dynamics"; }
+        { prefix = "⊛"; content = "ⵥ→change_prediction ∧ ⵥ∈system_dynamics ∧ low_ⵥ→reliable_behavior"; }
+        { prefix = "⊛"; content = "high_ⵥ→frequent_updates"; }
+        { prefix = "⊛"; content = "𝀾 flow in volatile systems"; }
+        { prefix = "⊛"; content = "𝀆 equilibrium when stable"; }
+        { prefix = "⊛"; content = "𝁀 oscillation between states"; }
+      ];
+    };
+    lifespan = {
+      symbol = "ⵜ";
+      name = "lifespan";
+      category = "\"Persistence\"";
+      lines = [
+        { prefix = "⊡"; content = "0≡⤋○|5≡≈○|9≡□○"; }
+        { prefix = "≡"; content = "lifespan"; }
+        { prefix = "≡"; content = "temporal_durability"; }
+        { prefix = "≝"; content = "maintenance requirements"; }
+        { prefix = "≝"; content = "sustainability design"; }
+        { prefix = "⊛"; content = "ⵜ→maintenance_requirements ∧ ⵜ∈sustainability_design ∧ code_ⵜ planning"; }
+        { prefix = "⊛"; content = "legacy_ⵜ management"; }
+        { prefix = "⊛"; content = "𝁆 dissolution as systems age"; }
+        { prefix = "⊛"; content = "𝀏 crystallization through stabilization"; }
+      ];
+    };
+    component_stability = {
+      symbol = "ⵛ";
+      name = "component_stability";
+      category = "\"Persistence\"";
+      lines = [
+        { prefix = "≡"; content = "component_stability"; }
+        { prefix = "≡"; content = "element_persistence"; }
+        { prefix = "≝"; content = "durability measure"; }
+        { prefix = "≝"; content = "component lifespan"; }
+        { prefix = "⊛"; content = "ⵛ8→stable_components ∧ ⵛ∈durability_measure"; }
+        { prefix = "⊛"; content = "component_lifespan→ⵛ_score"; }
+      ];
+    };
+    symbolic_stability = {
+      symbol = "ⵙ";
+      name = "symbolic_stability";
+      category = "\"Persistence\"";
+      lines = [
+        { prefix = "≡"; content = "symbolic_stability"; }
+        { prefix = "≡"; content = "notation_persistence"; }
+        { prefix = "≝"; content = "temporal consistency"; }
+        { prefix = "≝"; content = "symbol durability"; }
+        { prefix = "⊛"; content = "ⵙ9→stable_notation ∧ ⵙ∈temporal_consistency"; }
+        { prefix = "⊛"; content = "symbol_durability→ⵙ_measure"; }
+        { prefix = "⊛"; content = "𝀏 crystallization increases stability"; }
+        { prefix = "⊛"; content = "𝁆 dissolution reduces stability"; }
+      ];
+    };
+    boundary = {
+      symbol = "ⵗ";
+      name = "boundary";
+      category = "\"Organization\"";
+      lines = [
+        { prefix = "≡"; content = "boundary"; }
+        { prefix = "≡"; content = "interface"; }
+        { prefix = "≝"; content = "separation clarity ∧ specification"; }
+        { prefix = "⊡"; content = "0≡∅∂|5≡⊨∂|9≡⊩∂"; }
+        { prefix = "⊛"; content = "ⵗ→architectural_concern"; }
+        { prefix = "⊛"; content = "service∂service via ⵗ"; }
+        { prefix = "⊛"; content = "┃≡ⵗ_specialized"; }
+        { prefix = "⊛"; content = "ⵗ⤋→𝁆|ⵗ⌺→𝀏"; }
+      ];
+    };
+    cohesion = {
+      symbol = "ⵞ";
+      name = "cohesion";
+      category = "\"Organization\"";
+      lines = [
+        { prefix = "≡"; content = "cohesion"; }
+        { prefix = "≡"; content = "internal_unity"; }
+        { prefix = "≝"; content = "fragmented↔unified spectrum ∧ internal_alignment"; }
+        { prefix = "⊡"; content = "1: factionalized ∧ internal_conflict"; }
+        { prefix = "⊡"; content = "3: loosely_affiliated ∧ divergent_aims"; }
+        { prefix = "⊡"; content = "5: moderate_agreement ∧ some_tension"; }
+        { prefix = "⊡"; content = "7: aligned ∧ shared_direction"; }
+        { prefix = "⊡"; content = "9: monolithic ∧ unified_action"; }
+        { prefix = "⊛"; content = "⍚: ⵞ3(fractious_coalition)→ⵞ8(disciplined_firm)"; }
+        { prefix = "⊛"; content = "⌯: ⵞ2(broad_tent)→ⵞ7(ideological_core)"; }
+        { prefix = "⊛"; content = "⧊: ⵞ4(contested_concept)→ⵞ9(settled_definition)"; }
+        { prefix = "⊨"; content = "ⵞ ≡ internal_∧¬external"; }
+      ];
+    };
+    formalization = {
+      symbol = "ⵆ";
+      name = "formalization";
+      category = "\"Organization\"";
+      lines = [
+        { prefix = "≡"; content = "formalization"; }
+        { prefix = "≡"; content = "codification_degree"; }
+        { prefix = "≝"; content = "tacit↔explicit spectrum ∧ informal↔codified"; }
+        { prefix = "⊡"; content = "1: tacit_knowledge ∧ oral_tradition ∧ implicit_norms"; }
+        { prefix = "⊡"; content = "3: conventions ∧ soft_expectations"; }
+        { prefix = "⊡"; content = "5: documented_practices ∧ written_guidelines"; }
+        { prefix = "⊡"; content = "7: formal_rules ∧ explicit_procedures"; }
+        { prefix = "⊡"; content = "9: legal_code ∧ axiomatic_system ∧ protocol_specification"; }
+        { prefix = "⊛"; content = "⧊: ⵆ1(intuition)→ⵆ9(theorem)"; }
+        { prefix = "⊛"; content = "⧏: ⵆ2(craft)→ⵆ8(algorithm)"; }
+        { prefix = "⊛"; content = "⛫: ⵆ3(custom)→ⵆ9(statute)"; }
+        { prefix = "⊨"; content = "ⵆ ≡ explicitness∧transmissibility"; }
+      ];
+    };
+    hierarchy = {
+      symbol = "ⵄ";
+      name = "hierarchy";
+      category = "\"Organization\"";
+      lines = [
+        { prefix = "≡"; content = "hierarchy"; }
+        { prefix = "≡"; content = "nesting_depth"; }
+        { prefix = "≝"; content = "flat↔nested ∧ vertical_structure"; }
+        { prefix = "⊡"; content = "1: peer ∧ no_ranks"; }
+        { prefix = "⊡"; content = "5: moderate_levels"; }
+        { prefix = "⊡"; content = "9: rigid_stratification"; }
+        { prefix = "⊛"; content = "⍚: ⵄ2(cooperative)→ⵄ8(corporation)"; }
+        { prefix = "⊛"; content = "⧏: ⵄ1(heuristic)→ⵄ7(nested_procedure)"; }
+        { prefix = "⊛"; content = "⧊: ⵄ3(cluster)→ⵄ8(taxonomy)"; }
+        { prefix = "⊨"; content = "ⵄ ≡ vertical_differentiation"; }
+      ];
+    };
+    naming = {
+      symbol = "ⵃ";
+      name = "naming";
+      category = "\"Organization\"";
+      lines = [
+        { prefix = "≡"; content = "naming"; }
+        { prefix = "≡"; content = "identifier_quality"; }
+        { prefix = "≝"; content = "naming convention"; }
+        { prefix = "≝"; content = "semantic clarity"; }
+        { prefix = "⊛"; content = "ⵃ8→good_naming_convention ∧ ⵃ∈semantic_clarity"; }
+        { prefix = "⊛"; content = "name_precision→ⵃ_rating"; }
+      ];
+    };
+    coherence = {
+      symbol = "ⵌ";
+      name = "coherence";
+      category = "\"Organization\"";
+      lines = [
+        { prefix = "≡"; content = "coherence"; }
+        { prefix = "≡"; content = "internal_consistency"; }
+        { prefix = "≝"; content = "consistency measure"; }
+        { prefix = "≝"; content = "logical alignment"; }
+        { prefix = "⊛"; content = "ⵌ9→excellent_coherence ∧ ⵌ∈consistency_measure"; }
+        { prefix = "⊛"; content = "logical_alignment→ⵌ_score"; }
+      ];
+    };
+    antisymmetric = {
+      symbol = "ⵔ";
+      name = "antisymmetric";
+      category = "\"Relational\"";
+      lines = [
+        { prefix = "⊡"; content = "0≡⟷≡|5≡→≺←|9≡⊩≺"; }
+        { prefix = "≡"; content = "antisymmetric"; }
+        { prefix = "≡"; content = "directional_ordering"; }
+        { prefix = "≝"; content = "hierarchical structure enforcement"; }
+        { prefix = "≝"; content = "precedence design"; }
+        { prefix = "⊛"; content = "ⵔ→hierarchical_structures"; }
+        { prefix = "⊛"; content = "ⵔ∈precedence_design"; }
+        { prefix = "⊛"; content = "ⵔ enables ranking"; }
+        { prefix = "⊢"; content = "A≺B∧B≺A⊃A≡B via ⵔ"; }
+      ];
+    };
+    transitive = {
+      symbol = "ⵕ";
+      name = "transitive";
+      category = "\"Relational\"";
+      lines = [
+        { prefix = "⊡"; content = "0≡¬→|5≡∃→|9≡∀→"; }
+        { prefix = "≡"; content = "transitive"; }
+        { prefix = "≡"; content = "chain_propagation"; }
+        { prefix = "≝"; content = "inheritance chains"; }
+        { prefix = "≝"; content = "dependency graphs"; }
+        { prefix = "⊛"; content = "ⵕ→inheritance_chains"; }
+        { prefix = "⊛"; content = "ⵕ∈dependency_graphs"; }
+        { prefix = "⊛"; content = "ⵕ enables composition"; }
+        { prefix = "⊢"; content = "A→B→C⊃A→C via ⵕ"; }
+      ];
+    };
+    symmetric = {
+      symbol = "ⵖ";
+      name = "symmetric";
+      category = "\"Relational\"";
+      lines = [
+        { prefix = "⊡"; content = "0≡→⊥←|5≡→≈←|9≡→≡←"; }
+        { prefix = "≡"; content = "symmetric"; }
+        { prefix = "≡"; content = "bidirectional_equality"; }
+        { prefix = "≝"; content = "mutual relationships"; }
+        { prefix = "≝"; content = "partnership design"; }
+        { prefix = "⊛"; content = "ⵖ→mutual_relationships"; }
+        { prefix = "⊛"; content = "ⵖ∈partnership_design"; }
+        { prefix = "⊛"; content = "ⵖ enables cooperation"; }
+        { prefix = "⊢"; content = "A⋈B≡B⋈A via ⵖ"; }
+      ];
+    };
+    reflexive = {
+      symbol = "ⵅ";
+      name = "reflexive";
+      category = "\"Relational\"";
+      lines = [
+        { prefix = "⊡"; content = "0≡¬⟳|5≡∃⟳|9≡∀⟳"; }
+        { prefix = "≡"; content = "reflexive"; }
+        { prefix = "≡"; content = "self_reference"; }
+        { prefix = "≝"; content = "self awareness"; }
+        { prefix = "≝"; content = "recursive structures"; }
+        { prefix = "⊛"; content = "ⵅ→self_awareness ∧ ⵅ∈⟳_structures ∧ ⵅ enables introspection"; }
+        { prefix = "⊛"; content = "A⋈A via ⵅ ∧ 𝄎≡ⵅ specialized"; }
+      ];
+    };
+    total = {
+      symbol = "ⵀ";
+      name = "total";
+      category = "\"Relational\"";
+      lines = [
+        { prefix = "⊡"; content = "0≡∃∅|5≡≈∀|9≡∀⊨"; }
+        { prefix = "≡"; content = "total"; }
+        { prefix = "≡"; content = "complete_coverage"; }
+        { prefix = "≝"; content = "exhaustive enumeration"; }
+        { prefix = "≝"; content = "completeness validation"; }
+        { prefix = "⊛"; content = "ⵀ→exhaustive_enumeration"; }
+        { prefix = "⊛"; content = "ⵀ∈completeness_validation"; }
+        { prefix = "⊢"; content = "∀x∈domain⊃relation(x) via ⵀ"; }
+      ];
+    };
+    porosity = {
+      symbol = "ⵒ";
+      name = "porosity";
+      category = "\"Relational\"";
+      lines = [
+        { prefix = "≡"; content = "porosity"; }
+        { prefix = "≡"; content = "permeability"; }
+        { prefix = "≝"; content = "closed↔permeable spectrum ∧ boundary_flow_rate"; }
+        { prefix = "⊡"; content = "1: hermetic ∧ no_exchange"; }
+        { prefix = "⊡"; content = "3: guarded ∧ selective_admission"; }
+        { prefix = "⊡"; content = "5: semi-permeable ∧ regulated_flow"; }
+        { prefix = "⊡"; content = "7: porous ∧ easy_transit"; }
+        { prefix = "⊡"; content = "9: open ∧ boundary≈nominal"; }
+        { prefix = "⊛"; content = "membership: ⵒ2(secret_society)→ⵒ8(open_movement)"; }
+        { prefix = "⊛"; content = "information: ⵒ1(classified)→ⵒ9(public_domain)"; }
+        { prefix = "⊛"; content = "influence: ⵒ3(insulated)→ⵒ7(responsive)"; }
+        { prefix = "⊨"; content = "ⵒ ≡ flow_across_Բ"; }
+      ];
+    };
+    recursion = {
+      symbol = "ⵣ";
+      name = "recursion";
+      category = "\"Relational\"";
+      lines = [
+        { prefix = "≡"; content = "recursion"; }
+        { prefix = "≡"; content = "self_referential_depth"; }
+        { prefix = "≝"; content = "recursive capability"; }
+        { prefix = "≝"; content = "meta-level depth"; }
+        { prefix = "⊛"; content = "ⵣ8→high_recursive_capability"; }
+        { prefix = "⊛"; content = "meta_levels→ⵣ_depth"; }
+      ];
+    };
+    functional = {
+      symbol = "ⵟ";
+      name = "functional";
+      category = "\"Capacity\"";
+      lines = [
+        { prefix = "≡"; content = "functional"; }
+        { prefix = "≡"; content = "operational_effectiveness"; }
+        { prefix = "≝"; content = "performance metrics"; }
+        { prefix = "≝"; content = "capability assessment"; }
+        { prefix = "⊡"; content = "0≡∅⊙|5≡≈⊙|9≡⊨⊙"; }
+        { prefix = "⊛"; content = "ⵟ→performance_metrics ∧ ⵟ∈capability_assessment ∧ system_ⵟ validation"; }
+        { prefix = "⊛"; content = "⍜⊧ⵟ_embodiment"; }
+      ];
+    };
+    agency = {
+      symbol = "ⵓ";
+      name = "agency";
+      category = "\"Capacity\"";
+      lines = [
+        { prefix = "≡"; content = "agency"; }
+        { prefix = "≡"; content = "self_direction"; }
+        { prefix = "≝"; content = "dependent↔autonomous spectrum ∧ causal_origination"; }
+        { prefix = "⊡"; content = "1: puppet ∧ fully_determined"; }
+        { prefix = "⊡"; content = "3: constrained ∧ limited_options"; }
+        { prefix = "⊡"; content = "5: semi-autonomous ∧ conditional_freedom"; }
+        { prefix = "⊡"; content = "7: self-directing ∧ initiative"; }
+        { prefix = "⊡"; content = "9: sovereign ∧ unconstrained_origination"; }
+        { prefix = "⊛"; content = "⍚: ⵓ2(subsidiary)→ⵓ8(independent)"; }
+        { prefix = "⊛"; content = "⚘: ⵓ3(conscript)→ⵓ7(free_agent)"; }
+        { prefix = "⊛"; content = "⧊: ⵓ1(epiphenomenal)→ⵓ6(causal_concept)"; }
+        { prefix = "⊨"; content = "ⵓ ≡ origination_capacity"; }
+      ];
+    };
+    intentionality = {
+      symbol = "ⵢ";
+      name = "intentionality";
+      category = "\"Capacity\"";
+      lines = [
+        { prefix = "≡"; content = "intentionality"; }
+        { prefix = "≡"; content = "purposeful_design"; }
+        { prefix = "≝"; content = "design_intention ∧ deliberate_construction"; }
+        { prefix = "⊡"; content = "0≡∅⍜|5≡⌾⍜|9≡⊨⍜"; }
+        { prefix = "⊛"; content = "ⵢ→planned_behavior ∧ ⵢ→goal_alignment"; }
+      ];
+    };
+    scope = {
+      symbol = "ⵋ";
+      name = "scope";
+      category = "\"Extension\"";
+      lines = [
+        { prefix = "≡"; content = "scope"; }
+        { prefix = "≡"; content = "reach"; }
+        { prefix = "≝"; content = "local↔universal spectrum ∧ domain_extent"; }
+        { prefix = "⊡"; content = "1: parochial ∧ single_context"; }
+        { prefix = "⊡"; content = "3: regional ∧ limited_domain"; }
+        { prefix = "⊡"; content = "5: national ∧ domain_specific"; }
+        { prefix = "⊡"; content = "7: transnational ∧ cross_domain"; }
+        { prefix = "⊡"; content = "9: universal ∧ context_independent"; }
+        { prefix = "⊛"; content = "spatial: ⵋ1(village)→ⵋ9(global)"; }
+        { prefix = "⊛"; content = "conceptual: ⵋ2(case_specific)→ⵋ9(general_law)"; }
+        { prefix = "⊛"; content = "temporal: ⵋ3(era_bound)→ⵋ8(transhistorical)"; }
+        { prefix = "⊨"; content = "ⵋ ≡ applicability_breadth"; }
+      ];
+    };
+    generalizability = {
+      symbol = "ⵘ";
+      name = "generalizability";
+      category = "\"Extension\"";
+      lines = [
+        { prefix = "≡"; content = "generalizability"; }
+        { prefix = "≡"; content = "pattern_extension"; }
+        { prefix = "≝"; content = "reuse potential"; }
+        { prefix = "≝"; content = "design flexibility"; }
+        { prefix = "⊡"; content = "0≡⊂❖|5≡∩❖|9≡∀❖"; }
+        { prefix = "⊛"; content = "ⵘ→reuse_potential ∧ ⵘ∈design_flexibility ∧ ᛝ_ⵘ across domains"; }
+        { prefix = "⊛"; content = "framework_ⵘ assessment"; }
+      ];
+    };
+    contextualization = {
+      symbol = "ⵇ";
+      name = "contextualization";
+      category = "\"Extension\"";
+      lines = [
+        { prefix = "≡"; content = "contextualization"; }
+        { prefix = "≡"; content = "situational_adaptation"; }
+        { prefix = "≝"; content = "environment fitting"; }
+        { prefix = "≝"; content = "usage context sensitivity"; }
+        { prefix = "⊡"; content = "0≡⊥⯐|5≡∩⯐|9≡⊆⯐"; }
+        { prefix = "⊛"; content = "ⵇ→environment_fitting ∧ ⵇ∈usage_⯐ ∧ 𐤆_ⵇ sensitivity"; }
+        { prefix = "⊛"; content = "ⵇ enables portability"; }
+      ];
+    };
+    semantic_density = {
+      symbol = "ⵐ";
+      name = "semantic_density";
+      category = "\"Expression\"";
+      lines = [
+        { prefix = "≡"; content = "semantic_density"; }
+        { prefix = "≡"; content = "meaning_concentration"; }
+        { prefix = "≝"; content = "compression ratio"; }
+        { prefix = "≝"; content = "expressivity efficiency"; }
+        { prefix = "⊡"; content = "0≡∅≐|5≡≈≐|9≡∞≐"; }
+        { prefix = "⊛"; content = "ⵐ∝compression_ratio ∧ semantic_ⵐ optimization ∧ ⵐ→expressivity_efficiency"; }
+        { prefix = "⊛"; content = "symbol_ⵐ analysis"; }
+      ];
+    };
+    explanatory = {
+      symbol = "ⵝ";
+      name = "explanatory";
+      category = "\"Expression\"";
+      lines = [
+        { prefix = "≡"; content = "explanatory"; }
+        { prefix = "≡"; content = "clarification_power"; }
+        { prefix = "≝"; content = "understanding enhancement"; }
+        { prefix = "≝"; content = "documentation quality"; }
+        { prefix = "⊡"; content = "0≡⊟⧊|5≡⌾⧊|9≡⊨⧊"; }
+        { prefix = "⊛"; content = "ⵝ→understanding_enhancement ∧ ⵝ∈documentation_quality ∧ concept_ⵝ strength"; }
+        { prefix = "⊛"; content = "tutorial_ⵝ design"; }
+      ];
+    };
+    symbolic_economy = {
+      symbol = "ⵤ";
+      name = "symbolic_economy";
+      category = "\"Expression\"";
+      lines = [
+        { prefix = "≡"; content = "symbolic_economy"; }
+        { prefix = "≡"; content = "notation_efficiency"; }
+        { prefix = "≝"; content = "notation density"; }
+        { prefix = "≝"; content = "economic expression"; }
+        { prefix = "⊛"; content = "ⵤ8→good_symbolic_density ∧ ⵤ∈economic_notation"; }
+        { prefix = "⊛"; content = "symbol_count→ⵤ_ratio"; }
+      ];
+    };
+    reference_efficiency = {
+      symbol = "ⵎ";
+      name = "reference_efficiency";
+      category = "\"Expression\"";
+      lines = [
+        { prefix = "≡"; content = "reference_efficiency"; }
+        { prefix = "≡"; content = "citation_optimization"; }
+        { prefix = "≝"; content = "cross-reference quality"; }
+        { prefix = "≝"; content = "link optimization"; }
+        { prefix = "⊛"; content = "ⵎ9→excellent_referencing ∧ ⵎ∈cross_reference_quality"; }
+        { prefix = "⊛"; content = "link_density→ⵎ_score"; }
+        { prefix = "⊛"; content = "𝀷 concrescence through reference integration"; }
       ];
     };
   };
