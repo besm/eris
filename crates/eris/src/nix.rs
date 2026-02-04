@@ -3,7 +3,7 @@
 //! Generates Nix attribute sets from entity and operator definitions.
 //! Output structure:
 //! - entity.person, entity.place, etc. (flat)
-//! - operator.logical.equivalence, operator.armenian.performativity, etc. (module-nested)
+//! - operator.logical.equivalence, operator.property.functional, etc. (module-nested)
 
 use std::collections::BTreeMap;
 
@@ -164,7 +164,7 @@ fn get_operator_defs() -> Vec<(String, String, String, String, Vec<(String, Stri
         };
     }
 
-    process_operator!(armenian, get_armenian_operator_definitions, "armenian");
+    process_operator!(loader, get_property_vector_definitions, "property");
     process_operator!(chronos, get_chronos_operator_definitions, "chronos");
     process_operator!(georgian, get_georgian_operator_definitions, "georgian");
     process_operator!(logical, get_logical_operator_definitions, "logical");

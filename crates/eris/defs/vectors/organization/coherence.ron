@@ -1,0 +1,15 @@
+// ⵌ - Coherence (supersedes թ)
+(
+    symbol: "ⵌ",
+    name: "coherence",
+    category: "Organization",
+    supersedes: Some("թ"),
+    lines: [
+        ("≡", "coherence"),
+        ("≡", "internal_consistency"),
+        ("≝", "consistency measure"),
+        ("≝", "logical alignment"),
+        ("⊛", "ⵌ9→excellent_coherence ∧ ⵌ∈consistency_measure"),
+        ("⊛", "logical_alignment→ⵌ_score"),
+    ],
+)

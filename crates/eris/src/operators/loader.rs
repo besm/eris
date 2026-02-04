@@ -7,8 +7,11 @@
 //! - Structured: semantic field names
 //!
 //! Two loader types:
-//! - `load_vectors()`: Armenian + chronos property vectors (49 total)
+//! - `load_vectors()`: Property vectors + chronos vectors (39 total)
 //! - `load_chronos_operators()`: Non-vector chronos operators (19 total)
+//!
+//! Property vectors use Tifinagh script (U+2D30–U+2D7F), with legacy
+//! Armenian symbols tracked via `supersedes` field for backwards compatibility.
 
 use once_cell::sync::Lazy;
 use serde::Deserialize;
@@ -137,58 +140,48 @@ fn parse_operator(ron_str: &str) -> RonOperatorDef {
 }
 
 /// Load all vector property definitions from embedded RON files
-/// Order matches original armenian.rs for output equivalence
 fn load_vectors_inner() -> Vec<RonOperatorDef> {
     vec![
-        // Relational properties (antisymmetric moved here for grouping)
+        // Persistence (4)
+        parse_operator(include_str!("../../defs/vectors/persistence/volatility.ron")),
+        parse_operator(include_str!("../../defs/vectors/persistence/lifespan.ron")),
+        parse_operator(include_str!("../../defs/vectors/persistence/component.ron")),
+        parse_operator(include_str!("../../defs/vectors/persistence/symbolic.ron")),
+
+        // Organization (6)
+        parse_operator(include_str!("../../defs/vectors/organization/boundary.ron")),
+        parse_operator(include_str!("../../defs/vectors/organization/cohesion.ron")),
+        parse_operator(include_str!("../../defs/vectors/organization/formalization.ron")),
+        parse_operator(include_str!("../../defs/vectors/organization/hierarchy.ron")),
+        parse_operator(include_str!("../../defs/vectors/organization/naming.ron")),
+        parse_operator(include_str!("../../defs/vectors/organization/coherence.ron")),
+
+        // Relational (7)
         parse_operator(include_str!("../../defs/vectors/relational/antisymmetric.ron")),
-        parse_operator(include_str!("../../defs/vectors/boundary.ron")),
-        parse_operator(include_str!("../../defs/vectors/generalizability.ron")),
-        parse_operator(include_str!("../../defs/vectors/explanatory.ron")),
-        parse_operator(include_str!("../../defs/vectors/intentionality.ron")),
-        parse_operator(include_str!("../../defs/vectors/contextualization.ron")),
-        parse_operator(include_str!("../../defs/vectors/stability/lifespan.ron")),
-        parse_operator(include_str!("../../defs/vectors/functional.ron")),
-        parse_operator(include_str!("../../defs/vectors/semantic_density.ron")),
-        parse_operator(include_str!("../../defs/vectors/stability/volatility.ron")),
-        // Relational properties (first batch)
         parse_operator(include_str!("../../defs/vectors/relational/transitive.ron")),
         parse_operator(include_str!("../../defs/vectors/relational/symmetric.ron")),
         parse_operator(include_str!("../../defs/vectors/relational/reflexive.ron")),
         parse_operator(include_str!("../../defs/vectors/relational/total.ron")),
-        // Compression properties
-        parse_operator(include_str!("../../defs/vectors/symbolic_economy.ron")),
-        parse_operator(include_str!("../../defs/vectors/reference_efficiency.ron")),
-        // SelfReference properties
-        parse_operator(include_str!("../../defs/vectors/recursion.ron")),
-        parse_operator(include_str!("../../defs/vectors/coherence.ron")),
-        parse_operator(include_str!("../../defs/vectors/naming.ron")),
-        parse_operator(include_str!("../../defs/vectors/metamodel.ron")),
-        parse_operator(include_str!("../../defs/vectors/junction.ron")),
-        // SystemCoherence properties (first batch)
-        parse_operator(include_str!("../../defs/vectors/conceptual_orthogonality.ron")),
-        parse_operator(include_str!("../../defs/vectors/knowledge_propagation.ron")),
-        parse_operator(include_str!("../../defs/vectors/hierarchical_consistency.ron")),
-        parse_operator(include_str!("../../defs/vectors/stability/symbolic.ron")),
-        // Evolution properties
-        parse_operator(include_str!("../../defs/vectors/quality_improvement.ron")),
-        parse_operator(include_str!("../../defs/vectors/stability/component.ron")),
-        // DesignBalance properties
-        parse_operator(include_str!("../../defs/vectors/simplicity_expressiveness.ron")),
-        parse_operator(include_str!("../../defs/vectors/orthogonality_integration.ron")),
-        parse_operator(include_str!("../../defs/vectors/consistency_specialization.ron")),
-        // SystemCoherence properties (second batch)
-        parse_operator(include_str!("../../defs/vectors/formalization.ron")),
-        // Relational properties (second batch)
         parse_operator(include_str!("../../defs/vectors/relational/porosity.ron")),
-        // SystemCoherence properties (third batch)
-        parse_operator(include_str!("../../defs/vectors/hierarchy.ron")),
-        // Core properties (second batch)
-        parse_operator(include_str!("../../defs/vectors/scope.ron")),
-        // SystemCoherence properties (fourth batch)
-        parse_operator(include_str!("../../defs/vectors/cohesion.ron")),
-        // Core properties (third batch)
-        parse_operator(include_str!("../../defs/vectors/agency.ron")),
+        parse_operator(include_str!("../../defs/vectors/relational/recursion.ron")),
+
+        // Capacity (3)
+        parse_operator(include_str!("../../defs/vectors/capacity/functional.ron")),
+        parse_operator(include_str!("../../defs/vectors/capacity/agency.ron")),
+        parse_operator(include_str!("../../defs/vectors/capacity/intentionality.ron")),
+
+        // Extension (3)
+        parse_operator(include_str!("../../defs/vectors/extension/scope.ron")),
+        parse_operator(include_str!("../../defs/vectors/extension/generalizability.ron")),
+        parse_operator(include_str!("../../defs/vectors/extension/contextualization.ron")),
+
+        // Expression (4)
+        parse_operator(include_str!("../../defs/vectors/expression/semantic_density.ron")),
+        parse_operator(include_str!("../../defs/vectors/expression/explanatory.ron")),
+        parse_operator(include_str!("../../defs/vectors/expression/symbolic_economy.ron")),
+        parse_operator(include_str!("../../defs/vectors/expression/reference_efficiency.ron")),
+
+        // Standalone
         parse_operator(include_str!("../../defs/vectors/property_vector.ron")),
 
         // Chronos vectors - Teleological
@@ -217,6 +210,49 @@ static VECTORS: Lazy<Vec<RonOperatorDef>> = Lazy::new(load_vectors_inner);
 /// Get all loaded vector property definitions
 pub fn load_vectors() -> &'static Vec<RonOperatorDef> {
     &VECTORS
+}
+
+// ============================================================================
+// Property Vector Utilities
+// ============================================================================
+
+/// Property vector categories (excludes chronos vectors)
+const PROPERTY_CATEGORIES: &[&str] = &[
+    "Persistence",
+    "Organization",
+    "Relational",
+    "Capacity",
+    "Extension",
+    "Expression",
+];
+
+/// Property value type (0-9 scale)
+pub type PropertyValue = u8;
+
+/// Validate that a property value is in the valid range (0-9)
+pub fn validate_property_value(value: PropertyValue) -> bool {
+    value <= 9
+}
+
+/// Check if a category is a property vector category
+fn is_property_category(category: &str) -> bool {
+    PROPERTY_CATEGORIES.contains(&category)
+}
+
+/// Get all property vector definitions (filtered from unified vector loader)
+pub fn get_property_vector_definitions() -> Vec<RonOperatorDef> {
+    load_vectors()
+        .iter()
+        .filter(|op| is_property_category(&op.category))
+        .cloned()
+        .collect()
+}
+
+/// Get a specific property vector by symbol (checks both new and superseded symbols)
+pub fn get_property_vector(symbol: &str) -> Option<RonOperatorDef> {
+    get_property_vector_definitions()
+        .into_iter()
+        .find(|op| op.symbol == symbol || op.supersedes.as_deref() == Some(symbol))
 }
 
 // ============================================================================
@@ -270,7 +306,7 @@ mod tests {
     #[test]
     fn test_load_vectors() {
         let vectors = load_vectors();
-        assert_eq!(vectors.len(), 49, "Expected 49 vector property definitions (37 armenian + 12 chronos)");
+        assert_eq!(vectors.len(), 40, "Expected 40 vector definitions (27 property + 12 chronos + 1 standalone)");
     }
 
     #[test]
@@ -286,9 +322,9 @@ mod tests {
     #[test]
     fn test_structured_format() {
         let ron_str = r#"(
-            symbol: "Բ",
+            symbol: "ⵗ",
             name: "boundary",
-            category: "Core",
+            category: "Organization",
             equivalence: ["boundary", "interface"],
             vector: ["0≡∅∂|5≡⊨∂|9≡⊩∂"],
             definition: ["separation clarity"],
@@ -327,5 +363,35 @@ mod tests {
         let purpose = ops.iter().find(|op| op.symbol == "⍜").unwrap();
         let entity_type = purpose.entity_type().unwrap();
         assert_eq!(entity_type.name, "Purpose");
+    }
+
+    #[test]
+    fn test_validate_property_value() {
+        assert!(validate_property_value(0));
+        assert!(validate_property_value(5));
+        assert!(validate_property_value(9));
+        assert!(!validate_property_value(10));
+        assert!(!validate_property_value(255));
+    }
+
+    #[test]
+    fn test_get_property_vector_definitions() {
+        let defs = get_property_vector_definitions();
+        assert_eq!(defs.len(), 27, "Expected 27 property vector definitions");
+    }
+
+    #[test]
+    fn test_get_property_vector() {
+        // Test by new Tifinagh symbol
+        let functional = get_property_vector("ⵟ").expect("ⵟ should exist");
+        assert_eq!(functional.name, "functional");
+        assert_eq!(functional.category, "Capacity");
+
+        // Test by old Armenian symbol (via supersedes)
+        let functional_old = get_property_vector("Փ").expect("Փ should exist via supersedes");
+        assert_eq!(functional_old.name, "functional");
+
+        // Test non-existent
+        assert!(get_property_vector("X").is_none());
     }
 }

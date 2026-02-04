@@ -1,0 +1,15 @@
+// ⵃ - Naming (supersedes ն)
+(
+    symbol: "ⵃ",
+    name: "naming",
+    category: "Organization",
+    supersedes: Some("ն"),
+    lines: [
+        ("≡", "naming"),
+        ("≡", "identifier_quality"),
+        ("≝", "naming convention"),
+        ("≝", "semantic clarity"),
+        ("⊛", "ⵃ8→good_naming_convention ∧ ⵃ∈semantic_clarity"),
+        ("⊛", "name_precision→ⵃ_rating"),
+    ],
+)

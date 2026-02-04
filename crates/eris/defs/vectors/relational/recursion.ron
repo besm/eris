@@ -1,0 +1,15 @@
+// ⵣ - Recursion (supersedes ժ)
+(
+    symbol: "ⵣ",
+    name: "recursion",
+    category: "Relational",
+    supersedes: Some("ժ"),
+    lines: [
+        ("≡", "recursion"),
+        ("≡", "self_referential_depth"),
+        ("≝", "recursive capability"),
+        ("≝", "meta-level depth"),
+        ("⊛", "ⵣ8→high_recursive_capability"),
+        ("⊛", "meta_levels→ⵣ_depth"),
+    ],
+)

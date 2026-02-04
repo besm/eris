@@ -5,10 +5,10 @@
 //!
 //! ## Operator Categories
 //!
-//! **Armenian** — A numeric rating system for evaluating properties of concepts
+//! **Property Vectors** — A numeric rating system for evaluating properties of concepts
 //! and relationships. When you need to say how generalizable something is, whether
-//! it works in both directions, or how well it compresses—Armenian gives you
-//! a 0-9 scale encoded in letters. Think of it as a property vector for ideas.
+//! it works in both directions, or how well it compresses—property vectors give you
+//! a 0-9 scale encoded in Tifinagh symbols. Think of it as a property vector for ideas.
 //!
 //! **Chronos** — Time and purpose intertwined. These operators express not just
 //! when things happen but why they're aimed at particular ends. The vocabulary
@@ -37,7 +37,6 @@
 //! forces that shape what can be thought. Where sociology of knowledge meets
 //! dynamical systems.
 
-pub mod armenian;
 pub mod chronos;
 pub mod loader;
 pub mod georgian;
@@ -68,7 +67,7 @@ macro_rules! aggregate_operators {
 }
 
 aggregate_operators!(
-    armenian::get_armenian_operator_definitions/get_armenian_operator,
+    loader::get_property_vector_definitions/get_property_vector,
     chronos::get_chronos_operator_definitions/get_chronos_operator,
     georgian::get_georgian_operator_definitions/get_georgian_operator,
     logical::get_logical_operator_definitions/get_logical_operator,

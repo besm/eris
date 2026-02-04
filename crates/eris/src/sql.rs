@@ -180,7 +180,7 @@ pub fn generate_data() -> String {
     // Operator modules
     sql.push_str("-- Operator Modules\n");
     let operator_modules = [
-        ("armenian", "Property vectors (0-9 scale)"),
+        ("property", "Property vectors (0-9 scale)"),
         ("chronos", "Temporal/teleological operators"),
         ("georgian", "Workflow state operators"),
         ("logical", "Mathematical notation"),
@@ -224,7 +224,7 @@ fn category_to_id(cat_name: &str) -> i32 {
 
 fn module_to_id(module: &str) -> i32 {
     match module {
-        "armenian" => 1,
+        "property" => 1,
         "chronos" => 2,
         "georgian" => 3,
         "logical" => 4,
@@ -399,7 +399,7 @@ fn get_operator_defs_with_modules() -> Vec<(String, String, String, String, Vec<
         };
     }
 
-    process_operator!(armenian, get_armenian_operator_definitions, "armenian");
+    process_operator!(loader, get_property_vector_definitions, "property");
     process_operator!(chronos, get_chronos_operator_definitions, "chronos");
     process_operator!(georgian, get_georgian_operator_definitions, "georgian");
     process_operator!(logical, get_logical_operator_definitions, "logical");

@@ -1,9 +1,0 @@
-(
-    symbol: "Յ",
-    name: "junction",
-    category: "SelfReference",
-
-    equivalence: ["junction", "connection_quality"],
-    definition: ["integration_points ∧ interface_strength"],
-    examples: ["Յ7→adequate|interface_strength→Յ"],
-)
