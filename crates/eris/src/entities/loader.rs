@@ -175,7 +175,7 @@ fn load_all_entities_inner() -> Vec<RonEntityDef> {
         // Process entities
         parse_entity(include_str!("../../defs/entities/transformation.ron")),
         parse_entity(include_str!("../../defs/entities/action.ron")),
-        parse_entity(include_str!("../../defs/entities/effect.ron")),
+        parse_entity(include_str!("../../defs/entities/performative_constitution.ron")),
         // Compound entities
         parse_entity(include_str!("../../defs/entities/work.ron")),
         parse_entity(include_str!("../../defs/entities/journal.ron")),

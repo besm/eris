@@ -4,15 +4,16 @@
     description: "User-defined idea marker for user's own conceptual seeds",
     sort_order: 103,
     category: "UserDefined",
-    lines: [
-        ("≡", "idea_marker"),
-        ("≡", "conceptual_seed"),
-        ("≡", "owned_thought"),
-        ("≝", "user's own idea ∧ implementation potential"),
-        ("∂", "∂ user-defined (¬ERIS detection)"),
-        ("∂", "⟡⊅⧊ (⟡ mine | ⧊ in the world)"),
-        ("∂", "⟡⊅◈ (⟡ nascent | ◈ bounded project)"),
-        ("◻", "lifecycle: ⟡→◈ (idea matures) | ◈→⟡ (project spawns idea)"),
-        ("⊨", "⟡ ≡ user_owned_idea ∧ user-defined"),
+
+    equivalence: ["idea_marker", "conceptual_seed", "owned_thought"],
+    definition: ["user's own idea ∧ implementation potential"],
+    boundary: [
+        "∂ user-defined (¬ERIS detection)",
+        "⟡⊅⧊ (⟡ mine | ⧊ in the world)",
+        "⟡⊅◈ (⟡ nascent | ◈ bounded project)",
     ],
+    constraints: [
+        "lifecycle: ⟡→◈ (idea matures) | ◈→⟡ (project spawns idea)",
+    ],
+    validation: ["⟡ ≡ user_owned_idea ∧ user-defined"],
 )

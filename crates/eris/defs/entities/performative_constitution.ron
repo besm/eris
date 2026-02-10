@@ -1,0 +1,48 @@
+(
+    symbol: "⬢",
+    name: "Performative Constitution",
+    description: "Performative reality-making with instantaneous constitution (t₀=t₀)",
+    sort_order: 42,
+    category: "Complex",
+
+    equivalence: ["performative_effect", "reality_making", "instantaneous_constitution"],
+    definition: ["classification→reality simultaneity ∧ constitutive power ∧ t₀=t₀"],
+    boundary: [
+        "⬢⊅⥅ (⬢ simultaneous | ⥅ temporal gap)",
+        "⬢⊅◬ (⬢ designed | ◬ emergent)",
+        "⬢⊅⟗ (⬢ single | ⟗ iterating)",
+        "⬢⊅⧃ (⬢ constitutes | ⧃ transforms)",
+        "⬢⊅⧊ (⬢ specific effect | ⧊ analyzing concept of effect)",
+    ],
+    vector: [
+        "⬢: ⵒ7ⵟ5ⵕ4",
+        "⬢⦑Making Up People⦒: ⵒ8ⵟ6ⵕ3",
+    ],
+    examples: [
+        "⬢⦑Making Up People|Classification Creates Order|Ritual Creates Experience⦒",
+        "⬢⦑Prediction Creates Reality|Statistics Create Reality|Naming Creates Existence⦒",
+        "⬢⦑Bandwagon Effect|Pygmalion Effect|Observer Effect⦒",
+    ],
+    constraints: [
+        "simultaneity CRITICAL:",
+        "  t₀classify=t₀create — 'classified AS X makes one X'",
+        "  ✓⬢ 'ritual=reality' | ✗⬢ 'shapes future behavior'→⥅",
+        "  ANY temporal gap disqualifies ⬢",
+        "naming: 'X Creates Y' | gerunds | canonical effects",
+        "  'creates'→simultaneity | 'leads to'→temporal gap",
+        "discrimination:",
+        "  ⬢⦑Making Up People⦒: classification constitutes classified (t₀=t₀)",
+        "  ⟗⦑Multiple Personality Formation Loop⦒: same mechanism + iteration (1983→1991)",
+        "  ⧃⦑Medicalization⦒: unidirectional transformation (t₀<t₁)",
+        "  ⧊⦑Performativity⦒: analyzing concept ¬specific effect",
+    ],
+    discrimination: [
+        "test{specific effect?→continue | analyzing concept?→⧊}",
+        "test{t₀=t₀?→⬢|NO:continue}",
+        "test{t₀<t₁ precedent?→⥅|NO:continue}",
+        "test{emergent?→◬|NO:continue}",
+        "test{iterating?→⟗|NO:continue}",
+        "test{transforming?→⧃|NO:review}",
+    ],
+    validation: ["⬢ ≡ performative_constitution ∧ t₀=t₀ ∧ ¬temporal_gap"],
+)
