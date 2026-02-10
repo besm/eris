@@ -23,6 +23,7 @@ pub enum EntityType {
     Agency,
     Party,
     Tech,
+    Numinous,
     Identifier,
     Publisher,
     University,
@@ -95,6 +96,7 @@ impl EntityType {
         Self::Agency,
         Self::Party,
         Self::Tech,
+        Self::Numinous,
         Self::Identifier,
         Self::Publisher,
         Self::University,
@@ -182,7 +184,7 @@ mod tests {
     #[test]
     fn test_get_all_definitions() {
         let defs = get_all_definitions();
-        assert_eq!(defs.len(), 33);
+        assert_eq!(defs.len(), 34);
         assert!(defs[0].starts_with("⚘")); // Person is first (sort_order: 1)
     }
 

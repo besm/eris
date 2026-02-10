@@ -158,6 +158,7 @@ fn load_all_entities_inner() -> Vec<RonEntityDef> {
         parse_entity(include_str!("../../defs/entities/agency.ron")),
         parse_entity(include_str!("../../defs/entities/party.ron")),
         parse_entity(include_str!("../../defs/entities/tech.ron")),
+        parse_entity(include_str!("../../defs/entities/numinous.ron")),
         parse_entity(include_str!("../../defs/entities/identifier.ron")),
         parse_entity(include_str!("../../defs/entities/publisher.ron")),
         parse_entity(include_str!("../../defs/entities/university.ron")),
@@ -207,7 +208,7 @@ mod tests {
     #[test]
     fn test_load_all_entities() {
         let entities = load_all_entities();
-        assert_eq!(entities.len(), 33, "Expected 33 entity definitions");
+        assert_eq!(entities.len(), 34, "Expected 34 entity definitions");
     }
 
     #[test]

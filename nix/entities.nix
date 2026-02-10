@@ -440,6 +440,47 @@
       { prefix = "⊨"; content = "⌬ ≡ material|computational_realization ∧ operational_capability"; }
     ];
   };
+  numinous = {
+    symbol = "☥";
+    name = "Numinous";
+    description = "Object of religious/cultic attention, divine or heroic figure, sacred referent";
+    category = "Primary";
+    sortOrder = 11;
+    lines = [
+      { prefix = "≡"; content = "numinous_entity"; }
+      { prefix = "≡"; content = "object_of_cult"; }
+      { prefix = "≡"; content = "sacred_referent"; }
+      { prefix = "≝"; content = "object of religious/cultic attention ∧ (divine|heroic|daemonic) status ∧ scholarly discourse subject"; }
+      { prefix = "∂"; content = "☥⊅⚘ (☥ numinous | ⚘ historically attested human)"; }
+      { prefix = "∂"; content = "☥⊅⧊ (☥ named entity | ⧊ abstract concept e.g. 'divinity')"; }
+      { prefix = "∂"; content = "☥⊅⧈ (☥ specific figure | ⧈ category of beings e.g. 'daemons')"; }
+      { prefix = "∂"; content = "☥⊅fictional (☥ cultic/scholarly object | modern fictional→∅)"; }
+      { prefix = "⊡"; content = "☥: ⵋ variable (pantheon-head→local nymph)"; }
+      { prefix = "⊡"; content = "olympian: ⵋ9 | hero: ⵋ7 | daimon: ⵋ5 | nymph: ⵋ3"; }
+      { prefix = "⊛"; content = "deities: ☥⦑Apollo|Athena|Zeus|Dionysus|Isis|Mithras|Yahweh|Baal⦒"; }
+      { prefix = "⊛"; content = "heroes: ☥⦑Herakles|Theseus|Achilles|Asclepius|Romulus⦒"; }
+      { prefix = "⊛"; content = "daemonic: ☥⦑Tyche|Ananke|Erinyes|Moirai|Keres⦒"; }
+      { prefix = "⊛"; content = "abstract divine: ☥⦑Themis|Dike|Nemesis|Aidos⦒"; }
+      { prefix = "⊛"; content = "collective: ☥⦑Muses|Charites|Horai|Nymphs of Nysa⦒"; }
+      { prefix = "⊛"; content = "roman numina: ☥⦑Terminus|Robigus|Faunus|Lares|Penates⦒"; }
+      { prefix = "◻"; content = "naming:"; }
+      { prefix = "◻"; content = "✓☥⦑Apollo|Herakles|Isis⦒ — standard scholarly form"; }
+      { prefix = "◻"; content = "✓☥⦑Athena Polias|Apollo Pythios⦒ — epithet when contextually relevant"; }
+      { prefix = "◻"; content = "✗☥⦑God|Goddess|Spirit⦒ — categorical→⧊ or ⧈"; }
+      { prefix = "◻"; content = "✗☥⦑Harry Potter|Gandalf⦒ — modern fictional→∅"; }
+      { prefix = "◻"; content = "discrimination:"; }
+      { prefix = "◻"; content = "received cult OR object of religious discourse→☥"; }
+      { prefix = "◻"; content = "modern fictional character→∅"; }
+      { prefix = "◻"; content = "abstract 'the divine'→⧊⦑Divinity⦒"; }
+      { prefix = "◻"; content = "'the gods' as category→⧈⦑Gods⦒ (rare)"; }
+      { prefix = "≟"; content = "test{received cult|religious veneration?→YES:☥|NO:continue}"; }
+      { prefix = "≟"; content = "test{subject of scholarly religious discourse?→YES:☥|NO:continue}"; }
+      { prefix = "≟"; content = "test{modern fictional?→YES:∅|NO:continue}"; }
+      { prefix = "≟"; content = "test{abstract concept?→YES:⧊|NO:continue}"; }
+      { prefix = "≟"; content = "test{category of beings?→YES:⧈|NO:review}"; }
+      { prefix = "⊨"; content = "☥ ≡ numinous_referent ∧ (cultic_object ∨ religious_discourse_subject) ∧ ¬modern_fictional"; }
+    ];
+  };
   identifier = {
     symbol = "⎚";
     name = "Identifier";
