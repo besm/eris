@@ -4,20 +4,23 @@
     description: "User-defined project marker for bounded endeavors",
     sort_order: 102,
     category: "UserDefined",
-    lines: [
-        ("≡", "project_marker"),
-        ("≡", "bounded_endeavor"),
-        ("≡", "goal_oriented"),
-        ("≝", "user's own project ∧ scoped work ∧ aggregates ❧"),
-        ("∂", "∂ user-defined (¬ERIS detection)"),
-        ("∂", "◈⊅⟡ (◈ bounded | ⟡ nascent idea)"),
-        ("∂", "◈⊅⋯ (◈ project | ⋯ orienting question)"),
-        ("⊛", "◈⦑Binding Time|LLMs and Feedforward|Tainted Software⦒"),
-        ("⊛", "◈⦑Ronpaulization|The Intimate Machine|Classifier Stalinism⦒"),
-        ("⊛", "◈⦑Context Widows|Politically Unreliable|Secularism Studies Project⦒"),
-        ("◻", "lifecycle: ⟡→◈ (idea matures) | ◈→⟡ (project spawns idea)"),
-        ("◻", "aggregates: ❧→◈ (highlights gather to projects)"),
-        ("◻", "orients: ⋯⊰◈ (questions generate projects)"),
-        ("⊨", "◈ ≡ user_owned_project ∧ bounded ∧ user-defined"),
+
+    equivalence: ["project_marker", "bounded_endeavor", "goal_oriented"],
+    definition: ["user's own project ∧ scoped work ∧ aggregates ❧"],
+    boundary: [
+        "∂ user-defined (¬ERIS detection)",
+        "◈⊅⟡ (◈ bounded | ⟡ nascent idea)",
+        "◈⊅⋯ (◈ project | ⋯ orienting question)",
     ],
+    examples: [
+        "◈⦑Binding Time|LLMs and Feedforward|Tainted Software⦒",
+        "◈⦑Ronpaulization|The Intimate Machine|Classifier Stalinism⦒",
+        "◈⦑Context Widows|Politically Unreliable|Secularism Studies Project⦒",
+    ],
+    constraints: [
+        "lifecycle: ⟡→◈ (idea matures) | ◈→⟡ (project spawns idea)",
+        "aggregates: ❧→◈ (highlights gather to projects)",
+        "orients: ⋯⊰◈ (questions generate projects)",
+    ],
+    validation: ["◈ ≡ user_owned_project ∧ bounded ∧ user-defined"],
 )

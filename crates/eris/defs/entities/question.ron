@@ -4,18 +4,19 @@
     description: "User-defined question marker for generative inquiry",
     sort_order: 101,
     category: "UserDefined",
-    lines: [
-        ("≡", "generative_inquiry"),
-        ("≡", "fertile_unknown"),
-        ("≡", "orienting_problem"),
-        ("≝", "user's own question ∧ drives work ∧ anti-crystallization"),
-        ("∂", "∂ user-defined (¬ERIS detection)"),
-        ("∂", "⋯⊅⊟ (⋯ fertile | ⊟ needs resolution)"),
-        ("∂", "⋯⊅⌾ (⋯ drives work | ⌾ seeks clarification)"),
-        ("∂", "⋯⊅◈ (⋯ question | ◈ bounded project)"),
-        ("◻", "lifecycle: ⋯⊰◈ (questions generate projects)"),
-        ("◻", "accretes: ❧→⋯ (highlights gather to questions)"),
-        ("◻", "persistence: ⋯ holds ¬⌺ | ⋯ may persist through ◈_⌺"),
-        ("⊨", "⋯ ≡ user_owned_question ∧ generative ∧ user-defined"),
+
+    equivalence: ["generative_inquiry", "fertile_unknown", "orienting_problem"],
+    definition: ["user's own question ∧ drives work ∧ anti-crystallization"],
+    boundary: [
+        "∂ user-defined (¬ERIS detection)",
+        "⋯⊅⊟ (⋯ fertile | ⊟ needs resolution)",
+        "⋯⊅⌾ (⋯ drives work | ⌾ seeks clarification)",
+        "⋯⊅◈ (⋯ question | ◈ bounded project)",
     ],
+    constraints: [
+        "lifecycle: ⋯⊰◈ (questions generate projects)",
+        "accretes: ❧→⋯ (highlights gather to questions)",
+        "persistence: ⋯ holds ¬⌺ | ⋯ may persist through ◈_⌺",
+    ],
+    validation: ["⋯ ≡ user_owned_question ∧ generative ∧ user-defined"],
 )
