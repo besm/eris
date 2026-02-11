@@ -373,16 +373,16 @@
       { prefix = "⊡"; content = "  ⚐→⎈: electoral_victory→governing_authority"; }
       { prefix = "⊡"; content = "  ⚐→⌯: ⵆ↓ⵒ↑ⵗ↓ (abandons elections)"; }
       { prefix = "⊡"; content = "  ⌯→⚐: ⵆ↑ⵒ↓ⵗ↑ (institutionalizes)"; }
+      { prefix = "⊛"; content = "⚐⦑Democratic Party (United States)|Labour Party (UK)|Bharatiya Janata Party (BJP)|African National Congress (ANC)|Partido dos Trabalhadores (PT)⦒"; }
+      { prefix = "⊛"; content = "⚐⦑Liberal Democratic Party (Japan)|Fidesz|Likud|Morena (Mexico)|Syriza⦒"; }
+      { prefix = "⊛"; content = "⚐⦑Communist Party of the Soviet Union (CPSU)|Communist Party of China (CPC)|French Communist Party (PCF)|Communist Party of Germany (KPD)⦒"; }
+      { prefix = "⊛"; content = "⚐⦑National Socialist German Workers' Party (NSDAP)|Bolshevik Party|Kuomintang (KMT)|Baath Party (Syria)⦒"; }
       { prefix = "◻"; content = "naming: national specificity required"; }
       { prefix = "◻"; content = "  ⚐⦑[Name] ([Country])⦒: ⚐⦑Labour Party (UK)|Democratic Party (United States)|Liberal Party (Australia)⦒"; }
       { prefix = "◻"; content = "  ⚐⦑[Name] ([Acronym])⦒: ⚐⦑Communist Party of Germany (KPD)|African National Congress (ANC)|Bharatiya Janata Party (BJP)⦒"; }
       { prefix = "◻"; content = "  ⚐⦑[Unique Name]⦒: ⚐⦑Fidesz|Syriza|Podemos|Likud|Baath|Kuomintang⦒"; }
       { prefix = "◻"; content = "  ✗⚐⦑Communist Party|Socialist Party|Democratic Party|Republican Party|Labour Party|Liberal Party|Nazi Party⦒ — which country?"; }
       { prefix = "◻"; content = "  rationale: parties are national entities, generic names semantically empty"; }
-      { prefix = "⊛"; content = "⚐⦑Democratic Party (United States)|Labour Party (UK)|Bharatiya Janata Party (BJP)|African National Congress (ANC)|Partido dos Trabalhadores (PT)⦒"; }
-      { prefix = "⊛"; content = "⚐⦑Liberal Democratic Party (Japan)|Fidesz|Likud|Morena (Mexico)|Syriza⦒"; }
-      { prefix = "⊛"; content = "⚐⦑Communist Party of the Soviet Union (CPSU)|Communist Party of China (CPC)|French Communist Party (PCF)|Communist Party of Germany (KPD)⦒"; }
-      { prefix = "⊛"; content = "⚐⦑National Socialist German Workers' Party (NSDAP)|Bolshevik Party|Kuomintang (KMT)|Baath Party (Syria)⦒"; }
       { prefix = "≟"; content = "test{nominates_candidates?→YES:⚐|NO:continue}"; }
       { prefix = "≟"; content = "test{rejects_electoralism?→YES:⌯|NO:continue}"; }
       { prefix = "≟"; content = "test{governing_apparatus?→YES:⎈|NO:continue}"; }
@@ -455,8 +455,6 @@
       { prefix = "∂"; content = "☥⊅⧊ (☥ named entity | ⧊ abstract concept e.g. 'divinity')"; }
       { prefix = "∂"; content = "☥⊅⧈ (☥ specific figure | ⧈ category of beings e.g. 'daemons')"; }
       { prefix = "∂"; content = "☥⊅fictional (☥ cultic/scholarly object | modern fictional→∅)"; }
-      { prefix = "⊡"; content = "☥: ⵋ variable (pantheon-head→local nymph)"; }
-      { prefix = "⊡"; content = "olympian: ⵋ9 | hero: ⵋ7 | daimon: ⵋ5 | nymph: ⵋ3"; }
       { prefix = "⊛"; content = "deities: ☥⦑Apollo|Athena|Zeus|Dionysus|Isis|Mithras|Yahweh|Baal⦒"; }
       { prefix = "⊛"; content = "heroes: ☥⦑Herakles|Theseus|Achilles|Asclepius|Romulus⦒"; }
       { prefix = "⊛"; content = "daemonic: ☥⦑Tyche|Ananke|Erinyes|Moirai|Keres⦒"; }
@@ -911,9 +909,9 @@
       { prefix = "⊨"; content = "⟴ ≡ ⚘agency ∧ ℳ-act ∧ ⟴⊅automatic"; }
     ];
   };
-  effect = {
+  performative-constitution = {
     symbol = "⬢";
-    name = "Effect";
+    name = "Performative Constitution";
     description = "Performative reality-making with instantaneous constitution (t₀=t₀)";
     category = "Complex";
     sortOrder = 42;
@@ -1113,8 +1111,6 @@
       { prefix = "⊛"; content = "⋖.⥅ → anticipatory apparatus"; }
       { prefix = "⊛"; content = "⋖.⥅ at stake through use"; }
       { prefix = "⊛"; content = "⋖.properties → system-specific"; }
-      { prefix = "⥈"; content = "⚘⧊⦑I.A. Richards⦒⦑Feedforward⦒"; }
-      { prefix = "⥈"; content = "⚘⧊⦑Sherry Turkle⦒⦑Participant⦒"; }
     ];
   };
   section = {
