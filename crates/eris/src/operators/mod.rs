@@ -65,6 +65,18 @@ pub const REDUCED_SYMBOLS: &[char] = &[
     crate::symbols::SUBSET,          // ⊂
     crate::symbols::SUPERSET,        // ⊃
     crate::symbols::NOT_SUBSET,      // ⊅
+    // Well-defined through use (meaning obvious from 80+ uses as prefix)
+    crate::symbols::PROPERTY_VECTOR, // ⊡
+    // Standard modal/temporal logic
+    crate::symbols::ALWAYS,          // □
+    crate::symbols::EVENTUALLY,      // ◇
+    // Standard order relations
+    crate::symbols::PRECEDES,        // ≺
+    crate::symbols::SUCCEEDS,        // ≻
+    // Conventional symbols
+    crate::symbols::BIDIRECTIONAL,   // ⟷
+    crate::symbols::INFINITY,        // ∞
+    crate::symbols::STRUCTURED_COMBINATION, // ⊕
 ];
 
 fn is_reduced(symbol: &str) -> bool {
