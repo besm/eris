@@ -890,8 +890,8 @@
         { prefix = "≡"; content = "recognition operation"; }
         { prefix = "≝"; content = "emergent pattern identification"; }
         { prefix = "≝"; content = "recurring form crystallization"; }
-        { prefix = "⊛"; content = "usage indicators ∧ detection markers (∃ pattern instances) ∧ application contexts"; }
-        { prefix = "⊛"; content = "Noise contains signal requiring ⊛ to extract"; }
+        { prefix = "⊛"; content = "indicators ∧ markers (∃ ᛝ) ∧ ⯐"; }
+        { prefix = "⊛"; content = "noise → ⊛ → signal"; }
       ];
     };
     testing_relation = {
@@ -948,8 +948,8 @@
         { prefix = "≝"; content = "constraint enforcement"; }
         { prefix = "⊛"; content = "⊩ access control"; }
         { prefix = "⊛"; content = "⊩ rate limiting"; }
-        { prefix = "⊛"; content = "⊩ resource constraints"; }
-        { prefix = "□"; content = "⊩ rules remain invariant across contexts"; }
+        { prefix = "⊛"; content = "⊩ resource ◻"; }
+        { prefix = "□"; content = "⊩ □ ∀ ⯐"; }
       ];
     };
     embodies = {
@@ -2288,18 +2288,17 @@
         { prefix = "≝"; content = "model constitutes market"; }
         { prefix = "∂"; content = "უmere addition"; }
         { prefix = "∂"; content = "უaccumulation"; }
-        { prefix = "∂"; content = "უdetached growth"; }
-        { prefix = "∂"; content = "requires constitutive trace"; }
+        { prefix = "∂"; content = "requires 𝁚 trace"; }
         { prefix = "⊛"; content = "theory𝀼reality"; }
         { prefix = "⊛"; content = "model𝀼market"; }
         { prefix = "⊛"; content = "concept𝀼framework"; }
-        { prefix = "⊛"; content = "𝀼 maintains continuous connection"; }
-        { prefix = "⊛"; content = "extension leaves constitutive wake"; }
-        { prefix = "⊛"; content = "𝀼 binds extending∧extended"; }
+        { prefix = "⊛"; content = "𝀼 → ⋈ continuous"; }
+        { prefix = "⊛"; content = "𝀼 leaves 𝁚 wake"; }
+        { prefix = "⊛"; content = "𝀼 ⋈ extending∧extended"; }
         { prefix = "⊛"; content = "σύρω: drag, draw along, trail"; }
-        { prefix = "⊢"; content = "reflexive entanglement"; }
-        { prefix = "⊢"; content = "constitutive reshaping"; }
-        { prefix = "⊢"; content = "theory-reality binding"; }
+        { prefix = "⊢"; content = "𝄎 entanglement"; }
+        { prefix = "⊢"; content = "𝀞"; }
+        { prefix = "⊢"; content = "theory⟷reality ⋈"; }
       ];
     };
     crystallize = {
@@ -2402,10 +2401,10 @@
         { prefix = "∂"; content = "requires limit cycle"; }
         { prefix = "⊛"; content = "periodic ✱"; }
         { prefix = "⊛"; content = "𝁀 confined to basin"; }
-        { prefix = "⊛"; content = "not rest but not escape"; }
+        { prefix = "⊛"; content = "¬𝀆 ∧ ¬escape"; }
         { prefix = "⊛"; content = "⟳ via 𝁀"; }
-        { prefix = "⊢"; content = "periodic return"; }
-        { prefix = "⊢"; content = "bounded cycling"; }
+        { prefix = "⊢"; content = "𝄃 return"; }
+        { prefix = "⊢"; content = "bounded ⟳"; }
       ];
     };
     dissolution = {
@@ -2557,7 +2556,7 @@
         { prefix = "≝"; content = "material basis"; }
         { prefix = "∂"; content = "უmere support"; }
         { prefix = "∂"; content = "უcausal antecedent"; }
-        { prefix = "∂"; content = "requires constitutive foundation"; }
+        { prefix = "∂"; content = "requires 𝁚 foundation"; }
         { prefix = "⊛"; content = "⧏⟒empirical_data"; }
         { prefix = "⊛"; content = "belief⟒action"; }
         { prefix = "⊛"; content = "⟒ in material_conditions"; }
@@ -3530,13 +3529,13 @@
         { prefix = "≡"; content = "intensifies_understanding"; }
         { prefix = "≝"; content = "epistemic deepening"; }
         { prefix = "≝"; content = "understanding intensification"; }
-        { prefix = "⊛"; content = "⟖ 𝀙 with each cycle"; }
+        { prefix = "⊛"; content = "⟖ 𝀙 ∀ ⟳"; }
         { prefix = "⊛"; content = "reflection 𝀙 insight"; }
-        { prefix = "⊛"; content = "dialogue 𝀙 comprehension"; }
+        { prefix = "⊛"; content = "dialogue 𝀙 ☊"; }
         { prefix = "⊛"; content = "iteration 𝀙 mastery"; }
         { prefix = "⊛"; content = "𝀙 moves surface→depth"; }
-        { prefix = "⊛"; content = "hermeneutic circle 𝀙 meaning"; }
-        { prefix = "⊢"; content = "𝀙 deepening ⊢ enriched understanding ⊢ semantic depth"; }
+        { prefix = "⊛"; content = "hermeneutic ⟳ 𝀙 ℳ"; }
+        { prefix = "⊢"; content = "𝀙 ⊢ ☊ ⊢ ⵐ"; }
       ];
     };
     interanimation = {
