@@ -79,8 +79,25 @@ pub const REDUCED_SYMBOLS: &[char] = &[
     crate::symbols::STRUCTURED_COMBINATION, // ⊕
 ];
 
+/// Operators reduced to their def line only (symbol ≡ name) in reduced mode.
+/// Meaning is clear from the name but the symbol still appears for closure.
+pub const REDUCED_DEF_ONLY: &[char] = &[
+    crate::symbols::STRONG_PREFERENCE, // ≫
+    crate::symbols::REPEATS,           // 𝄃
+    crate::symbols::NEXT_STATE,        // ○
+];
+
 fn is_reduced(symbol: &str) -> bool {
     REDUCED_SYMBOLS.iter().any(|s| symbol == s.to_string())
+}
+
+fn is_def_only(symbol: &str) -> bool {
+    REDUCED_DEF_ONLY.iter().any(|s| symbol == s.to_string())
+}
+
+/// Render just the first line of a definition (symbol ≡ name)
+fn def_line_only(text: &str) -> String {
+    text.lines().next().unwrap_or(text).to_string()
 }
 
 macro_rules! aggregate_operators {
@@ -94,7 +111,12 @@ macro_rules! aggregate_operators {
         pub fn get_all_definitions_reduced() -> Vec<String> {
             let mut defs = Vec::new();
             $(for op in $mod::$defs() {
-                if !is_reduced(&op.symbol.to_string()) {
+                let sym = op.symbol.to_string();
+                if is_reduced(&sym) {
+                    // omit entirely
+                } else if is_def_only(&sym) {
+                    defs.push(def_line_only(&op.to_eris_text()));
+                } else {
                     defs.push(op.to_eris_text());
                 }
             })+
