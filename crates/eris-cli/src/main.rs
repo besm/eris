@@ -3,7 +3,7 @@
 use anyhow::{anyhow, Result};
 use clap::{Parser, Subcommand};
 use eris::{
-    get_all_definitions, get_all_symbols, lookup_symbol,
+    get_all_definitions, get_all_definitions_reduced, get_all_symbols, lookup_symbol,
     get_operator_symbols, get_entity_symbols, lookup_operator, lookup_entity,
     citations, nix, sql,
 };
@@ -85,6 +85,8 @@ enum Command {
     Entities,
     /// Output citation pattern definitions
     Cite,
+    /// Output all definitions with well-known operators omitted
+    Reduced,
     /// Output definitions for ERIS symbols used in a file
     Define {
         /// Category filter: ops, entities, or all (default)
@@ -236,6 +238,15 @@ fn main() -> Result<()> {
         }
         Command::Cite => {
             let defs = citations::get_all_definitions();
+            for (i, text) in defs.iter().enumerate() {
+                println_or_exit!("{text}");
+                if i < defs.len() - 1 {
+                    println_or_exit!();
+                }
+            }
+        }
+        Command::Reduced => {
+            let defs = get_all_definitions_reduced();
             for (i, text) in defs.iter().enumerate() {
                 println_or_exit!("{text}");
                 if i < defs.len() - 1 {

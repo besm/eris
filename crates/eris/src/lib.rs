@@ -15,13 +15,20 @@ pub mod sql;
 pub mod symbols;
 
 pub use entities::types::get_entity_type_by_symbol;
-pub use export::{definitions_for_prompt, entity_definitions_for_prompt, system_prompt_base};
+pub use export::{definitions_for_prompt, definitions_reduced_for_prompt, entity_definitions_for_prompt, system_prompt_base};
 pub use parsers::{parse_tag, validate_tag_structure, TagValidationError};
 
 use std::collections::HashSet;
 
 pub fn get_all_definitions() -> Vec<String> {
     let mut defs = operators::get_all_definitions();
+    defs.extend(entities::get_all_definitions());
+    defs.extend(citations::get_all_definitions());
+    defs
+}
+
+pub fn get_all_definitions_reduced() -> Vec<String> {
+    let mut defs = operators::get_all_definitions_reduced();
     defs.extend(entities::get_all_definitions());
     defs.extend(citations::get_all_definitions());
     defs

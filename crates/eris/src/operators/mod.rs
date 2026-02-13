@@ -45,11 +45,47 @@ pub mod meta;
 pub mod ontology;
 pub mod semantic;
 
+/// Operators whose standalone definition blocks are omitted in reduced mode.
+/// Their meaning is already internalized through pervasive use as line prefixes,
+/// or mirrors conventional mathematical/logical usage that LLMs already know.
+pub const REDUCED_SYMBOLS: &[char] = &[
+    // Well-defined through use (appear as prefixes in every definition)
+    crate::symbols::EQUIVALENCE,     // ≡
+    crate::symbols::DEFINED_AS,      // ≝
+    // Standard logic (conventional use, identical to textbook)
+    crate::symbols::IMPLIES,         // →
+    crate::symbols::CONJUNCTION,     // ∧
+    crate::symbols::DISJUNCTION,     // ∨
+    crate::symbols::NEGATION,        // ¬
+    crate::symbols::FOR_ALL,         // ∀
+    crate::symbols::EXISTS,          // ∃
+    crate::symbols::VALIDATES,       // ⊨
+    crate::symbols::ENTAILS,         // ⊢
+    // Standard set theory (conventional use)
+    crate::symbols::SUBSET,          // ⊂
+    crate::symbols::SUPERSET,        // ⊃
+    crate::symbols::NOT_SUBSET,      // ⊅
+];
+
+fn is_reduced(symbol: &str) -> bool {
+    REDUCED_SYMBOLS.iter().any(|s| symbol == s.to_string())
+}
+
 macro_rules! aggregate_operators {
     ($($mod:ident :: $defs:ident / $get:ident),+ $(,)?) => {
         pub fn get_all_definitions() -> Vec<String> {
             let mut defs = Vec::new();
             $(for op in $mod::$defs() { defs.push(op.to_eris_text()); })+
+            defs
+        }
+
+        pub fn get_all_definitions_reduced() -> Vec<String> {
+            let mut defs = Vec::new();
+            $(for op in $mod::$defs() {
+                if !is_reduced(&op.symbol.to_string()) {
+                    defs.push(op.to_eris_text());
+                }
+            })+
             defs
         }
 

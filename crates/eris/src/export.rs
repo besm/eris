@@ -20,6 +20,17 @@ pub fn definitions_for_prompt() -> &'static str {
     &DEFINITIONS
 }
 
+/// Reduced ERIS definitions — omits operators whose meaning is
+/// already internalized through pervasive use (≡, ≝).
+pub static DEFINITIONS_REDUCED: Lazy<String> = Lazy::new(|| {
+    super::get_all_definitions_reduced().join("\n\n")
+});
+
+/// Get the reduced ERIS definitions for use in an LLM system prompt.
+pub fn definitions_reduced_for_prompt() -> &'static str {
+    &DEFINITIONS_REDUCED
+}
+
 /// Get only entity definitions (no operators) for LLM prompts.
 ///
 /// Use this for a smaller prompt when operator definitions aren't needed.
