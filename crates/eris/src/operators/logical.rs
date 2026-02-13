@@ -69,8 +69,8 @@ pub fn get_logical_operator_definitions() -> Vec<LogDef> {
                 ("≡", ["pattern detection", "recognition operation"]),
                 ("≝", ["emergent pattern identification", "recurring form crystallization"]),
                 ("⊛", [
-                    "usage indicators ∧ detection markers (∃ pattern instances) ∧ application contexts",
-                    "Noise contains signal requiring ⊛ to extract"
+                    "indicators ∧ markers (∃ ᛝ) ∧ ⯐",
+                    "noise → ⊛ → signal"
                 ]),
             ],
         },
@@ -122,8 +122,8 @@ pub fn get_logical_operator_definitions() -> Vec<LogDef> {
             lines: lines![
                 ("≡", ["policy enforcement", "governance rule"]),
                 ("≝", ["mandatory compliance", "constraint enforcement"]),
-                ("⊛", ["⊩ access control", "⊩ rate limiting", "⊩ resource constraints"]),
-                ("□", "⊩ rules remain invariant across contexts"),
+                ("⊛", ["⊩ access control", "⊩ rate limiting", "⊩ resource ◻"]),
+                ("□", "⊩ □ ∀ ⯐"),
             ],
         },
         LogDef {

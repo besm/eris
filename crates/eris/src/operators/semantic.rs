@@ -466,14 +466,14 @@ pub fn get_semantic_operator_definitions() -> Vec<SemanticOperatorDef> {
                 ("≡", ["deepens", "intensifies_understanding"]),
                 ("≝", ["epistemic deepening", "understanding intensification"]),
                 ("⊛", [
-                    "⟖ 𝀙 with each cycle",
+                    "⟖ 𝀙 ∀ ⟳",
                     "reflection 𝀙 insight",
-                    "dialogue 𝀙 comprehension",
+                    "dialogue 𝀙 ☊",
                     "iteration 𝀙 mastery",
                     "𝀙 moves surface→depth",
-                    "hermeneutic circle 𝀙 meaning"
+                    "hermeneutic ⟳ 𝀙 ℳ"
                 ]),
-                ("⊢", "𝀙 deepening ⊢ enriched understanding ⊢ semantic depth"),
+                ("⊢", "𝀙 ⊢ ☊ ⊢ ⵐ"),
             ],
             entity_type: None,
         },

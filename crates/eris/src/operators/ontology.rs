@@ -69,22 +69,21 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                 ("∂", [
                     "უmere addition",
                     "უaccumulation",
-                    "უdetached growth",
-                    "requires constitutive trace"
+                    "requires 𝁚 trace"
                 ]),
                 ("⊛", [
                     "theory𝀼reality",
                     "model𝀼market",
                     "concept𝀼framework",
-                    "𝀼 maintains continuous connection",
-                    "extension leaves constitutive wake",
-                    "𝀼 binds extending∧extended",
+                    "𝀼 → ⋈ continuous",
+                    "𝀼 leaves 𝁚 wake",
+                    "𝀼 ⋈ extending∧extended",
                     "σύρω: drag, draw along, trail"
                 ]),
                 ("⊢", [
-                    "reflexive entanglement",
-                    "constitutive reshaping",
-                    "theory-reality binding"
+                    "𝄎 entanglement",
+                    "𝀞",
+                    "theory⟷reality ⋈"
                 ]),
             ],
         },
@@ -200,10 +199,10 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                 ("⊛", [
                     "periodic ✱",
                     "𝁀 confined to basin",
-                    "not rest but not escape",
+                    "¬𝀆 ∧ ¬escape",
                     "⟳ via 𝁀"
                 ]),
-                ("⊢", ["periodic return", "bounded cycling"]),
+                ("⊢", ["𝄃 return", "bounded ⟳"]),
             ],
         },
         // 𝁆 - Dissolution
@@ -366,7 +365,7 @@ pub fn get_ontology_operator_definitions() -> Vec<OntologyOperatorDef> {
                 ("∂", [
                     "უmere support",
                     "უcausal antecedent",
-                    "requires constitutive foundation"
+                    "requires 𝁚 foundation"
                 ]),
                 ("⊛", [
                     "⧏⟒empirical_data",
